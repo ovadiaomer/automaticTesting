@@ -7,6 +7,10 @@ import org.apache.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 //import java.util.logging.Logger;
 
@@ -38,7 +42,7 @@ public class SeleniumTestBase {
     }
 
     @Test
-    public void test1() {
+    public void test1() throws ParserConfigurationException, SAXException, IOException {
         logger.info("TestNo1");
     }
 

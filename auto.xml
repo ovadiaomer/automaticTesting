@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<review xmlns="http://plugins.intellij.net/revu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://plugins.intellij.net/revu http://plugins.intellij.net/revu/ns/revu_1_0.xsd" name="auto" status="draft" shared="false">
+  <history createdBy="Omero" lastUpdatedBy="Omero" createdOn="2013-11-11 13:43:04 +0200" lastUpdatedOn="2013-11-11 13:45:47 +0200"/>
+  <goal></goal>
+  <referential>
+    <priorities/>
+    <tags/>
+    <users>
+      <user displayName="Omero" login="Omero" roles="admin,reviewer,author"/>
+    </users>
+  </referential>
+  <filescope pathPattern="file[*]:*//*||test:*..*"/>
+  <issues/>
+</review>

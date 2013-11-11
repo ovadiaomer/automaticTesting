@@ -1,7 +1,12 @@
 package applango.common.tests;
 
 import applango.common.SeleniumTestBase;
+import applango.common.enums.requestType;
+import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.objectMapper;
+import applango.common.services.restAPI;
+import com.mongodb.DBObject;
+import com.mongodb.util.JSON;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +15,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.Map;
 
@@ -44,6 +51,9 @@ public class SanityTest extends SeleniumTestBase{
         logger.info("++++++++++++++++++++++++++++Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "++++++++++++++++++++++");
 
         try {
+
+            restAPI.executeRequest(requestType.GET.getValue(), "http://www.google.com", null);
+            restAPI.executeGetRequest("http://www.google.com");
             launchingWebsite(websiteAdress);
             clickOnLoginButton(wait);
             enterCredentials(userNameField, username, passwordField, password);
@@ -58,6 +68,27 @@ public class SanityTest extends SeleniumTestBase{
         finally {
 
         }
+    }
+    @Test
+    public void testInsertingToMongoDb() throws ParserConfigurationException, SAXException, IOException {
+        String json = "{'database' : 'mkyongDB','table' : 'hosting'," +
+                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}}";
+        DBObject dbObject = (DBObject) JSON.parse(json);
+        String json_new = "{'database' : 'mkyongDB1','table' : 'hosting'," +
+                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}}";
+        DBObject dbObjectNew = (DBObject) JSON.parse(json_new);
+        String cursor;
+        String collection = "OmerTest";
+//        DB db = mongoDB.connectToServer();
+//        mongoDB.insertToDB(db, "OmerTest", dbObject);
+//        mongoDB.deleteFromDB(db, "OmerTest", dbObjectNew);
+
+        mongoDB.connectAndInsertToDB(collection, dbObject);
+        cursor =  mongoDB.connectAndReadFromDB(collection, dbObject, null);
+        mongoDB.connectAndUpdateDB(collection, dbObject, dbObjectNew);
+        mongoDB.connectAndDeleteFromDB(collection, dbObjectNew);
+
+
     }
 
     private void checkThatPageLoaded(String mainScreenCss, WebDriverWait wait) {

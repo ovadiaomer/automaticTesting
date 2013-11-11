@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AutomaticTesting.iml" filepath="$PROJECT_DIR$/AutomaticTesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonAPI/commonAPI.iml" filepath="$PROJECT_DIR$/commonAPI/commonAPI.iml" />
     </modules>
   </component>
 </project>
