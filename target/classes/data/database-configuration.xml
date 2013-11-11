@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<databases>
+    <database id="test">
+        <url>localhost</url>
+        <port>27017</port>
+        <username>Omer</username>
+        <password>Omer</password>
+    </database>
+    <database id="omer-dev">
+        <url>iad-mongos0.objectrocket.com</url>
+        <port>15101</port>
+        <username>omer.ovadia@applango.com</username>
+        <password>changeit123</password>
+    </database>
+    <database id="kineret-dev">
+        <url>iad-mongos0.objectrocket.com</url>
+        <port>15101</port>
+        <username>kineret.amor@applango.com</username>
+        <password>changeit123</password>
+    </database>
+</databases>
