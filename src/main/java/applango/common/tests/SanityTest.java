@@ -35,7 +35,7 @@ public class SanityTest extends SeleniumTestBase{
     public static final String PASSWORD = "password";
 
     @Test
-    public void testLoginWihExistingUser() throws IOException {
+    public void testWebActionsWithRestAPI() throws IOException {
         Map appObjectMapper = objectMapper.getAppObjectMap();
         Map configPropertiesMapper = objectMapper.getConfigProperties();
         String websiteAdress = appObjectMapper.get(HOME_SITE).toString();
@@ -71,32 +71,51 @@ public class SanityTest extends SeleniumTestBase{
         }
     }
     @Test
-    public void testInsertingToMongoDb() throws Exception {
+    public void testMongoDb() throws Exception {
 
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-        String json = "{'database' : 'mkyongDB','table' : 'hosting'," +
-                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}}";
-        DBObject dbObject = (DBObject) JSON.parse(json);
+        String json_Omer = "{FirstName : 'Omer', FamilyName : 'Ovadia'," +
+                "Age : 31, Sex : 'Male', Color : 'Blue'}";
+        DBObject dbObjectOmer = (DBObject) JSON.parse(json_Omer);
+        String json_Becky = "{FirstName : 'Becky', FamilyName : 'Ovadia'," +
+                "Age : 27, Sex : 'Female', Color : 'Red'}";
+        DBObject dbObjectBecky = (DBObject) JSON.parse(json_Becky);
+        String json_Avigail = "{FirstName : 'Avigail', FamilyName : 'Ovadia'," +
+                "Age : 3, Sex : 'Female', Color : 'Pink'}";
+        DBObject dbObjectAvigail = (DBObject) JSON.parse(json_Avigail);
+        String json_Dor = "{FirstName : 'Dor', FamilyName : 'Amit'," +
+                "Age : 29, Sex : 'Male', Color : 'Black'}";
+        DBObject dbObjectDor = (DBObject) JSON.parse(json_Dor);
+
+
+
         String json_new = "{'database' : 'mkyongDB1','table' : 'hosting'," +
                 "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}";
         DBObject dbObjectNew = (DBObject) JSON.parse(json_new);
 
-        String dbRecord = "{database1 : 'omerDB',table : 'Cars'}";
-        DBObject dbObjectRecord = (DBObject) JSON.parse(dbRecord);
+
+//        //Set the document to query for
+        String dbRecordToQuery = "{$or: [ {Age : {$gt: 30}}, {Sex : { $ne: 'Male' }} ] }";
+        DBObject dbObjectRecordToQuery = (DBObject) JSON.parse(dbRecordToQuery);
+
+//        String dbRecordQuery = "{database : 'mkyongDB1',table : 'Cars'}";
+//        DBObject dbObjectRecordQuery = (DBObject) JSON.parse(dbRecordQuery);
+
 
         List<DBObject> listOfDbObjects = new ArrayList<DBObject>();
         String collection = "OmerTest";
 
         DB db = mongoDB.connectToServer();
-        mongoDB.insertToDB(db, collection, dbObjectRecord);
-        listOfDbObjects = mongoDB.readFromDB(db, collection, dbObjectRecord, null);
-        mongoDB.updateDB(db, collection, dbObjectRecord, dbObjectNew);
-        mongoDB.deleteFromDB(db, collection, dbObjectRecord);
-
-//        mongoDB.connectAndInsertToDB(collection, dbObject);
-//        cursor =  mongoDB.connectAndReadFromDB(collection, dbObject, null);
-//        mongoDB.connectAndUpdateDB(collection, dbObject, dbObjectNew);
-//        mongoDB.connectAndDeleteFromDB(collection, dbObjectNew);
+        db.getCollection(collection).drop();
+        mongoDB.insertToDB(db, collection, dbObjectOmer);
+        mongoDB.insertToDB(db, collection, dbObjectBecky);
+        mongoDB.insertToDB(db, collection, dbObjectAvigail);
+        mongoDB.insertToDB(db, collection, dbObjectDor);
+//        dbObjectRecordQuery = (DBObject) JSON.parse("{database : 'Omero',table : 'Cars'}");
+//        mongoDB.insertToDB(db, collection, dbObjectRecordQuery);
+        listOfDbObjects = mongoDB.readFromDB(db, collection, dbObjectRecordToQuery, null);
+        mongoDB.updateDB(db, collection, dbObjectRecordToQuery, dbObjectNew);
+        mongoDB.deleteFromDB(db, collection, dbObjectRecordToQuery);
 
 
     }

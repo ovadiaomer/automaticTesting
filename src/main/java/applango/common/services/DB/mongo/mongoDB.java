@@ -74,13 +74,13 @@ public class mongoDB extends SeleniumTestBase {
     }
 
 
-    public static void updateDB(DB db, String collection, DBObject document, DBObject newDocument) {
-        logger.info("Updating " + document + " on collection " + collection);
+    public static void updateDB(DB db, String collection, DBObject queryDocument, DBObject newDocument) {
+        logger.info("Updating " + queryDocument + " on collection " + collection);
         DBCollection table = db.getCollection(collection);
-        table.findAndModify(document, newDocument);
+        table.findAndModify(queryDocument, newDocument);
     }
 
-    public static List<DBObject> readDB(DB db, String collection, DBObject document) throws Exception {
+    protected static List<DBObject> readDB(DB db, String collection, DBObject document) throws Exception {
         DBCursor cursor;
         logger.info("Reading " + document + " from collection " + collection);
         List<DBObject> list = new ArrayList<DBObject>();
@@ -94,13 +94,9 @@ public class mongoDB extends SeleniumTestBase {
 
             if (cursor.hasNext()) {
                 moreResultsInCursor = true;
-//                list.add(cursor.next());
                 dbObjects = cursor.next();
             } else {
-//                dbObjects = cursor.get
-//                list.add(dbObjects); //dbObject has empty value
                 dbObjects.put("", "");
-//                throw new InvalidArgumentException(new String[]{"Document not found in DB"});
             }
 
 
@@ -108,9 +104,7 @@ public class mongoDB extends SeleniumTestBase {
             while ((moreResultsInCursor) && !(((BasicDBObject) dbObjects).isEmpty())) {
                 System.out.println(" Current DBObject" + dbObjects);
                 list.add(dbObjects);
-//                ((BasicDBObject) dbObjects).append("1", cursor.next());
                 if (cursor.hasNext()) {
-//                    cursor.next();
                     dbObjects =  cursor.next();
                 } else {
                     moreResultsInCursor = false;
@@ -124,33 +118,20 @@ public class mongoDB extends SeleniumTestBase {
             logger.error("Document not found in DB \n" + e);
 
         }
-//        catch (java.lang.RuntimeException e) {
-//            logger.error(e);
-//            return null;
-//        }
         return list;
     }
 
     public static List<DBObject> connectAndReadFromDB(String collection, DBObject document, String searchBy) throws Exception {
         DB db = connectToServer();
-        /*DBCollection table = db.getCollection(collection);
-        if (searchBy != null) {
-            return readDB(db, collection, document, searchBy).get(searchBy).toString();
-
-        }
-        return readDB(db, collection, document, searchBy).toString();*/
         return readFromDB(db, collection, document, searchBy);
 
     }
     public static List<DBObject> readFromDB(DB db, String collection, DBObject document, String searchBy) throws Exception {
-//        DBCollection table = db.getCollection(collection);
 
+        if (searchBy != null) {
+//            return readDB(db, collection, document).get(searchBy);
 
-//
-//        if (searchBy != null) {
-//            return readDB(db, collection, document).get(searchBy).toString();
-//
-//        }
+        }
         return readDB(db, collection, document);
     }
 
