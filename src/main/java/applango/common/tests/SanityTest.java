@@ -5,6 +5,7 @@ import applango.common.enums.requestType;
 import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.objectMapper;
 import applango.common.services.restAPI;
+import com.mongodb.DB;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
 import org.junit.After;
@@ -15,10 +16,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class SanityTest extends SeleniumTestBase{
@@ -48,7 +49,7 @@ public class SanityTest extends SeleniumTestBase{
         WebDriverWait wait = new WebDriverWait(driver, 15);
         driver.manage().deleteAllCookies();
 
-        logger.info("++++++++++++++++++++++++++++Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "++++++++++++++++++++++");
+        logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
 
         try {
 
@@ -70,23 +71,32 @@ public class SanityTest extends SeleniumTestBase{
         }
     }
     @Test
-    public void testInsertingToMongoDb() throws ParserConfigurationException, SAXException, IOException {
+    public void testInsertingToMongoDb() throws Exception {
+
+        logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
         String json = "{'database' : 'mkyongDB','table' : 'hosting'," +
                 "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}}";
         DBObject dbObject = (DBObject) JSON.parse(json);
         String json_new = "{'database' : 'mkyongDB1','table' : 'hosting'," +
-                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}}";
+                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}";
         DBObject dbObjectNew = (DBObject) JSON.parse(json_new);
-        String cursor;
-        String collection = "OmerTest";
-//        DB db = mongoDB.connectToServer();
-//        mongoDB.insertToDB(db, "OmerTest", dbObject);
-//        mongoDB.deleteFromDB(db, "OmerTest", dbObjectNew);
 
-        mongoDB.connectAndInsertToDB(collection, dbObject);
-        cursor =  mongoDB.connectAndReadFromDB(collection, dbObject, null);
-        mongoDB.connectAndUpdateDB(collection, dbObject, dbObjectNew);
-        mongoDB.connectAndDeleteFromDB(collection, dbObjectNew);
+        String dbRecord = "{database1 : 'omerDB',table : 'Cars'}";
+        DBObject dbObjectRecord = (DBObject) JSON.parse(dbRecord);
+
+        List<DBObject> listOfDbObjects = new ArrayList<DBObject>();
+        String collection = "OmerTest";
+
+        DB db = mongoDB.connectToServer();
+        mongoDB.insertToDB(db, collection, dbObjectRecord);
+        listOfDbObjects = mongoDB.readFromDB(db, collection, dbObjectRecord, null);
+        mongoDB.updateDB(db, collection, dbObjectRecord, dbObjectNew);
+        mongoDB.deleteFromDB(db, collection, dbObjectRecord);
+
+//        mongoDB.connectAndInsertToDB(collection, dbObject);
+//        cursor =  mongoDB.connectAndReadFromDB(collection, dbObject, null);
+//        mongoDB.connectAndUpdateDB(collection, dbObject, dbObjectNew);
+//        mongoDB.connectAndDeleteFromDB(collection, dbObjectNew);
 
 
     }
@@ -144,6 +154,8 @@ public class SanityTest extends SeleniumTestBase{
 
     @After
     public void tearDown() {
+        logger.info("--------------------------- TearDown  " + Thread.currentThread().getStackTrace()[1].getClassName() + "---------------------------");
+
         if (driver != null) {
             driver.quit();
         }
@@ -151,6 +163,7 @@ public class SanityTest extends SeleniumTestBase{
 
     @Before
     public void setUp() {
+        logger.info("++++++++++++++++ Setup  " + Thread.currentThread().getStackTrace()[1].getClassName() + "\"++++++++++++++++");
 
     }
 

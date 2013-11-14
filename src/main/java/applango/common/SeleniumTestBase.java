@@ -37,7 +37,7 @@ public class SeleniumTestBase {
 
 // PropertyConfigurator.configure(getServletContext().getRealPath("/"));
 
-        logger.info("SetUp");
+        logger.info("+++++++++++++++++++++ SetUp Base +++++++++++++++++++++");
 
     }
 
@@ -48,7 +48,7 @@ public class SeleniumTestBase {
 
     @AfterClass
     public static void tearDownBase() {
-        logger.info("TearDown");
+        logger.info("--------------------------- TearDown Base ---------------------------");
     }
 
 

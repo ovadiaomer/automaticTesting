@@ -9,6 +9,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -89,7 +91,9 @@ public class restAPI extends SeleniumTestBase {
         return null;
     }
 
+    @Test
     public static void main(String [] args) throws IOException {
+//        logger.info("++++++++++++++++++++++++++++Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "++++++++++++++++++++++");
         executeRequest("get", "http://www.google.com", null);
         String url = "https://selfsolve.apple.com/wcResults.do";
         List<BasicNameValuePair> urlParameters = new ArrayList<BasicNameValuePair>();
@@ -101,6 +105,13 @@ public class restAPI extends SeleniumTestBase {
         executeRequest("post", url, urlParameters);
 //        String url = "Http://www.google.com";
 //        String sb = executeGetRequest(url);
+    }
+
+    @Before
+    public void setUp() {
+        logger.info("++++++++++++++++++++++++++++Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "++++++++++++++++++++++");
+        System.out.println("Before setup");
+
     }
 
 }

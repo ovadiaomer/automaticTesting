@@ -9,6 +9,8 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -62,12 +64,13 @@ public class mongoDB extends SeleniumTestBase {
 
     public static void deleteFromDB(DB db, String collection, DBObject document) {
         logger.info("Deleting " + document + " from collection " + collection);
-        DBCollection table = db.getCollection(collection);
-        DBCursor cursor = table.find(document);
-        while (cursor.hasNext()) {
-            table.findAndRemove(document);
-
-        }
+        db.getCollection(collection).remove(document);
+//        DBCursor cursor = table.find(document);
+//        while (cursor.hasNext()) {
+//            table.findAndRemove(document);
+//            cursor = table.find(document);
+//
+//        }
     }
 
 
@@ -77,32 +80,81 @@ public class mongoDB extends SeleniumTestBase {
         table.findAndModify(document, newDocument);
     }
 
-    public static DBObject readDB(DB db, String collection, DBObject document, String searchBy) {
+    public static List<DBObject> readDB(DB db, String collection, DBObject document) throws Exception {
         DBCursor cursor;
         logger.info("Reading " + document + " from collection " + collection);
-        DBCollection table = db.getCollection(collection);
-        cursor = table.find(document);
-        DBObject dbObject = cursor.next();
-       /* if (searchBy != null){
-            cursor = (DBObject) cursor.get(searchBy);
+        List<DBObject> list = new ArrayList<DBObject>();
+        try {
+            boolean moreResultsInCursor = false;
+            DBObject dbObjects = BasicDBObjectBuilder.start().add("", "").get();
+//            dbObjects.put("", "");
+            document.removeField("_id");
+            DBCollection table = db.getCollection(collection);
+            cursor = table.find(document);
+
+            if (cursor.hasNext()) {
+                moreResultsInCursor = true;
+//                list.add(cursor.next());
+                dbObjects = cursor.next();
+            } else {
+//                dbObjects = cursor.get
+//                list.add(dbObjects); //dbObject has empty value
+                dbObjects.put("", "");
+//                throw new InvalidArgumentException(new String[]{"Document not found in DB"});
+            }
+
+
+            logger.info("Inserting results to result list");
+            while ((moreResultsInCursor) && !(((BasicDBObject) dbObjects).isEmpty())) {
+                System.out.println(" Current DBObject" + dbObjects);
+                list.add(dbObjects);
+//                ((BasicDBObject) dbObjects).append("1", cursor.next());
+                if (cursor.hasNext()) {
+//                    cursor.next();
+                    dbObjects =  cursor.next();
+                } else {
+                    moreResultsInCursor = false;
+                }
+
+
+            }
+
+//            return list;
+        } catch (Exception e) {
+            logger.error("Document not found in DB \n" + e);
+
         }
-        else {
-            cursor = table.find(document).next();
-        }*/
-        return dbObject;
+//        catch (java.lang.RuntimeException e) {
+//            logger.error(e);
+//            return null;
+//        }
+        return list;
     }
 
-    public static String connectAndReadFromDB(String collection, DBObject document, String searchBy) throws ParserConfigurationException, SAXException, IOException {
+    public static List<DBObject> connectAndReadFromDB(String collection, DBObject document, String searchBy) throws Exception {
         DB db = connectToServer();
-        DBCollection table = db.getCollection(collection);
+        /*DBCollection table = db.getCollection(collection);
         if (searchBy != null) {
             return readDB(db, collection, document, searchBy).get(searchBy).toString();
 
         }
-        return readDB(db, collection, document, searchBy).toString();
-
+        return readDB(db, collection, document, searchBy).toString();*/
+        return readFromDB(db, collection, document, searchBy);
 
     }
+    public static List<DBObject> readFromDB(DB db, String collection, DBObject document, String searchBy) throws Exception {
+//        DBCollection table = db.getCollection(collection);
+
+
+//
+//        if (searchBy != null) {
+//            return readDB(db, collection, document).get(searchBy).toString();
+//
+//        }
+        return readDB(db, collection, document);
+    }
+
+
 
     public static void connectAndInsertToDB(String collection, DBObject document) throws IOException, ParserConfigurationException, SAXException {
 
