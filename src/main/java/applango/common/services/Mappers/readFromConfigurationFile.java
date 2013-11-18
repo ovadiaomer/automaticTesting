@@ -1,8 +1,8 @@
-package applango.common.services.DB.mongo;
+package applango.common.services.Mappers;
 
 import applango.common.SeleniumTestBase;
-import applango.common.services.DB.mongo.beans.Database;
-import org.junit.Test;
+import applango.common.services.beans.Database;
+import applango.common.services.beans.Salesforce;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -15,16 +15,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created with IntelliJ IDEA.
- * User: omer.ovadia
- * Date: 06/11/13
- * Time: 15:34
- * To change this template use File | Settings | File Templates.
- */
-public class readFromDatabaseConfigurationFile extends SeleniumTestBase {
+public class readFromConfigurationFile extends SeleniumTestBase {
+
     public static Database getDatabaseConfigurationFileByDbName(String dbName) throws IOException, ParserConfigurationException, SAXException {
-        logger.info("Get database object values of " + dbName);
         Database database = new Database();
         try {
             logger.info("Get " + database + "database configuration data");
@@ -68,11 +61,49 @@ public class readFromDatabaseConfigurationFile extends SeleniumTestBase {
         return database;
     }
 
+    public static Salesforce getSalesfoceConfigurationFileByenvironmentId(String salesforceEnvironmentId) throws IOException, ParserConfigurationException, SAXException {
+        Salesforce salesforce= new Salesforce();
+        try {
+            logger.info("Get " + salesforce + " configuration data");
+            File fXmlFile = new File("src/main/resources/data/salesforce-configuration.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
 
-    @Test
-    public void test1() throws ParserConfigurationException, SAXException, IOException {
-        Database db1 = new Database();
-        db1 = getDatabaseConfigurationFileByDbName("omer-dev");
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+
+            NodeList nList = doc.getElementsByTagName("environment");
+
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+                Node nNode = nList.item(temp);
+
+
+                if (((nNode.getNodeType() == Node.ELEMENT_NODE))
+                        &&
+                        (nNode.getAttributes().item(0).toString().contains(salesforceEnvironmentId)))
+                {
+                    logger.info("Init salesforce object by salesforce-configuration.xml");
+                    Element eElement = (Element) nNode;
+                    salesforce.setEnvironment(nNode.getAttributes().item(0).toString());
+                    salesforce.setUrl(eElement.getElementsByTagName("url").item(0).getFirstChild().getTextContent());
+                    salesforce.setPassword(eElement.getElementsByTagName("password").item(0).getFirstChild().getTextContent());
+                    salesforce.setUsername(eElement.getElementsByTagName("username").item(0).getFirstChild().getTextContent());
+
+                }
+
+            }
+
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            e.printStackTrace();
+
+        }
+        return salesforce;
     }
+
+
 
 }

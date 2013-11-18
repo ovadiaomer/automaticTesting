@@ -1,0 +1,6 @@
+{"home.site.string":"http://www.salesforce.com",
+"login.button.id":"button-login",
+"login.username.textfield.id":"username",
+"login.password.textfield.id":"password",
+"login.submit.button.id":"Login",
+ "main.css":"html body div div#wrapper div#main div div.firstUserMain div.container"}

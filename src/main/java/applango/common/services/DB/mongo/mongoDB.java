@@ -1,8 +1,9 @@
 package applango.common.services.DB.mongo;
 
 import applango.common.SeleniumTestBase;
-import applango.common.services.DB.mongo.beans.Database;
-import applango.common.services.objectMapper;
+import applango.common.services.Mappers.readFromConfigurationFile;
+import applango.common.services.beans.Database;
+import applango.common.services.Mappers.objectMapper;
 import com.mongodb.*;
 import org.xml.sax.SAXException;
 
@@ -13,17 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: omer.ovadia
- * Date: 05/11/13
- * Time: 15:52
- * To change this template use File | Settings | File Templates.
- */
 public class mongoDB extends SeleniumTestBase {
-    public static final String DATABASE = "database";
-    public static Map configPropertiesMapper;
-    public static Database db1;
+    private static final String DATABASE = "database";
+    private static Map configPropertiesMapper;
+    private static Database db1;
 
 
     public static DB connectToServer() throws IOException, ParserConfigurationException, SAXException {
@@ -31,6 +25,8 @@ public class mongoDB extends SeleniumTestBase {
         GetDb getDb = new GetDb().invoke();
         String database = getDb.getDatabase();
         DB db = getDb.getDb();
+
+
 
         logger.info("Authenticate to DB: " + database + " with User: " + db1.getUsername() + " Password: " + db1.getPassword().toCharArray());
         boolean auth = db.authenticate(db1.getUsername(), db1.getPassword().toCharArray());
@@ -172,7 +168,7 @@ public class mongoDB extends SeleniumTestBase {
             configPropertiesMapper = objectMapper.getConfigProperties();
             database = configPropertiesMapper.get(DATABASE).toString();
             logger.info("Connect to DB: " + database);
-            db1 = readFromDatabaseConfigurationFile.getDatabaseConfigurationFileByDbName(database);
+            db1 = readFromConfigurationFile.getDatabaseConfigurationFileByDbName(database);
 
             MongoClient mongoClient = new MongoClient(db1.getUrl(), db1.getPort());
             db = mongoClient.getDB(database);

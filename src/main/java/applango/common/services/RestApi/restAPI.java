@@ -1,4 +1,4 @@
-package applango.common.services;
+package applango.common.services.RestApi;
 
 import applango.common.SeleniumTestBase;
 import org.apache.http.HttpResponse;
@@ -103,8 +103,6 @@ public class restAPI extends SeleniumTestBase {
         urlParameters.add(new BasicNameValuePair("caller", ""));
         urlParameters.add(new BasicNameValuePair("num", "12345"));
         executeRequest("post", url, urlParameters);
-//        String url = "Http://www.google.com";
-//        String sb = executeGetRequest(url);
     }
 
     @Before

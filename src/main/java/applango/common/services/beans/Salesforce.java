@@ -1,22 +1,17 @@
-package applango.common.services.DB.mongo.beans;
+package applango.common.services.beans;
 
 /**
  * Created with IntelliJ IDEA.
  * User: omer.ovadia
- * Date: 07/11/13
- * Time: 12:41
+ * Date: 17/11/13
+ * Time: 13:15
  * To change this template use File | Settings | File Templates.
  */
-public class Database {
+public class Salesforce {
     String url;
-    int port;
-    String dbName;
     String username;
     String password;
-
-    public void database() {
-
-    }
+    String environment;
 
     public String getUrl() {
         return url;
@@ -24,22 +19,6 @@ public class Database {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
-    public String getDbName() {
-        return dbName;
-    }
-
-    public void setDbName(String dbName) {
-        this.dbName = dbName;
     }
 
     public String getUsername() {
@@ -58,7 +37,15 @@ public class Database {
         this.password = password;
     }
 
+    public String getEnvironment() {
+        return environment;
+    }
 
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
 
+    public void salesforce() {
 
+    }
 }

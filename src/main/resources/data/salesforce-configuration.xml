@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<saleforce>
+    <environment id="production">
+        <url>http://www.salesforce.com</url>
+        <username>ovadia.omero@gmail.com1</username>
+        <password>omer1982</password>
+    </environment>
+    <environment id="developer">
+        <url>http://www.salesforce.com</url>
+        <username>ovadia.omero@gmail.com</username>
+        <password>omer1982</password>
+    </environment>
+</saleforce>

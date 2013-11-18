@@ -1,6 +1,0 @@
-{"home.site.string":"http://www.applango.com",
-"login.button.xpath":"/html/body/div/div/ul/li[6]/a",
-"login.username.textfield.id":"userName",
-"login.password.textfield.id":"password",
-"login.submit.button.xpath":"/html/body/div/div[2]/div/form/fieldset/div[2]/div[6]/input",
- "main.css":"html body div div#wrapper div#main div div.firstUserMain div.container"}
