@@ -137,10 +137,16 @@ public class SanityTest extends SeleniumTestBase{
         driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, 15);
 
+
+        logger.info("Open website " + sf.getUrl().toString() + " and login");
         launchingWebsite(driver, sf.getUrl().toString());
         clickOnLoginButton(driver, wait);
         enterCredentials(driver, userNameField, sf.getUsername(), passwordField, sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
+
+        genericSalesforceWebsiteActions.createNewAccount(driver, wait);
+
+
 
     }
 

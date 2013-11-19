@@ -2,7 +2,7 @@
 <saleforce>
     <environment id="production">
         <url>http://www.salesforce.com</url>
-        <username>ovadia.omero@gmail.com1</username>
+        <username>ovadia.omero@gmail.com</username>
         <password>omer1982</password>
     </environment>
     <environment id="developer">
