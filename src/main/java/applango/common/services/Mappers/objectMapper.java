@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.Map;
 
 public class objectMapper {
-
+    private static String configPropertiesPath = "data/config.properties";
 
     public static Map getObjectMap(jsonMaps jsonMapObject) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
@@ -19,7 +19,7 @@ public class objectMapper {
 
     public static Map   getConfigProperties() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        URL envURL = SanityTest.class.getClassLoader().getResource("data/config.properties");
+        URL envURL = SanityTest.class.getClassLoader().getResource(configPropertiesPath);
         return mapper.readValue(envURL, Map.class);
     }
 

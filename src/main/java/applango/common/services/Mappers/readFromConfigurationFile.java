@@ -16,17 +16,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class readFromConfigurationFile extends SeleniumTestBase {
+    private static String configurationXmlPath;
 
     public static Database getDatabaseConfigurationFileByDbName(String dbName) throws IOException, ParserConfigurationException, SAXException {
         Database database = new Database();
+        configurationXmlPath = "src/main/resources/data/database-configuration.xml";
         try {
-            logger.info("Get " + database + "database configuration data");
-            File fXmlFile = new File("src/main/resources/data/database-configuration.xml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
-
-            doc.getDocumentElement().normalize();
+            Document doc = getDocument(configurationXmlPath);
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
@@ -61,16 +57,23 @@ public class readFromConfigurationFile extends SeleniumTestBase {
         return database;
     }
 
+    private static Document getDocument(String configurationXmlPath) throws ParserConfigurationException, SAXException, IOException {
+        logger.info("Get configuration data");
+        File fXmlFile = new File(configurationXmlPath);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(fXmlFile);
+
+        doc.getDocumentElement().normalize();
+        return doc;
+    }
+
     public static Salesforce getSalesfoceConfigurationFileByenvironmentId(String salesforceEnvironmentId) throws IOException, ParserConfigurationException, SAXException {
         Salesforce salesforce= new Salesforce();
+        configurationXmlPath = "src/main/resources/data/salesforce-configuration.xml";
         try {
-            logger.info("Get " + salesforce + " configuration data");
-            File fXmlFile = new File("src/main/resources/data/salesforce-configuration.xml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
 
-            doc.getDocumentElement().normalize();
+            Document doc = getDocument(configurationXmlPath);
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 

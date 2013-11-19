@@ -61,12 +61,6 @@ public class mongoDB extends SeleniumTestBase {
     public static void deleteFromDB(DB db, String collection, DBObject document) {
         logger.info("Deleting " + document + " from collection " + collection);
         db.getCollection(collection).remove(document);
-//        DBCursor cursor = table.find(document);
-//        while (cursor.hasNext()) {
-//            table.findAndRemove(document);
-//            cursor = table.find(document);
-//
-//        }
     }
 
 

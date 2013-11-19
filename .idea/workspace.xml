@@ -7,25 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/WebdriverExtend/genericWebsiteActions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/loginToSalesForce.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/omer_ovadia.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" />
-      <change type="MOVED" beforePath="C:\app-project\AutomaticTesting\src\main\java\applango\common\services\DB\mongo\beans\Database.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java" />
-      <change type="MOVED" beforePath="C:\app-project\AutomaticTesting\src\main\java\applango\common\services\DB\mongo\readFromDatabaseConfigurationFile.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
-      <change type="MOVED" beforePath="C:\app-project\AutomaticTesting\src\main\java\applango\common\services\objectMapper.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java" />
-      <change type="MOVED" beforePath="C:\app-project\AutomaticTesting\src\main\java\applango\common\services\restAPI.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/RestApi/restAPI.java" />
-      <change type="MOVED" beforePath="C:\app-project\AutomaticTesting\src\main\resources\mappers\appObjectsMap.json" afterPath="$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/data/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
     <ignored path="AutomaticTesting.iws" />
@@ -44,7 +28,7 @@
     <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1382340608699" ignored="false" />
     <file path="/log4j.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1382449348836" ignored="false" />
     <file path="/log4j.properties" changelist="2c65d532-f314-485a-a005-237161801969" time="1382358880111" ignored="false" />
-    <file path="/objectMapper.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384773245084" ignored="false" />
+    <file path="/objectMapper.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384786661040" ignored="false" />
     <file path="/testEnvironment.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1382455963396" ignored="false" />
     <file path="/loginObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1382519809802" ignored="false" />
     <file path="/config.properties" changelist="2c65d532-f314-485a-a005-237161801969" time="1384778924835" ignored="false" />
@@ -77,7 +61,7 @@
     <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384778159722" ignored="false" />
     <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384777472136" ignored="false" />
     <file path="/salesforceObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1384702839203" ignored="false" />
-    <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384771242461" ignored="false" />
+    <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384786940266" ignored="false" />
     <file path="/jsonMaps.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384773122711" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,21 +185,6 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" line="63" class="applango.common.services.DB.mongo.mongoDB" package="applango.common.services.DB.mongo">
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="&#13;&#13;JAVA" />
-        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="66" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -246,7 +215,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" line="172" class="applango.common.services.DB.mongo.mongoDB.GetDb" package="applango.common.services.DB.mongo">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" line="166" class="applango.common.services.DB.mongo.mongoDB.GetDb" package="applango.common.services.DB.mongo">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -291,6 +260,36 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="135" class="applango.common.tests.SanityTest" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" line="72" class="applango.common.services.Mappers.readFromConfigurationFile" package="applango.common.services.Mappers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -301,30 +300,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SanityTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SanityTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="30" selection-start="5802" selection-end="5802" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongoDB.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="20" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.5744681">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SeleniumTestBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="26" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0">
+            <state line="163" column="43" selection-start="7537" selection-end="7537" vertical-scroll-proportion="0.5177305">
               <folding />
             </state>
           </provider>
@@ -333,25 +312,25 @@
       <file leaf-file-name="objectMapper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="22" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0">
+            <state line="11" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readFromConfigurationFile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
+      <file leaf-file-name="Database.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="80" selection-start="3712" selection-end="3712" vertical-scroll-proportion="0.0">
+            <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salesforce-configuration.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
+      <file leaf-file-name="Salesforce.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="154" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
+            <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -366,6 +345,35 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="readFromConfigurationFile.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="0" selection-start="4516" selection-end="4516" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongoDB.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="24" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginToSalesForce.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/loginToSalesForce.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="44" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="genericWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/WebdriverExtend/genericWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -375,19 +383,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restAPI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/RestApi/restAPI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="24" selection-start="3933" selection-end="3933" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="genericSalesforceWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="23" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.0">
+            <state line="51" column="0" selection-start="2402" selection-end="2402" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -415,14 +414,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/objectMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/readFromDatabaseConfigurationFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/readFromConfigurationFile.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/RestApi/restAPI.java" />
@@ -430,6 +426,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
       </list>
     </option>
   </component>
@@ -1421,52 +1420,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="git_tutorial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="git_tutorial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commonAPI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="automaticTesting" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1546,7 +1499,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SanityTest.testMongoDb">
+  <component name="RunManager" selected="JUnit.SanityTest.testSalesforce">
     <configuration default="false" name="SanityTest.testMongoDb" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1831,8 +1784,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest.testMongoDb" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SanityTest.testSalesforce" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest.testSalesforce" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SanityTest.testMongoDb" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.SanityTest.testWebActionsWithRestAPI" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.loginToSalesForce.testLoginToSslesForceWithValidUser" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.loginToSalesForce" />
@@ -1918,7 +1871,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2026,79 +1979,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="31" selection-start="198" selection-end="198" vertical-scroll-proportion="-2.6153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/requestType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/loginToSalesForce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/RestApi/restAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="105" column="24" selection-start="3933" selection-end="3933" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/WebdriverExtend/genericWebsiteActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="80" selection-start="3712" selection-end="3712" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -2117,28 +2000,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="23" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="9" column="12" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/requestType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="30" selection-start="5802" selection-end="5802" vertical-scroll-proportion="0.0">
+        <state line="9" column="12" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="20" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.5744681">
+        <state line="105" column="24" selection-start="3731" selection-end="3731" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/objectMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="26" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="33" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="0" selection-start="4516" selection-end="4516" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="2402" selection-end="2402" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/loginToSalesForce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="44" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/WebdriverExtend/genericWebsiteActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="43" selection-start="7537" selection-end="7537" vertical-scroll-proportion="0.5177305">
+          <folding />
         </state>
       </provider>
     </entry>
