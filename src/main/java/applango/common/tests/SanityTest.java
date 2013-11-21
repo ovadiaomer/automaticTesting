@@ -6,9 +6,9 @@ import applango.common.enums.requestType;
 import applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions;
 import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Mappers.objectMapper;
+import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.beans.Salesforce;
-import applango.common.services.RestApi.restAPI;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
@@ -26,8 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static applango.common.services.Salesforce.genericSalesforceWebsiteActions.clickOnLoginButton;
-import static applango.common.services.Salesforce.genericSalesforceWebsiteActions.clickOnSubmitCredentials;
+import static applango.common.services.Salesforce.genericSalesforceWebsiteActions.*;
 
 public class SanityTest extends SeleniumTestBase{
     WebDriver driver;
@@ -144,11 +143,12 @@ public class SanityTest extends SeleniumTestBase{
         enterCredentials(driver, userNameField, sf.getUsername(), passwordField, sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-        genericSalesforceWebsiteActions.createNewAccount(driver, wait);
-
-
+        String[] newAccounts = createNewAccounts(driver, wait, 2);
+        createNewAccount(driver, wait);
 
     }
+
+
 
 
     public static void main (String... args) throws Exception {

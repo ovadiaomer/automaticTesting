@@ -1,12 +1,5 @@
 package applango.common.services.beans;
 
-/**
- * Created with IntelliJ IDEA.
- * User: omer.ovadia
- * Date: 07/11/13
- * Time: 12:41
- * To change this template use File | Settings | File Templates.
- */
 public class Database {
     String url;
     int port;

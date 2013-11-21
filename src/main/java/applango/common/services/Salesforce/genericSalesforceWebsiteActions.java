@@ -51,49 +51,75 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         Map salesforceObjectMap = getMap();
         String loginSubmit = salesforceObjectMap.get(LOGIN_SUBMIT_UI_OBJECT).toString();
         driver.findElement(By.id(loginSubmit)).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bodyCell")));
+        waitForPageToLoad(wait);
 
+    }
+
+    private static void waitForPageToLoad(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bodyCell")));
     }
 
     public static void createNewAccount(WebDriver driver, WebDriverWait wait) throws IOException {
-        String newAccountName;
-        logger.info("Create new account");
+        createNewAccounts(driver, wait, 1);
+    }
+
+    public static String[] createNewAccounts(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
+        String[] newAccountName = new String[numberOfAccounts];
         Map salesforceObjectMap = getMap();
         try {
-            openTab(driver, salesforceTabs.ACCOUNT);
-            verifyRecentElementExist(wait, salesforceObjectMap, salesforceRecent.ACCOUNTS);
-
-            clickOnButton(driver, salesforceButtons.NEW);
-            newAccountName = fillNewAccountDetailsAndSave(driver);
-            verifyAccountSaved(driver, newAccountName);
+            for (int i=1; i<=numberOfAccounts; i++) {
+                logger.info("Create new account " + i + " out of " + numberOfAccounts);
+                openTab(driver, salesforceTabs.ACCOUNT);
+                verifyRecentElementExist(wait, salesforceObjectMap, salesforceRecent.ACCOUNTS);
+                clickOnButton(driver, salesforceButtons.NEW);
+                newAccountName[i-1] = fillNewAccountDetailsAndSave(driver, wait);
+            }
 
         }
         catch (Exception ex) {
-            logger.error("Error- " + ex.getMessage());
+            logger.error("Error- " + ex.getCause());
+        }
+        return newAccountName;
+    }
+
+    public static void deleteAccount(WebDriver driver, WebDriverWait wait, String accountName){
+
+    }
+
+
+    private static boolean verifyAccountSaved(WebDriver driver, String newAccountName) {
+        logger.info("Verify new account saved ");
+        try {
+            Assert.assertTrue(driver.findElement(By.xpath("/html/body/div/div[2]/table/tbody/tr/td[2]/div/div/div/div/div[2]/h2")).getText().equals(newAccountName));
+            return true;
+        }
+        catch (Exception ex) {
+            logger.error("New account didn't save\n" + ex.getMessage());
+            return false;
         }
     }
 
-    private static boolean verifyAccountSaved(WebDriver driver, String newAccountName) {
-        boolean accountExist = true;
-
-        //TODO implement
-        return accountExist;
-    }
-
-    private static String fillNewAccountDetailsAndSave(WebDriver driver) throws IOException {
+    private static String fillNewAccountDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new account details");
         String newAccount = fillNewAccountDetails(driver);
         clickOnButton(driver, salesforceButtons.SAVE);
+        waitForPageToLoad(wait);
+        if (verifyAccountSaved(driver, newAccount)) {
+            return newAccount;
 
-        return newAccount;
+        }
+        else {
+            logger.error("Account not saved");
+            return null;
+        }
 
     }
 
     private static String fillNewAccountDetails(WebDriver driver) throws IOException {
-            CharSequence accountName = "testAccount"+ Calendar.getInstance().getTimeInMillis();
-            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
-            logger.info("New Account name is " + accountName);
-            return accountName.toString();
+        CharSequence accountName = "testAccount"+ Calendar.getInstance().getTimeInMillis();
+        driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
+        logger.info("New Account name is " + accountName);
+        return accountName.toString();
     }
 
     private static void clickOnButton(WebDriver driver, salesforceButtons sfButton) throws IOException {
@@ -122,4 +148,6 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
     private static Map getMap() throws IOException {
         return objectMapper.getObjectMap(jsonMaps.SALESFORCE);
     }
+
+
 }
