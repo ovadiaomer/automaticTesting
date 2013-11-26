@@ -13,7 +13,16 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public enum salesforceTextfields {
-    ACCOUNT_AccountNAME{
+    ACCOUNT_AccountNameInTitle{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("accounts.title.accountName.xpath").toString();
+
+
+        }
+    },
+   ACCOUNT_AccountNAME{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
@@ -22,11 +31,11 @@ public enum salesforceTextfields {
 
         }
     },
-    SAVE{
+    ACCOUNT_AccountStatus{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-            return salesforceObjectMap.get("accounts.button.save.xpath").toString();
+            return salesforceObjectMap.get("accounts.record.status.xpath").toString();
 
 
         }

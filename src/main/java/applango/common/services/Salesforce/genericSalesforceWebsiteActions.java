@@ -5,6 +5,7 @@ import applango.common.enums.*;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.Mappers.readFromConfigurationFile;
 import applango.common.services.beans.Salesforce;
+import applango.common.services.beans.SalesforceAccounts;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,8 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Calendar;
 import java.util.Map;
 
@@ -63,8 +66,8 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         createNewAccounts(driver, wait, 1);
     }
 
-    public static String[] createNewAccounts(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
-        String[] newAccountName = new String[numberOfAccounts];
+    public static SalesforceAccounts[] createNewAccounts(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
+        SalesforceAccounts[] newAccountName = new SalesforceAccounts[numberOfAccounts];
         Map salesforceObjectMap = getMap();
         try {
             for (int i=1; i<=numberOfAccounts; i++) {
@@ -82,29 +85,74 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         return newAccountName;
     }
 
-    public static void deleteAccount(WebDriver driver, WebDriverWait wait, String accountName){
 
+    public static void deleteAccounts(WebDriver driver,  WebDriverWait wait, SalesforceAccounts[] accounts) throws IOException {
+
+        for (SalesforceAccounts account : accounts) {
+            deleteAccount(driver, wait, account);
+        }
+
+    }
+
+    public static void deleteAccount(WebDriver driver,  WebDriverWait wait, SalesforceAccounts account) throws IOException {
+        logger.info("Deleting account "+ account.getAccountName());
+        openAccount(driver, wait, account);
+        if (verifyAccountSaved(driver, account.getAccountName())) {
+            clickOnDelete(driver);
+            if(driver.switchTo().alert().getText().equals("Are you sure?")) {
+                acceptAlertPopup(driver);
+
+            }
+            checkAccountDeleted(driver, wait, account);
+        }
+    }
+
+    private static void clickOnDelete(WebDriver driver) throws IOException {
+        clickOnButton(driver, salesforceButtons.DELETE);
+    }
+
+    private static void openAccount(WebDriver driver, WebDriverWait wait, SalesforceAccounts account) throws MalformedURLException {
+        URL domain = new URL(driver.getCurrentUrl().toString());
+        String accountUrl = domain.getHost().toString() + "/" + account.getAccountId();
+        driver.navigate().to("https://" + accountUrl);
+        waitForPageToLoad(wait);
+    }
+
+    private static void checkAccountDeleted(WebDriver driver,  WebDriverWait wait, SalesforceAccounts account) throws IOException {
+        logger.info("Verify account deleted");
+        openAccount(driver, wait, account);
+        Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.ACCOUNT_AccountStatus.getValue())).getText().contains("Record deleted"));
+    }
+
+    private static void acceptAlertPopup(WebDriver driver) {
+        driver.switchTo().alert().accept();
+    }
+    
+    private static void dismissAlertPopup(WebDriver driver) {
+        driver.switchTo().alert().dismiss();
     }
 
 
     private static boolean verifyAccountSaved(WebDriver driver, String newAccountName) {
-        logger.info("Verify new account saved ");
+        logger.info("Verify account is saved ");
         try {
-            Assert.assertTrue(driver.findElement(By.xpath("/html/body/div/div[2]/table/tbody/tr/td[2]/div/div/div/div/div[2]/h2")).getText().equals(newAccountName));
+            Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.ACCOUNT_AccountNameInTitle.getValue())).getText().equals(newAccountName));
             return true;
         }
         catch (Exception ex) {
-            logger.error("New account didn't save\n" + ex.getMessage());
+            logger.error("Account not saved\n" + ex.getMessage());
             return false;
         }
     }
-
-    private static String fillNewAccountDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
-        logger.info("Fill new account details");
-        String newAccount = fillNewAccountDetails(driver);
+    //Fill new account and return object SalesforceAccounts with accountName and accountId
+    private static SalesforceAccounts fillNewAccountDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
+        logger.info("Fill new account details and return object SalesforceAccounts with accountName and accountId");
+        SalesforceAccounts newAccount = new SalesforceAccounts();
+        newAccount.setAccountName(fillNewAccountDetails(driver));
         clickOnButton(driver, salesforceButtons.SAVE);
         waitForPageToLoad(wait);
-        if (verifyAccountSaved(driver, newAccount)) {
+        if (verifyAccountSaved(driver, newAccount.getAccountName())) {
+            newAccount.setAccountId(getAccountIdFromUrl(driver));
             return newAccount;
 
         }
@@ -113,6 +161,11 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
             return null;
         }
 
+    }
+
+    private static String getAccountIdFromUrl(WebDriver driver) throws MalformedURLException {
+        URL domain = new URL(driver.getCurrentUrl().toString());
+        return domain.getPath().substring(1);
     }
 
     private static String fillNewAccountDetails(WebDriver driver) throws IOException {

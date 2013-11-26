@@ -6,8 +6,10 @@
     "main.css":"html body div div#wrapper div#main div div.firstUserMain div.container",
     "recent.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[3]/div/div/div/form/table/tbody/tr/td/h3",
     "new.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[3]/div/div/div/form/table/tbody/tr/td[2]/input",
+    "delete.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[4]/div/table/tbody/tr/td[2]/input[4]",
     "accounts.tab.xpath":"/html/body/div/div/div/div/nav/ul/li[5]/a",
-    "accounts.new.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[3]/div/div/div/form/table/tbody/tr/td[2]/input",
     "accounts.textfield.accountName.id":"acc2",
-    "accounts.button.save.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/form/div/div[3]/table/tbody/tr/td[2]/input"
+    "accounts.button.save.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/form/div/div[3]/table/tbody/tr/td[2]/input",
+    "accounts.title.accountName.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div/div/div/div/div[2]/h2",
+    "accounts.record.status.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/span"
 }

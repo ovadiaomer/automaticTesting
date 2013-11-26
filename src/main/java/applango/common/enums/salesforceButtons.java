@@ -22,6 +22,15 @@ public enum salesforceButtons {
 
         }
     },
+ DELETE{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("delete.button.xpath").toString();
+
+
+        }
+    },
     SAVE{
         public String path() throws IOException {
 

@@ -9,6 +9,7 @@ import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.beans.Salesforce;
+import applango.common.services.beans.SalesforceAccounts;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
@@ -143,8 +144,8 @@ public class SanityTest extends SeleniumTestBase{
         enterCredentials(driver, userNameField, sf.getUsername(), passwordField, sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-        String[] newAccounts = createNewAccounts(driver, wait, 2);
-        createNewAccount(driver, wait);
+        SalesforceAccounts[] newAccounts = createNewAccounts(driver, wait, 2);
+        deleteAccounts(driver, wait, newAccounts);
 
     }
 
