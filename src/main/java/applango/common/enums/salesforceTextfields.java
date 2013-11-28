@@ -39,6 +39,24 @@ public enum salesforceTextfields {
 
 
         }
+    },
+    MAIN_LoginUsername{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("login.username.textfield.id").toString();
+
+
+        }
+    },
+    MAIN_LoginPassword{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("login.password.textfield.id").toString();
+
+
+        }
     }
 
     ;

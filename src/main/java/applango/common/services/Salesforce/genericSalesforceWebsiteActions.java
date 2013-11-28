@@ -75,6 +75,7 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
                 openTab(driver, salesforceTabs.ACCOUNT);
                 verifyRecentElementExist(wait, salesforceObjectMap, salesforceRecent.ACCOUNTS);
                 clickOnButton(driver, salesforceButtons.NEW);
+                waitForPageToLoad(wait);
                 newAccountName[i-1] = fillNewAccountDetailsAndSave(driver, wait);
             }
 
@@ -82,6 +83,7 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         catch (Exception ex) {
             logger.error("Error- " + ex.getCause());
         }
+        logger.info("Accounts created successfully");
         return newAccountName;
     }
 
@@ -107,16 +109,58 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         }
     }
 
+
+    public static void updateAccounts(WebDriver driver,  WebDriverWait wait, SalesforceAccounts[] accounts, String newAccountName) throws IOException {
+        for (SalesforceAccounts account : accounts) {
+            updateAccount(driver, wait, account, newAccountName);
+        }
+    }
+
+
+    public static void updateAccount(WebDriver driver,  WebDriverWait wait, SalesforceAccounts account, String newAccountName) throws IOException {
+        logger.info("Updating account name of "+ account.getAccountName() + " to "+ newAccountName);
+        openAccount(driver, wait, account);
+        if (verifyAccountSaved(driver, account.getAccountName())) {
+            clickOnEdit(driver, wait);
+            account.setAccountName(fillAccountDetails(driver, newAccountName));
+            clickOnSave(driver);
+            waitForPageToLoad(wait);
+            verifyAccountSaved(driver, newAccountName);
+        }
+        else {
+            logger.info("Failed to update account " + account.getAccountName() + " since account not found");
+        }
+    }
+
     private static void clickOnDelete(WebDriver driver) throws IOException {
         clickOnButton(driver, salesforceButtons.DELETE);
     }
+    private static void clickOnSave(WebDriver driver) throws IOException {
+        clickOnButton(driver, salesforceButtons.SAVE);
+    }
+    private static void clickOnEdit(WebDriver driver, WebDriverWait wait) throws IOException {
+        clickOnButton(driver, salesforceButtons.EDIT);
+        waitForPageToLoad(wait);
+    }
 
-    private static void openAccount(WebDriver driver, WebDriverWait wait, SalesforceAccounts account) throws MalformedURLException {
+    public static void openAccount(WebDriver driver, WebDriverWait wait, SalesforceAccounts account) throws MalformedURLException {
         URL domain = new URL(driver.getCurrentUrl().toString());
         String accountUrl = domain.getHost().toString() + "/" + account.getAccountId();
         driver.navigate().to("https://" + accountUrl);
         waitForPageToLoad(wait);
     }
+    public static void openSetup(WebDriver driver, WebDriverWait wait) throws IOException {
+        URL domain = new URL(driver.getCurrentUrl().toString());
+        String accountUrl = domain.getHost().toString() + "/" + salesforceTabs.SETUP.getValue();
+        driver.navigate().to("https://" + accountUrl);
+        waitForPageToLoad(wait);
+    }
+//public static void openSetup(WebDriver driver, WebDriverWait wait) throws MalformedURLException {
+//        URL domain = new URL(driver.getCurrentUrl().toString());
+//        String accountUrl = domain.getHost().toString() + "/setup/forcecomHomepage.apexp";
+//        driver.navigate().to("https://" + accountUrl);
+//        waitForPageToLoad(wait);
+//    }
 
     private static void checkAccountDeleted(WebDriver driver,  WebDriverWait wait, SalesforceAccounts account) throws IOException {
         logger.info("Verify account deleted");
@@ -127,7 +171,7 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
     private static void acceptAlertPopup(WebDriver driver) {
         driver.switchTo().alert().accept();
     }
-    
+
     private static void dismissAlertPopup(WebDriver driver) {
         driver.switchTo().alert().dismiss();
     }
@@ -149,7 +193,7 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         logger.info("Fill new account details and return object SalesforceAccounts with accountName and accountId");
         SalesforceAccounts newAccount = new SalesforceAccounts();
         newAccount.setAccountName(fillNewAccountDetails(driver));
-        clickOnButton(driver, salesforceButtons.SAVE);
+        clickOnSave(driver);
         waitForPageToLoad(wait);
         if (verifyAccountSaved(driver, newAccount.getAccountName())) {
             newAccount.setAccountId(getAccountIdFromUrl(driver));
@@ -170,6 +214,11 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     private static String fillNewAccountDetails(WebDriver driver) throws IOException {
         CharSequence accountName = "testAccount"+ Calendar.getInstance().getTimeInMillis();
+        driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
+        logger.info("New Account name is " + accountName);
+        return accountName.toString();
+    }
+    private static String fillAccountDetails(WebDriver driver, String accountName) throws IOException {
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
         logger.info("New Account name is " + accountName);
         return accountName.toString();

@@ -7,30 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutomaticTesting.iml" afterPath="$PROJECT_DIR$/AutomaticTesting.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commonAPI/commonAPI.iml" afterPath="$PROJECT_DIR$/commonAPI/commonAPI.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/omer_ovadia.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/omer_ovadia.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" afterPath="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
     <ignored path="AutomaticTesting.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1381233776693" ignored="false" />
     <file path="/LoginPage.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381239247413" ignored="false" />
-    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385481367235" ignored="false" />
+    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385564984196" ignored="false" />
     <file path="/CreateUser.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382262684204" ignored="false" />
-    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1385458110517" ignored="false" />
+    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1385547777989" ignored="false" />
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
     <file path="/SeleniumBaseTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267638173" ignored="false" />
     <file path="$PROJECT_DIR$/../selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267697907" ignored="false" />
     <file path="/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382621241138" ignored="false" />
-    <file path="/SanityTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385481957087" ignored="false" />
+    <file path="/SanityTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385565133876" ignored="false" />
     <file path="/Logger.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382279699100" ignored="false" />
     <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1385029693659" ignored="false" />
     <file path="/log4j.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1382449348836" ignored="false" />
@@ -66,14 +63,14 @@
     <file path="/Salesforce.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384687072936" ignored="false" />
     <file path="/genericWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384695770947" ignored="false" />
     <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384778159722" ignored="false" />
-    <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385481944487" ignored="false" />
-    <file path="/salesforceObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1385479805293" ignored="false" />
+    <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385565656485" ignored="false" />
+    <file path="/salesforceObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1385565269950" ignored="false" />
     <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384786940266" ignored="false" />
     <file path="/jsonMaps.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384773122711" ignored="false" />
     <file path="/salesforceRecent.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384862076314" ignored="false" />
-    <file path="/salesforceTabs.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384868610159" ignored="false" />
-    <file path="/salesforceButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385465396765" ignored="false" />
-    <file path="/salesforceTextfields.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385479911221" ignored="false" />
+    <file path="/salesforceTabs.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385565237392" ignored="false" />
+    <file path="/salesforceButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385545479686" ignored="false" />
+    <file path="/salesforceTextfields.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385543964525" ignored="false" />
     <file path="$PROJECT_DIR$/../sf-collector/sf-collector/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1385029789136" ignored="false" />
     <file path="$PROJECT_DIR$/../sf-collector/sf-collector/src/main/java/com/applango/core/OAuthResponse.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385029789136" ignored="false" />
     <file path="$PROJECT_DIR$/../sf-collector/sf-collector/src/main/java/com/applango/core/OAuthSFCredentials.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385029789136" ignored="false" />
@@ -87,6 +84,7 @@
     <file path="$PROJECT_DIR$/../sf-collector/sf-collector/src/main/java/com/applango/core/sforiginal/MetadataLoginUtil.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385029789137" ignored="false" />
     <file path="$PROJECT_DIR$/../sf-collector/sf-collector/src/main/java/com/applango/App.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385029789137" ignored="false" />
     <file path="/SalesforceAccounts.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385461966645" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1385626323197" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="66" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="65" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -226,7 +224,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="194" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="243" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -241,7 +239,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="115" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="114" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -271,7 +269,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="121" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="215" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -286,22 +284,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="117" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="&#13;&#13;JAVA" />
-        <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="147" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" line="142" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -330,7 +313,7 @@
       <file leaf-file-name="SanityTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="23" selection-start="7133" selection-end="7133" vertical-scroll-proportion="0.46548674">
+            <state line="142" column="12" selection-start="6815" selection-end="6815" vertical-scroll-proportion="0.18541667">
               <folding>
                 <element signature="method#testWebActionsWithRestAPI#0;class#SanityTest#0" expanded="false" />
                 <element signature="method#testMongoDb#0;class#SanityTest#0" expanded="false" />
@@ -342,7 +325,7 @@
       <file leaf-file-name="genericSalesforceWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="35" selection-start="3579" selection-end="3579" vertical-scroll-proportion="-20.96">
+            <state line="151" column="23" selection-start="6536" selection-end="6536" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -350,19 +333,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorHandler.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/2.35.0/selenium-remote-driver-2.35.0.jar!/org/openqa/selenium/remote/ErrorHandler.class">
+      <file leaf-file-name="salesforceTabs.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="2715" selection-end="2715" vertical-scroll-proportion="-13.64">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salesforceTextfields.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="27" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
+            <state line="14" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -371,7 +345,34 @@
       <file leaf-file-name="salesforceObjectsMap.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="1005" selection-end="1033" vertical-scroll-proportion="-4.3333335">
+            <state line="7" column="157" selection-start="535" selection-end="535" vertical-scroll-proportion="-2.3333333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="salesforce-configuration.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SalesforceAccounts.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="salesforceButtons.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="1" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -404,12 +405,12 @@
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceRecent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
       </list>
@@ -1843,7 +1844,7 @@
       <recent name="C:\app-project\AutomaticTesting\src\test\com.applango.webdriver" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.genericSalesforceWebsiteActions">
+  <component name="RunManager" selected="JUnit.SanityTest.testSalesforce">
     <configuration default="false" name="SanityTest.testMongoDb" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2219,16 +2220,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15421557" sideWeight="0.67335564" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43924192" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3979933" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49386844" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2237,14 +2238,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14887941" sideWeight="0.67335564" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15635005" sideWeight="0.19063546" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14407684" sideWeight="0.48494983" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.156563" sideWeight="0.6837315" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20597652" sideWeight="0.67335564" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15635005" sideWeight="0.41137123" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20597652" sideWeight="0.6020067" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3199554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2327,27 +2328,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/requestType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java16/jdk1.6.0_41/src.zip!/java/net/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="115" selection-start="6235" selection-end="6235" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="26" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0">
@@ -2369,30 +2349,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/2.35.0/selenium-remote-driver-2.35.0.jar!/org/openqa/selenium/remote/ErrorHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="2715" selection-end="2715" vertical-scroll-proportion="-13.64">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="70" selection-start="1002" selection-end="1028" vertical-scroll-proportion="0.7434211">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceRecent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="12" selection-start="202" selection-end="202" vertical-scroll-proportion="0.25438598">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
@@ -2404,30 +2363,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.035639413">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="1005" selection-end="1033" vertical-scroll-proportion="-4.3333335">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="27" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
+        <state line="55" column="71" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.8947368">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/2.35.0/selenium-remote-driver-2.35.0.jar!/org/openqa/selenium/remote/ErrorHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="2715" selection-end="2715" vertical-scroll-proportion="0.77676535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="1" selection-start="569" selection-end="569" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.1/junit-4.8.1.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.1/junit-4.8.1.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.39443156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="157" selection-start="535" selection-end="535" vertical-scroll-proportion="-2.3333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTabs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="35" selection-start="3579" selection-end="3579" vertical-scroll-proportion="-20.96">
+        <state line="151" column="23" selection-start="6536" selection-end="6536" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2436,7 +2437,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/tests/SanityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="23" selection-start="7133" selection-end="7133" vertical-scroll-proportion="0.46548674">
+        <state line="142" column="12" selection-start="6815" selection-end="6815" vertical-scroll-proportion="0.18541667">
           <folding>
             <element signature="method#testWebActionsWithRestAPI#0;class#SanityTest#0" expanded="false" />
             <element signature="method#testMongoDb#0;class#SanityTest#0" expanded="false" />

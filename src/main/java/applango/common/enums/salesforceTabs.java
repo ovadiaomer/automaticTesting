@@ -22,6 +22,16 @@ public enum salesforceTabs {
 
 
         }
+    },
+    SETUP{
+        public String path() throws IOException {
+
+//            String ACCOUNTS_TAB_XPATH= "accounts.tab.xpath";
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("setup.tab.xpath").toString();
+
+
+        }
     };
 
     //    ACCOUNTS("Recent Accounts"),

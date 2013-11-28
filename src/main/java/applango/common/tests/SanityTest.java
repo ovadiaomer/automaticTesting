@@ -3,13 +3,13 @@ package applango.common.tests;
 import applango.common.SeleniumTestBase;
 import applango.common.enums.jsonMaps;
 import applango.common.enums.requestType;
+import applango.common.enums.salesforceTextfields;
 import applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions;
 import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.beans.Salesforce;
-import applango.common.services.beans.SalesforceAccounts;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
@@ -31,7 +31,6 @@ import static applango.common.services.Salesforce.genericSalesforceWebsiteAction
 
 public class SanityTest extends SeleniumTestBase{
     WebDriver driver;
-    Map<String, String> env;
     public static final String HOME_SITE = "home.site.string";
 
     private static final String USER_NAME_UI_OBJECT = "login.username.textfield.id";
@@ -130,9 +129,6 @@ public class SanityTest extends SeleniumTestBase{
     @Test
     public void testSalesforce() throws IOException, ParserConfigurationException, SAXException {
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-        Map salesforceObjectMapper = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-        String userNameField = salesforceObjectMapper.get(USER_NAME_UI_OBJECT).toString();
-        String passwordField = salesforceObjectMapper.get(PASSWORD_UI_OBJECT).toString();
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, 15);
@@ -141,11 +137,14 @@ public class SanityTest extends SeleniumTestBase{
         logger.info("Open website " + sf.getUrl().toString() + " and login");
         launchingWebsite(driver, sf.getUrl().toString());
         clickOnLoginButton(driver, wait);
-        enterCredentials(driver, userNameField, sf.getUsername(), passwordField, sf.getPassword());
+        enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-        SalesforceAccounts[] newAccounts = createNewAccounts(driver, wait, 2);
-        deleteAccounts(driver, wait, newAccounts);
+         openSetup(driver, wait);
+
+//        SalesforceAccounts[] newAccounts = createNewAccounts(driver, wait, 2);
+//        updateAccounts(driver, wait, newAccounts, "Omer2711-");
+//        deleteAccounts(driver, wait, newAccounts);
 
     }
 
