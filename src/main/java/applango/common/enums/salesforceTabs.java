@@ -16,9 +16,17 @@ public enum salesforceTabs {
     ACCOUNT{
         public String path() throws IOException {
 
-//            String ACCOUNTS_TAB_XPATH= "accounts.tab.xpath";
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
             return salesforceObjectMap.get("accounts.tab.xpath").toString();
+
+
+        }
+    },
+    SOBJECTS_DATA{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("sObjects.tab.xpath").toString();
 
 
         }
@@ -26,28 +34,18 @@ public enum salesforceTabs {
     SETUP{
         public String path() throws IOException {
 
-//            String ACCOUNTS_TAB_XPATH= "accounts.tab.xpath";
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-            return salesforceObjectMap.get("setup.tab.xpath").toString();
+            return salesforceObjectMap.get("setup.tab.url").toString();
 
 
         }
     };
 
-    //    ACCOUNTS("Recent Accounts"),
-//    CONTACTS("Recent Contacts");
-//
-//    private final String value;
     public abstract String path() throws IOException;
 
 
 
-//    private salesforceTabs(String path) {
-//        this.path = path;
-//    }
-
     salesforceTabs() {
-        //To change body of created methods use File | Settings | File Templates.
     }
 
     public String getValue() throws IOException {

@@ -3,19 +3,23 @@ package applango.common.enums;
 /**
  * Created with IntelliJ IDEA.
  * User: omer.ovadia
- * Date: 05/11/13
- * Time: 13:24
+ * Date: 01/12/13
+ * Time: 11:15
  * To change this template use File | Settings | File Templates.
  */
-public enum salesforceRecent {
+public enum salesforceSObjectMovement {
+    CREATE("CREATE"),
+    UPDATE("UPDATE"),
+    DELETE("DELETE"),
+    UNDELETE("UNDELETE"),
+    VIEW("VIEW"),
+    LINK("LINK"),
+    UNLINK("UNLINK");
 
-    ACCOUNTS("Recent Accounts"),
-    CONTACTS("Recent Contacts"),
-    SOBJECTS("Recent Sobjects Data");
 
     private final String value;
 
-    private salesforceRecent(String value) {
+    private salesforceSObjectMovement(String value) {
         this.value = value;
     }
 

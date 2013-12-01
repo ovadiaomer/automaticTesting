@@ -1,15 +1,15 @@
 package applango.common.tests;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.jsonMaps;
-import applango.common.enums.requestType;
-import applango.common.enums.salesforceTextfields;
+import applango.common.enums.*;
 import applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions;
 import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.beans.Salesforce;
+import applango.common.services.beans.SalesforceAccounts;
+import applango.common.services.beans.SalesforceSobjects;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
@@ -140,11 +140,21 @@ public class SanityTest extends SeleniumTestBase{
         enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-         openSetup(driver, wait);
+        SalesforceSobjects[] sObject = createNewSobject(driver, wait, 1);
+        SalesforceSobjects sObjectToUpdate = new SalesforceSobjects();
+        sObjectToUpdate.setsObjectName("Omer1201");
+        sObjectToUpdate.setSalesforceSObjectMovement(salesforceSObjectMovement.UPDATE);
+        sObjectToUpdate.setUser(getUserLabel(driver));
+        updateSObject(driver, wait, sObject[0], sObjectToUpdate);
+        deleteRecordById(driver, wait, sObjectToUpdate.getsObjectId());
 
-//        SalesforceAccounts[] newAccounts = createNewAccounts(driver, wait, 2);
-//        updateAccounts(driver, wait, newAccounts, "Omer2711-");
-//        deleteAccounts(driver, wait, newAccounts);
+        openSetup(driver, wait);
+        openTab(driver, salesforceTabs.SOBJECTS_DATA, wait);
+
+
+        SalesforceAccounts[] newAccounts = createNewAccounts(driver, wait, 2);
+        updateAccounts(driver, wait, newAccounts, "Omer2711-");
+        deleteAccounts(driver, wait, newAccounts);
 
     }
 

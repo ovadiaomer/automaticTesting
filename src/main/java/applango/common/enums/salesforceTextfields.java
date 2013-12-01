@@ -22,7 +22,7 @@ public enum salesforceTextfields {
 
         }
     },
-   ACCOUNT_AccountNAME{
+    ACCOUNT_AccountNAME{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
@@ -31,11 +31,57 @@ public enum salesforceTextfields {
 
         }
     },
+    RECORD_STATUS{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("record.status.xpath").toString();
+
+
+        }
+    },
     ACCOUNT_AccountStatus{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-            return salesforceObjectMap.get("accounts.record.status.xpath").toString();
+            return salesforceObjectMap.get("record.status.xpath").toString();
+
+
+        }
+    },
+
+    SOBJECT_USER{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("sObjects.textfield.User.id").toString();
+
+
+        }
+    },
+    SOBJECT_MOVEMENT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("sObjects.textfield.Movement.id").toString();
+
+
+        }
+    },
+    SOBJECT_NAME{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("sObjects.textfield.name.id").toString();
+
+
+        }
+    },
+    SOBJECT_SObjectNameInTitle{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("sObjects.title.sObjects.xpath").toString();
 
 
         }
