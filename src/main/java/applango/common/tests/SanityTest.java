@@ -7,6 +7,8 @@ import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
+import applango.common.services.Salesforce.salesforceAccountActions;
+import applango.common.services.Salesforce.salesforceSobjectsActions;
 import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceAccounts;
 import applango.common.services.beans.SalesforceSobjects;
@@ -140,21 +142,26 @@ public class SanityTest extends SeleniumTestBase{
         enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-        SalesforceSobjects[] sObject = createNewSobject(driver, wait, 1);
+
+        //Create SObject in salesforce - sObject (random objectName)
+        SalesforceSobjects[] sObject = salesforceSobjectsActions.createNewSobject(driver, wait, 1);
+        //Create SObject sObjectToUpdate (not in salesforce) "Omer1201"
         SalesforceSobjects sObjectToUpdate = new SalesforceSobjects();
         sObjectToUpdate.setsObjectName("Omer1201");
         sObjectToUpdate.setSalesforceSObjectMovement(salesforceSObjectMovement.UPDATE);
         sObjectToUpdate.setUser(getUserLabel(driver));
-        updateSObject(driver, wait, sObject[0], sObjectToUpdate);
+        //Update sObject to sObjectToUpdate
+        salesforceSobjectsActions.updateSObject(driver, wait, sObject[0], sObjectToUpdate);
+        //Delete updated sObjectToUpdate from salesforce
         deleteRecordById(driver, wait, sObjectToUpdate.getsObjectId());
 
         openSetup(driver, wait);
         openTab(driver, salesforceTabs.SOBJECTS_DATA, wait);
 
 
-        SalesforceAccounts[] newAccounts = createNewAccounts(driver, wait, 2);
-        updateAccounts(driver, wait, newAccounts, "Omer2711-");
-        deleteAccounts(driver, wait, newAccounts);
+        SalesforceAccounts[] newAccounts = salesforceAccountActions.createNewAccounts(driver, wait, 2);
+        salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Omer2711-");
+        salesforceAccountActions.deleteAccounts(driver, wait, newAccounts);
 
     }
 

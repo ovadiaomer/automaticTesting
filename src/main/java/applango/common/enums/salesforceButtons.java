@@ -48,9 +48,25 @@ public enum salesforceButtons {
 
 
         }
-    }
+    },
+    LOGIN_BUTTON{
+        public String path() throws IOException {
 
-    ;
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("login.button.id").toString();
+
+
+        }
+    },
+    LOGIN_SUBMIT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("login.submit.button.id").toString();
+
+
+        }
+    };
 
     public abstract String path() throws IOException;
 
