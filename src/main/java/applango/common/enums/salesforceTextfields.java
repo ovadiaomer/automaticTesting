@@ -103,6 +103,42 @@ public enum salesforceTextfields {
 
 
         }
+    },
+    CustomOBJECT_Label{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.label.textfield.id").toString();
+
+
+        }
+    },
+    CustomOBJECT_PluralLabel{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.plural.label.textfield.id").toString();
+
+
+        }
+    },
+    CustomOBJECT_ObjectName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.object.name.textfield.id").toString();
+
+
+        }
+    },
+    CustomOBJECT_RecordName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.record.name.textfield.id").toString();
+
+
+        }
     }
 
     ;

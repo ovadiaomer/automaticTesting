@@ -8,40 +8,37 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  * User: omer.ovadia
- * Date: 05/11/13
- * Time: 13:24
+ * Date: 03/12/13
+ * Time: 12:19
  * To change this template use File | Settings | File Templates.
  */
-public enum salesforceTabs {
-    ACCOUNT{
+public enum salesforceUrls {
+
+    SETUP{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-            return salesforceObjectMap.get("accounts.tab.xpath").toString();
+            return salesforceObjectMap.get("setup.tab.url").toString();
 
 
         }
     },
-    SOBJECTS_DATA{
+    CUSTOM_OBJECTS{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-            return salesforceObjectMap.get("sObjects.tab.xpath").toString();
+            return salesforceObjectMap.get("custom.objects.url").toString();
 
 
         }
-    }
-
-    ;
-
+    };
     public abstract String path() throws IOException;
 
-
-
-    salesforceTabs() {
+    salesforceUrls() {
     }
 
     public String getValue() throws IOException {
         return path();
     }
 }
+

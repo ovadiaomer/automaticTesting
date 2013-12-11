@@ -66,6 +66,103 @@ public enum salesforceButtons {
 
 
         }
+    },
+    CUSTOM_OBJECT_NEW{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.new.button.xpath").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_EDIT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.edit.button.xpath").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_SAVE{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.save.xpath").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_DELETE{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.delete.button.xpath").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_UNDELETE{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.undelete.button.xpath").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_POPUP_DELETE_CHECKBOX{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.popup.delete.checkbox.id").toString();
+        }
+    },
+    CUSTOM_OBJECT_POPUP_DELETE_BUTTON{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.popup.delete.button.xpath").toString();
+        }
+    },
+    CUSTOM_OBJECT_ALLOW_REPORTS{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.optional.features.allow.report.checkbox.id").toString();
+
+
+        }
+    },
+
+
+    CUSTOM_OBJECT_ALLOW_ACTIVITIES{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.optional.features.allow.activities.checkbox.id").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_TRACK_FIELD_HISTORY{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.optional.features.allow.track.field.history.checkbox.id").toString();
+
+
+        }
+    },
+    CUSTOM_OBJECT_DEPLOY{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("custom.objects.deployment.status.deployed.checkbox.id").toString();
+
+
+        }
     };
 
     public abstract String path() throws IOException;

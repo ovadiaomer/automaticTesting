@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.Map;
 
 /**
@@ -20,7 +19,7 @@ import java.util.Map;
  * Time: 13:13
  * To change this template use File | Settings | File Templates.
  */
-public class salesforceSobjectsActions  extends genericSalesforceWebsiteActions {
+public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActions {
     public static SalesforceSobjects[] createNewSobject(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
         SalesforceSobjects[] newSobjects = new SalesforceSobjects[numberOfAccounts];
         Map salesforceObjectMap = getMap();
@@ -54,14 +53,14 @@ public class salesforceSobjectsActions  extends genericSalesforceWebsiteActions 
         newSObject.setSobjectDataCode(sObject.getsObjectDataCode());
     }
 
-    private static boolean verifyObjectSaved(WebDriver driver, String sObjectDataCode) {
-        logger.info("Verify account is saved ");
+    public static boolean verifyObjectSaved(WebDriver driver, String sObjectDataCode) {
+        logger.info("Verify "+ sObjectDataCode + " object is saved ");
         try {
             Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.SOBJECT_SObjectNameInTitle.getValue())).getText().equals(sObjectDataCode));
             return true;
         }
         catch (Exception ex) {
-            logger.error("Account not saved\n" + ex.getMessage());
+            logger.error("Object not saved\n" + ex.getMessage());
             return false;
         }
     }
@@ -116,7 +115,7 @@ public class salesforceSobjectsActions  extends genericSalesforceWebsiteActions 
 
     private static SalesforceSobjects fillNewSObjectDetails(WebDriver driver, salesforceSObjectMovement salesforceSObjectMovement) throws IOException {
         SalesforceSobjects sfObject = new SalesforceSobjects();
-        sfObject = setSObjectValues(driver, salesforceSObjectMovement, sfObject);
+        sfObject = SalesforceSobjects.setSObjectValues(driver, salesforceSObjectMovement, sfObject);
         try {
 
             driver.findElement(By.id(salesforceTextfields.SOBJECT_NAME.getValue())).sendKeys(sfObject.getsObjectName());
@@ -128,14 +127,6 @@ public class salesforceSobjectsActions  extends genericSalesforceWebsiteActions 
             logger.error("Field not exist \n" + ex);
         }
         return null;
-    }
-
-    private static SalesforceSobjects setSObjectValues(WebDriver driver, salesforceSObjectMovement salesforceSObjectMovement, SalesforceSobjects sfObject) {
-        CharSequence sObjectName = "testsObject"+ Calendar.getInstance().getTimeInMillis();
-        sfObject.setsObjectName(sObjectName.toString());
-        sfObject.setUser(getUserLabel(driver));
-        sfObject.setSalesforceSObjectMovement(salesforceSObjectMovement);
-        return sfObject;
     }
 
     public static SalesforceSobjects[] createNewSobject(WebDriver driver, WebDriverWait wait) throws IOException {

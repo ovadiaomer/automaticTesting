@@ -61,15 +61,23 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
 
     public static void deleteRecordById(WebDriver driver,  WebDriverWait wait, String Id) throws IOException {
+        deleteRecordById(driver, wait, Id, salesforceButtons.DELETE);
+    }
+    public static void deleteRecordById(WebDriver driver,  WebDriverWait wait, String Id, salesforceButtons deleteButtonId) throws IOException {
         logger.info("Deleting record "+ Id);
         openPageWithIdInUrl(driver, wait, Id);
-        clickOnDelete(driver);
+        clickOnButton(driver, deleteButtonId);
+        acceptDeleteAlert(driver, wait);
+        checkRecordDeleted(driver, wait, Id);
+    }
+
+
+    private static void acceptDeleteAlert(WebDriver driver, WebDriverWait wait) {
         if(driver.switchTo().alert().getText().equals("Are you sure?")) {
             acceptAlertPopup(driver);
             waitForPageToLoad(wait);
 
         }
-        checkRecordDeleted(driver, wait, Id);
     }
 
 
@@ -86,16 +94,25 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     public static void openPageWithIdInUrl(WebDriver driver, WebDriverWait wait, String id) throws MalformedURLException {
         URL domain = new URL(driver.getCurrentUrl().toString());
-        String url = domain.getHost().toString() + "/" + id;
-        driver.navigate().to("https://" + url);
+        String url = "https://" + domain.getHost().toString() + "/" + id;
+        driver.navigate().to(url);
         waitForPageToLoad(wait);
     }
 
+
+
     public static void openSetup(WebDriver driver, WebDriverWait wait) throws IOException {
+        openUrl(driver, wait, salesforceUrls.SETUP);
+    }
+
+    public static void openUrl(WebDriver driver, WebDriverWait wait, salesforceUrls url) throws IOException {
         URL domain = new URL(driver.getCurrentUrl().toString());
-        String accountUrl = domain.getHost().toString() + "/" + salesforceTabs.SETUP.getValue();
+        String accountUrl = domain.getHost().toString() + "/" + url.getValue();
         driver.navigate().to("https://" + accountUrl);
         waitForPageToLoad(wait);
+
+
+
     }
 
     protected static void checkRecordDeleted(WebDriver driver, WebDriverWait wait, String recordId) throws IOException {
@@ -143,9 +160,19 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         }
     }
 
+    public static void markCheckBox(WebDriver driver, salesforceButtons checkbox) throws IOException {
+        if (!driver.findElement(By.id(checkbox.getValue())).isSelected()) {
+            driver.findElement(By.id(checkbox.getValue())).click();
+        }
+    }
+    public static void unmarkCheckBox(WebDriver driver, salesforceButtons checkbox) throws IOException {
+        if (driver.findElement(By.id(checkbox.getValue())).isSelected()) {
+            driver.findElement(By.id(checkbox.getValue())).click();
+        }
+    }
+
     protected static Map getMap() throws IOException {
         return objectMapper.getObjectMap(jsonMaps.SALESFORCE);
     }
-
 
 }

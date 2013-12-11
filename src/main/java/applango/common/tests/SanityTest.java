@@ -8,9 +8,11 @@ import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.Salesforce.salesforceAccountActions;
+import applango.common.services.Salesforce.salesforceCustomObjectsActions;
 import applango.common.services.Salesforce.salesforceSobjectsActions;
 import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceAccounts;
+import applango.common.services.beans.SalesforceCustomObject;
 import applango.common.services.beans.SalesforceSobjects;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
@@ -21,9 +23,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -129,18 +129,24 @@ public class SanityTest extends SeleniumTestBase{
 
     }
     @Test
-    public void testSalesforce() throws IOException, ParserConfigurationException, SAXException {
+    public void testSalesforce() throws Exception {
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, 15);
-
 
         logger.info("Open website " + sf.getUrl().toString() + " and login");
         launchingWebsite(driver, sf.getUrl().toString());
         clickOnLoginButton(driver, wait);
         enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
+
+        SalesforceCustomObject[] customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait);
+        SalesforceCustomObject newCustomObject = new SalesforceCustomObject(customObject[0].getObjectName() + "-updated");
+        salesforceCustomObjectsActions.updateCustomObject(driver, wait, customObject[0], newCustomObject);
+//        salesforceCustomObjectsActions.deleteCustomObject(driver, wait, customObject[0], salesforceButtons.CUSTOM_OBJECT_DELETE);
+
+
 
 
         //Create SObject in salesforce - sObject (random objectName)
@@ -155,7 +161,7 @@ public class SanityTest extends SeleniumTestBase{
         //Delete updated sObjectToUpdate from salesforce
         deleteRecordById(driver, wait, sObjectToUpdate.getsObjectId());
 
-        openSetup(driver, wait);
+
         openTab(driver, salesforceTabs.SOBJECTS_DATA, wait);
 
 
@@ -168,25 +174,26 @@ public class SanityTest extends SeleniumTestBase{
 
 
 
-    public static void main (String... args) throws Exception {
-    }
 
-
-    @After
-    public void tearDown() {
-        logger.info("--------------------------- TearDown  " + Thread.currentThread().getStackTrace()[1].getClassName() + "---------------------------");
-
-        if (driver != null) {
-            driver.quit();
+            public static void main (String... args) throws Exception {
         }
-    }
-
-    @Before
-    public void setUp() {
-        logger.info("++++++++++++++++ Setup  " + Thread.currentThread().getStackTrace()[1].getClassName() + "\"++++++++++++++++");
-
-    }
 
 
+            @After
+            public void tearDown() {
+            logger.info("--------------------------- TearDown  " + Thread.currentThread().getStackTrace()[1].getClassName() + "---------------------------");
 
-}
+            if (driver != null) {
+                driver.quit();
+            }
+        }
+
+            @Before
+            public void setUp() {
+            logger.info("++++++++++++++++ Setup  " + Thread.currentThread().getStackTrace()[1].getClassName() + "\"++++++++++++++++");
+
+        }
+
+
+
+        }

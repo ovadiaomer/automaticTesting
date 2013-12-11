@@ -14,10 +14,26 @@
     "accounts.title.accountName.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div/div/div/div/div[2]/h2",
     "record.status.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/span",
     "setup.tab.url":"setup/forcecomHomepage.apexp",
+    "custom.objects.url":"p/setup/custent/CustomObjectsPage?setupid=CustomObjects&retURL=/ui/setup/Setup?setupid=DevTools",
     "sObjects.tab.xpath":"/html/body/div/div/div/div/nav/ul/li[15]/a",
     "sObjects.textfield.User.id":"CF00Nb0000005Dp80",
     "sObjects.textfield.Movement.id":"00Nb0000005Dp7p",
     "sObjects.textfield.name.id":"00Nb0000005Dp7z",
-    "sObjects.title.sObjects.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div/div/div/h2"
+    "sObjects.title.sObjects.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div/div/div/h2",
+    "custom.objects.new.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[3]/div/div/div/table/tbody/tr/td[2]/input",
+    "custom.objects.edit.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[4]/div/table/tbody/tr/td[2]/input",
+    "custom.objects.delete.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[4]/div/table/tbody/tr/td[2]/input[2]",
+    "custom.objects.undelete.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[4]/div/table/tbody/tr/td[2]/input",
+    "custom.objects.label.textfield.id":"MasterLabel",
+    "custom.objects.plural.label.textfield.id":"PluralLabel",
+    "custom.objects.object.name.textfield.id":"DeveloperName",
+    "custom.objects.record.name.textfield.id":"MasterNameFieldLabel",
+    "custom.objects.optional.features.allow.report.checkbox.id":"options_0",
+    "custom.objects.optional.features.allow.activities.checkbox.id":"options_3",
+    "custom.objects.optional.features.allow.track.field.history.checkbox.id":"options_6",
+    "custom.objects.deployment.status.deployed.checkbox.id":"InDevelopment0",
+    "custom.objects.save.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/form/div/div/table/tbody/tr/td[2]/input",
+    "custom.objects.popup.delete.checkbox.id":"confirmed",
+    "custom.objects.popup.delete.button.xpath":"/html/body/div[2]/input"
 
 }
