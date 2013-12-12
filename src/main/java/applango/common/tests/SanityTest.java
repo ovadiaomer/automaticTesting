@@ -8,11 +8,9 @@ import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.Salesforce.salesforceAccountActions;
-import applango.common.services.Salesforce.salesforceCustomObjectsActions;
 import applango.common.services.Salesforce.salesforceSobjectsActions;
 import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceAccounts;
-import applango.common.services.beans.SalesforceCustomObject;
 import applango.common.services.beans.SalesforceSobjects;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
@@ -141,12 +139,14 @@ public class SanityTest extends SeleniumTestBase{
         enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-        SalesforceCustomObject[] customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait);
-        SalesforceCustomObject newCustomObject = new SalesforceCustomObject(customObject[0].getObjectName() + "-updated");
-        salesforceCustomObjectsActions.updateCustomObject(driver, wait, customObject[0], newCustomObject);
+//        SalesforceCustomObject[] customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait);
+//        SalesforceCustomObject newCustomObject = new SalesforceCustomObject(customObject[0].getObjectName() + "-updated");
+//        salesforceCustomObjectsActions.updateCustomObject(driver, wait, customObject[0], newCustomObject);
 //        salesforceCustomObjectsActions.deleteCustomObject(driver, wait, customObject[0], salesforceButtons.CUSTOM_OBJECT_DELETE);
-
-
+//
+        SalesforceAccounts[] newAccounts = salesforceAccountActions.createNewAccounts(driver, wait, 1);
+        salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-");
+        salesforceAccountActions.deleteAccounts(driver, wait, newAccounts);
 
 
         //Create SObject in salesforce - sObject (random objectName)
@@ -165,9 +165,7 @@ public class SanityTest extends SeleniumTestBase{
         openTab(driver, salesforceTabs.SOBJECTS_DATA, wait);
 
 
-        SalesforceAccounts[] newAccounts = salesforceAccountActions.createNewAccounts(driver, wait, 2);
-        salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Omer2711-");
-        salesforceAccountActions.deleteAccounts(driver, wait, newAccounts);
+
 
     }
 

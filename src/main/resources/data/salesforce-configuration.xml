@@ -10,4 +10,9 @@
         <username>ovadia.omero@gmail.com</username>
         <password>omer1982</password>
     </environment>
+    <environment id="testing">
+        <url>http://www.salesforce.com</url>
+        <username>omer.ovadia@applango.net</username>
+        <password>omer1982</password>
+    </environment>
 </saleforce>

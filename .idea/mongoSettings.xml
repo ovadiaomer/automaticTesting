@@ -20,12 +20,12 @@
           <option name="username" value="kineret.amor@applango.com" />
         </ServerConfiguration>
         <ServerConfiguration>
-          <option name="label" value="localhost" />
-          <option name="password" value="Omer1" />
-          <option name="serverName" value="localhost" />
-          <option name="serverPort" value="27017" />
-          <option name="userDatabase" value="test" />
-          <option name="username" value="Omer" />
+          <option name="label" value="vasily" />
+          <option name="password" value="changeit123" />
+          <option name="serverName" value="iad-mongos0.objectrocket.com" />
+          <option name="serverPort" value="15101" />
+          <option name="userDatabase" value="vasily-dev" />
+          <option name="username" value="vasily@applango.com" />
         </ServerConfiguration>
       </list>
     </option>

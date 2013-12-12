@@ -34,7 +34,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
     static boolean verifyAccountSaved(WebDriver driver, String newAccountName) {
         logger.info("Verify account is saved ");
         try {
-            Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.ACCOUNT_AccountNameInTitle.getValue())).getText().equals(newAccountName));
+            Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.SOBJECT_SObjectNameInTitle.getValue())).getText().equals(newAccountName));
             return true;
         }
         catch (Exception ex) {
