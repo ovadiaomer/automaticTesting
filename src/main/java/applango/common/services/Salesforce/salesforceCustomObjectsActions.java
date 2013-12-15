@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -63,6 +64,20 @@ public class salesforceCustomObjectsActions {
                     }
                 }
             }
+        }
+    }
+
+    public static String getTriggers(WebDriver driver, WebDriverWait wait, SalesforceCustomObject customObject) throws MalformedURLException {
+
+        genericSalesforceWebsiteActions.openPageWithIdInUrl(driver, wait, customObject.getObjectId());
+        try {
+            String trigger = driver.findElement(By.xpath("/html/body/div/div[2]/table/tbody/tr/td[2]/div[10]/div/div/div[2]/table/tbody/tr[2]/th/a")).getText();
+            SeleniumTestBase.logger.info("Trigger of object " + customObject.getObjectName() + " is " + trigger);
+            return trigger;
+        }
+        catch (Exception ex) {
+            SeleniumTestBase.logger.info("No trigger exist for object " + customObject.getObjectName());
+            return null;
         }
     }
 

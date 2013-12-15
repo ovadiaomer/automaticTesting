@@ -11,15 +11,25 @@ public class SalesforceCustomObject {
     String objectName;
     String recordName;
     String objectId;
+
+    String trigger;
+
     boolean allowReport;
     boolean allowActivities;
     boolean trackFieldHistory;
+
     boolean customObjectDeployed;
 
     public SalesforceCustomObject() {
     }
 
+    public String getTrigger() {
+        return trigger;
+    }
 
+    public void setTrigger(String trigger) {
+        this.trigger = trigger;
+    }
 
 
     public SalesforceCustomObject(String customObjectLabel, String customObjectPluralLabel, String objectName, String recordName) {
@@ -31,6 +41,7 @@ public class SalesforceCustomObject {
         this.allowActivities = true;
         this.trackFieldHistory = true;
         this.customObjectDeployed = true;
+        this.trigger = "";
 
     }
     public SalesforceCustomObject(String customObjectLabel) {
@@ -42,6 +53,7 @@ public class SalesforceCustomObject {
         this.allowActivities = true;
         this.trackFieldHistory = true;
         this.customObjectDeployed = true;
+        this.trigger = "";
 
     }
 
