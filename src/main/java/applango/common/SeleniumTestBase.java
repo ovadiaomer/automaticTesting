@@ -6,15 +6,10 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 
 //import java.util.logging.Logger;
 
@@ -43,11 +38,6 @@ public class SeleniumTestBase {
     protected static void checkThatPageLoaded(String mainScreenCss, WebDriverWait wait) {
         logger.info("Checking page loaded ");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(mainScreenCss)));
-    }
-
-    @Test
-    public void test1() throws ParserConfigurationException, SAXException, IOException {
-        logger.info("TestNo1");
     }
 
     @AfterClass

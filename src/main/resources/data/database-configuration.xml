@@ -18,4 +18,10 @@
         <username>kineret.amor@applango.com</username>
         <password>changeit123</password>
     </database>
+    <database id="prod-beta">
+        <url>iad-mongos0.objectrocket.com</url>
+        <port>15101</port>
+        <username>applango-beta@applango.com</username>
+        <password>!SaaSDud3!</password>
+    </database>
 </databases>

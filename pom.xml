@@ -6,13 +6,26 @@
 
     <groupId>automaticTest.com</groupId>
     <artifactId>AutomaticTesting</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0</version>
-    <modules>
-        <module>commonAPI</module>
-    </modules>
+
+    <properties>
+        <applango.version>1.0-SNAPSHOT</applango.version>
+    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.applango</groupId>
+            <artifactId>restclients</artifactId>
+            <version>${applango.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.unitedinternet.portal.selenium.utils</groupId>
+            <artifactId>logging-selenium</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>

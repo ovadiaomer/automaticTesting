@@ -1,9 +1,9 @@
 package applango.common.services.DB.mongo;
 
 import applango.common.SeleniumTestBase;
+import applango.common.services.Mappers.objectMapper;
 import applango.common.services.Mappers.readFromConfigurationFile;
 import applango.common.services.beans.Database;
-import applango.common.services.Mappers.objectMapper;
 import com.mongodb.*;
 import org.xml.sax.SAXException;
 
@@ -70,7 +70,7 @@ public class mongoDB extends SeleniumTestBase {
         table.findAndModify(queryDocument, newDocument);
     }
 
-    protected static List<DBObject> readDB(DB db, String collection, DBObject document) throws Exception {
+    public static List<DBObject> readDB(DB db, String collection, DBObject document) throws Exception {
         DBCursor cursor;
         logger.info("Reading " + document + " from collection " + collection);
         List<DBObject> list = new ArrayList<DBObject>();

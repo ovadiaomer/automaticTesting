@@ -11,10 +11,14 @@ import applango.common.services.Salesforce.salesforceAccountActions;
 import applango.common.services.Salesforce.salesforceSobjectsActions;
 import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceAccounts;
+import applango.common.services.beans.SalesforceCustomObject;
 import applango.common.services.beans.SalesforceSobjects;
+import com.applango.beans.Customer;
+import com.applango.rest.client.CustomerManagerClient;
 import com.mongodb.DB;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
+import org.apache.http.message.BasicNameValuePair;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +46,22 @@ public class SanityTest extends SeleniumTestBase{
 
 
     @Test
+    public void testCustomerCreation() throws Exception {
+
+        CustomerManagerClient client = new CustomerManagerClient();
+        client.setManagerServicesURL("http://localhost:8090/managerservices");
+        Customer customer = new Customer();
+        customer.setCustomerId("omer1TestAuto");
+        customer.setCustomerName("omer1TestAuto");
+
+        Customer customer2 = client.createCustomer(customer);
+        System.out.println("This is customer: " + customer2);
+
+
+
+    }
+
+    @Test
     public void testWebActionsWithRestAPI() throws IOException {
         Map appObjectMapper = objectMapper.getObjectMap(jsonMaps.APPLANGO);
         Map configPropertiesMapper = objectMapper.getConfigProperties();
@@ -54,12 +74,14 @@ public class SanityTest extends SeleniumTestBase{
         driver = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, 15);
 
-        driver.manage().deleteAllCookies();
+//        driver.manage().deleteAllCookies();
 
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
 
         try {
-
+            List<BasicNameValuePair> urlParameters = new ArrayList<BasicNameValuePair>();
+//            urlParameters.add(new BasicNameValuePair("customerId", "omer0801"));
+//            restAPI.executePostRequest("http://localhost:8090/managerservices/customer-manager/cm-rest/customer", urlParameters);
             restAPI.executeRequest(requestType.GET.getValue(), "http://www.google.com", null);
             restAPI.executeGetRequest("http://www.google.com");
             launchingWebsite(driver, websiteAddress);
@@ -110,7 +132,7 @@ public class SanityTest extends SeleniumTestBase{
 
 
         List<DBObject> listOfDbObjects = new ArrayList<DBObject>();
-        String collection = "OmerTest";
+        String collection = "user";
 
         DB db = mongoDB.connectToServer();
         db.getCollection(collection).drop();
@@ -139,14 +161,26 @@ public class SanityTest extends SeleniumTestBase{
         enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
         clickOnSubmitCredentials(driver, wait);
 
-//        SalesforceCustomObject[] customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait);
+
+        SalesforceCustomObject[] customObject;
+//        customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait, 4);
+
+//        customObject[0].setObjectId("01Ib0000000EeWu");
+//        customObject[0].setTrigger(salesforceCustomObjectsActions.getTriggers(driver, wait, customObject[0]));
 //        SalesforceCustomObject newCustomObject = new SalesforceCustomObject(customObject[0].getObjectName() + "-updated");
 //        salesforceCustomObjectsActions.updateCustomObject(driver, wait, customObject[0], newCustomObject);
-//        salesforceCustomObjectsActions.deleteCustomObject(driver, wait, customObject[0], salesforceButtons.CUSTOM_OBJECT_DELETE);
+////        salesforceCustomObjectsActions.deleteCustomObject(driver, wait, customObject[0], salesforceButtons.CUSTOM_OBJECT_DELETE);
 //
+
+
         SalesforceAccounts[] newAccounts = salesforceAccountActions.createNewAccounts(driver, wait, 1);
-        salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-");
-        salesforceAccountActions.deleteAccounts(driver, wait, newAccounts);
+
+        for (int i=0; i <200; i++){
+            salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-");
+            salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-1");
+            salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-2");
+            salesforceAccountActions.deleteAccounts(driver, wait, newAccounts);
+        }
 
 
         //Create SObject in salesforce - sObject (random objectName)
@@ -173,25 +207,25 @@ public class SanityTest extends SeleniumTestBase{
 
 
 
-            public static void main (String... args) throws Exception {
+    public static void main (String... args) throws Exception {
+    }
+
+
+    @After
+    public void tearDown() {
+        logger.info("--------------------------- TearDown  " + Thread.currentThread().getStackTrace()[1].getClassName() + "---------------------------");
+
+        if (driver != null) {
+            driver.quit();
         }
+    }
 
+    @Before
+    public void setUp() {
+        logger.info("++++++++++++++++ Setup  " + Thread.currentThread().getStackTrace()[1].getClassName() + "\"++++++++++++++++");
 
-            @After
-            public void tearDown() {
-            logger.info("--------------------------- TearDown  " + Thread.currentThread().getStackTrace()[1].getClassName() + "---------------------------");
-
-            if (driver != null) {
-                driver.quit();
-            }
-        }
-
-            @Before
-            public void setUp() {
-            logger.info("++++++++++++++++ Setup  " + Thread.currentThread().getStackTrace()[1].getClassName() + "\"++++++++++++++++");
-
-        }
+    }
 
 
 
-        }
+}

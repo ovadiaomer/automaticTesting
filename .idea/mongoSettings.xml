@@ -27,6 +27,22 @@
           <option name="userDatabase" value="vasily-dev" />
           <option name="username" value="vasily@applango.com" />
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="anders" />
+          <option name="password" value="changeit123" />
+          <option name="serverName" value="iad-mongos0.objectrocket.com" />
+          <option name="serverPort" value="15101" />
+          <option name="userDatabase" value="anders-dev" />
+          <option name="username" value="anders.fridberg@applango.com" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="prod-beta" />
+          <option name="password" value="!SaaSDud3!" />
+          <option name="serverName" value="iad-mongos0.objectrocket.com" />
+          <option name="serverPort" value="15101" />
+          <option name="userDatabase" value="prod-beta" />
+          <option name="username" value="applango-beta@applango.com" />
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="C:\mongodb-win32-x86_64-2008plus-2.4.8\bin\mongo.exe" />
