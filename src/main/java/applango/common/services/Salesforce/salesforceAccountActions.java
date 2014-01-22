@@ -2,12 +2,12 @@ package applango.common.services.Salesforce;
 
 import applango.common.enums.salesforceButtons;
 import applango.common.enums.salesforceRecent;
-import applango.common.enums.salesforceTabs;
 import applango.common.enums.salesforceTextfields;
+import applango.common.enums.salesforceUrls;
 import applango.common.services.beans.SalesforceAccounts;
-import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -16,13 +16,6 @@ import java.net.URL;
 import java.util.Calendar;
 import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: omer.ovadia
- * Date: 02/12/13
- * Time: 12:56
- * To change this template use File | Settings | File Templates.
- */
 public class salesforceAccountActions extends genericSalesforceWebsiteActions {
     public static void openAccount(WebDriver driver, WebDriverWait wait, SalesforceAccounts account) throws MalformedURLException {
         URL domain = new URL(driver.getCurrentUrl().toString());
@@ -31,10 +24,10 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         waitForPageToLoad(wait);
     }
 
-    static boolean verifyAccountSaved(WebDriver driver, String newAccountName) {
+    static boolean verifySaved(FirefoxDriver driver, String newAccountName) {
         logger.info("Verify account is saved ");
         try {
-            Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.SOBJECT_SObjectNameInTitle.getValue())).getText().equals(newAccountName));
+//            Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.ACCOUNT_AccountNameInTitle.getValue())).getText().equals(newAccountName));
             return true;
         }
         catch (Exception ex) {
@@ -43,13 +36,16 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         }
     }
 
-    static SalesforceAccounts fillNewAccountDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
+    public static SalesforceAccounts fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new account details and return object SalesforceAccounts with accountName and accountId");
         SalesforceAccounts newAccount = new SalesforceAccounts();
-        newAccount.setAccountName(fillNewAccountDetails(driver));
+        newAccount.setAccountName(fillDetailsRandomly(driver));
+
+        fillExtraDetails(driver);
+
         clickOnSave(driver);
         waitForPageToLoad(wait);
-        if (verifyAccountSaved(driver, newAccount.getAccountName())) {
+        if (verifySaved(driver, newAccount.getAccountName())) {
             newAccount.setAccountId(getIdFromUrl(driver));
             return newAccount;
 
@@ -61,28 +57,23 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
 
     }
 
-    private static String fillNewAccountDetails(WebDriver driver) throws IOException {
-        CharSequence accountName = "testAccount"+ Calendar.getInstance().getTimeInMillis();
-        driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
-        logger.info("New Account name is " + accountName);
-        return accountName.toString();
+
+
+    public static void createOne(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        create(driver, wait, 1);
     }
 
-    public static void createNewAccount(WebDriver driver, WebDriverWait wait) throws IOException {
-        createNewAccounts(driver, wait, 1);
-    }
-
-    public static SalesforceAccounts[] createNewAccounts(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
+    public static SalesforceAccounts[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
         SalesforceAccounts[] newAccountName = new SalesforceAccounts[numberOfAccounts];
         Map salesforceObjectMap = getMap();
         try {
             for (int i=1; i<=numberOfAccounts; i++) {
                 logger.info("Create new account " + i + " out of " + numberOfAccounts);
-                openTab(driver, salesforceTabs.ACCOUNT, wait);
+                openUrl(driver, wait, salesforceUrls.ACCOUNT);
                 verifyRecentElementExist(wait, salesforceObjectMap, salesforceRecent.ACCOUNTS);
                 clickOnButton(driver, salesforceButtons.NEW);
                 waitForPageToLoad(wait);
-                newAccountName[i-1] = fillNewAccountDetailsAndSave(driver, wait);
+                newAccountName[i-1] = fillDetailsAndSave(driver, wait);
             }
 
         }
@@ -93,52 +84,81 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         return newAccountName;
     }
 
-    public static void deleteAccounts(WebDriver driver,  WebDriverWait wait, SalesforceAccounts[] accounts) throws IOException {
+    public static void delete(FirefoxDriver driver, WebDriverWait wait, SalesforceAccounts[] accounts) throws IOException {
 
         for (SalesforceAccounts account : accounts) {
-            deleteAccount(driver, wait, account);
+            deleteOne(driver, wait, account);
         }
 
     }
 
-    public static void deleteAccount(WebDriver driver,  WebDriverWait wait, SalesforceAccounts account) throws IOException {
+    public static void deleteOne(FirefoxDriver driver, WebDriverWait wait, SalesforceAccounts account) throws IOException {
         logger.info("Deleting account "+ account.getAccountName());
         openPageWithIdInUrl(driver, wait, account.getAccountId());
-        if (verifyAccountSaved(driver, account.getAccountName())) {
+        if (verifySaved(driver, account.getAccountName())) {
             clickOnDelete(driver);
-            if(driver.switchTo().alert().getText().equals("Are you sure?")) {
-                acceptAlertPopup(driver);
-
-            }
+//            if(driver.switchTo().alert().getText().equals("Are you sure?")) {
+            acceptAlertPopup(driver);
+//            }
             checkRecordDeleted(driver, wait, account.getAccountId());
         }
     }
 
-    public static void updateAccounts(WebDriver driver,  WebDriverWait wait, SalesforceAccounts[] accounts, String newAccountName) throws IOException {
+
+    public static void update(FirefoxDriver driver, WebDriverWait wait, SalesforceAccounts[] accounts, String newAccountName) throws IOException {
         for (SalesforceAccounts account : accounts) {
-            updateAccount(driver, wait, account, newAccountName);
+            updateOne(driver, wait, account, newAccountName);
         }
     }
 
-    public static void updateAccount(WebDriver driver,  WebDriverWait wait, SalesforceAccounts account, String newAccountName) throws IOException {
+    public static void updateOne(FirefoxDriver driver, WebDriverWait wait, SalesforceAccounts account, String newAccountName) throws IOException {
         logger.info("Updating account name of "+ account.getAccountName() + " to "+ newAccountName);
         openPageWithIdInUrl(driver, wait, account.getAccountId());
-        if (verifyAccountSaved(driver, account.getAccountName())) {
+        waitForPageToLoad(wait);
+        if (verifySaved(driver, account.getAccountName())) {
+            waitForPageToLoad(wait);
             clickOnEdit(driver, wait);
-            account.setAccountName(fillAccountDetails(driver, newAccountName));
+            waitForPageToLoad(wait);
+            account.setAccountName(fillDetails(driver, wait, newAccountName));
+            waitForPageToLoad(wait);
             clickOnSave(driver);
             waitForPageToLoad(wait);
-            verifyAccountSaved(driver, newAccountName);
         }
         else {
             logger.info("Failed to update account " + account.getAccountName() + " since account not found");
         }
     }
 
-    private static String fillAccountDetails(WebDriver driver, String accountName) throws IOException {
+    private static String fillDetails(FirefoxDriver driver, WebDriverWait wait, String accountName) throws IOException {
+
+        driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).clear();
+        waitForPageToLoad(wait);
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
         logger.info("New Account name is " + accountName);
         return accountName.toString();
     }
+
+    private static String fillDetailsRandomly(FirefoxDriver driver) throws IOException {
+        CharSequence accountName = "testA"+ Calendar.getInstance().getTimeInMillis();
+        accountName = accountName.subSequence(0,9);
+        driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
+        logger.info("New Account name is " + accountName);
+        return accountName.toString();
+    }
+
+    private static void fillExtraDetails(FirefoxDriver driver) throws IOException {
+
+        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).isDisplayed()) {
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).sendKeys("APAC");
+
+        }
+        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).isDisplayed()) {
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).sendKeys("w.com");
+        }
+        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).isDisplayed()) {
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).sendKeys("India");
+        }
+    }
+
 
 }

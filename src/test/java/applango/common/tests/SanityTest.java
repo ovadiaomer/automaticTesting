@@ -1,23 +1,17 @@
 package applango.common.tests;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.*;
+import applango.common.enums.jsonMaps;
+import applango.common.enums.requestType;
+import applango.common.enums.salesforceTabs;
+import applango.common.enums.salesforceTextfields;
 import applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions;
-import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
-import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
-import applango.common.services.Salesforce.salesforceAccountActions;
-import applango.common.services.Salesforce.salesforceSobjectsActions;
-import applango.common.services.beans.Salesforce;
-import applango.common.services.beans.SalesforceAccounts;
-import applango.common.services.beans.SalesforceCustomObject;
-import applango.common.services.beans.SalesforceSobjects;
+import applango.common.services.Salesforce.*;
+import applango.common.services.beans.*;
 import com.applango.beans.Customer;
 import com.applango.rest.client.CustomerManagerClient;
-import com.mongodb.DB;
-import com.mongodb.DBObject;
-import com.mongodb.util.JSON;
 import org.apache.http.message.BasicNameValuePair;
 import org.junit.After;
 import org.junit.Before;
@@ -32,6 +26,10 @@ import java.util.List;
 import java.util.Map;
 
 import static applango.common.services.Salesforce.genericSalesforceWebsiteActions.*;
+
+//import com.mongodb.DB;
+//import com.mongodb.DBObject;
+//import com.mongodb.util.JSON;
 
 public class SanityTest extends SeleniumTestBase{
     WebDriver driver;
@@ -71,8 +69,8 @@ public class SanityTest extends SeleniumTestBase{
         String mainScreenCss = appObjectMapper.get(MAIN_SCREEN_CSS).toString();
         String password = configPropertiesMapper.get(PASSWORD).toString();
         String username = configPropertiesMapper.get(USER_NAME).toString();
-        driver = new FirefoxDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        FirefoxDriver driver1 =  new FirefoxDriver();
+        WebDriverWait wait = new WebDriverWait(driver1, 15);
 
 //        driver.manage().deleteAllCookies();
 
@@ -84,10 +82,10 @@ public class SanityTest extends SeleniumTestBase{
 //            restAPI.executePostRequest("http://localhost:8090/managerservices/customer-manager/cm-rest/customer", urlParameters);
             restAPI.executeRequest(requestType.GET.getValue(), "http://www.google.com", null);
             restAPI.executeGetRequest("http://www.google.com");
-            launchingWebsite(driver, websiteAddress);
-            genericApplangoWebsiteActions.clickOnLoginButton(driver, wait);
-            enterCredentials(driver, userNameField, username, passwordField, password);
-            genericApplangoWebsiteActions.clickOnSubmitCredentials(driver);
+            launchingWebsite(driver1, websiteAddress);
+            genericApplangoWebsiteActions.clickOnLoginButton(driver1, wait);
+            enterCredentials(driver1, userNameField, username, passwordField, password);
+            genericApplangoWebsiteActions.clickOnSubmitCredentials(driver1);
             checkThatPageLoaded(mainScreenCss, wait);
         }
         catch (Exception e) {
@@ -101,68 +99,80 @@ public class SanityTest extends SeleniumTestBase{
     }
     @Test
     public void testMongoDb() throws Exception {
-
-        logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-        String json_Omer = "{FirstName : 'Omer', FamilyName : 'Ovadia'," +
-                "Age : 31, Sex : 'Male', Color : 'Blue'}";
-        DBObject dbObjectOmer = (DBObject) JSON.parse(json_Omer);
-        String json_Becky = "{FirstName : 'Becky', FamilyName : 'Ovadia'," +
-                "Age : 27, Sex : 'Female', Color : 'Red'}";
-        DBObject dbObjectBecky = (DBObject) JSON.parse(json_Becky);
-        String json_Avigail = "{FirstName : 'Avigail', FamilyName : 'Ovadia'," +
-                "Age : 3, Sex : 'Female', Color : 'Pink'}";
-        DBObject dbObjectAvigail = (DBObject) JSON.parse(json_Avigail);
-        String json_Dor = "{FirstName : 'Dor', FamilyName : 'Amit'," +
-                "Age : 29, Sex : 'Male', Color : 'Black'}";
-        DBObject dbObjectDor = (DBObject) JSON.parse(json_Dor);
-
-
-
-        String json_new = "{'database' : 'mkyongDB1','table' : 'hosting'," +
-                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}";
-        DBObject dbObjectNew = (DBObject) JSON.parse(json_new);
-
-
-//        //Set the document to query for
-        String dbRecordToQuery = "{$or: [ {Age : {$gt: 30}}, {Sex : { $ne: 'Male' }} ] }";
-        DBObject dbObjectRecordToQuery = (DBObject) JSON.parse(dbRecordToQuery);
-
-//        String dbRecordQuery = "{database : 'mkyongDB1',table : 'Cars'}";
-//        DBObject dbObjectRecordQuery = (DBObject) JSON.parse(dbRecordQuery);
-
-
-        List<DBObject> listOfDbObjects = new ArrayList<DBObject>();
-        String collection = "user";
-
-        DB db = mongoDB.connectToServer();
-        db.getCollection(collection).drop();
-        mongoDB.insertToDB(db, collection, dbObjectOmer);
-        mongoDB.insertToDB(db, collection, dbObjectBecky);
-        mongoDB.insertToDB(db, collection, dbObjectAvigail);
-        mongoDB.insertToDB(db, collection, dbObjectDor);
-//        dbObjectRecordQuery = (DBObject) JSON.parse("{database : 'Omero',table : 'Cars'}");
-//        mongoDB.insertToDB(db, collection, dbObjectRecordQuery);
-        listOfDbObjects = mongoDB.readFromDB(db, collection, dbObjectRecordToQuery, null);
-        mongoDB.updateDB(db, collection, dbObjectRecordToQuery, dbObjectNew);
-        mongoDB.deleteFromDB(db, collection, dbObjectRecordToQuery);
-
-
+//
+//        logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
+//        String json_Omer = "{FirstName : 'Omer', FamilyName : 'Ovadia'," +
+//                "Age : 31, Sex : 'Male', Color : 'Blue'}";
+//        DBObject dbObjectOmer = (DBObject) JSON.parse(json_Omer);
+//        String json_Becky = "{FirstName : 'Becky', FamilyName : 'Ovadia'," +
+//                "Age : 27, Sex : 'Female', Color : 'Red'}";
+//        DBObject dbObjectBecky = (DBObject) JSON.parse(json_Becky);
+//        String json_Avigail = "{FirstName : 'Avigail', FamilyName : 'Ovadia'," +
+//                "Age : 3, Sex : 'Female', Color : 'Pink'}";
+//        DBObject dbObjectAvigail = (DBObject) JSON.parse(json_Avigail);
+//        String json_Dor = "{FirstName : 'Dor', FamilyName : 'Amit'," +
+//                "Age : 29, Sex : 'Male', Color : 'Black'}";
+//        DBObject dbObjectDor = (DBObject) JSON.parse(json_Dor);
+//
+//
+//
+//        String json_new = "{'database' : 'mkyongDB1','table' : 'hosting'," +
+//                "'detail' : {'records' : 99, 'index' : 'vps_index1', 'active' : 'true'}}";
+//        DBObject dbObjectNew = (DBObject) JSON.parse(json_new);
+//
+//
+////        //Set the document to query for
+//        String dbRecordToQuery = "{$or: [ {Age : {$gt: 30}}, {Sex : { $ne: 'Male' }} ] }";
+//        DBObject dbObjectRecordToQuery = (DBObject) JSON.parse(dbRecordToQuery);
+//
+////        String dbRecordQuery = "{database : 'mkyongDB1',table : 'Cars'}";
+////        DBObject dbObjectRecordQuery = (DBObject) JSON.parse(dbRecordQuery);
+//
+//
+//        List<DBObject> listOfDbObjects = new ArrayList<DBObject>();
+//        String collection = "user";
+//
+//        DB db = mongoDB.connectToServer();
+////        db.getCollection(collection).drop();
+//        mongoDB.insertToDB(db, collection, dbObjectOmer);
+//        mongoDB.insertToDB(db, collection, dbObjectBecky);
+//        mongoDB.insertToDB(db, collection, dbObjectAvigail);
+//        mongoDB.insertToDB(db, collection, dbObjectDor);
+////        dbObjectRecordQuery = (DBObject) JSON.parse("{database : 'Omero',table : 'Cars'}");
+////        mongoDB.insertToDB(db, collection, dbObjectRecordQuery);
+//        listOfDbObjects = mongoDB.readFromDB(db, collection, dbObjectRecordToQuery, null);
+//        mongoDB.updateDB(db, collection, dbObjectRecordToQuery, dbObjectNew);
+//        mongoDB.deleteFromDB(db, collection, dbObjectRecordToQuery);
+//
+//
     }
     @Test
     public void testSalesforce() throws Exception {
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
-        driver = new FirefoxDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        FirefoxDriver driver1 = new FirefoxDriver();
+        WebDriverWait wait = new WebDriverWait(driver1, 15);
 
         logger.info("Open website " + sf.getUrl().toString() + " and login");
-        launchingWebsite(driver, sf.getUrl().toString());
-        clickOnLoginButton(driver, wait);
-        enterCredentials(driver, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
-        clickOnSubmitCredentials(driver, wait);
+        launchingWebsite(driver1, sf.getUrl().toString());
+        //Login Button not appear in sandbox because enter credentials appears
+        if (!sf.getEnvironment().contains("sandbox"))   {
+            clickOnLoginButton(driver1, wait);
+
+        }
+        enterCredentials(driver1, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
+        //Since SF open screen after login is different, wait fail
+        if (!sf.getEnvironment().contains("sandbox"))   {
+            clickOnSubmitCredentials(driver1, wait);
 
 
-        SalesforceCustomObject[] customObject;
+        }
+        else {
+            clickOnSubmitCredentialsForTesting(driver1, wait);
+        }
+
+
+//        SalesforceCustomObject[] customObject;
 //        customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait, 4);
 
 //        customObject[0].setObjectId("01Ib0000000EeWu");
@@ -173,37 +183,115 @@ public class SanityTest extends SeleniumTestBase{
 //
 
 
-        SalesforceAccounts[] newAccounts = salesforceAccountActions.createNewAccounts(driver, wait, 1);
 
-        for (int i=0; i <200; i++){
-            salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-");
-            salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-1");
-            salesforceAccountActions.updateAccounts(driver, wait, newAccounts, "Test-2");
-            salesforceAccountActions.deleteAccounts(driver, wait, newAccounts);
+        for (int i=0; i <2; i++){
+            SalesforceAccounts[] newAccounts = salesforceAccountActions.create(driver1, wait, 1);
+            salesforceAccountActions.update(driver1, wait, newAccounts, "Test-");
+            salesforceAccountActions.delete(driver1, wait, newAccounts);
         }
 
 
-        //Create SObject in salesforce - sObject (random objectName)
-        SalesforceSobjects[] sObject = salesforceSobjectsActions.createNewSobject(driver, wait, 1);
-        //Create SObject sObjectToUpdate (not in salesforce) "Omer1201"
-        SalesforceSobjects sObjectToUpdate = new SalesforceSobjects();
-        sObjectToUpdate.setsObjectName("Omer1201");
-        sObjectToUpdate.setSalesforceSObjectMovement(salesforceSObjectMovement.UPDATE);
-        sObjectToUpdate.setUser(getUserLabel(driver));
-        //Update sObject to sObjectToUpdate
-        salesforceSobjectsActions.updateSObject(driver, wait, sObject[0], sObjectToUpdate);
-        //Delete updated sObjectToUpdate from salesforce
-        deleteRecordById(driver, wait, sObjectToUpdate.getsObjectId());
+//        //Create SObject in salesforce - sObject (random objectName)
+//        SalesforceSobjects[] sObject = salesforceSobjectsActions.createNewSobject(driver1, wait, 1);
+//        //Create SObject sObjectToUpdate (not in salesforce) "Omer1201"
+//        SalesforceSobjects sObjectToUpdate = new SalesforceSobjects();
+//        sObjectToUpdate.setsObjectName("Omer1201");
+//        sObjectToUpdate.setSalesforceSObjectMovement(salesforceSObjectMovement.UPDATE);
+//        sObjectToUpdate.setUser(getUserLabel(driver1));
+//        //Update sObject to sObjectToUpdate
+//        salesforceSobjectsActions.updateSObject(driver1, wait, sObject[0], sObjectToUpdate);
+//        //Delete updated sObjectToUpdate from salesforce
+//        deleteRecordById(driver1, wait, sObjectToUpdate.getsObjectId());
 
 
-        openTab(driver, salesforceTabs.SOBJECTS_DATA, wait);
+        openTab((FirefoxDriver) driver, salesforceTabs.SOBJECTS_DATA, wait);
 
 
 
 
     }
+    @Test
+    public void testPerformActivitiesNetformx() throws Exception {
+        FirefoxDriver driver1 = new FirefoxDriver();
+        try {
+
+            logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
+            Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
+
+            WebDriverWait wait = new WebDriverWait(driver1, 15);
+
+            logger.info("Open website " + sf.getUrl().toString() + " and login");
+            launchingWebsite(driver1, sf.getUrl().toString());
+
+            enterCredentials(driver1, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
+            //Since SF open screen after login is different, wait fail
+            clickOnSubmitCredentialsForTesting(driver1, wait);
+
+            navigateToUrl(driver1, wait, "001Q000000oFFc2");
+
+            //Create Lead
+            SalesforceLeads[] salesforceLead =  salesforceLeadActions.create(driver1, wait, 1);
+            //Update Lead
+            for (int i=0; i<20; i++){
+                waitForPageToLoad(wait);
+                salesforceLeadActions.update(driver1, wait, salesforceLead[0], "TestL" + i);
+                waitForPageToLoad(wait);
+            }
+            //Delete Lead
+            genericSalesforceWebsiteActions.delete(driver1, wait, salesforceLead[0].getId());
+
+            //Create Contact
+            SalesforceContacts[] salesforceContact =  salesforceContactActions.create(driver1, wait, 1);
+            //Update the Contact x times
+            for (int i=0; i<20; i++){
+                waitForPageToLoad(wait);
+                salesforceContactActions.update(driver1, wait, salesforceContact[0], "TestC" + i);
+                waitForPageToLoad(wait);
+            }
+            //Delete Contact
+            genericSalesforceWebsiteActions.delete(driver1, wait, salesforceContact[0].getContactId());
 
 
+            //Create Account
+            SalesforceAccounts[] newAccounts = salesforceAccountActions.create(driver1, wait, 1);
+            //Update Account x times
+            for (int i=0; i<20; i++){
+                waitForPageToLoad(wait);
+                salesforceAccountActions.updateOne(driver1, wait, newAccounts[0], "TestA" + i);
+                waitForPageToLoad(wait);
+            }
+            //Delete Account
+            salesforceAccountActions.deleteOne(driver1, wait, newAccounts[0]);
+
+
+            //Create Opportunity
+            SalesforceOpportunities[] salesforceOpportunity = salesforceOpportunitiesActions.create(driver1, wait, 1);
+            //Update Opportunity
+            for (int i=0; i<20; i++){
+                waitForPageToLoad(wait);
+                salesforceOpportunitiesActions.update(driver1, wait, salesforceOpportunity[0], "TestOpp" + i);
+                waitForPageToLoad(wait);
+            }
+            //Delete Opportunity
+            genericSalesforceWebsiteActions.delete(driver1, wait, salesforceOpportunity[0].getOpportunityId());
+
+
+
+
+
+
+
+
+
+        }
+        catch (Exception e) {
+            logger.error(e.getMessage());
+
+        }
+        finally {
+            driver1.kill();
+        }
+    }
 
 
 

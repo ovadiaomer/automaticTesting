@@ -49,6 +49,15 @@ public enum salesforceButtons {
 
         }
     },
+    CANCEL{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("cancel.button.xpath").toString();
+
+
+        }
+    },
     LOGIN_BUTTON{
         public String path() throws IOException {
 

@@ -23,6 +23,42 @@ public enum salesforceUrls {
 
         }
     },
+    CONTACT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("contacts.tab.url").toString();
+
+
+        }
+    },
+    ACCOUNT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("account.tab.url").toString();
+
+
+        }
+    },
+    LEADS{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("leads.tab.url").toString();
+
+
+        }
+    },
+    OPPORTUNITY{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.tab.url").toString();
+
+
+        }
+    },
     CUSTOM_OBJECTS{
         public String path() throws IOException {
 

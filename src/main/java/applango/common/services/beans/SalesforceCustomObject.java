@@ -1,7 +1,7 @@
 package applango.common.services.beans;
 
 import applango.common.SeleniumTestBase;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Calendar;
 
@@ -57,7 +57,7 @@ public class SalesforceCustomObject {
 
     }
 
-    public static SalesforceCustomObject setCustomObjectValues(WebDriver driver, SalesforceCustomObject sfCustomObject) {
+    public static SalesforceCustomObject setCustomObjectValues(FirefoxDriver driver, SalesforceCustomObject sfCustomObject) {
 
         CharSequence sObjectName = "CustomObject"+ Calendar.getInstance().getTimeInMillis();
         SeleniumTestBase.logger.info("Set customObject " + sObjectName);

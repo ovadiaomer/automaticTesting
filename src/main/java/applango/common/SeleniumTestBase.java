@@ -2,20 +2,20 @@ package applango.common;
 
 //import org.apache.commons.logging.impl.Log4JLogger;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //import java.util.logging.Logger;
 
 public class SeleniumTestBase {
 
-    public static final Logger logger = LogManager.getLogger(SeleniumTestBase.class.getName());
+    public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
 
 
     @BeforeClass
@@ -24,13 +24,13 @@ public class SeleniumTestBase {
 
     }
 
-    protected static void enterCredentials(WebDriver driver, String userNameField, String username, String passwordField, String password) {
+    protected static void enterCredentials(FirefoxDriver driver, String userNameField, String username, String passwordField, String password) {
         logger.info("Entering credentials and pressing on login (username= " + username + ", password= " + password +")");
         driver.findElement(By.id(userNameField)).sendKeys(username);
         driver.findElement(By.id(passwordField)).sendKeys(password);
     }
 
-    protected static void launchingWebsite(WebDriver driver, String websiteAdress) {
+    protected static void launchingWebsite(FirefoxDriver driver, String websiteAdress) {
         logger.info("Launching " + websiteAdress);
         driver.navigate().to(websiteAdress);
     }
@@ -43,6 +43,7 @@ public class SeleniumTestBase {
     @AfterClass
     public static void tearDownBase() {
         logger.info("--------------------------- TearDown Base ---------------------------");
+
     }
 
 

@@ -31,6 +31,160 @@ public enum salesforceTextfields {
 
         }
     },
+    ACCOUNT_AccountWebsite{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("accounts.website.textfield.id").toString();
+
+
+        }
+    },
+    ACCOUNT_AccountRegion{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("accounts.region.dropdown.id").toString();
+
+
+        }
+    },
+    ACCOUNT_AccountCountry{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("accounts.country.dropdown.id").toString();
+
+
+        }
+    },
+    CONTACT_ContactLastName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("contacts.lastName.textfield.id").toString();
+
+
+        }
+    },
+    CONTACT_ContactAccountName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("contacts.accountName.textfield.id").toString();
+
+
+        }
+    },
+    CONTACT_ContactCountry{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("contacts.country.dropdown.id").toString();
+
+
+        }
+    },
+    LEAD_LeadLastName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("leads.lastname.id").toString();
+
+
+        }
+    },
+    LEAD_LeadCompany{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("leads.company.id").toString();
+
+
+        }
+    },
+    LEAD_LeadSource{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("leads.leadSource.id").toString();
+
+
+        }
+    },
+    LEAD_LeadRegion{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("leads.region.dropdown.id").toString();
+
+
+        }
+    },
+    LEAD_LeadCountry{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("leads.country.dropdown.id").toString();
+
+
+        }
+    },
+    OPPORTUNITY_OpportunityName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.name.textfield.id").toString();
+
+
+        }
+    },
+    OPPORTUNITY_OpportunityAccountName{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.accountName.textfield.id").toString();
+
+
+        }
+    },
+    OPPORTUNITY_OpportunityClosedDate{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.closedDate.textfield.id").toString();
+
+
+        }
+    },
+    OPPORTUNITY_OpportunityType{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.type.dropdown.id").toString();
+
+
+        }
+    },
+    OPPORTUNITY_OpportunityStage{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.stage.dropdown.id").toString();
+
+
+        }
+    },
+    OPPORTUNITY_OpportunityProbability{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.probability.textfield.id").toString();
+
+
+        }
+    },
+
     RECORD_STATUS{
         public String path() throws IOException {
 

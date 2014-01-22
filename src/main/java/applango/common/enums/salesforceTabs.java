@@ -22,6 +22,42 @@ public enum salesforceTabs {
 
         }
     },
+    LEAD{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("lead.tab.xpath").toString();
+
+
+        }
+    },
+    CONTACT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("contact.tab.xpath").toString();
+
+
+        }
+    },
+    OPPORTUNITIES{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("opportunities.tab.xpath").toString();
+
+
+        }
+    },
+    CAMPAIGN{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("campaign.tab.xpath").toString();
+
+
+        }
+    },
     SOBJECTS_DATA{
         public String path() throws IOException {
 

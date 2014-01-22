@@ -3,6 +3,7 @@ package applango.common.services.beans;
 import applango.common.enums.salesforceSObjectMovement;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Calendar;
 
@@ -20,7 +21,7 @@ public class SalesforceSobjects {
     public static SalesforceSobjects setSObjectValues(WebDriver driver, salesforceSObjectMovement salesforceSObjectMovement, SalesforceSobjects sfObject) {
         CharSequence sObjectName = "testsObject"+ Calendar.getInstance().getTimeInMillis();
         sfObject.setsObjectName(sObjectName.toString());
-        sfObject.setUser(genericSalesforceWebsiteActions.getUserLabel(driver));
+        sfObject.setUser(genericSalesforceWebsiteActions.getUserLabel((FirefoxDriver) driver));
         sfObject.setSalesforceSObjectMovement(salesforceSObjectMovement);
         return sfObject;
     }

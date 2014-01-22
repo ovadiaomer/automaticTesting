@@ -8,11 +8,22 @@
     <environment id="developer">
         <url>http://www.salesforce.com</url>
         <username>ovadia.omero@gmail.com</username>
-        <password>omer1982</password>
+        <password>omer1983</password>
+        <accessToken></accessToken>
+        <secret></secret>
     </environment>
     <environment id="testing">
         <url>http://www.salesforce.com</url>
         <username>omer.ovadia@applango.net</username>
         <password>omer1982</password>
+        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wFcAtrXQR8g_gXDh62PMoOkRq8iCkiSDZkVdI3SzWBO.O0bd31KPAgAKZQtT</accessToken>
+        <secret>7503168071949708689</secret>
+    </environment>
+    <environment id="sandbox">
+        <url>https://test.salesforce.com</url>
+        <username>brad.hlista@applango.com1</username>
+        <password>1Zippy1!</password>
+        <accessToken></accessToken>
+        <secret></secret>
     </environment>
 </saleforce>

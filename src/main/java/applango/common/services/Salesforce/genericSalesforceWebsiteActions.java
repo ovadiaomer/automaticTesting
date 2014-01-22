@@ -8,6 +8,7 @@ import applango.common.services.beans.Salesforce;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.xml.sax.SAXException;
@@ -38,32 +39,37 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         return salesforce;
     }
 
-    public static void clickOnLoginButton(WebDriver driver, WebDriverWait wait) throws IOException {
+    public static void clickOnLoginButton(FirefoxDriver driver, WebDriverWait wait) throws IOException {
 
         SeleniumTestBase.logger.info("Clicking on login button (by xpath)");
         driver.findElement(By.id(salesforceButtons.LOGIN_BUTTON.getValue())).click();
 //        waitForPageToLoad(wait);
     }
 
-    public static void clickOnSubmitCredentials(WebDriver driver, WebDriverWait wait) throws IOException {
+    public static void clickOnSubmitCredentials(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         driver.findElement(By.id(salesforceButtons.LOGIN_SUBMIT.getValue())).click();
         waitForPageToLoad(wait);
 
     }
+    public static void clickOnSubmitCredentialsForTesting(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        driver.findElement(By.id(salesforceButtons.LOGIN_SUBMIT.getValue())).click();
+        wait.until(ExpectedConditions.titleContains("Console ~ salesforce.com - Enterprise Edition"));
 
-    protected static void waitForPageToLoad(WebDriverWait wait) {
+    }
+
+    public static void waitForPageToLoad(WebDriverWait wait) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bodyCell")));
     }
 
-    public static String getUserLabel(WebDriver driver) {
+    public static String getUserLabel(FirefoxDriver driver) {
         return driver.findElement(By.id("userNavLabel")).getText();
     }
 
 
-    public static void deleteRecordById(WebDriver driver,  WebDriverWait wait, String Id) throws IOException {
+    public static void deleteRecordById(FirefoxDriver driver,  WebDriverWait wait, String Id) throws IOException {
         deleteRecordById(driver, wait, Id, salesforceButtons.DELETE);
     }
-    public static void deleteRecordById(WebDriver driver,  WebDriverWait wait, String Id, salesforceButtons deleteButtonId) throws IOException {
+    public static void deleteRecordById(FirefoxDriver driver,  WebDriverWait wait, String Id, salesforceButtons deleteButtonId) throws IOException {
         logger.info("Deleting record "+ Id);
         openPageWithIdInUrl(driver, wait, Id);
         clickOnButton(driver, deleteButtonId);
@@ -72,27 +78,27 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
     }
 
 
-    private static void acceptDeleteAlert(WebDriver driver, WebDriverWait wait) {
-        if(driver.switchTo().alert().getText().equals("Are you sure?")) {
+    private static void acceptDeleteAlert(FirefoxDriver driver, WebDriverWait wait) {
+//        if(driver.switchTo().alert().getText().equals("Are you sure?")) {
             acceptAlertPopup(driver);
             waitForPageToLoad(wait);
 
-        }
+//        }
     }
 
 
-    protected static void clickOnDelete(WebDriver driver) throws IOException {
+    protected static void clickOnDelete(FirefoxDriver driver) throws IOException {
         clickOnButton(driver, salesforceButtons.DELETE);
     }
-    protected static void clickOnSave(WebDriver driver) throws IOException {
+    protected static void clickOnSave(FirefoxDriver driver) throws IOException {
         clickOnButton(driver, salesforceButtons.SAVE);
     }
-    protected static void clickOnEdit(WebDriver driver, WebDriverWait wait) throws IOException {
+    protected static void clickOnEdit(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         clickOnButton(driver, salesforceButtons.EDIT);
         waitForPageToLoad(wait);
     }
 
-    public static void openPageWithIdInUrl(WebDriver driver, WebDriverWait wait, String id) throws MalformedURLException {
+    public static void openPageWithIdInUrl(FirefoxDriver driver, WebDriverWait wait, String id) throws MalformedURLException {
         URL domain = new URL(driver.getCurrentUrl().toString());
         String url = "https://" + domain.getHost().toString() + "/" + id;
         driver.navigate().to(url);
@@ -101,11 +107,11 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
 
 
-    public static void openSetup(WebDriver driver, WebDriverWait wait) throws IOException {
+    public static void openSetup(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         openUrl(driver, wait, salesforceUrls.SETUP);
     }
 
-    public static void openUrl(WebDriver driver, WebDriverWait wait, salesforceUrls url) throws IOException {
+    public static void openUrl(FirefoxDriver driver, WebDriverWait wait, salesforceUrls url) throws IOException {
         URL domain = new URL(driver.getCurrentUrl().toString());
         String accountUrl = domain.getHost().toString() + "/" + url.getValue();
         driver.navigate().to("https://" + accountUrl);
@@ -115,13 +121,23 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     }
 
-    protected static void checkRecordDeleted(WebDriver driver, WebDriverWait wait, String recordId) throws IOException {
+    public static void navigateToUrl(FirefoxDriver driver, WebDriverWait wait, String url) throws IOException {
+        URL domain = new URL(driver.getCurrentUrl().toString());
+        String accountUrl = domain.getHost().toString() + "/" + url;
+        driver.navigate().to("https://" + accountUrl);
+        waitForPageToLoad(wait);
+
+
+
+    }
+
+    protected static void checkRecordDeleted(FirefoxDriver driver, WebDriverWait wait, String recordId) throws IOException {
         logger.info("Verify record deleted");
         openPageWithIdInUrl(driver, wait, recordId);
         Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.RECORD_STATUS.getValue())).getText().contains("Record deleted"));
     }
 
-    protected static void acceptAlertPopup(WebDriver driver) {
+    protected static void acceptAlertPopup(FirefoxDriver driver) {
         driver.switchTo().alert().accept();
     }
 
@@ -129,20 +145,32 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         driver.switchTo().alert().dismiss();
     }
 
+    public static void delete(FirefoxDriver driver, WebDriverWait wait, String id) throws IOException {
+        logger.info("Deleting  "+ id);
+        openPageWithIdInUrl(driver, wait, id);
 
-    protected static String getIdFromUrl(WebDriver driver) throws MalformedURLException {
+        clickOnDelete(driver);
+//        waitForPageToLoad(wait);
+//        if(driver.switchTo().alert().getText().equals("Are you sure?")) {
+        acceptAlertPopup(driver);
+        waitForPageToLoad(wait);
+
+//        }
+    }
+
+    protected static String getIdFromUrl(FirefoxDriver driver) throws MalformedURLException {
         URL domain = new URL(driver.getCurrentUrl().toString());
         return domain.getPath().substring(1);
     }
 
 
-    protected static void clickOnButton(WebDriver driver, salesforceButtons sfButton) throws IOException {
+    public static void clickOnButton(FirefoxDriver driver, salesforceButtons sfButton) throws IOException {
         logger.info("Click on button " + sfButton);
         driver.findElement(By.xpath(sfButton.getValue())).click();
     }
 
 
-    public static void openTab(WebDriver driver, salesforceTabs sfTab, WebDriverWait wait) throws IOException {
+    public static void openTab(FirefoxDriver driver, salesforceTabs sfTab, WebDriverWait wait) throws IOException {
         logger.info("Open tab " + sfTab);
         driver.findElement(By.xpath(sfTab.getValue())).click();
         waitForPageToLoad(wait);
@@ -160,19 +188,19 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         }
     }
 
-    public static void markCheckBox(WebDriver driver, salesforceButtons checkbox) throws IOException {
+    public static void markCheckBox(FirefoxDriver driver, salesforceButtons checkbox) throws IOException {
         if (!driver.findElement(By.id(checkbox.getValue())).isSelected()) {
             driver.findElement(By.id(checkbox.getValue())).click();
         }
     }
-    public static void unmarkCheckBox(WebDriver driver, salesforceButtons checkbox) throws IOException {
+    public static void unmarkCheckBox(FirefoxDriver driver, salesforceButtons checkbox) throws IOException {
         if (driver.findElement(By.id(checkbox.getValue())).isSelected()) {
             driver.findElement(By.id(checkbox.getValue())).click();
         }
     }
-
-    protected static Map getMap() throws IOException {
+    public static Map getMap() throws IOException {
         return objectMapper.getObjectMap(jsonMaps.SALESFORCE);
     }
+
 
 }

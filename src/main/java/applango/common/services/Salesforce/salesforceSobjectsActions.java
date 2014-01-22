@@ -5,6 +5,7 @@ import applango.common.services.beans.SalesforceSobjects;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActions {
-    public static SalesforceSobjects[] createNewSobject(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
+    public static SalesforceSobjects[] createNewSobject(FirefoxDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
         SalesforceSobjects[] newSobjects = new SalesforceSobjects[numberOfAccounts];
         Map salesforceObjectMap = getMap();
         try {
@@ -41,7 +42,7 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
         return newSobjects;
     }
 
-    public static void updateSObject(WebDriver driver,  WebDriverWait wait, SalesforceSobjects sObject, SalesforceSobjects newSObject) throws IOException {
+    public static void updateSObject(FirefoxDriver driver,  WebDriverWait wait, SalesforceSobjects sObject, SalesforceSobjects newSObject) throws IOException {
         logger.info("Updating sObject "+ sObject.getsObjectName() + " to "+ newSObject.getsObjectName());
         openPageWithIdInUrl(driver, wait, sObject.getsObjectId());
 
@@ -53,7 +54,7 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
         newSObject.setSobjectDataCode(sObject.getsObjectDataCode());
     }
 
-    public static boolean verifyObjectSaved(WebDriver driver, String sObjectDataCode) {
+    public static boolean verifyObjectSaved(FirefoxDriver driver, String sObjectDataCode) {
         logger.info("Verify "+ sObjectDataCode + " object is saved ");
         try {
             Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.SOBJECT_SObjectNameInTitle.getValue())).getText().equals(sObjectDataCode));
@@ -65,7 +66,7 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
         }
     }
 
-    private static String getSObjectDataCode(WebDriver driver) {
+    private static String getSObjectDataCode(FirefoxDriver driver) {
         logger.info("Verify sObject is saved ");
         try {
             return driver.findElement(By.xpath(salesforceTextfields.SOBJECT_SObjectNameInTitle.getValue())).getText();
@@ -77,7 +78,7 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
 
     }
 
-    private static SalesforceSobjects fillNewSobjectDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
+    private static SalesforceSobjects fillNewSobjectDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new sObject details and return object SalesforceAccounts with User, Movement and Sobject name");
         SalesforceSobjects newSobject;
         newSobject = fillNewSObjectDetails(driver);
@@ -129,7 +130,7 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
         return null;
     }
 
-    public static SalesforceSobjects[] createNewSobject(WebDriver driver, WebDriverWait wait) throws IOException {
+    public static SalesforceSobjects[] createNewSobject(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         return createNewSobject(driver, wait, 1);
     }
 }

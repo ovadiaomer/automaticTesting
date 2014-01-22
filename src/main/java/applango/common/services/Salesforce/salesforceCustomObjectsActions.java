@@ -7,7 +7,7 @@ import applango.common.enums.salesforceUrls;
 import applango.common.services.beans.SalesforceCustomObject;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -16,15 +16,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA.
- * User: omer.ovadia
- * Date: 11/12/13
- * Time: 15:47
- * To change this template use File | Settings | File Templates.
- */
 public class salesforceCustomObjectsActions {
-    public static void deleteCustomObject(WebDriver driver,  WebDriverWait wait, SalesforceCustomObject customObject, salesforceButtons deleteButtonId) throws Exception {
+    public static void deleteCustomObject(FirefoxDriver driver,  WebDriverWait wait, SalesforceCustomObject customObject, salesforceButtons deleteButtonId) throws Exception {
 
         SeleniumTestBase.logger.info("Deleting record " + customObject.getObjectName());
 
@@ -44,7 +37,7 @@ public class salesforceCustomObjectsActions {
 
     }
 
-    private static void confirmCustomObjectDeleteInPopup(WebDriver driver) throws IOException {
+    private static void confirmCustomObjectDeleteInPopup(FirefoxDriver driver) throws IOException {
 
         String parent = driver.getWindowHandle();
         Set<String> pops = driver.getWindowHandles();
@@ -55,7 +48,7 @@ public class salesforceCustomObjectsActions {
                 String popupHandle=it.next().toString();
                 if(!popupHandle.contains(parent))
                 {
-                    driver = driver.switchTo().window(popupHandle);
+                    driver = (FirefoxDriver) driver.switchTo().window(popupHandle);
                     if (driver.getTitle().equals("Confirm Custom Object Delete")) {
                         //Check checkbox - Yes, I want to delete the custom object
                         genericSalesforceWebsiteActions.markCheckBox(driver, salesforceButtons.CUSTOM_OBJECT_POPUP_DELETE_CHECKBOX);
@@ -67,7 +60,7 @@ public class salesforceCustomObjectsActions {
         }
     }
 
-    public static String getTriggers(WebDriver driver, WebDriverWait wait, SalesforceCustomObject customObject) throws MalformedURLException {
+    public static String getTriggers(FirefoxDriver driver, WebDriverWait wait, SalesforceCustomObject customObject) throws MalformedURLException {
 
         genericSalesforceWebsiteActions.openPageWithIdInUrl(driver, wait, customObject.getObjectId());
         try {
@@ -81,17 +74,17 @@ public class salesforceCustomObjectsActions {
         }
     }
 
-    protected static void checkCustomObjectDeleted(WebDriver driver, WebDriverWait wait, String recordId) throws IOException {
+    protected static void checkCustomObjectDeleted(FirefoxDriver driver, WebDriverWait wait, String recordId) throws IOException {
         SeleniumTestBase.logger.info("Verify custom object deleted");
         genericSalesforceWebsiteActions.openPageWithIdInUrl(driver, wait, recordId);
         Assert.assertTrue(driver.findElement(By.xpath(salesforceButtons.CUSTOM_OBJECT_UNDELETE.getValue())).isDisplayed());
     }
 
-    public static SalesforceCustomObject[] createNewCustomObject(WebDriver driver, WebDriverWait wait) throws IOException {
+    public static SalesforceCustomObject[] createNewCustomObject(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         return createNewCustomObject(driver, wait, 1);
     }
 
-    public static SalesforceCustomObject[] createNewCustomObject(WebDriver driver, WebDriverWait wait, int numOfCustomObjects) throws IOException {
+    public static SalesforceCustomObject[] createNewCustomObject(FirefoxDriver driver, WebDriverWait wait, int numOfCustomObjects) throws IOException {
         SalesforceCustomObject[] newCustomObject = new SalesforceCustomObject[numOfCustomObjects];
 
         Map salesforceObjectMap = genericSalesforceWebsiteActions.getMap();
@@ -113,7 +106,7 @@ public class salesforceCustomObjectsActions {
 
     }
 
-    private static SalesforceCustomObject fillCustomObjectDetailsAnsSave(WebDriver driver, WebDriverWait wait) throws IOException {
+    private static SalesforceCustomObject fillCustomObjectDetailsAnsSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         SeleniumTestBase.logger.info("Create customObject object");
         SalesforceCustomObject sfCustomObject = new SalesforceCustomObject();
         SalesforceCustomObject.setCustomObjectValues(driver, sfCustomObject);
@@ -126,7 +119,7 @@ public class salesforceCustomObjectsActions {
 
     }
 
-    public static void updateCustomObject(WebDriver driver,  WebDriverWait wait, SalesforceCustomObject customObject, SalesforceCustomObject newCustomObject) throws IOException {
+    public static void updateCustomObject(FirefoxDriver driver,  WebDriverWait wait, SalesforceCustomObject customObject, SalesforceCustomObject newCustomObject) throws IOException {
         SeleniumTestBase.logger.info("Updating customObject " + customObject.getObjectName() + " to " + newCustomObject.getObjectName());
         genericSalesforceWebsiteActions.openPageWithIdInUrl(driver, wait, customObject.getObjectId());
 
@@ -137,20 +130,20 @@ public class salesforceCustomObjectsActions {
         newCustomObject.setObjectId(customObject.getObjectId());
     }
 
-    private static void fillCustomObjectDetails(WebDriver driver, SalesforceCustomObject sfCustomObject) throws IOException {
+    private static void fillCustomObjectDetails(FirefoxDriver driver, SalesforceCustomObject sfCustomObject) throws IOException {
         enterCustomObjectLabel(driver, sfCustomObject);
         markOptionalFeatures(driver, sfCustomObject);
         setDepolymentStatusDeployed(driver, sfCustomObject);
     }
 
-    protected static void setDepolymentStatusDeployed(WebDriver driver, SalesforceCustomObject sfCustomObject) throws IOException {
+    protected static void setDepolymentStatusDeployed(FirefoxDriver driver, SalesforceCustomObject sfCustomObject) throws IOException {
         SeleniumTestBase.logger.info("Mark Custom Object Deploy");
         if (sfCustomObject.isCustomObjectDeployed()) {
             genericSalesforceWebsiteActions.markCheckBox(driver, salesforceButtons.CUSTOM_OBJECT_DEPLOY);
         }
     }
 
-    protected static void markOptionalFeatures(WebDriver driver, SalesforceCustomObject sfCustomObject) throws IOException {
+    protected static void markOptionalFeatures(FirefoxDriver driver, SalesforceCustomObject sfCustomObject) throws IOException {
         SeleniumTestBase.logger.info("Check,  un-check Allow Reports, Allow Activities, Track Field History");
         if (sfCustomObject.isAllowReport()) {
             genericSalesforceWebsiteActions.markCheckBox(driver, salesforceButtons.CUSTOM_OBJECT_ALLOW_REPORTS);
@@ -172,7 +165,7 @@ public class salesforceCustomObjectsActions {
         }
     }
 
-    protected static void enterCustomObjectLabel(WebDriver driver, SalesforceCustomObject customObjectName) throws IOException {
+    protected static void enterCustomObjectLabel(FirefoxDriver driver, SalesforceCustomObject customObjectName) throws IOException {
         SeleniumTestBase.logger.info("Setting customObject Label " + customObjectName.getCustomObjectLabel() + " and plural label " + customObjectName.getCustomObjectPluralLabel());
         driver.findElement(By.id(salesforceTextfields.CustomOBJECT_Label.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.CustomOBJECT_PluralLabel.getValue())).clear();
@@ -184,7 +177,7 @@ public class salesforceCustomObjectsActions {
         driver.findElement(By.id(salesforceTextfields.CustomOBJECT_RecordName.getValue())).sendKeys(customObjectName.getRecordName());
     }
 
-    protected static void clickOnNewCustomObject(WebDriver driver, WebDriverWait wait) throws IOException {
+    protected static void clickOnNewCustomObject(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         genericSalesforceWebsiteActions.clickOnButton(driver, salesforceButtons.CUSTOM_OBJECT_NEW);
         genericSalesforceWebsiteActions.waitForPageToLoad(wait);
 
