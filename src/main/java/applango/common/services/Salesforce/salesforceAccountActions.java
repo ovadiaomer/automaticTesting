@@ -38,7 +38,9 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
 
     public static SalesforceAccounts fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new account details and return object SalesforceAccounts with accountName and accountId");
+        waitForPageToLoad(wait);
         SalesforceAccounts newAccount = new SalesforceAccounts();
+        waitForPageToLoad(wait);
         newAccount.setAccountName(fillDetailsRandomly(driver));
 
         fillExtraDetails(driver);
@@ -87,7 +89,8 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
     public static void delete(FirefoxDriver driver, WebDriverWait wait, SalesforceAccounts[] accounts) throws IOException {
 
         for (SalesforceAccounts account : accounts) {
-            deleteOne(driver, wait, account);
+            delete(driver, wait, account.getAccountId());
+            waitForPageToLoad(wait);
         }
 
     }
@@ -129,6 +132,16 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         }
     }
 
+
+    public static void updateAccountNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceAccounts newAccount, int numberOfUpdateAccounts) throws IOException {
+        for (int i=0; i<numberOfUpdateAccounts; i++){
+            waitForPageToLoad(wait);
+            salesforceAccountActions.updateOne(driver1, wait, newAccount, "TestA" + i);
+            waitForPageToLoad(wait);
+        }
+    }
+
+
     private static String fillDetails(FirefoxDriver driver, WebDriverWait wait, String accountName) throws IOException {
 
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).clear();
@@ -140,7 +153,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
 
     private static String fillDetailsRandomly(FirefoxDriver driver) throws IOException {
         CharSequence accountName = "testA"+ Calendar.getInstance().getTimeInMillis();
-        accountName = accountName.subSequence(0,9);
+        accountName = accountName.subSequence(0,14);
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
         logger.info("New Account name is " + accountName);
         return accountName.toString();

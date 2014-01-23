@@ -1,10 +1,7 @@
 package applango.common.tests;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.jsonMaps;
-import applango.common.enums.requestType;
-import applango.common.enums.salesforceTabs;
-import applango.common.enums.salesforceTextfields;
+import applango.common.enums.*;
 import applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
@@ -26,6 +23,9 @@ import java.util.List;
 import java.util.Map;
 
 import static applango.common.services.Salesforce.genericSalesforceWebsiteActions.*;
+import static applango.common.services.Salesforce.salesforceContactActions.updateContactNTimes;
+import static applango.common.services.Salesforce.salesforceLeadActions.updateLeadNTimes;
+import static applango.common.services.Salesforce.salesforceOpportunitiesActions.updateOpportunityNTimes;
 
 //import com.mongodb.DB;
 //import com.mongodb.DBObject;
@@ -212,6 +212,14 @@ public class SanityTest extends SeleniumTestBase{
     }
     @Test
     public void testPerformActivitiesNetformx() throws Exception {
+        int numberOfNewAccounts = 2;
+        int numberOfUpdateAccounts = 2;
+        int numberOfNewContacts = 7;
+        int numberOfUpdateContacts = 11;
+        int numberOfNewLeads = 5;
+        int numberOfUpdateLeads = 12;
+        int numberOfNewOpportunities = 2;
+        int numberOfUpdateOpportunities = 1;
         FirefoxDriver driver1 = new FirefoxDriver();
         try {
 
@@ -226,60 +234,40 @@ public class SanityTest extends SeleniumTestBase{
             enterCredentials(driver1, salesforceTextfields.MAIN_LoginUsername.getValue(), sf.getUsername(), salesforceTextfields.MAIN_LoginPassword.getValue(), sf.getPassword());
             //Since SF open screen after login is different, wait fail
             clickOnSubmitCredentialsForTesting(driver1, wait);
+            navigateToUrl(driver1, wait, salesforceUrls.ACCOUNT.getValue());
 
-            navigateToUrl(driver1, wait, "001Q000000oFFc2");
-
-            //Create Lead
-            SalesforceLeads[] salesforceLead =  salesforceLeadActions.create(driver1, wait, 1);
-            //Update Lead
-            for (int i=0; i<20; i++){
-                waitForPageToLoad(wait);
-                salesforceLeadActions.update(driver1, wait, salesforceLead[0], "TestL" + i);
-                waitForPageToLoad(wait);
-            }
-            //Delete Lead
-            genericSalesforceWebsiteActions.delete(driver1, wait, salesforceLead[0].getId());
-
-            //Create Contact
-            SalesforceContacts[] salesforceContact =  salesforceContactActions.create(driver1, wait, 1);
-            //Update the Contact x times
-            for (int i=0; i<20; i++){
-                waitForPageToLoad(wait);
-                salesforceContactActions.update(driver1, wait, salesforceContact[0], "TestC" + i);
-                waitForPageToLoad(wait);
-            }
-            //Delete Contact
-            genericSalesforceWebsiteActions.delete(driver1, wait, salesforceContact[0].getContactId());
+            //Create Opportunity
+            SalesforceOpportunities[] salesforceOpportunity = salesforceOpportunitiesActions.create(driver1, wait, numberOfNewOpportunities);
+            //Update Opportunity
+            updateOpportunityNTimes(driver1, wait, salesforceOpportunity[0], numberOfUpdateOpportunities);
+            //Delete Opportunity
+            salesforceOpportunitiesActions.delete(driver1, wait, salesforceOpportunity);
 
 
             //Create Account
-            SalesforceAccounts[] newAccounts = salesforceAccountActions.create(driver1, wait, 1);
+            SalesforceAccounts[] newAccounts = salesforceAccountActions.create(driver1, wait, numberOfNewAccounts);
             //Update Account x times
-            for (int i=0; i<20; i++){
-                waitForPageToLoad(wait);
-                salesforceAccountActions.updateOne(driver1, wait, newAccounts[0], "TestA" + i);
-                waitForPageToLoad(wait);
-            }
+            salesforceAccountActions.updateAccountNTimes(driver1, wait, newAccounts[0], numberOfUpdateAccounts);
             //Delete Account
-            salesforceAccountActions.deleteOne(driver1, wait, newAccounts[0]);
-
-
-            //Create Opportunity
-            SalesforceOpportunities[] salesforceOpportunity = salesforceOpportunitiesActions.create(driver1, wait, 1);
-            //Update Opportunity
-            for (int i=0; i<20; i++){
-                waitForPageToLoad(wait);
-                salesforceOpportunitiesActions.update(driver1, wait, salesforceOpportunity[0], "TestOpp" + i);
-                waitForPageToLoad(wait);
-            }
-            //Delete Opportunity
-            genericSalesforceWebsiteActions.delete(driver1, wait, salesforceOpportunity[0].getOpportunityId());
+            salesforceAccountActions.delete(driver1, wait, newAccounts);
 
 
 
 
 
+            //Create Lead
+            SalesforceLeads[] salesforceLead = salesforceLeadActions.create(driver1, wait, numberOfNewLeads);
+            //Update Lead
+            updateLeadNTimes(driver1, wait, salesforceLead[0], numberOfUpdateLeads);
+            //Delete Leads
+            salesforceLeadActions.delete(driver1, wait, salesforceLead);
 
+            //Create Contact
+            SalesforceContacts[] salesforceContact =  salesforceContactActions.create(driver1, wait, numberOfNewContacts);
+            //Update the Contact x times
+            updateContactNTimes(driver1, wait, salesforceContact[0], numberOfUpdateContacts);
+            //Delete Contact
+            salesforceContactActions.delete(driver1, wait, salesforceContact);
 
 
 

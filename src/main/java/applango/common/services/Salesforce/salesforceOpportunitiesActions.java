@@ -15,12 +15,14 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
 
     public static SalesforceOpportunities[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfOpportunities) throws IOException {
         SalesforceOpportunities[] newOpportunity =  new SalesforceOpportunities[numberOfOpportunities];
-        SalesforceOpportunities newOpportunityWithDefaultData = new SalesforceOpportunities();
+        SalesforceOpportunities newOpportunityWithDefaultData;
+
 //        Map salesforceObjectMap = getMap();
         try {
             for (int i=1; i<=numberOfOpportunities; i++) {
                 logger.info("Create new opportunity " + i + " out of " + numberOfOpportunities);
 
+                newOpportunityWithDefaultData = new SalesforceOpportunities();
                 openUrl(driver, wait, salesforceUrls.OPPORTUNITY);
                 waitForPageToLoad(wait);
                 clickOnButton(driver, salesforceButtons.NEW);
@@ -83,6 +85,20 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         waitForPageToLoad(wait);
         clickOnSave(driver);
         waitForPageToLoad(wait);
+
+    }
+    public static void updateOpportunityNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceOpportunities opportunity, int numberOfUpdateOpportunities) throws IOException {
+        for (int i=0; i<numberOfUpdateOpportunities; i++){
+            waitForPageToLoad(wait);
+            salesforceOpportunitiesActions.update(driver1, wait, opportunity, "TestOpp" + i);
+            waitForPageToLoad(wait);
+        }
+    }
+    public static void delete(FirefoxDriver driver, WebDriverWait wait, SalesforceOpportunities[] opportunity) throws IOException {
+
+        for (SalesforceOpportunities salesforceOpportunities : opportunity) {
+            delete(driver, wait, salesforceOpportunities.getOpportunityId());
+        }
 
     }
 

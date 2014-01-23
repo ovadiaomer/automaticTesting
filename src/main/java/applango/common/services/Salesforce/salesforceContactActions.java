@@ -48,6 +48,14 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
         waitForPageToLoad(wait);
     }
 
+    public static void updateContactNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceContacts contact, int numberOfUpdateContacts) throws IOException {
+        for (int i=0; i<numberOfUpdateContacts; i++){
+            waitForPageToLoad(wait);
+            salesforceContactActions.update(driver1, wait, contact, "TestC" + i);
+            waitForPageToLoad(wait);
+        }
+    }
+
     public static String fillDetails(FirefoxDriver driver, String newContactName) throws IOException {
         driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).sendKeys(newContactName);
@@ -69,7 +77,13 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
 
     }
 
+    public static void delete(FirefoxDriver driver, WebDriverWait wait, SalesforceContacts[] contact) throws IOException {
 
+        for (SalesforceContacts salesforceContacts : contact) {
+            delete(driver, wait, salesforceContacts.getContactId());
+        }
+
+    }
 
     private static String fillDetailsRandomly(FirefoxDriver driver) throws IOException {
         CharSequence contactName = "testContact"+ Calendar.getInstance().getTimeInMillis();

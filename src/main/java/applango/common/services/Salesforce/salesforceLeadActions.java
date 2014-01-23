@@ -28,7 +28,6 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
             for (int i=1; i<=numberOfLeads; i++) {
                 logger.info("Create new lead " + i + " out of " + numberOfLeads);
                 openUrl(driver, wait, salesforceUrls.LEADS);
-//                verifyRecentElementExist(wait, salesforceObjectMap, salesforceRecent.ACCOUNTS);
                 waitForPageToLoad(wait);
                 clickOnButton(driver, salesforceButtons.NEW);
                 waitForPageToLoad(wait);
@@ -44,6 +43,12 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
         logger.info("Lead created successfully");
         return newLead;
     }
+
+    public static SalesforceLeads[] create(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        SalesforceLeads[] newLead =  create(driver, wait, 1);
+        return newLead;
+    }
+
 
     private static SalesforceLeads fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new lead details and return object SalesforceContact with LeadName and LeadId");
@@ -75,6 +80,14 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
         return leadName.toString();
     }
 
+    public static void delete(FirefoxDriver driver, WebDriverWait wait, SalesforceLeads[] leads) throws IOException {
+
+        for (SalesforceLeads lead : leads) {
+            delete(driver, wait, lead.getId());
+        }
+
+    }
+
     public static void update(FirefoxDriver driver, WebDriverWait wait, SalesforceLeads lead, String newLeadName) throws IOException {
         logger.info("Updating lead name of "+ lead.getLastName() + " to "+ newLeadName);
         waitForPageToLoad(wait);
@@ -90,6 +103,12 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
 
     }
 
-
+    public static void updateLeadNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceLeads lead, int numberOfUpdateLeads) throws IOException {
+        for (int i=0; i<numberOfUpdateLeads; i++){
+            waitForPageToLoad(wait);
+            salesforceLeadActions.update(driver1, wait, lead, "TestL" + i);
+            waitForPageToLoad(wait);
+        }
+    }
 
 }
