@@ -49,13 +49,16 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
 //        SalesforceOpportunities newOpportunity = new SalesforceOpportunities();
         waitForPageToLoad(wait);
         sfOpportunity = fillDetailsRandomly(driver, wait, sfOpportunity);
-        clickOnButton(driver, salesforceButtons.SAVE);
+        clickOnSave(driver);
+//        clickOnButton(driver, salesforceButtons.SAVE);
         waitForPageToLoad(wait);
         //Save for choose price book
-        clickOnButton(driver, salesforceButtons.SAVE);
+        clickOnSave(driver);
+//        clickOnButton(driver, salesforceButtons.SAVE);
         waitForPageToLoad(wait);
         //Click on cancel in Product Selection
-        clickOnButton(driver, salesforceButtons.CANCEL);
+        clickOnCancel(driver);
+//        clickOnButton(driver, salesforceButtons.CANCEL);
         waitForPageToLoad(wait);
         sfOpportunity.setOpportunityId(getIdFromUrl(driver));
         return sfOpportunity;

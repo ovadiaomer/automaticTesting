@@ -18,7 +18,7 @@ public class SalesforceSobjects {
     String user;
     String sObjectName;
 
-    public static SalesforceSobjects setSObjectValues(WebDriver driver, salesforceSObjectMovement salesforceSObjectMovement, SalesforceSobjects sfObject) {
+    public static SalesforceSobjects setSObjectValues(FirefoxDriver driver, salesforceSObjectMovement salesforceSObjectMovement, SalesforceSobjects sfObject) {
         CharSequence sObjectName = "testsObject"+ Calendar.getInstance().getTimeInMillis();
         sfObject.setsObjectName(sObjectName.toString());
         sfObject.setUser(genericSalesforceWebsiteActions.getUserLabel((FirefoxDriver) driver));

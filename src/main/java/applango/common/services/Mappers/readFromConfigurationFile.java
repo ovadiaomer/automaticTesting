@@ -94,9 +94,13 @@ public class readFromConfigurationFile extends SeleniumTestBase {
                     salesforce.setUrl(eElement.getElementsByTagName("url").item(0).getFirstChild().getTextContent());
                     salesforce.setPassword(eElement.getElementsByTagName("password").item(0).getFirstChild().getTextContent());
                     salesforce.setUsername(eElement.getElementsByTagName("username").item(0).getFirstChild().getTextContent());
-
+                    salesforce.setAccessToken(eElement.getElementsByTagName("accessToken").item(0).getFirstChild().getTextContent());
+                    salesforce.setLoginUrl(eElement.getElementsByTagName("loginUrl").item(0).getFirstChild().getTextContent());
+                    salesforce.setClientSecret(eElement.getElementsByTagName("clientSecret").item(0).getFirstChild().getTextContent());
+                    salesforce.setClientId(eElement.getElementsByTagName("clientId").item(0).getFirstChild().getTextContent());
+                    salesforce.setClientLogin(eElement.getElementsByTagName("clientLogin").item(0).getFirstChild().getTextContent());
+                    salesforce.setSecurityToken(eElement.getElementsByTagName("securityToken").item(0).getFirstChild().getTextContent());
                 }
-
             }
 
         } catch (Exception e) {

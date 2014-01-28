@@ -46,14 +46,13 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 //        waitForPageToLoad(wait);
     }
 
-    public static void clickOnSubmitCredentials(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    public static void clickOnSubmitCredentials(FirefoxDriver driver) throws IOException {
         driver.findElement(By.id(salesforceButtons.LOGIN_SUBMIT.getValue())).click();
-        waitForPageToLoad(wait);
 
     }
-    public static void clickOnSubmitCredentialsForTesting(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    public static void clickOnSubmitCredentialsForTesting(FirefoxDriver driver) throws IOException {
         driver.findElement(By.id(salesforceButtons.LOGIN_SUBMIT.getValue())).click();
-        wait.until(ExpectedConditions.titleContains("Console ~ salesforce.com - Enterprise Edition"));
+//
 
     }
 
@@ -80,22 +79,29 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     private static void acceptDeleteAlert(FirefoxDriver driver, WebDriverWait wait) {
 //        if(driver.switchTo().alert().getText().equals("Are you sure?")) {
-            acceptAlertPopup(driver);
-            waitForPageToLoad(wait);
+        acceptAlertPopup(driver);
+        waitForPageToLoad(wait);
 
 //        }
     }
 
 
     protected static void clickOnDelete(FirefoxDriver driver) throws IOException {
+        Assert.assertTrue(driver.findElement(By.xpath(salesforceButtons.DELETE.getValue())).isDisplayed());
         clickOnButton(driver, salesforceButtons.DELETE);
     }
     protected static void clickOnSave(FirefoxDriver driver) throws IOException {
+        Assert.assertTrue(driver.findElement(By.xpath(salesforceButtons.SAVE.getValue())).isDisplayed());
         clickOnButton(driver, salesforceButtons.SAVE);
     }
     protected static void clickOnEdit(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        Assert.assertTrue(driver.findElement(By.xpath(salesforceButtons.EDIT.getValue())).isDisplayed());
         clickOnButton(driver, salesforceButtons.EDIT);
         waitForPageToLoad(wait);
+    }
+    protected static void clickOnCancel(FirefoxDriver driver) throws IOException {
+        Assert.assertTrue(driver.findElement(By.xpath(salesforceButtons.CANCEL.getValue())).isDisplayed());
+        clickOnButton(driver, salesforceButtons.CANCEL);
     }
 
     public static void openPageWithIdInUrl(FirefoxDriver driver, WebDriverWait wait, String id) throws MalformedURLException {

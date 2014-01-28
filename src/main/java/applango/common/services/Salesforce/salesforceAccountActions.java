@@ -66,6 +66,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
     }
 
     public static SalesforceAccounts[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
+        logger.info("Create " + numberOfAccounts + " accounts");
         SalesforceAccounts[] newAccountName = new SalesforceAccounts[numberOfAccounts];
         Map salesforceObjectMap = getMap();
         try {
@@ -134,6 +135,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
 
 
     public static void updateAccountNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceAccounts newAccount, int numberOfUpdateAccounts) throws IOException {
+        logger.info("Update Account " + numberOfUpdateAccounts + " times");
         for (int i=0; i<numberOfUpdateAccounts; i++){
             waitForPageToLoad(wait);
             salesforceAccountActions.updateOne(driver1, wait, newAccount, "TestA" + i);

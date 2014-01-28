@@ -102,7 +102,7 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
         return domain.getPath().substring(1);
     }
 
-    private static void fillSObjectDetails(WebDriver driver, SalesforceSobjects salesforceSobjects) throws IOException {
+    private static void fillSObjectDetails(FirefoxDriver driver, SalesforceSobjects salesforceSobjects) throws IOException {
         driver.findElement(By.id(salesforceTextfields.SOBJECT_USER.getValue())).sendKeys(salesforceSobjects.getUser());
         driver.findElement(By.id(salesforceTextfields.SOBJECT_MOVEMENT.getValue())).sendKeys(salesforceSobjects.getSalesforceSObjectMovement().getValue());
         driver.findElement(By.id(salesforceTextfields.SOBJECT_NAME.getValue())).clear();
@@ -110,11 +110,11 @@ public class    salesforceSobjectsActions  extends genericSalesforceWebsiteActio
         logger.info("New sObject name is " + salesforceSobjects.getsObjectName());
     }
 
-    private static SalesforceSobjects fillNewSObjectDetails(WebDriver driver) throws IOException {
+    private static SalesforceSobjects fillNewSObjectDetails(FirefoxDriver driver) throws IOException {
         return  fillNewSObjectDetails(driver, salesforceSObjectMovement.CREATE);
     }
 
-    private static SalesforceSobjects fillNewSObjectDetails(WebDriver driver, salesforceSObjectMovement salesforceSObjectMovement) throws IOException {
+    private static SalesforceSobjects fillNewSObjectDetails(FirefoxDriver driver, salesforceSObjectMovement salesforceSObjectMovement) throws IOException {
         SalesforceSobjects sfObject = new SalesforceSobjects();
         sfObject = SalesforceSobjects.setSObjectValues(driver, salesforceSObjectMovement, sfObject);
         try {

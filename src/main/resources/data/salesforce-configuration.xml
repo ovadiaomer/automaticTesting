@@ -4,26 +4,49 @@
         <url>http://www.salesforce.com</url>
         <username>ovadia.omero@gmail.com</username>
         <password>omer1982</password>
+        <accessToken></accessToken>
+        <clientSecret></clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId></clientId>
     </environment>
     <environment id="developer">
         <url>http://www.salesforce.com</url>
         <username>ovadia.omero@gmail.com</username>
         <password>omer1983</password>
         <accessToken></accessToken>
-        <secret></secret>
+        <clientSecret></clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId></clientId>
     </environment>
-    <environment id="testing">
+    <environment id="testing-prodBeta">
         <url>http://www.salesforce.com</url>
         <username>omer.ovadia@applango.net</username>
         <password>omer1982</password>
         <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wFcAtrXQR8g_gXDh62PMoOkRq8iCkiSDZkVdI3SzWBO.O0bd31KPAgAKZQtT</accessToken>
-        <secret>7503168071949708689</secret>
+        <clientSecret>7503168071949708689</clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>omerTest</clientId>
+        <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
     </environment>
-    <environment id="sandbox">
+    <environment id="testing-qa">
+        <url>http://www.salesforce.com</url>
+        <username>omer.ovadia@applango.net</username>
+        <password>omer1982</password>
+        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wKCuR16NmPdCf.7A0_hI24H3lPZ1kUqUlM.CngG7IUPp7Cnu6MI6wgdkgyiH</accessToken>
+        <clientSecret>7581599953914068391</clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>testCust66</clientId>
+        <connectedApp>walkThru</connectedApp>
+        <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
+        <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
+    </environment>
+    <environment id="netformx-sandbox">
         <url>https://test.salesforce.com</url>
         <username>brad.hlista@applango.com1</username>
         <password>1Zippy1!</password>
-        <accessToken></accessToken>
-        <secret></secret>
+        <accessToken>3MVG9pHRjzOBdkd9_lUWgyk_HUId8Svzc0AKhITOasVp5LSgBANZGexUyXM4rac4Yu5zoTaBrjtSPYoSDTE6C</accessToken>
+        <clientSecret>2826080930407254723</clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>omer1TestAuto1</clientId>
     </environment>
 </saleforce>

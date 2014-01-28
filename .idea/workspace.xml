@@ -7,33 +7,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/clientManager/genericClientManagerActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceSobjects.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceSobjects.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/data/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceSobjectsActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceSobjectsActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
     <ignored path="AutomaticTesting.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1390233303659" ignored="false" />
     <file path="/LoginPage.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381239247413" ignored="false" />
-    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390473104017" ignored="false" />
+    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390929497841" ignored="false" />
     <file path="/CreateUser.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382262684204" ignored="false" />
-    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1390404324137" ignored="false" />
+    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1390929346889" ignored="false" />
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
     <file path="/SeleniumBaseTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267638173" ignored="false" />
     <file path="$PROJECT_DIR$/../selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267697907" ignored="false" />
-    <file path="/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390307834959" ignored="false" />
-    <file path="/SanityTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390471696647" ignored="false" />
+    <file path="/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390818219145" ignored="false" />
+    <file path="/SanityTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390930353147" ignored="false" />
     <file path="/Logger.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382279699100" ignored="false" />
-    <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1390243686835" ignored="false" />
+    <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1390918983932" ignored="false" />
     <file path="/log4j.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1382449348836" ignored="false" />
     <file path="/log4j.properties" changelist="2c65d532-f314-485a-a005-237161801969" time="1390230170227" ignored="false" />
     <file path="/objectMapper.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390238004980" ignored="false" />
     <file path="/testEnvironment.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1382455963396" ignored="false" />
     <file path="/loginObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1382519809802" ignored="false" />
-    <file path="/config.properties" changelist="2c65d532-f314-485a-a005-237161801969" time="1390239922236" ignored="false" />
+    <file path="/config.properties" changelist="2c65d532-f314-485a-a005-237161801969" time="1390752322239" ignored="false" />
     <file path="/mainScreenObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1382610896386" ignored="false" />
     <file path="$PROJECT_DIR$/../experimental/resttest/moduleA/src/main/java/com.applango.restclient/ApacheHttpClientGet.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382888548411" ignored="false" />
     <file path="/restAPI.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1383486823276" ignored="false" />
@@ -57,13 +67,13 @@
     <file path="/database.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1383821021020" ignored="false" />
     <file path="/a.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384958278692" ignored="false" />
     <file path="/Login.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384684660199" ignored="false" />
-    <file path="/salesforce-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1390239569841" ignored="false" />
-    <file path="/Salesforce.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384687072936" ignored="false" />
+    <file path="/salesforce-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1390919585382" ignored="false" />
+    <file path="/Salesforce.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390919817283" ignored="false" />
     <file path="/genericWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384695770947" ignored="false" />
     <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384778159722" ignored="false" />
-    <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390404563816" ignored="false" />
+    <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390489806311" ignored="false" />
     <file path="/salesforceObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1390388270761" ignored="false" />
-    <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384786940266" ignored="false" />
+    <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390919870272" ignored="false" />
     <file path="/jsonMaps.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384773122711" ignored="false" />
     <file path="/salesforceRecent.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385891318556" ignored="false" />
     <file path="/salesforceTabs.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1386065878764" ignored="false" />
@@ -86,11 +96,11 @@
     <file path="/salesforceSObjectMovement.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385889609688" ignored="false" />
     <file path="/genericSalesforceAccountActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385981818840" ignored="false" />
     <file path="/salesforceUrls.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390384494818" ignored="false" />
-    <file path="/salesforceSobjectsActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390238587407" ignored="false" />
+    <file path="/salesforceSobjectsActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390488986657" ignored="false" />
     <file path="/SalesforceCustomObject.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1387102624684" ignored="false" />
-    <file path="/salesforceAccountActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390474667341" ignored="false" />
-    <file path="/salesforceCustomObjectsActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1387106347029" ignored="false" />
-    <file path="$PROJECT_DIR$/../applango/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807043" ignored="false" />
+    <file path="/salesforceAccountActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390730654243" ignored="false" />
+    <file path="/salesforceCustomObjectsActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390489023013" ignored="false" />
+    <file path="$PROJECT_DIR$/../applango/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1390492058031" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/commonAPI/src/main/java/com/applango/restservices/CustomerManagerRest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807043" ignored="false" />
     <file path="/CustomerManagerRest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389178059766" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/commonAPI/src/main/java/com/applango/restservices/UserManagerRest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807041" ignored="false" />
@@ -108,7 +118,7 @@
     <file path="$PROJECT_DIR$/../applango/managerservices/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/restclients/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/dataaccess/src/main/java/com/applango/dal/CustomerDAOMongoImpl.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
-    <file path="$PROJECT_DIR$/../applango/restclients/src/main/java/com/applango/rest/client/CustomerManagerClient.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
+    <file path="$PROJECT_DIR$/../applango/restclients/src/main/java/com/applango/rest/client/CustomerManagerClient.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390839059639" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/managerservices/src/main/java/com/applango/managers/CustomerManagerRestImpl.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/sf-integration/sf-oauth2-public/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/managerservices/src/main/java/com/applango/managers/CustomerManagerImpl.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1389610807042" ignored="false" />
@@ -130,11 +140,15 @@
     <file path="/.gitignore" changelist="2c65d532-f314-485a-a005-237161801969" time="1389614223269" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/.gitignore" changelist="2c65d532-f314-485a-a005-237161801969" time="1389614251838" ignored="false" />
     <file path="/SalesforceContacts.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390312712892" ignored="false" />
-    <file path="/salesforceContactActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390471873512" ignored="false" />
+    <file path="/salesforceContactActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390488906972" ignored="false" />
     <file path="/SalesforceLeads.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390322429185" ignored="false" />
-    <file path="/salesforceLeadActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390471909698" ignored="false" />
-    <file path="/salesforceOpportunitiesActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390473352867" ignored="false" />
+    <file path="/salesforceLeadActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390488924445" ignored="false" />
+    <file path="/salesforceOpportunitiesActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390489911039" ignored="false" />
     <file path="/SalesforceOpportunities.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390389554415" ignored="false" />
+    <file path="$PROJECT_DIR$/../applango/integration2-testing/src/test/java/com/applango/managers/CustomerManagerIT.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390747957465" ignored="false" />
+    <file path="/genricClientActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390751971428" ignored="false" />
+    <file path="/CustomerManagerClient.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390839019401" ignored="false" />
+    <file path="$PROJECT_DIR$/../applango/integration2-testing/src/test/java/com/applango/sfintegration/SFUsageStatsManagerIT.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390927034963" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,45 +176,8 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" line="32" class="applango.common.SeleniumTestBase" package="applango.common">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" line="35" class="applango.common.SeleniumTestBase" package="applango.common">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -260,7 +237,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="184" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="190" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -290,7 +267,7 @@
         <option name="CONDITION" value="&#13;&#13;JAVA" />
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="134" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="305" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -305,7 +282,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="143" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="314" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -320,7 +297,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="79" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="250" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -335,7 +312,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="55" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="358" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -350,7 +327,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="50" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="213" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -365,37 +342,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="186" class="applango.common.tests.SanityTest" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="243" class="applango.common.tests.SanityTest" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="239" class="applango.common.tests.SanityTest" package="applango.common.tests">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="70" class="applango.common.tests.SanityTest" package="applango.common.tests">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -411,6 +358,43 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -423,46 +407,25 @@
       <file leaf-file-name="SanityTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="250" column="37" selection-start="12223" selection-end="12223" vertical-scroll-proportion="0.22670807">
-              <folding>
-                <element signature="method#testMongoDb#0;class#SanityTest#0" expanded="false" />
-                <element signature="method#testSalesforce#0;class#SanityTest#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="salesforceAccountActions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="0" selection-start="3726" selection-end="3726" vertical-scroll-proportion="0.0">
+            <state line="134" column="33" selection-start="5828" selection-end="5828" vertical-scroll-proportion="0.2902439">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalesforceAccounts.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java">
+      <file leaf-file-name="CustomerManagerClient.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/applango/restclients/1.0-SNAPSHOT/restclients-1.0-20140113.113138-1.jar!/com/applango/rest/client/CustomerManagerClient.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+            <state line="17" column="39" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salesforceContactActions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java">
+      <file leaf-file-name="SalesforceCredentials.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/applango/commonAPI/1.0-SNAPSHOT/commonAPI-1.0-20140113.113129-1.jar!/com/applango/beans/SalesforceCredentials.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="38" selection-start="2844" selection-end="2844" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="genericSalesforceWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="0" selection-start="6321" selection-end="6321" vertical-scroll-proportion="0.0">
+            <state line="37" column="16" selection-start="1193" selection-end="1193" vertical-scroll-proportion="-5.28">
               <folding />
             </state>
           </provider>
@@ -471,43 +434,43 @@
       <file leaf-file-name="salesforceObjectsMap.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="108" selection-start="764" selection-end="847" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salesforceLeadActions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java">
+      <file leaf-file-name="config.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="35" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
+            <state line="3" column="25" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salesforceOpportunitiesActions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java">
+      <file leaf-file-name="salesforce-configuration.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="0" selection-start="5283" selection-end="5283" vertical-scroll-proportion="0.0">
+            <state line="28" column="64" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalesforceOpportunities.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceOpportunities.java">
+      <file leaf-file-name="readFromConfigurationFile.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0">
+            <state line="101" column="137" selection-start="5160" selection-end="5160" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalesforceLeads.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceLeads.java">
+      <file leaf-file-name="Salesforce.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+            <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -532,22 +495,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceContacts.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceLeads.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceUrls.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceSobjectsActions.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceCustomObjectsActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceOpportunities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/client/genricClientActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/client/genricClientActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/clientManager/genericClientManagerActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/ApplangoWebsite/genericApplangoWebsiteActions.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" />
       </list>
     </option>
   </component>
@@ -601,10 +564,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -877,6 +840,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -899,112 +863,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.seleniumhq.selenium:selenium-firefox-driver:2.39.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selenium-firefox-driver-2.39.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="firefox" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.seleniumhq.selenium:selenium-firefox-driver:2.39.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selenium-firefox-driver-2.39.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson-mapper-asl-1.9.13.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson-mapper-asl-1.9.13.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackson-mapper-asl-1.9.13.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Maven: junit:junit:4.8.1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
@@ -1036,70 +894,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="junit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit-4.8.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="runners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit-4.8.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="junit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="runners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1275,25 +1069,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AutomaticTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemId" value="Maven: com.applango:restclients:1.0-SNAPSHOT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="restclients-1.0-20140113.113138-1.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1307,15 +1087,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemId" value="Maven: com.applango:restclients:1.0-SNAPSHOT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="restclients-1.0-20140113.113138-1.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1329,19 +1109,59 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemId" value="Maven: com.applango:commonAPI:1.0-SNAPSHOT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
+              <option name="myItemId" value="commonAPI-1.0-20140113.113129-1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.applango:commonAPI:1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonAPI-1.0-20140113.113129-1.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="applango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.applango:commonAPI:1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commonAPI-1.0-20140113.113129-1.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="io" />
+              <option name="myItemId" value="applango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1609,7 +1429,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mongo" />
+              <option name="myItemId" value="clientManager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1673,13 +1493,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApplangoWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="enums" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Revu" />
     </panes>
   </component>
@@ -1694,14 +1547,16 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="applango.common.services.clientManager" />
       <recent name="applango.common.services.beans" />
       <recent name="applango.common.services.Salesforce" />
       <recent name="applango.common.enums" />
@@ -1723,6 +1578,13 @@
       <recent name="applango.common.services.beans" />
       <recent name="applango.common" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="applango.common.services.Salesforce" />
+      <recent name="applango.common.tests" />
+      <recent name="applango.common.services.RestApi" />
+      <recent name="applango.common.services.Mappers" />
+      <recent name="applango.common.services.beans" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\app-project\AutomaticTesting1901" />
       <recent name="C:\app-project\AutomaticTesting" />
@@ -1730,49 +1592,8 @@
       <recent name="C:\app-project\AutomaticTesting\src\main\java\applango\common\tests" />
       <recent name="C:\app-project\AutomaticTesting\src\main\resources\mappers" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="applango.common.tests" />
-      <recent name="applango.common.services.RestApi" />
-      <recent name="applango.common.services.Mappers" />
-      <recent name="applango.common.services.beans" />
-      <recent name="applango.common.services.DB.mongo.beans" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.SanityTest.testPerformActivitiesNetformx">
-    <configuration default="false" name="SanityTest.testMongoDb" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="applango.common.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AutomaticTesting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="applango.common.tests" />
-      <option name="MAIN_CLASS_NAME" value="applango.common.tests.SanityTest" />
-      <option name="METHOD_NAME" value="testMongoDb" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.SanityTest.testValidCustomerCreation">
     <configuration default="false" name="SanityTest.testSalesforce" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1841,7 +1662,7 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <configuration default="false" name="SanityTest.testCustomerCreation" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="SanityTest.testValidCustomerCreation" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="applango.common.tests.*" />
@@ -1853,7 +1674,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="applango.common.tests" />
       <option name="MAIN_CLASS_NAME" value="applango.common.tests.SanityTest" />
-      <option name="METHOD_NAME" value="testCustomerCreation" />
+      <option name="METHOD_NAME" value="testValidCustomerCreation" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1870,7 +1691,9 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="false" name="SanityTest.testPerformActivitiesNetformx" type="JUnit" factoryName="JUnit" temporary="true">
@@ -1905,6 +1728,38 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SanityTest.test1" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="applango.common.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AutomaticTesting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="applango.common.tests" />
+      <option name="MAIN_CLASS_NAME" value="applango.common.tests.SanityTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1943,6 +1798,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1969,19 +1837,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2021,19 +1876,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest.testMongoDb" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SanityTest.testSalesforce" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SanityTest.testWebActionsWithRestAPI" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SanityTest.testCustomerCreation" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SanityTest.testPerformActivitiesNetformx" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest.testSalesforce" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SanityTest.testWebActionsWithRestAPI" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SanityTest.testValidCustomerCreation" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SanityTest.testPerformActivitiesNetformx" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.SanityTest.test1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest.testPerformActivitiesNetformx" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SanityTest.testSalesforce" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SanityTest.testCustomerCreation" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SanityTest.testWebActionsWithRestAPI" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SanityTest.testMongoDb" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SanityTest.testValidCustomerCreation" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SanityTest.test1" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SanityTest.testWebActionsWithRestAPI" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.SanityTest.testPerformActivitiesNetformx" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SanityTest.testSalesforce" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -2116,37 +1971,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22630993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15421557" sideWeight="0.40802675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26254" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48919228" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38684505" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32441473" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32337245" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19103523" sideWeight="0.7246377" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1547492" sideWeight="0.40802675" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2289221" sideWeight="0.73745996" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40356743" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23545259" sideWeight="0.51080775" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2320819" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15635005" sideWeight="0.36120403" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22525597" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2219,114 +2074,103 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/database-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceUrls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="19" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.63369966">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceCustomObjectsActions.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="32" selection-start="1140" selection-end="1406" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="382" column="29" selection-start="17643" selection-end="17643" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceTextfields.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/applango/commonAPI/1.0-SNAPSHOT/commonAPI-1.0-20140113.113129-1.jar!/com/applango/beans/Customer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="28" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforceButtons.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/applango/restclients/1.0-SNAPSHOT/restclients-1.0-20140113.113138-1.jar!/com/applango/rest/client/SFUserManagerClient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="63" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
+        <state line="25" column="50" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/applango/commonAPI/1.0-SNAPSHOT/commonAPI-1.0-20140113.113129-1.jar!/com/applango/beans/SyncProcessProgress.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="28" selection-start="1547" selection-end="1547" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/clientManager/genericClientManagerActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="108" selection-start="764" selection-end="847" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/io/FileInputStream.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="267" column="15" selection-start="9675" selection-end="9675" vertical-scroll-proportion="0.33278146" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceLeads.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+        <state line="3" column="25" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Salesforce.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="38" selection-start="2844" selection-end="2844" vertical-scroll-proportion="0.0">
+        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceAccounts.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+        <state line="101" column="137" selection-start="5160" selection-end="5160" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/applango/restclients/1.0-SNAPSHOT/restclients-1.0-20140113.113138-1.jar!/com/applango/rest/client/CustomerManagerClient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="35" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0">
+        <state line="17" column="39" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceOpportunities.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.1/junit-4.8.1.jar!/org/junit/internal/runners/statements/RunAfters.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0">
+        <state line="13" column="16" selection-start="612" selection-end="612" vertical-scroll-proportion="0.50246304" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.1/junit-4.8.1.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="0.4187192" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/applango/commonAPI/1.0-SNAPSHOT/commonAPI-1.0-20140113.113129-1.jar!/com/applango/beans/SalesforceCredentials.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="16" selection-start="1193" selection-end="1193" vertical-scroll-proportion="-5.28">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="0" selection-start="6321" selection-end="6321" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="0" selection-start="5283" selection-end="5283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="0" selection-start="3726" selection-end="3726" vertical-scroll-proportion="0.0">
+        <state line="28" column="64" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="37" selection-start="12223" selection-end="12223" vertical-scroll-proportion="0.22670807">
-          <folding>
-            <element signature="method#testMongoDb#0;class#SanityTest#0" expanded="false" />
-            <element signature="method#testSalesforce#0;class#SanityTest#0" expanded="false" />
-          </folding>
+        <state line="134" column="33" selection-start="5828" selection-end="5828" vertical-scroll-proportion="0.2902439">
+          <folding />
         </state>
       </provider>
     </entry>
