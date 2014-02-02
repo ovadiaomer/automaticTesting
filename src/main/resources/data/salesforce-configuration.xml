@@ -48,5 +48,8 @@
         <clientSecret>2826080930407254723</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
         <clientId>omer1TestAuto1</clientId>
+        <connectedApp>1</connectedApp>
+        <clientLogin>1</clientLogin>
+        <securityToken>1</securityToken>
     </environment>
 </saleforce>

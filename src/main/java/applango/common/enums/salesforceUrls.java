@@ -67,6 +67,15 @@ public enum salesforceUrls {
 
 
         }
+    },
+    LOGOUT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
+            return salesforceObjectMap.get("logout.url").toString();
+
+
+        }
     };
     public abstract String path() throws IOException;
 

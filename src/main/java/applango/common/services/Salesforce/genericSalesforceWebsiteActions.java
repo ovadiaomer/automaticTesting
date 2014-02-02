@@ -43,13 +43,52 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
         SeleniumTestBase.logger.info("Clicking on login button (by xpath)");
         driver.findElement(By.id(salesforceButtons.LOGIN_BUTTON.getValue())).click();
-//        waitForPageToLoad(wait);
+        waitForLoginPageToLoad(wait);
     }
 
     public static void clickOnSubmitCredentials(FirefoxDriver driver) throws IOException {
+        logger.info("Click on Login");
         driver.findElement(By.id(salesforceButtons.LOGIN_SUBMIT.getValue())).click();
 
     }
+    public static void launchWebsiteAndlogin(Salesforce sf, FirefoxDriver driver1, WebDriverWait wait) throws IOException {
+        logger.info("Open website " + sf.getUrl().toString() + " and launchWebsiteAndlogin");
+        launchingWebsite(driver1, sf.getUrl().toString());
+        //Login Button not appear in sandbox because enter credentials appears
+        login(sf, driver1, wait);
+    }
+
+    public static void login(Salesforce sf, FirefoxDriver driver1, WebDriverWait wait) throws IOException {
+
+        if (!sf.getEnvironment().contains("sandbox"))   {
+            clickOnLoginButton(driver1, wait);
+
+
+        }
+        enterCredentials(driver1, sf.getUsername(), sf.getPassword());
+        //Since SF open screen after launchWebsiteAndlogin is different, wait fail
+        if (!sf.getEnvironment().contains("sandbox"))   {
+            clickOnSubmitCredentials(driver1);
+            waitForPageToLoad(wait);
+
+
+        }
+        else {
+            clickOnSubmitCredentialsForTesting(driver1);
+            wait.until(ExpectedConditions.titleContains("Console ~ salesforce.com - Enterprise Edition"));
+        }
+    }
+
+    public static void logout(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        URL domain = new URL(driver.getCurrentUrl().toString());
+        String url = domain.getHost().toString() + "/" + salesforceUrls.LOGOUT.getValue();
+        driver.navigate().to("https://" + url);
+        waitForLoginPageToLoad(wait);
+
+    }
+
+
+
     public static void clickOnSubmitCredentialsForTesting(FirefoxDriver driver) throws IOException {
         driver.findElement(By.id(salesforceButtons.LOGIN_SUBMIT.getValue())).click();
 //
@@ -58,6 +97,10 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     public static void waitForPageToLoad(WebDriverWait wait) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bodyCell")));
+    }
+
+ public static void waitForLoginPageToLoad(WebDriverWait wait) {
+     wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("Login")));
     }
 
     public static String getUserLabel(FirefoxDriver driver) {

@@ -5,6 +5,7 @@ import applango.common.enums.salesforceRecent;
 import applango.common.enums.salesforceTextfields;
 import applango.common.enums.salesforceUrls;
 import applango.common.services.beans.SalesforceAccounts;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -145,7 +146,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
 
 
     private static String fillDetails(FirefoxDriver driver, WebDriverWait wait, String accountName) throws IOException {
-
+        Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).clear();
         waitForPageToLoad(wait);
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);

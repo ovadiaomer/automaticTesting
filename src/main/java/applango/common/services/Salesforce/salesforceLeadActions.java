@@ -4,6 +4,7 @@ import applango.common.enums.salesforceButtons;
 import applango.common.enums.salesforceTextfields;
 import applango.common.enums.salesforceUrls;
 import applango.common.services.beans.SalesforceLeads;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -63,12 +64,14 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
     }
 
     public static String fillDetails(FirefoxDriver driver, String newLeadName) throws IOException {
+        Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).sendKeys(newLeadName);
         return newLeadName;
     }
 
     private static String fillDetailsRandomly(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).isDisplayed());
         CharSequence leadName = "testLead"+ Calendar.getInstance().getTimeInMillis();
         driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).sendKeys(leadName);
         driver.findElement(By.id(salesforceTextfields.LEAD_LeadCompany.getValue())).sendKeys("applango");

@@ -4,6 +4,7 @@ import applango.common.enums.salesforceButtons;
 import applango.common.enums.salesforceTextfields;
 import applango.common.enums.salesforceUrls;
 import applango.common.services.beans.SalesforceOpportunities;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -106,6 +107,7 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
     }
 
     public static String fillDetails(FirefoxDriver driver, String newOpportunityName) throws IOException {
+        Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).sendKeys(newOpportunityName);
         return newOpportunityName;

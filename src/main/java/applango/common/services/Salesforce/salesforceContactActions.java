@@ -4,6 +4,7 @@ import applango.common.enums.salesforceButtons;
 import applango.common.enums.salesforceTextfields;
 import applango.common.enums.salesforceUrls;
 import applango.common.services.beans.SalesforceContacts;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -57,6 +58,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
     }
 
     public static String fillDetails(FirefoxDriver driver, String newContactName) throws IOException {
+        Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).sendKeys(newContactName);
         return newContactName;

@@ -26,7 +26,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,8 +48,8 @@ public class SanityTest extends SeleniumTestBase{
     WebDriver driver;
     public static final String HOME_SITE = "home.site.string";
 
-    private static final String USER_NAME_UI_OBJECT = "login.username.textfield.id";
-    private static final String PASSWORD_UI_OBJECT = "login.password.textfield.id";
+    private static final String USER_NAME_UI_OBJECT = "launchWebsiteAndlogin.username.textfield.id";
+    private static final String PASSWORD_UI_OBJECT = "launchWebsiteAndlogin.password.textfield.id";
 
     private static final String MAIN_SCREEN_CSS = "main.css";
     private static final String USER_NAME = "username";
@@ -56,56 +58,6 @@ public class SanityTest extends SeleniumTestBase{
     Salesforce sf;
     CustomerManagerClient customerManagerClient;
     //TODO fix writing to log
-    @Test
-    public void    test1() throws IOException {
-        CustomerManagerClient client = new CustomerManagerClient();
-//        client.removeAllSalesforceCredentials();
-//        client.removeAll();
-//        Customer customer1 = new Customer();
-//        customer1.setCustomerId("testCustomerA99999999");
-//        customer1.setCustomerName("testCustomerA2");
-//        customer1.setBeginDate(new Date(System.currentTimeMillis() - 1000 * 60 * 60 * 24 * 180));
-//        customerManagerClient.createCustomer(customer1);
-
-        Customer customer1 = new Customer();
-        customer1 = client.createCustomer(customer1);
-
-        // Add the credentials
-        /*
-        String clientId = "3MVG9A2kN3Bn17hsB3ltm2JILU5zP1CALd1psD.THvPsAu5DgMH3EksHFW5bC8V.y8WAmYgnQDqdyWSWtA9dv";
-        String clientSecret = "8289157997545557480";
-        String securityToken = "CjmXV0HDIF6bIlqIeY2FGf7ac";
-        String sfUrl = "https://login.salesforce.com";
-        String tokenService = "/services/oauth2/token";
-        String userName = "jafridberg@gmail.com";
-        String passWord = "bapelsin3";
-        */
-
-        String clientId = "3MVG99qusVZJwhsn_xr.KeDe5wKCuR16NmPdCf.7A0_hI24H3lPZ1kUqUlM.CngG7IUPp7Cnu6MI6wgdkgyiH";
-        String clientSecret = "7581599953914068391";
-        String securityToken = "lUTKBO5DzVg1moS1y0VARiKha";
-        String sfUrl = "https://login.salesforce.com";
-        String tokenService = "/services/oauth2/token";
-        String userName = "omer.ovadia@applango.net";
-        String passWord = "omer1982";
-
-        // String tokenLoginPwd = passWord + securityToken;
-        // String tokenURL = sfUrl + tokenService;
-
-        SalesforceCredentials sfc1 = new SalesforceCredentials();
-        sfc1.setClientId(clientId);
-        sfc1.setClientSecret(clientSecret);
-        sfc1.setLoginURL(sfUrl);
-        sfc1.setCustomerId(customer1.getCustomerId());
-        sfc1.setPassword(passWord);
-        sfc1.setSecurityToken(securityToken);
-        sfc1.setUsername(userName);
-
-        customerManagerClient.addSalesforceCredentials("testCustomer1", sfc1);
-
-
-    }
-
 
 
     @Test
@@ -127,11 +79,12 @@ public class SanityTest extends SeleniumTestBase{
 //
             sfCredentials = addSalesforceCredentialsToNewCustomer(client, customer);
             driver1 = authenticateNewCustomer(driver1, customer, sfCredentials);
-            executeSyncUsers(customer, userManagerClient);
+//            executeSyncUsers(customer, userManagerClient);
             //TODO check users in DB
 //            userManagerstat.
 
             //Todo install triggers
+
             //Todo get activities
 
 
@@ -155,9 +108,47 @@ public class SanityTest extends SeleniumTestBase{
 
     }
 
+    @Test
+    public void testSyncLogin() throws ParserConfigurationException, SAXException, IOException {
+        logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
+        Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
+        FirefoxDriver driver1 = new FirefoxDriver();
+        WebDriverWait wait = new WebDriverWait(driver1, 15);
+        try  {
+
+
+            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver1, wait);
+            genericSalesforceWebsiteActions.logout(driver1, wait);
+
+
+            for (int i = 0; i < 399; i++) {
+                logger.info("Log-in No. " + i);
+                waitForLoginPageToLoad(wait);
+                enterCredentials(driver1, sf.getUsername(), sf.getPassword());
+                genericSalesforceWebsiteActions.clickOnSubmitCredentials(driver1);
+                waitForPageToLoad(wait);
+                genericSalesforceWebsiteActions.logout(driver1,wait);
+            }
+
+        }
+        catch (Exception ex) {
+            logger.error(ex.getMessage());
+        }
+
+        finally {
+            driver1.kill();
+        }
+
+    }
+
+
+
+
     private void executeSyncUsers(Customer customer, SFUserManagerClient userManagerClient) throws Throwable {
         userManagerClient.setSfIntegrationServiceURL("http://localhost:8090/sfintegration");
         SyncProcessProgress syncResults = userManagerClient.syncUsers(customer.getCustomerId());
+        SFUsageStatsManagerClient sf = new SFUsageStatsManagerClient();
+//        sf.(customer.getCustomerId(), "walkThru");
         try {
 
 
@@ -172,7 +163,7 @@ public class SanityTest extends SeleniumTestBase{
         }
 
 
-        System.out.println("Sync finished");
+        System.out.println("Sync finished, Process:  " + syncResults.getProcessId() + " "  + userManagerClient.getSyncProcessProgress(syncResults.getProcessId()).getProcessStatus().toString());
     }
 
     private FirefoxDriver authenticateNewCustomer(FirefoxDriver driver1, Customer customer, SalesforceCredentials sfCredentials) throws IOException {
@@ -181,7 +172,7 @@ public class SanityTest extends SeleniumTestBase{
         driver1 = new FirefoxDriver();
 
         wait = new WebDriverWait(driver1, 15);
-        logger.info("Open login page - " + sf.getClientLogin() + " and Enter clientId");
+        logger.info("Open launchWebsiteAndlogin page - " + sf.getClientLogin() + " and Enter clientId");
         driver1.get(sf.getClientLogin());
         driver1.findElement(By.xpath("/html/body/form/input")).sendKeys(customer.getCustomerId());
 //            driver1.findElement(By.xpath("/html/body/form/input")).sendKeys("testCust728");
@@ -324,25 +315,7 @@ public class SanityTest extends SeleniumTestBase{
         FirefoxDriver driver1 = new FirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver1, 15);
 
-        logger.info("Open website " + sf.getUrl().toString() + " and login");
-        launchingWebsite(driver1, sf.getUrl().toString());
-        //Login Button not appear in sandbox because enter credentials appears
-        if (!sf.getEnvironment().contains("sandbox"))   {
-            clickOnLoginButton(driver1, wait);
-
-        }
-        enterCredentials(driver1, sf.getUsername(), sf.getPassword());
-        //Since SF open screen after login is different, wait fail
-        if (!sf.getEnvironment().contains("sandbox"))   {
-            clickOnSubmitCredentials(driver1);
-            waitForPageToLoad(wait);
-
-
-        }
-        else {
-            clickOnSubmitCredentialsForTesting(driver1);
-            wait.until(ExpectedConditions.titleContains("Console ~ salesforce.com - Enterprise Edition"));
-        }
+        genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver1, wait);
 
 
 //        SalesforceCustomObject[] customObject;
@@ -385,13 +358,13 @@ public class SanityTest extends SeleniumTestBase{
     @Test
     public void testPerformActivitiesNetformx() throws Exception {
         int numberOfNewAccounts = 1;
-        int numberOfUpdateAccounts = 20;
+        int numberOfUpdateAccounts = 7;
         int numberOfNewContacts = 1;
-        int numberOfUpdateContacts = 23;
+        int numberOfUpdateContacts = 9;
         int numberOfNewLeads = 1;
-        int numberOfUpdateLeads = 23;
+        int numberOfUpdateLeads = 10;
         int numberOfNewOpportunities = 1;
-        int numberOfUpdateOpportunities = 23;
+        int numberOfUpdateOpportunities = 8;
         FirefoxDriver driver1 = new FirefoxDriver();
         try {
 
@@ -400,14 +373,20 @@ public class SanityTest extends SeleniumTestBase{
 
             WebDriverWait wait = new WebDriverWait(driver1, 15);
 
-            logger.info("Open website " + sf.getUrl().toString() + " and login");
+            logger.info("Open website " + sf.getUrl().toString() + " and launchWebsiteAndlogin");
             launchingWebsite(driver1, sf.getUrl().toString());
 
             enterCredentials(driver1, sf.getUsername(), sf.getPassword());
-            //Since SF open screen after login is different, wait fail
+            //Since SF open screen after launchWebsiteAndlogin is different, wait fail
             clickOnSubmitCredentialsForTesting(driver1);
             navigateToUrl(driver1, wait, salesforceUrls.ACCOUNT.getValue());
 
+            //Create Opportunity
+            SalesforceOpportunities[] salesforceOpportunity = salesforceOpportunitiesActions.create(driver1, wait, numberOfNewOpportunities);
+            //Update Opportunity
+            updateOpportunityNTimes(driver1, wait, salesforceOpportunity[0], numberOfUpdateOpportunities);
+            //Delete Opportunity
+            salesforceOpportunitiesActions.delete(driver1, wait, salesforceOpportunity);
 
             //Create Contact
             SalesforceContacts[] salesforceContact =  salesforceContactActions.create(driver1, wait, numberOfNewContacts);
@@ -417,12 +396,6 @@ public class SanityTest extends SeleniumTestBase{
             salesforceContactActions.delete(driver1, wait, salesforceContact);
 
 
-            //Create Opportunity
-            SalesforceOpportunities[] salesforceOpportunity = salesforceOpportunitiesActions.create(driver1, wait, numberOfNewOpportunities);
-            //Update Opportunity
-            updateOpportunityNTimes(driver1, wait, salesforceOpportunity[0], numberOfUpdateOpportunities);
-            //Delete Opportunity
-            salesforceOpportunitiesActions.delete(driver1, wait, salesforceOpportunity);
 
             //Create Account
             SalesforceAccounts[] newAccounts = salesforceAccountActions.create(driver1, wait, numberOfNewAccounts);

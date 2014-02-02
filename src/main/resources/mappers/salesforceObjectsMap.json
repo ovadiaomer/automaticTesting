@@ -3,6 +3,7 @@
     "login.username.textfield.id":"username",
     "login.password.textfield.id":"password",
     "login.submit.button.id":"Login",
+    "logout.url":"secur/logout.jsp",
     "main.css":"html body div div#wrapper div#main div div.firstUserMain div.container",
     "recent.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[3]/div/div/div/form/table/tbody/tr/td/h3",
     "new.button.xpath":"/html/body/div/div[2]/table/tbody/tr/td[2]/div[3]/div/div/div/form/table/tbody/tr/td[2]/input",
