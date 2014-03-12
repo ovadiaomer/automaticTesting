@@ -1,8 +1,8 @@
 package applango.common.services.Salesforce;
 
-import applango.common.enums.salesforceButtons;
-import applango.common.enums.salesforceTextfields;
-import applango.common.enums.salesforceUrls;
+import applango.common.enums.salesforce.salesforceButtons;
+import applango.common.enums.salesforce.salesforceTextfields;
+import applango.common.enums.salesforce.salesforceUrls;
 import applango.common.services.beans.SalesforceLeads;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -73,11 +73,18 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
     private static String fillDetailsRandomly(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).isDisplayed());
         CharSequence leadName = "testLead"+ Calendar.getInstance().getTimeInMillis();
-        driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).sendKeys(leadName);
-        driver.findElement(By.id(salesforceTextfields.LEAD_LeadCompany.getValue())).sendKeys("applango");
-        driver.findElement(By.id(salesforceTextfields.LEAD_LeadRegion.getValue())).sendKeys("APAC");
-        driver.findElement(By.id(salesforceTextfields.LEAD_LeadSource.getValue())).sendKeys("Cold Call");
-        driver.findElement(By.id(salesforceTextfields.LEAD_LeadCountry.getValue())).sendKeys("Fiji");
+        try {
+
+
+            driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).sendKeys(leadName);
+            driver.findElement(By.id(salesforceTextfields.LEAD_LeadCompany.getValue())).sendKeys("applango");
+            driver.findElement(By.id(salesforceTextfields.LEAD_LeadRegion.getValue())).sendKeys("APAC");
+            driver.findElement(By.id(salesforceTextfields.LEAD_LeadSource.getValue())).sendKeys("Cold Call");
+            driver.findElement(By.id(salesforceTextfields.LEAD_LeadCountry.getValue())).sendKeys("Fiji");
+        }
+        catch (Exception ex) {
+            logger.info(ex.getMessage());
+        }
 
         logger.info("New lead name is " + leadName);
         return leadName.toString();

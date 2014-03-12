@@ -1,8 +1,8 @@
 package applango.common.services.Salesforce;
 
-import applango.common.enums.salesforceButtons;
-import applango.common.enums.salesforceTextfields;
-import applango.common.enums.salesforceUrls;
+import applango.common.enums.salesforce.salesforceButtons;
+import applango.common.enums.salesforce.salesforceTextfields;
+import applango.common.enums.salesforce.salesforceUrls;
 import applango.common.services.beans.SalesforceContacts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -89,9 +89,16 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
 
     private static String fillDetailsRandomly(FirefoxDriver driver) throws IOException {
         CharSequence contactName = "testContact"+ Calendar.getInstance().getTimeInMillis();
-        driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).sendKeys(contactName);
-        driver.findElement(By.id(salesforceTextfields.CONTACT_ContactAccountName.getValue())).sendKeys("danielt");
-        driver.findElement(By.id(salesforceTextfields.CONTACT_ContactCountry.getValue())).sendKeys("Israel");
+        try {
+            driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).sendKeys(contactName);
+            driver.findElement(By.id(salesforceTextfields.CONTACT_ContactAccountName.getValue())).sendKeys("danielt");
+            driver.findElement(By.id(salesforceTextfields.CONTACT_ContactCountry.getValue())).sendKeys("Israel");
+        }
+
+        catch (Exception ex)
+        {
+            logger.info(ex.getMessage());
+        }
 
         logger.info("New Contact name is " + contactName);
         return contactName.toString();

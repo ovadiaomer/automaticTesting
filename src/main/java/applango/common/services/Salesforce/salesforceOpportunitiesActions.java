@@ -1,8 +1,8 @@
 package applango.common.services.Salesforce;
 
-import applango.common.enums.salesforceButtons;
-import applango.common.enums.salesforceTextfields;
-import applango.common.enums.salesforceUrls;
+import applango.common.enums.salesforce.salesforceButtons;
+import applango.common.enums.salesforce.salesforceTextfields;
+import applango.common.enums.salesforce.salesforceUrls;
 import applango.common.services.beans.SalesforceOpportunities;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -69,10 +69,16 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         CharSequence opportunityName = "testOpp"+ Calendar.getInstance().getTimeInMillis();
         driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).sendKeys(opportunityName);
         sfOpportunity.setOpportunityName(opportunityName.toString());
-        driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityAccountName.getValue())).sendKeys(sfOpportunity.getAccountName());
-        driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityStage.getValue())).sendKeys(sfOpportunity.getStage());
-        driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityType.getValue())).sendKeys(sfOpportunity.getType());
-        driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityClosedDate.getValue())).sendKeys(sfOpportunity.getClosedDate());
+        try {
+            driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityAccountName.getValue())).sendKeys(sfOpportunity.getAccountName());
+            driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityStage.getValue())).sendKeys(sfOpportunity.getStage());
+            driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityType.getValue())).sendKeys(sfOpportunity.getType());
+            driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityClosedDate.getValue())).sendKeys(sfOpportunity.getClosedDate());
+
+        }
+        catch (Exception ex) {
+            logger.info(ex.getMessage());
+        }
         logger.info("New opportunityName name is " + opportunityName);
         return sfOpportunity;
     }

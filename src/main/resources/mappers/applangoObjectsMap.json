@@ -1,6 +1,17 @@
-{"home.site.string":"http://www.applango.com",
-"login.button.xpath":"/html/body/div/div/ul/li[6]/a",
-"login.username.textfield.id":"userName",
-"login.password.textfield.id":"password",
-"login.submit.button.xpath":"/html/body/div/div[2]/div/form/fieldset/div[2]/div[6]/input",
- "main.css":"html body div div#wrapper div#main div div.firstUserMain div.container"}
+{"login.username.textfield.id":"username",
+    "login.password.textfield.id":"password",
+    "login.submit.button.id":"Loginbutton",
+    "login.message.incorrect.xpath":"/html/body/div/div[2]",
+    "head.css.xpath":"/html/body/div[3]/div/div[3]",
+    "dashboard.from.year.dropdown.xpath":"/html/body/div[2]/div/div[2]/ul[2]/li/span/select",
+    "dashboard.until.year.dropdown.xpath":"/html/body/div[2]/div/div[2]/ul[2]/li/span/select[3]",
+    "dashboard.from.month.dropdown.xpath":"/html/body/div[2]/div/div[2]/ul[2]/li/span/select[2]",
+    "dashboard.until.month.dropdown.xpath":"/html/body/div[2]/div/div[2]/ul[2]/li/span/select[4]",
+    "dashboard.search.button.xpath":"/html/body/div[2]/div/div[2]/ul[2]/li/span/input",
+    "dashboard.search.lastName.textfield.xpath":"/html/body/div[3]/div/div[3]/div[3]/div[2]/input",
+    "dashboard.usertable.xpath":"/html/body/div[3]/div/div[3]/div[2]/table/tbody",
+    "dashboard.user.in.table.xpath":"/html/body/div[3]/div/div[3]/div[2]/table/tbody/tr/td",
+    "dashboard.histogram.xpath":"/html/body/div[3]/div/div[3]/div[4]"
+
+
+}

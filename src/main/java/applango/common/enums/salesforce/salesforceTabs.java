@@ -1,5 +1,6 @@
-package applango.common.enums;
+package applango.common.enums.salesforce;
 
+import applango.common.enums.jsonMaps;
 import applango.common.services.Mappers.objectMapper;
 
 import java.io.IOException;

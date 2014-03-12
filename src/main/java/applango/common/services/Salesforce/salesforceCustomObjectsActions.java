@@ -1,9 +1,9 @@
 package applango.common.services.Salesforce;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.salesforceButtons;
-import applango.common.enums.salesforceTextfields;
-import applango.common.enums.salesforceUrls;
+import applango.common.enums.salesforce.salesforceButtons;
+import applango.common.enums.salesforce.salesforceTextfields;
+import applango.common.enums.salesforce.salesforceUrls;
 import applango.common.services.beans.SalesforceCustomObject;
 import junit.framework.Assert;
 import org.openqa.selenium.By;

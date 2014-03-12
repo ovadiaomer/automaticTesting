@@ -1,9 +1,9 @@
 package applango.common.services.Salesforce;
 
-import applango.common.enums.salesforceButtons;
-import applango.common.enums.salesforceRecent;
-import applango.common.enums.salesforceTextfields;
-import applango.common.enums.salesforceUrls;
+import applango.common.enums.salesforce.salesforceButtons;
+import applango.common.enums.salesforce.salesforceRecent;
+import applango.common.enums.salesforce.salesforceTextfields;
+import applango.common.enums.salesforce.salesforceUrls;
 import applango.common.services.beans.SalesforceAccounts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -45,6 +45,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         newAccount.setAccountName(fillDetailsRandomly(driver));
 
         fillExtraDetails(driver);
+
 
         clickOnSave(driver);
         waitForPageToLoad(wait);
@@ -164,17 +165,33 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
 
     private static void fillExtraDetails(FirefoxDriver driver) throws IOException {
 
-        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).isDisplayed()) {
-            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).sendKeys("APAC");
+        try {
 
-        }
-        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).isDisplayed()) {
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).isDisplayed();
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).sendKeys("APAC");
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).isDisplayed();
             driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).sendKeys("w.com");
-        }
-        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).isDisplayed()) {
+            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).isDisplayed();
             driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).sendKeys("India");
         }
+        catch (Exception ex)
+        {
+            logger.info(ex.getMessage());
+        }
     }
+
+
+//        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).isDisplayed()) {
+//            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountRegion.getValue())).sendKeys("APAC");
+//
+//        }
+//        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).isDisplayed()) {
+//            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountWebsite.getValue())).sendKeys("w.com");
+//        }
+//        if (driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).isDisplayed()) {
+//            driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountCountry.getValue())).sendKeys("India");
+//        }
+
 
 
 }

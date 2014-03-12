@@ -3,10 +3,14 @@
     <environment id="production">
         <url>http://www.salesforce.com</url>
         <username>ovadia.omero@gmail.com</username>
-        <password>omer1982</password>
-        <accessToken></accessToken>
-        <clientSecret></clientSecret>
+        <password>omer1983</password>
+        <accessToken>3MVG99qusVZJwhskm2SrYINfbrJQka3Ah2Otl6hfJbvdPWR8ncbxaJkWx0m277mji0kTVCyPywd2uJFavh84s</accessToken>
+        <clientSecret>9128680489914768464</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>music</clientId>
+        <applangoUserId>applangoMusic</applangoUserId>
+        <applangoPasswordId>applangoMusic</applangoPasswordId>
+        <isSandbox>false</isSandbox>
         <clientId></clientId>
     </environment>
     <environment id="developer">
@@ -16,7 +20,9 @@
         <accessToken></accessToken>
         <clientSecret></clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId></clientId>
+        <applangoUserId>1</applangoUserId>
+        <clientId>1</clientId>
+        <isSandbox>false</isSandbox>
     </environment>
     <environment id="testing-prodBeta">
         <url>http://www.salesforce.com</url>
@@ -26,7 +32,10 @@
         <clientSecret>7503168071949708689</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
         <clientId>omerTest</clientId>
+        <applangoUserId>applango</applangoUserId>
+        <applangoPasswordId>applango</applangoPasswordId>
         <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
+        <isSandbox>false</isSandbox>
     </environment>
     <environment id="testing-qa">
         <url>http://www.salesforce.com</url>
@@ -38,7 +47,9 @@
         <clientId>testCust66</clientId>
         <connectedApp>walkThru</connectedApp>
         <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
+        <applangoUserId>1</applangoUserId>
         <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
+        <isSandbox>false</isSandbox>
     </environment>
     <environment id="netformx-sandbox">
         <url>https://test.salesforce.com</url>
@@ -50,6 +61,23 @@
         <clientId>omer1TestAuto1</clientId>
         <connectedApp>1</connectedApp>
         <clientLogin>1</clientLogin>
+        <applangoUserId>1</applangoUserId>
         <securityToken>1</securityToken>
+        <isSandbox>true</isSandbox>
+    </environment>
+    <environment id="omerqa">
+        <url>https://www.salesforce.com</url>
+        <!--username>omerqa@applango.com</username-->
+        <username>omerqa@applango.com</username>
+        <password>omer1982</password>
+        <accessToken>3MVG9A2kN3Bn17hsVnmueHI2OSaOn6O_J8PtsZeijDQ6TSd.cojflHn41PDhLEKuDc_m.TYQgKpFJVtv1F8FI</accessToken>
+        <clientSecret>8869251231301639512</clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>omerqa</clientId>
+        <connectedApp>omerqa</connectedApp>
+        <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
+        <securityToken>1</securityToken>
+        <applangoUserId>omerqa</applangoUserId>
+        <isSandbox>false</isSandbox>
     </environment>
 </saleforce>

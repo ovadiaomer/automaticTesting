@@ -1,6 +1,7 @@
 package applango.common.services.Mappers;
 
 import applango.common.SeleniumTestBase;
+import applango.common.services.beans.Applango;
 import applango.common.services.beans.Database;
 import applango.common.services.beans.Salesforce;
 import org.w3c.dom.Document;
@@ -100,6 +101,8 @@ public class readFromConfigurationFile extends SeleniumTestBase {
                     salesforce.setClientId(eElement.getElementsByTagName("clientId").item(0).getFirstChild().getTextContent());
                     salesforce.setClientLogin(eElement.getElementsByTagName("clientLogin").item(0).getFirstChild().getTextContent());
                     salesforce.setSecurityToken(eElement.getElementsByTagName("securityToken").item(0).getFirstChild().getTextContent());
+                    salesforce.setApplangoUserId(eElement.getElementsByTagName("applangoUserId").item(0).getFirstChild().getTextContent());
+                    salesforce.setIsSandbox(eElement.getElementsByTagName("isSandbox").item(0).getFirstChild().getTextContent());
                 }
             }
 
@@ -109,6 +112,42 @@ public class readFromConfigurationFile extends SeleniumTestBase {
 
         }
         return salesforce;
+    }
+    public static Applango getApplangoConfigurationFileByEnvironmentId(String applangoEnvironmentId) throws IOException, ParserConfigurationException, SAXException {
+        Applango applango= new Applango();
+        configurationXmlPath = "src/main/resources/data/applango-configuration.xml";
+        try {
+
+            Document doc = getDocument(configurationXmlPath);
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+
+            NodeList nList = doc.getElementsByTagName("environment");
+
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+                Node nNode = nList.item(temp);
+
+
+                if (((nNode.getNodeType() == Node.ELEMENT_NODE))
+                        &&
+                        (nNode.getAttributes().item(0).toString().contains(applangoEnvironmentId)))
+                {
+                    logger.info("Init applango object by applango-configuration.xml");
+                    Element eElement = (Element) nNode;
+                    applango.setEnvironment(nNode.getAttributes().item(0).toString());
+                    applango.setUrl(eElement.getElementsByTagName("url").item(0).getFirstChild().getTextContent());
+                    applango.setPassword(eElement.getElementsByTagName("password").item(0).getFirstChild().getTextContent());
+                    applango.setUsername(eElement.getElementsByTagName("username").item(0).getFirstChild().getTextContent());
+                }
+            }
+
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            e.printStackTrace();
+
+        }
+        return applango;
     }
 
 

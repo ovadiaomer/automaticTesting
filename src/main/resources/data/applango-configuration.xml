@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<saleforce>
+    <environment id="qa">
+        <url>https://applangoqa2.cloudapp.net/dashboard/login.html#/</url>
+        <username>omer</username>
+        <password>omer</password>
+    </environment>
+</saleforce>

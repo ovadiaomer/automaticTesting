@@ -1,4 +1,4 @@
-package applango.common.enums;
+package applango.common.enums.salesforce;
 
 /**
  * Created with IntelliJ IDEA.

@@ -2,6 +2,7 @@ package applango.common.services.Salesforce;
 
 import applango.common.SeleniumTestBase;
 import applango.common.enums.*;
+import applango.common.enums.salesforce.*;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.Mappers.readFromConfigurationFile;
 import applango.common.services.beans.Salesforce;
@@ -34,6 +35,7 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     public static Salesforce getSalesforceConfigurationXML() throws IOException, ParserConfigurationException, SAXException {
         configPropertiesMapper = objectMapper.getConfigProperties();
+        //Getting the value of salesforce parameter from config.properties file
         String salesfoceEnvironment = configPropertiesMapper.get(SALESFORCE_ENVIRONMENT).toString();
         Salesforce salesforce = readFromConfigurationFile.getSalesfoceConfigurationFileByenvironmentId(salesfoceEnvironment);
         return salesforce;
@@ -252,4 +254,11 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
     }
 
 
+    public static void enterCredentials(FirefoxDriver driver, String username, String password) throws IOException {
+
+        logger.info("Entering credentials and pressing on login (username= " + username + ", password= " + password +")");
+
+        driver.findElement(By.id(salesforceTextfields.MAIN_LoginUsername.getValue().toString())).sendKeys(username);
+        driver.findElement(By.id(salesforceTextfields.MAIN_LoginPassword.getValue())).sendKeys(password);
+    }
 }

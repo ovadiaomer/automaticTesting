@@ -17,7 +17,7 @@ public class objectMapper {
         return mapper.readValue(Thread.currentThread().getContextClassLoader().getResource(jsonMapObject.getValue().toString()), Map.class);
     }
 
-    public static Map   getConfigProperties() throws IOException {
+    public static Map getConfigProperties() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 //        URL envURL = SanityTest.class.getClassLoader().getResource(configPropertiesPath);
 //        return mapper.readValue(envURL, Map.class);

@@ -2,7 +2,7 @@ package applango.common;
 
 //import org.apache.commons.logging.impl.Log4JLogger;
 
-import applango.common.enums.salesforceTextfields;
+import applango.common.services.beans.Applango;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
@@ -11,8 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+
+import static applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions.getApplangoConfigurationXML;
 
 //import java.util.logging.Logger;
 
@@ -22,20 +26,14 @@ public class SeleniumTestBase {
 
 
     @BeforeClass
-    public static void setUpBase() {
+    public static void setUpBase() throws ParserConfigurationException, SAXException, IOException {
         logger.info("+++++++++++++++++++++ SetUp Base +++++++++++++++++++++");
-
     }
 
-    protected static void enterCredentials(FirefoxDriver driver, String username, String password) throws IOException {
-        logger.info("Entering credentials and pressing on login (username= " + username + ", password= " + password +")");
-        driver.findElement(By.id(salesforceTextfields.MAIN_LoginUsername.getValue().toString())).sendKeys(username);
-        driver.findElement(By.id(salesforceTextfields.MAIN_LoginPassword.getValue())).sendKeys(password);
-    }
-
-    protected static void launchingWebsite(FirefoxDriver driver, String websiteAdress) {
+    public static void launchingWebsite(FirefoxDriver driver, String websiteAdress) {
         logger.info("Launching " + websiteAdress);
         driver.navigate().to(websiteAdress);
+
     }
 
     protected static void checkThatPageLoaded(String mainScreenCss, WebDriverWait wait) {

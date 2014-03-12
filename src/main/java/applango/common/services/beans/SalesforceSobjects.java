@@ -1,8 +1,7 @@
 package applango.common.services.beans;
 
-import applango.common.enums.salesforceSObjectMovement;
+import applango.common.enums.salesforce.salesforceSObjectMovement;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Calendar;

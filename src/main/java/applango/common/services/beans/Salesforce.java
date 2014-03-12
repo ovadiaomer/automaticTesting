@@ -16,6 +16,24 @@ public class Salesforce {
     String loginUrl;
     String clientSecret;
     String clientId;
+    String applangoUserId;
+    String isSandbox;
+
+    public String getApplangoUserId() {
+        return applangoUserId;
+    }
+
+    public void setApplangoUserId(String applangoUserId) {
+        this.applangoUserId = applangoUserId;
+    }
+
+    public String isSandbox() {
+        return isSandbox;
+    }
+
+    public void setIsSandbox(String sandbox) {
+        isSandbox = sandbox;
+    }
 
     String securityToken;
 
@@ -105,4 +123,6 @@ public class Salesforce {
     public void salesforce() {
 
     }
+
+
 }

@@ -1,6 +1,6 @@
 package applango.common.services.Salesforce;
 
-import applango.common.enums.*;
+import applango.common.enums.salesforce.*;
 import applango.common.services.beans.SalesforceSobjects;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
