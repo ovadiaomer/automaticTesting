@@ -27,7 +27,7 @@
     <environment id="testing-prodBeta">
         <url>http://www.salesforce.com</url>
         <username>omer.ovadia@applango.net</username>
-        <password>omer1982</password>
+        <password>omer1983</password>
         <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wFcAtrXQR8g_gXDh62PMoOkRq8iCkiSDZkVdI3SzWBO.O0bd31KPAgAKZQtT</accessToken>
         <clientSecret>7503168071949708689</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
@@ -37,14 +37,28 @@
         <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
         <isSandbox>false</isSandbox>
     </environment>
+    <environment id="testing-qa1">
+        <url>http://www.salesforce.com</url>
+        <username>omer.ovadia@applango.net</username>
+        <password>omer1983</password>
+        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wO.nH5cQNvHcYv3do0xDvruR7vmDGfEc4YmCwpOKCFrQFLwSqfRYntRzSulX</accessToken>
+        <clientSecret>473287191571074338</clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>omerTest4</clientId>
+        <connectedApp>walkThru</connectedApp>
+        <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
+        <applangoUserId>1</applangoUserId>
+        <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
+        <isSandbox>false</isSandbox>
+    </environment>
     <environment id="testing-qa">
         <url>http://www.salesforce.com</url>
         <username>omer.ovadia@applango.net</username>
-        <password>omer1982</password>
-        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wKCuR16NmPdCf.7A0_hI24H3lPZ1kUqUlM.CngG7IUPp7Cnu6MI6wgdkgyiH</accessToken>
-        <clientSecret>7581599953914068391</clientSecret>
+        <password>omer1983</password>
+        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wO.nH5cQNvHcYv3do0xDvruR7vmDGfEc4YmCwpOKCFrQFLwSqfRYntRzSulX</accessToken>
+        <clientSecret>473287191571074338</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>testCust66</clientId>
+        <clientId>automationCustomer</clientId>
         <connectedApp>walkThru</connectedApp>
         <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
         <applangoUserId>1</applangoUserId>

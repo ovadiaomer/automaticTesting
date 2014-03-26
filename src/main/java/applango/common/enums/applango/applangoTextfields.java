@@ -42,6 +42,63 @@ public enum applangoTextfields {
 
         }
     },
+    CURRENT_PASSWORD{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.change.password.current.password.xpath").toString();
+
+
+        }
+    },
+    NEW_PASSWORD{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.change.password.new.password.xpath").toString();
+
+
+        }
+    },
+    CONFIRM_PASSWORD{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.change.password.confirm.password.xpath").toString();
+
+
+        }
+    },
+    APPLICATION_CLIENT_KEY{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.client.key.textfield.xpath").toString();
+
+
+        }
+    },
+    APPLICATION_CLIENT_SECRET{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.client.secret.textfield.xpath").toString();
+
+
+        }
+    },
+    FORGOT_PASSWORD_USERNAME{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.forgot.password.textfield.xpath").toString();
+
+
+        }
+    }
+
+
+
 
 
     ;

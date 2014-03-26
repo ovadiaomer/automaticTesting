@@ -3,7 +3,7 @@ package applango.common.tests;
 import applango.common.SeleniumTestBase;
 import applango.common.enums.jsonMaps;
 import applango.common.enums.requestType;
-import applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions;
+import applango.common.services.Applango.genericApplangoWebsiteActions;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
 import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
@@ -83,8 +83,6 @@ public class SanityTest extends SeleniumTestBase{
 
         try {
             List<BasicNameValuePair> urlParameters = new ArrayList<BasicNameValuePair>();
-//            urlParameters.add(new BasicNameValuePair("customerId", "omer0801"));
-//            restAPI.executePostRequest("http://localhost:8090/managerservices/customer-manager/cm-rest/customer", urlParameters);
             restAPI.executeRequest(requestType.GET.getValue(), "http://www.google.com", null);
             restAPI.executeGetRequest("http://www.google.com");
             launchingWebsite(driver1, websiteAddress);
@@ -133,9 +131,9 @@ public class SanityTest extends SeleniumTestBase{
 
 
 //        logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-//        String json_Omer = "{FirstName : 'Omer', FamilyName : 'Ovadia'," +
-//                "Age : 31, Sex : 'Male', Color : 'Blue'}";
-//        mongoCollection. dbObjectOmer = () JSON.parse(json_Omer);
+        String json_Omer = "{FirstName : 'Omer', FamilyName : 'Ovadia'," +
+                "Age : 31, Sex : 'Male', Color : 'Blue'}";
+//        mongoCollection dbObjectOmer = () JSON.parse(json_Omer);
 //        String json_Becky = "{FirstName : 'Becky', FamilyName : 'Ovadia'," +
 //                "Age : 27, Sex : 'Female', Color : 'Red'}";
 //        com.mongodb.DBObject json_externalObjectActivity = (com.mongodb.DBObject) JSON.parse(json_Becky);
@@ -189,19 +187,6 @@ public class SanityTest extends SeleniumTestBase{
         WebDriverWait wait = new WebDriverWait(driver1, 15);
         genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver1, wait);
         try {
-//        launchingWebsite(driver1, sf.getUrl().toString());
-//        clickOnLoginButtonAndWaitForUserListToLoad(driver1, wait);
-//        enterCredentials(driver1, sf.getUsername(), sf.getPassword());
-
-//        SalesforceCustomObject[] customObject;
-//        customObject = salesforceCustomObjectsActions.createNewCustomObject(driver, wait, 4);
-
-//        customObject[0].setObjectId("01Ib0000000EeWu");
-//        customObject[0].setTrigger(salesforceCustomObjectsActions.getTriggers(driver, wait, customObject[0]));
-//        SalesforceCustomObject newCustomObject = new SalesforceCustomObject(customObject[0].getObjectName() + "-updated");
-//        salesforceCustomObjectsActions.updateCustomObject(driver, wait, customObject[0], newCustomObject);
-////        salesforceCustomObjectsActions.deleteCustomObject(driver, wait, customObject[0], salesforceButtons.CUSTOM_OBJECT_DELETE);
-//
             //Create Contact
             int numberOfNewContacts = 1;
             int numberOfUpdateContacts = 2;

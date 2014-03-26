@@ -44,7 +44,63 @@ public enum applangoObject {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.histogram.xpath").toString();
         }
+    },
+    ACCOUNT_TITLE{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.user.account.pagetitle.xpath").toString();
+        }
+    },
+    CHANGE_PASSWORD_MESSAGE{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.change.password.message.xpath").toString();
+        }
+    },
+    AUTHENTICATION_HEADER{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.application.settings.header").toString();
+        }
+    },
+    AUTHENTICATION_CLICK_HERE_LINK{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.application.authenticate.link.xpath").toString();
+
+
+        }
+    },
+    AUTHENTICATION_AUTHENTICATED_SUCCESSFULLY{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.application.authenticated.message.xpath").toString();
+
+
+        }
+    },
+    AUTHENTICATION_AUTHENTICATED_SUCCESSFULLY_IN_DASHBOARD{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.application.authenticated").toString();
+
+
+        }
+    },
+    RECOVER_PASSWORD_REQUEST_SENT{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.recover.password.request.sent.label.xpath").toString();
+
+
+        }
     }
+
+
 
 
 

@@ -259,6 +259,5 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         logger.info("Entering credentials and pressing on login (username= " + username + ", password= " + password +")");
 
         driver.findElement(By.id(salesforceTextfields.MAIN_LoginUsername.getValue().toString())).sendKeys(username);
-        driver.findElement(By.id(salesforceTextfields.MAIN_LoginPassword.getValue())).sendKeys(password);
-    }
+        driver.findElement(By.id(salesforceTextfields.MAIN_LoginPassword.getValue())).sendKeys(password);    }
 }

@@ -11,7 +11,28 @@
     "dashboard.search.lastName.textfield.xpath":"/html/body/div[3]/div/div[3]/div[3]/div[2]/input",
     "dashboard.usertable.xpath":"/html/body/div[3]/div/div[3]/div[2]/table/tbody",
     "dashboard.user.in.table.xpath":"/html/body/div[3]/div/div[3]/div[2]/table/tbody/tr/td",
-    "dashboard.histogram.xpath":"/html/body/div[3]/div/div[3]/div[4]"
-
+    "dashboard.histogram.xpath":"/html/body/div[3]/div/div[3]/div[4]",
+    "dashboard.user.dropdown":"/html/body/div/div/div/span[3]/ul[2]/li[2]/a",
+    "dashboard.user.account":"/html/body/div/div/div/span[3]/ul[2]/li[2]/ul/li[2]/span",
+    "dashboard.user.account.pagetitle.xpath":"/html/body/div[2]/div/div",
+    "dashboard.change.password.xpath":"/html/body/div[3]/div/div/input",
+    "dashboard.change.password.submit.xpath":"/html/body/div[3]/div/div/div/input",
+    "dashboard.change.password.current.password.xpath":"/html/body/div[3]/div/div/div/span[2]/input",
+    "dashboard.change.password.new.password.xpath":"/html/body/div[3]/div/div/div/span[3]/input",
+    "dashboard.change.password.confirm.password.xpath":"/html/body/div[3]/div/div/div/span[4]/input",
+    "dashboard.change.password.message.xpath":"/html/body/div[3]/div/div/div/span",
+    "dashboard.application.settings.button.xpath":"/html/body/div[2]/div/div[2]/ul/img",
+    "dashboard.client.key.textfield.xpath":"/html/body/div[3]/div/div/div/input",
+    "dashboard.client.secret.textfield.xpath":"/html/body/div[3]/div/div/div/input[2]",
+    "dashboard.application.settings.header":"/html/body/div[2]/div/div",
+    "dashboard.application.settings.submit.xpath":"/html/body/div[3]/div/div/div/button",
+    "dashboard.application.authenticate.link.xpath":"/html/body/div[3]/div/div/div[3]/a",
+    "dashboard.application.verify.button.xpath":"/html/body/div[3]/div/div/div[4]/button",
+    "dashboard.application.authenticated.message.xpath":"/html/body/div/span/div[2]/div",
+    "dashboard.application.authenticated":"/html/body/div[3]/div/div/p",
+    "dashboard.forgot.password.button.xpath":"/html/body/div/div[4]/div/form/div[6]/span",
+    "dashboard.recover.password.button.xpath":"/html/body/div/div[4]/div/form/div[7]/button",
+    "dashboard.forgot.password.textfield.xpath":"/html/body/div/div[4]/div/form/div[7]/span/input",
+    "dashboard.recover.password.request.sent.label.xpath":"/html/body/div/div[4]/div/form/div[7]/span/label"
 
 }

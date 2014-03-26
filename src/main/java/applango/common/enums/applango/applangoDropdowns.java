@@ -36,7 +36,20 @@ public enum applangoDropdowns {
             return applangoObjectMap.get("dashboard.until.month.dropdown.xpath").toString();
         }
 
-    };
+    },
+    USER_MENU{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.user.dropdown").toString();
+        }
+
+    }
+
+
+
+
+
+    ;
 
     public abstract String path() throws IOException;
 

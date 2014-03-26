@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <databases>
+    <database id="qa-it">
+        <dbName>qa-it</dbName>
+        <url>204.232.247.134</url>
+        <port>15101</port>
+        <username>applango-qa@applango.com</username>
+        <password>!SaaSDud3!</password>
+    </database>
     <database id="test">
         <url>localhost</url>
         <port>27017</port>

@@ -1,15 +1,16 @@
 package applango.common.services.beans;
 
-public class Database {
+/**
+ * Created with IntelliJ IDEA.
+ * User: omer.ovadia
+ * Date: 17/11/13
+ * Time: 13:15
+ * To change this template use File | Settings | File Templates.
+ */
+public class Gmail {
     String url;
-    String dbName;
-    int port;
     String username;
     String password;
-
-    public void database() {
-
-    }
 
     public String getUrl() {
         return url;
@@ -17,22 +18,6 @@ public class Database {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
-    public String getDbName() {
-        return dbName;
-    }
-
-    public void setDbName(String dbName) {
-        this.dbName = dbName;
     }
 
     public String getUsername() {
@@ -50,5 +35,4 @@ public class Database {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

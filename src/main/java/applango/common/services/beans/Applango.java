@@ -10,7 +10,55 @@ package applango.common.services.beans;
 public class Applango {
     String url;
     String username;
+    String primaryEmail;
+
+    String primaryEmailPassword;
     String password;
+    String userForoAuth;
+    String passwordForoAuth;
+
+    public String getPrimaryEmailPassword() {
+        return primaryEmailPassword;
+    }
+
+    public void setPrimaryEmailPassword(String primaryEmailPassword) {
+        this.primaryEmailPassword = primaryEmailPassword;
+    }
+
+    public String getPrimaryEmail() {
+        return primaryEmail;
+    }
+
+    public void setPrimaryEmail(String primaryEmail) {
+        this.primaryEmail = primaryEmail;
+    }
+
+    public String getCustomerForoAuth() {
+        return customerForoAuth;
+    }
+
+    public void setCustomerForoAuth(String customerForoAuth) {
+        this.customerForoAuth = customerForoAuth;
+    }
+
+    String customerForoAuth;
+
+    public String getUserForoAuth() {
+        return userForoAuth;
+    }
+
+    public void setUserForoAuth(String userForoAuth) {
+        this.userForoAuth = userForoAuth;
+    }
+
+    public String getPasswordForoAuth() {
+        return passwordForoAuth;
+    }
+
+    public void setPasswordForoAuth(String passwordForoAuth) {
+        this.passwordForoAuth = passwordForoAuth;
+    }
+
     String environment;
 
     public String getUrl() {

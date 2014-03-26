@@ -2,7 +2,12 @@ package applango.common;
 
 //import org.apache.commons.logging.impl.Log4JLogger;
 
-import applango.common.services.beans.Applango;
+import applango.common.services.Mappers.objectMapper;
+import applango.common.services.Mappers.readFromConfigurationFile;
+import applango.common.services.beans.Database;
+import com.mongodb.DB;
+import com.mongodb.MongoClient;
+import com.mongodb.WriteConcern;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
@@ -15,14 +20,33 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-
-import static applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions.getApplangoConfigurationXML;
+import java.net.UnknownHostException;
+import java.util.Map;
 
 //import java.util.logging.Logger;
 
 public class SeleniumTestBase {
 
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
+
+    private static Map configPropertiesMapper;
+
+    public static Database getDatabaseConfigurationXML() throws IOException, ParserConfigurationException, SAXException {
+        configPropertiesMapper = objectMapper.getConfigProperties();
+        //Getting the value of database parameter from config.properties file
+        String dbEnvironment = configPropertiesMapper.get("database").toString();
+        //Setting values applango-configuration.xml in applango object
+        Database db = readFromConfigurationFile.getDatabaseConfigurationFileByDbName(dbEnvironment);
+        return db;
+    }
+
+    public static DB connectToDB(Database dbProperties) throws UnknownHostException {
+        MongoClient mongoClient = new MongoClient(dbProperties.getUrl(), dbProperties.getPort());
+        DB db = mongoClient.getDB(dbProperties.getDbName());
+        boolean auth = db.authenticate(dbProperties.getUsername(), dbProperties.getPassword().toCharArray());
+        mongoClient.setWriteConcern(WriteConcern.JOURNALED);
+        return db;
+    }
 
 
     @BeforeClass
