@@ -3,6 +3,7 @@ package applango.common.services.Salesforce;
 import applango.common.enums.salesforce.salesforceButtons;
 import applango.common.enums.salesforce.salesforceTextfields;
 import applango.common.enums.salesforce.salesforceUrls;
+import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceLeads;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -121,4 +122,11 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
         }
     }
 
+    public static  void salesforcePerformActivitiesInLeads(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewLeads, int numOfUpdateLeads) throws IOException {
+
+        //Create Lead
+        SalesforceLeads[] salesforceLeads =  create(driver2, wait2, numOfNewLeads);
+        //Update the Lead x times
+        updateLeadNTimes(driver2, wait2, salesforceLeads[0], numOfUpdateLeads);
+    }
 }

@@ -21,7 +21,9 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 //import java.util.logging.Logger;
 
@@ -72,4 +74,14 @@ public class SeleniumTestBase {
     }
 
 
+    protected static String controlAndSwitchWindow(FirefoxDriver driver1) {
+        Set<String> windowId = driver1.getWindowHandles();    // get  window id of current window
+        Iterator<String> it = windowId.iterator();
+
+        String mainWinID = it.next();
+        String  newAdwinID = it.next();
+
+        driver1.switchTo().window(newAdwinID);
+        return mainWinID;
+    }
 }

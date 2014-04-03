@@ -55,18 +55,18 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
     }
     public static void launchWebsiteAndlogin(Salesforce sf, FirefoxDriver driver1, WebDriverWait wait) throws IOException {
         logger.info("Open website " + sf.getUrl().toString() + " and launchWebsiteAndlogin");
-        launchingWebsite(driver1, sf.getUrl().toString());
+        launchingWebsite(driver1, sf.getLoginUrl().toString());
         //Login Button not appear in sandbox because enter credentials appears
         login(sf, driver1, wait);
     }
 
     public static void login(Salesforce sf, FirefoxDriver driver1, WebDriverWait wait) throws IOException {
 
-        if (!sf.getEnvironment().contains("sandbox"))   {
-            clickOnLoginButton(driver1, wait);
-
-
-        }
+//        if (!sf.getEnvironment().contains("sandbox"))   {
+//            clickOnLoginButton(driver1, wait);
+//
+//
+//        }
         enterCredentials(driver1, sf.getUsername(), sf.getPassword());
         //Since SF open screen after launchWebsiteAndlogin is different, wait fail
         if (!sf.getEnvironment().contains("sandbox"))   {

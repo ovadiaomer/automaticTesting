@@ -7,32 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Gmail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/database/dbTables.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/data/gmail-configuration.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json" />
-      <change type="MOVED" beforePath="C:\app-project\AutomaticTesting\src\main\java\applango\common\services\ApplangoWebsite\genericApplangoWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/gmail/gmailButtons.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/gmail/gmailTextfields.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/monthsNumeric.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/salesforce/salesforceRanks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceOpportunities.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceOpportunities.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoButtons.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoButtons.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoDropdowns.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoDropdowns.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoObject.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json" afterPath="$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoTextfields.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoTextfields.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/data/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/database-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/database-configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/omer_ovadia.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/omer_ovadia.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/gmail-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/gmail-configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json" afterPath="$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceAccountActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceContactActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceLeadActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
@@ -40,9 +39,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1395241293542" ignored="false" />
     <file path="/LoginPage.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381239247413" ignored="false" />
-    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395850197686" ignored="false" />
+    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396534071304" ignored="false" />
     <file path="/CreateUser.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382262684204" ignored="false" />
-    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1395737446856" ignored="false" />
+    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1396532712773" ignored="false" />
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
     <file path="/SeleniumBaseTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267638173" ignored="false" />
     <file path="$PROJECT_DIR$/../selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267697907" ignored="false" />
@@ -82,11 +81,11 @@
     <file path="/salesforce-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1395652853756" ignored="false" />
     <file path="/Salesforce.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1391943145856" ignored="false" />
     <file path="/genericWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394461189100" ignored="false" />
-    <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395847700690" ignored="false" />
-    <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394460001601" ignored="false" />
+    <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396537421451" ignored="false" />
+    <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396513399546" ignored="false" />
     <file path="/salesforceObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1391084247956" ignored="false" />
     <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395851304963" ignored="false" />
-    <file path="/jsonMaps.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1384773122711" ignored="false" />
+    <file path="/jsonMaps.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396452661564" ignored="false" />
     <file path="/salesforceRecent.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1385891318556" ignored="false" />
     <file path="/salesforceTabs.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1386065878764" ignored="false" />
     <file path="/salesforceButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390388518376" ignored="false" />
@@ -177,26 +176,30 @@
     <file path="$PROJECT_DIR$/../applango/dataaccess/src/main/java/com/applango/dal/AppInfoDAOMongoImpl.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1391682151750" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/dashboard/src/main/webapp/js/controllers2.js" changelist="2c65d532-f314-485a-a005-237161801969" time="1391682151750" ignored="false" />
     <file path="/Applango.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395248595799" ignored="false" />
-    <file path="/applango-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1395847286565" ignored="false" />
-    <file path="/applangoObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1395847463083" ignored="false" />
+    <file path="/applango-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1396193534067" ignored="false" />
+    <file path="/applangoObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1396527761810" ignored="false" />
     <file path="/applangoTextfields.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395844976308" ignored="false" />
-    <file path="/applangoButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395844890861" ignored="false" />
-    <file path="/applangoObject.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395847523682" ignored="false" />
-    <file path="/dashboardTests.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395850999303" ignored="false" />
+    <file path="/applangoButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396528098374" ignored="false" />
+    <file path="/applangoObject.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396527876049" ignored="false" />
+    <file path="/dashboardTests.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396538323224" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/org/junit/Test.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394468431780" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/commonAPI/src/main/java/com/applango/restservices/SyncProcessProgressManagerRest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394533026086" ignored="false" />
     <file path="/applangoDropdowns.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394704288710" ignored="false" />
     <file path="/applangoDropdown.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394615475881" ignored="false" />
     <file path="/months.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394617492822" ignored="false" />
-    <file path="/applangoMessages.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395847654978" ignored="false" />
+    <file path="/applangoMessages.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396527992358" ignored="false" />
     <file path="/applangoToolsCommand.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395588225816" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/commonAPI/src/main/java/com/applango/services/UserManager.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395234746457" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/dataaccess/src/test/java/com/applango/dal/OAuth2CredentialsDAOIT.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395241457514" ignored="false" />
     <file path="/Database.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395322193211" ignored="false" />
     <file path="/dbTables.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395655963831" ignored="false" />
-    <file path="/gmailObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1395849770408" ignored="false" />
+    <file path="/gmailObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1396451330922" ignored="false" />
     <file path="/gmail-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1395851375101" ignored="false" />
-    <file path="/genericGmailWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395850910008" ignored="false" />
+    <file path="/genericGmailWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396533897239" ignored="false" />
+    <file path="/salesforceRanks.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396365371116" ignored="false" />
+    <file path="/monthsNumeric.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396440281110" ignored="false" />
+    <file path="/gmailButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396517016725" ignored="false" />
+    <file path="/gmailTextfields.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396453179284" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,173 +227,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="341" class="applango.common.tests.SanityTest" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="330" class="applango.common.tests.SanityTest" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" line="181" class="applango.common.services.Applango.genericApplangoWebsiteActions" package="applango.common.services.Applango">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="152" class="applango.common.tests.dashboardTests" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="94" class="applango.common.tests.dashboardTests" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="149" class="applango.common.tests.dashboardTests" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="207" class="applango.common.tests.dashboardTests" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="65" class="applango.common.tests.dashboardTests" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="345" class="applango.common.tests.dashboardTests" package="applango.common.tests">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" line="166" class="applango.common.services.Mappers.readFromConfigurationFile" package="applango.common.services.Mappers">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" line="65" class="applango.common.services.Mappers.readFromConfigurationFile" package="applango.common.services.Mappers">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -427,7 +264,173 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="341" class="applango.common.tests.SanityTest" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/SanityTest.java" line="330" class="applango.common.tests.SanityTest" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" line="185" class="applango.common.services.Applango.genericApplangoWebsiteActions" package="applango.common.services.Applango">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" line="366" class="applango.common.services.Applango.genericApplangoWebsiteActions" package="applango.common.services.Applango">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="55" class="applango.common.tests.dashboardTests" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="213" class="applango.common.tests.dashboardTests" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" line="64" class="applango.common.services.Salesforce.genericSalesforceWebsiteActions" package="applango.common.services.Salesforce">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="188" class="applango.common.tests.dashboardTests" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="178" class="applango.common.tests.dashboardTests" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java" line="86" class="applango.common.services.Gmail.genericGmailWebsiteActions" package="applango.common.services.Gmail">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" line="332" class="applango.common.tests.dashboardTests" package="applango.common.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -437,32 +440,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboardTests.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dashboardTests.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="337" column="31" selection-start="17739" selection-end="17739" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#controlAndSwitchWindow#0;class#dashboardTests#0" expanded="false" />
-                <element signature="method#checkRecordCreatedInDB#0;class#dashboardTests#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applango-configuration.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="355" selection-end="373" vertical-scroll-proportion="0.0">
+            <state line="421" column="0" selection-start="22930" selection-end="23077" vertical-scroll-proportion="0.43917525">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gmailObjectsMap.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json">
+      <file leaf-file-name="applangoObjectsMap.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="-0.0">
+            <state line="19" column="81" selection-start="1476" selection-end="1511" vertical-scroll-proportion="-2.6666667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applangoButtons.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoButtons.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="44" selection-start="412" selection-end="412" vertical-scroll-proportion="-6.48">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applangoObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="42" selection-start="220" selection-end="220" vertical-scroll-proportion="-2.4">
               <folding />
             </state>
           </provider>
@@ -471,18 +479,25 @@
       <file leaf-file-name="genericGmailWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="99" column="19" selection-start="4603" selection-end="4603" vertical-scroll-proportion="-7.2">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
+      <file leaf-file-name="gmailButtons.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/gmail/gmailButtons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="26" column="33" selection-start="714" selection-end="714" vertical-scroll-proportion="-3.04">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gmailObjectsMap.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="41" selection-start="1258" selection-end="1295" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
@@ -491,43 +506,16 @@
       <file leaf-file-name="genericApplangoWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="49" selection-start="1151" selection-end="1193" vertical-scroll-proportion="0.0">
+            <state line="420" column="0" selection-start="23578" selection-end="23578" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readFromConfigurationFile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
+      <file leaf-file-name="applangoMessages.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="38" selection-start="3007" selection-end="3007" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DocumentBuilder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/parsers/DocumentBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="0" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gmail-configuration.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/data/gmail-configuration.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="18" selection-start="377" selection-end="377" vertical-scroll-proportion="0.21030928">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database-configuration.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/data/database-configuration.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="16" column="53" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -552,22 +540,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/database/dbTables.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoButtons.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/SalesforceOpportunities.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/salesforceOpportunitiesActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/DB/mongo/mongoDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/jsonMaps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/gmail/gmailTextfields.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/gmail/gmailButtons.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoTextfields.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoButtons.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Gmail.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data/gmail-configuration.xml" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json" />
       </list>
     </option>
   </component>
@@ -918,6 +906,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slf4j-log4j12-1.7.5.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slf4j-log4j12-1.7.5.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Maven: org.seleniumhq.selenium:selenium-java:2.39.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
@@ -958,11 +986,337 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.seleniumhq.selenium:selenium-api:2.39.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium-api-2.39.0.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.seleniumhq.selenium:selenium-api:2.39.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium-api-2.39.0.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selenium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.glassfish.jersey.core:jersey-common:2.4.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey-common-2.4.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.glassfish.jersey.core:jersey-common:2.4.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey-common-2.4.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="message" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.glassfish.jersey.core:jersey-common:2.4.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey-common-2.4.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="message" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.glassfish.jersey.core:jersey-common:2.4.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey-common-2.4.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Maven: junit:junit:4.8.1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="junit-4.8.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit-4.8.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit-4.8.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit-4.8.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="runners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit-4.8.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="internal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="runners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: junit:junit:4.8.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit-4.8.1.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.applango:restclients:1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restclients-1.0-20140204.104915-19.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.applango:restclients:1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restclients-1.0-20140204.104915-19.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1073,6 +1427,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javax" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1272,6 +1674,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Salesforce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Mappers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1307,6 +1743,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Gmail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1438,6 +1908,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="salesforce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enums" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gmail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutomaticTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enums" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="applango" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1469,11 +2007,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="applango.common.services.beans" />
-      <recent name="applango.common.enums.database" />
-      <recent name="applango.common.enums.applango" />
+      <recent name="applango.common.enums.gmail" />
       <recent name="applango.common.enums" />
       <recent name="applango.common.enums.salesforce" />
+      <recent name="applango.common.services.beans" />
+      <recent name="applango.common.enums.database" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\app-project\AutomaticTesting\src\main\resources\data" />
@@ -1482,23 +2020,16 @@
       <recent name="C:\app-project\AutomaticTesting\src\test\selenium\com.applango" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
-      <recent name="applango.common.services.Applango.genericApplangoWebsiteActions" />
-      <recent name="applango.common.services.ApplangoWebsite.genericApplangoWebsiteActions" />
-      <recent name="applango.common.services.Salesforce.genericSalesforceWebsiteActions" />
-      <recent name="applango.common.services.Generic.genericWebsiteActions" />
-      <recent name="applango.common.services.Salesforce.salesforceCustomObjectsActions" />
+      <recent name="applango.common.SeleniumTestBase" />
+      <recent name="applango.common.services.Gmail.genericGmailWebsiteActions" />
+      <recent name="applango.common.services.DB.mongo.mongoDB" />
+      <recent name="applango.common.services.Salesforce.salesforceOpportunitiesActions" />
+      <recent name="applango.common.services.Salesforce.salesforceLeadActions" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.junit" />
       <recent name="applango.common.services.beans" />
       <recent name="applango.common" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\app-project\AutomaticTesting1901" />
-      <recent name="C:\app-project\AutomaticTesting" />
-      <recent name="C:\app-project\AutomaticTesting\src\main\resources\data" />
-      <recent name="C:\app-project\AutomaticTesting\src\main\java\applango\common\tests" />
-      <recent name="C:\app-project\AutomaticTesting\src\main\resources\mappers" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="applango.common.services.Applango" />
@@ -1507,8 +2038,49 @@
       <recent name="applango.common.tests" />
       <recent name="applango.common.services.RestApi" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\app-project\AutomaticTesting1901" />
+      <recent name="C:\app-project\AutomaticTesting" />
+      <recent name="C:\app-project\AutomaticTesting\src\main\resources\data" />
+      <recent name="C:\app-project\AutomaticTesting\src\main\java\applango\common\tests" />
+      <recent name="C:\app-project\AutomaticTesting\src\main\resources\mappers" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.dashboardTests.testResetPassword">
+    <configuration default="false" name="dashboardTests.testResetPassword" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="applango.common.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AutomaticTesting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="applango.common.tests" />
+      <option name="MAIN_CLASS_NAME" value="applango.common.tests.dashboardTests" />
+      <option name="METHOD_NAME" value="testResetPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="dashboardTests.testChangePassword" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1522,6 +2094,40 @@
       <option name="PACKAGE_NAME" value="applango.common.tests" />
       <option name="MAIN_CLASS_NAME" value="applango.common.tests.dashboardTests" />
       <option name="METHOD_NAME" value="testChangePassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dashboardTests.testDashboardFilterDate" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="applango.common.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AutomaticTesting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="applango.common.tests" />
+      <option name="MAIN_CLASS_NAME" value="applango.common.tests.dashboardTests" />
+      <option name="METHOD_NAME" value="testDashboardFilterDate" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1577,7 +2183,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="dashboardTests.testSyncingWithoutAuthenticationCredentials" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="dashboardTests.testRunner" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="applango.common.tests.*" />
@@ -1589,7 +2195,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="applango.common.tests" />
       <option name="MAIN_CLASS_NAME" value="applango.common.tests.dashboardTests" />
-      <option name="METHOD_NAME" value="testSyncingWithoutAuthenticationCredentials" />
+      <option name="METHOD_NAME" value="testRunner" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1601,80 +2207,8 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="dashboardTests.testDashboardLogin" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="applango.common.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AutomaticTesting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="applango.common.tests" />
-      <option name="MAIN_CLASS_NAME" value="applango.common.tests.dashboardTests" />
-      <option name="METHOD_NAME" value="testDashboardLogin" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="dashboardTests.testResetPassword" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="applango.common.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AutomaticTesting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="applango.common.tests" />
-      <option name="MAIN_CLASS_NAME" value="applango.common.tests.dashboardTests" />
-      <option name="METHOD_NAME" value="testResetPassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1791,19 +2325,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.dashboardTests.testChangePassword" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.dashboardTests.testSyncingActivities" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.dashboardTests.testSyncingWithoutAuthenticationCredentials" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.dashboardTests.testDashboardLogin" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.dashboardTests.testResetPassword" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.dashboardTests.testResetPassword" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.dashboardTests.testChangePassword" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.dashboardTests.testDashboardFilterDate" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.dashboardTests.testSyncingActivities" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.dashboardTests.testRunner" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.dashboardTests.testResetPassword" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.dashboardTests.testDashboardLogin" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.dashboardTests.testChangePassword" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.dashboardTests.testSyncingActivities" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.dashboardTests.testChangePassword" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.dashboardTests.testSyncingWithoutAuthenticationCredentials" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.dashboardTests.testRunner" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.dashboardTests.testDashboardFilterDate" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1812,6 +2346,11 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="" />
@@ -1887,12 +2426,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23188406" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15421557" sideWeight="0.40802675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41835645" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1902,21 +2440,22 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3199554" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3191035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.060298827" sideWeight="0.5816435" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.061366063" sideWeight="0.5816435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1547492" sideWeight="0.40802675" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22518677" sideWeight="0.5816435" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46042365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22518677" sideWeight="0.5816435" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45891142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15635005" sideWeight="0.36120403" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23052295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1989,120 +2528,114 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/salesforce/salesforceButtons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="8" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="5" selection-start="3394" selection-end="3394" vertical-scroll-proportion="0.0">
+        <state line="61" column="4" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="36" selection-start="2963" selection-end="2981" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="36" selection-start="764" selection-end="774" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="32" selection-start="72" selection-end="81" vertical-scroll-proportion="0.03803132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Salesforce/genericSalesforceWebsiteActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="2683" selection-end="2683" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoTextfields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="4" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoMessages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="53" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="41" selection-start="1258" selection-end="1295" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="42" selection-start="220" selection-end="220" vertical-scroll-proportion="-2.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/applango/applangoButtons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="44" selection-start="412" selection-end="412" vertical-scroll-proportion="-6.48">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/enums/gmail/gmailButtons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="33" selection-start="714" selection-end="714" vertical-scroll-proportion="-3.04">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="1811" selection-end="1811" vertical-scroll-proportion="-7.3333335">
+        <state line="19" column="81" selection-start="1476" selection-end="1511" vertical-scroll-proportion="-2.6666667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-java/2.39.0/selenium-java-2.39.0.jar!/com/thoughtworks/selenium/SeleneseTestBase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Gmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="40" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="49" selection-start="1151" selection-end="1193" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/javax/xml/parsers/DocumentBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="0" selection-start="6771" selection-end="6771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/database-configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="355" selection-end="373" vertical-scroll-proportion="0.0">
+        <state line="89" column="0" selection-start="4182" selection-end="4182" vertical-scroll-proportion="0.8229885">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Gmail/genericGmailWebsiteActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="99" column="19" selection-start="4603" selection-end="4603" vertical-scroll-proportion="-7.2">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="38" selection-start="3007" selection-end="3007" vertical-scroll-proportion="0.0">
+        <state line="420" column="0" selection-start="23578" selection-end="23578" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/tests/dashboardTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="337" column="31" selection-start="17739" selection-end="17739" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#controlAndSwitchWindow#0;class#dashboardTests#0" expanded="false" />
-            <element signature="method#checkRecordCreatedInDB#0;class#dashboardTests#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/gmailObjectsMap.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/gmail-configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="377" selection-end="377" vertical-scroll-proportion="0.21030928">
+        <state line="421" column="0" selection-start="22930" selection-end="23077" vertical-scroll-proportion="0.43917525">
           <folding />
         </state>
       </provider>

@@ -27,9 +27,9 @@ public class SalesforceOpportunities {
     public SalesforceOpportunities() {
         this.opportunityName = null;
         this.opportunityId = null;
-        this.accountName = "applangoTest-DontDelete";
+        this.accountName = "danielt";
         this.closedDate = "1/1/2019";
-        this.stage = "0 - Lead";
+        this.stage = "Prospecting";
         this.probability = "0";
         this.type = "Product";
     }

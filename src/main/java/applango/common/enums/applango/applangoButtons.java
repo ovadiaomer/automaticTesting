@@ -61,13 +61,19 @@ public enum applangoButtons {
     FORGOT_PASSWORD_BUTTON{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.forgot.password.button.xpath").toString();
+            return applangoObjectMap.get("dashboard.forgot.password.button.id").toString();
         }
     },
     RECOVER_PASSWORD_BUTTON{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.recover.password.button.xpath").toString();
+            return applangoObjectMap.get("dashboard.recover.password.button.id").toString();
+        }
+    },
+    SUCCESSFUL_RESET_PASSWORD_BUTTON{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.successful.reset.password.message.close.xpath").toString();
         }
     }
 

@@ -1,3 +1,15 @@
-{"gmail.website.address":"username"
+{
+    "gmail.username.textfield.xpath":"/html/body/div/div[2]/div[2]/form/input[14]",
+    "gmail.password.textfield.id":"Passwd",
+    "gmail.signin.button.id":"signIn",
+    "gmail.Inbox.button.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div/div/div/div/span/a",
+    "gmail.firstMail.label.subject.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div/div/div[2]/div/div/div[2]/div/div/div/div/div/div/div/div/span/a",
+    "gmail.firstMail.sender.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/div/div/div/div/div[4]/div/div/table/tbody/tr/td[5]/div/span",
+    "gmail.firstMail.subject.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/div/div/div/div/div[4]/div/div/table/tbody/tr/td[6]/div/div/div/span",
+    "gmail.mail.sender.time.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/table/tr/td/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div/table/tbody/tr/td[2]/div/span[2]",
+    "gmail.mail.forgot.password.link.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/table/tr/td/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div[6]/div/a",
+    "gmail.mail.forgot.password.to.xpath":"/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/table/tr/td/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div[6]/div/a"
+
+
 
 }

@@ -53,7 +53,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         }
     }
 
-    public static void openDashboard(Applango applango, FirefoxDriver driver1, WebDriverWait wait) {
+    public static void openDashboard(Applango applango, FirefoxDriver driver1, WebDriverWait wait) throws IOException {
         launchingWebsite(driver1, applango.getUrl());
         waitForDashboardLoginPageToLoad(wait);
     }
@@ -77,9 +77,14 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         driver.findElement(By.id(applangoTextfields.MAIN_LoginPassword.getValue())).sendKeys(password);
     }
 
-    public static void waitForDashboardLoginPageToLoad(WebDriverWait wait) {
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("Loginbutton")));
+    public static void waitForDashboardLoginPageToLoad(WebDriverWait wait) throws IOException {
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.LOGIN_SUBMIT.getValue().toString())));
     }
+    public static void waitForUsersTableToLoad(WebDriverWait wait) throws IOException {
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoObject.USERTABLE_ID.getValue().toString())));
+    }
+
+
 
     public static void clickOnLoginButtonAndWaitForUserListToLoad(FirefoxDriver driver, WebDriverWait wait) throws IOException {
 
@@ -89,17 +94,17 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     public static void clickOnLoginButtonAndWaitForErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
 
         clickOnLogin(driver);
-        waitForIncorrectCredentialsErrorMessage(driver, wait);
+        waitForCredentialsErrorMessage(driver, wait, applangoMessages.ENTER_CREDENTIALS_INCORRECT_PASSWORD_INCORRECT.getValue());
     }
 
     public static void clickOnLoginButtonAndWaitForPleaseEnterUsernameErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         clickOnLogin(driver);
-        waitForPleaseEnterUsernameErrorMessage(driver, wait);
+        waitForCredentialsErrorMessage(driver, wait, applangoMessages.ENTER_CREDENTIALS_ERROR_EMPTY_USERNAME.getValue());
     }
 
     public static void clickOnLoginButtonAndWaitForPleaseEnterPasswordErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
         clickOnLogin(driver);
-        waitForPleaseEnterPasswordErrorMessage(driver, wait);
+        waitForCredentialsErrorMessage(driver, wait, applangoMessages.ENTER_CREDENTIALS_ERROR_EMPTY_PASSWORD.getValue());
     }
 
     public static void clickOnLogin(FirefoxDriver driver) throws IOException {
@@ -108,25 +113,24 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
 
-    private static void waitForPleaseEnterUsernameErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
-        String errorMessage = "Please enter a user name";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())));
-        Assert.assertTrue(driver.findElement(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())).getText().equals(errorMessage));
+    private static void waitForCredentialsErrorMessage(FirefoxDriver driver, WebDriverWait wait, String errorMessage) throws IOException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())));
+        Assert.assertTrue(driver.findElement(By.id(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())).getText().equals(errorMessage));
     }
 
-    private static void waitForPleaseEnterPasswordErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
-        String errorMessage = "Please enter your password";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())));
-        Assert.assertTrue(driver.findElement(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())).getText().equals(errorMessage));
-    }
-
-
-
-    private static void waitForIncorrectCredentialsErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
-        String errorMessage = "Your login attempt has failed. The username or password may be incorrect. Please contact the administrator at your company for help.";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())));
-        Assert.assertTrue(driver.findElement(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())).getText().equals(errorMessage));
-    }
+//    private static void waitForPleaseEnterPasswordErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+//        String errorMessage = "Please enter your password";
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())));
+//        Assert.assertTrue(driver.findElement(By.xpath(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())).getText().equals(errorMessage));
+//    }
+//
+//
+//
+//    private static void waitForIncorrectCredentialsErrorMessage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+//        String errorMessage = "Your login attempt has failed. The username or password may be incorrect. Please contact the administrator at your company for help.";
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())));
+//        Assert.assertTrue(driver.findElement(By.id(applangoObject.INCORRECT_CREDENTIALS_ERRORMESSAGE.getValue().toString())).getText().equals(errorMessage));
+//    }
 
 
     private static void waitForUserListToLoad(WebDriverWait wait) throws IOException {
@@ -250,15 +254,32 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoButtons.CHANGE_PASSWORD_SUBMIT.getValue().toString())));
     }
 
-    public static void fillChangePasswordAndSubmit(FirefoxDriver driver1, WebDriverWait wait,String currentPassword, String newPassword, String confirmNewPassword) throws IOException {
-        driver1.findElement(By.xpath(applangoTextfields.CURRENT_PASSWORD.getValue().toString())).clear();
-        driver1.findElement(By.xpath(applangoTextfields.NEW_PASSWORD.getValue().toString())).clear();
-        driver1.findElement(By.xpath(applangoTextfields.CONFIRM_PASSWORD.getValue().toString())).clear();
 
-        driver1.findElement(By.xpath(applangoTextfields.CURRENT_PASSWORD.getValue().toString())).sendKeys(currentPassword);
-        driver1.findElement(By.xpath(applangoTextfields.NEW_PASSWORD.getValue().toString())).sendKeys(newPassword);
-        driver1.findElement(By.xpath(applangoTextfields.CONFIRM_PASSWORD.getValue().toString())).sendKeys(confirmNewPassword);
-        clickOnSubmitChangePassword(driver1);
+    public static void fillChangePasswordAndSubmit(FirefoxDriver driver1, String currentPassword, String newPassword, String confirmNewPassword) throws IOException {
+        fillChangePasswordAndSubmit(driver1, currentPassword, newPassword, confirmNewPassword, false);
+    }
+
+    public static void fillChangePasswordAndSubmit(FirefoxDriver driver1, String currentPassword, String newPassword, String confirmNewPassword, boolean isResetPassword) throws IOException {
+        if (!isResetPassword) {
+            driver1.findElement(By.xpath(applangoTextfields.CURRENT_PASSWORD.getValue().toString())).clear();
+            driver1.findElement(By.xpath(applangoTextfields.CURRENT_PASSWORD.getValue().toString())).sendKeys(currentPassword);
+            driver1.findElement(By.id(applangoTextfields.NEW_PASSWORD.getValue().toString())).clear();
+            driver1.findElement(By.id(applangoTextfields.CONFIRM_PASSWORD.getValue().toString())).clear();
+            driver1.findElement(By.id(applangoTextfields.CONFIRM_PASSWORD.getValue().toString())).sendKeys(confirmNewPassword);
+
+
+        }
+        else {
+            driver1.findElement(By.id(applangoTextfields.NEW_PASSWORD.getValue().toString())).sendKeys(newPassword);
+
+        }
+        driver1.findElement(By.id("passwordconf")).sendKeys(confirmNewPassword);
+
+
+        if (!isResetPassword) {
+            clickOnSubmitChangePassword(driver1);
+
+        }
     }
 
     private static void clickOnSubmitChangePassword(FirefoxDriver driver1) throws IOException {
@@ -266,7 +287,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     public static void checkChangePasswordMessage(SearchContext driver1, applangoMessages changePasswordMessage) throws IOException {
-        Assert.assertTrue(driver1.findElement(By.xpath(applangoObject.CHANGE_PASSWORD_MESSAGE.getValue().toString())).getText().contains(changePasswordMessage.getValue().toString()));
+        Assert.assertTrue(driver1.findElement(By.id(applangoObject.CHANGE_PASSWORD_MESSAGE.getValue().toString())).getText().contains(changePasswordMessage.getValue().toString()));
     }
 
     public static int getAppRank(FirefoxDriver driver1) throws IOException {
@@ -342,8 +363,8 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     public static void waitForSuccessfulAuthenticatedMessage(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
-        wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoObject.AUTHENTICATION_AUTHENTICATED_SUCCESSFULLY.getValue().toString())));
-        Assert.assertTrue(driver1.findElement(By.xpath(applangoObject.AUTHENTICATION_AUTHENTICATED_SUCCESSFULLY.getValue().toString())).getText().contains(applangoMessages.AUTHENTICATION_SUCCESSFUL.getValue().toString()));
+        wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.AUTHENTICATION_AUTHENTICATED_SUCCESS.getValue().toString())));
+        Assert.assertTrue(driver1.findElement(By.id(applangoObject.AUTHENTICATION_AUTHENTICATED_SUCCESS.getValue().toString())).getText().contains(applangoMessages.AUTHENTICATION_SUCCESSFUL.getValue().toString()));
     }
 
     public static void clickOnVerifyAuthentication(FirefoxDriver driver1) throws IOException {
@@ -359,25 +380,43 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     public static void clickOnRecoverPassword(FirefoxDriver driver1, WebDriverWait wait) throws IOException {
-        driver1.findElement(By.xpath(applangoButtons.RECOVER_PASSWORD_BUTTON.getValue().toString())).click();
+        driver1.findElement(By.id(applangoButtons.RECOVER_PASSWORD_BUTTON.getValue().toString())).click();
         waitForRecoverPasswordRequestSent(wait);
     }
 
     private static void waitForRecoverPasswordRequestSent(WebDriverWait wait) throws IOException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoObject.RECOVER_PASSWORD_REQUEST_SENT.getValue().toString()))).getText().contains(applangoMessages.RECOVER_PASSWORD_REQUEST_SENT.getValue().toString());
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.RECOVER_PASSWORD_REQUEST_SENT.getValue().toString()))).getText().contains(applangoMessages.RECOVER_PASSWORD_REQUEST_SENT.getValue().toString());
     }
 
     public static void clickOnForgotPassword(FirefoxDriver driver1, WebDriverWait wait) throws IOException {
-        driver1.findElement(By.xpath(applangoButtons.FORGOT_PASSWORD_BUTTON.getValue().toString())).click();
+        driver1.findElement(By.id(applangoButtons.FORGOT_PASSWORD_BUTTON.getValue().toString())).click();
         waitForRecoverPasswordButton(wait);
     }
 
     private static void waitForRecoverPasswordButton(WebDriverWait wait) throws IOException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoButtons.RECOVER_PASSWORD_BUTTON.getValue().toString())));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(applangoTextfields.FORGOT_PASSWORD_USERNAME.getValue().toString())));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoButtons.RECOVER_PASSWORD_BUTTON.getValue().toString())));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoTextfields.FORGOT_PASSWORD_USERNAME.getValue().toString())));
     }
 
     public static void enterUsernameInForgotPasswordTextfield(FirefoxDriver driver1, String username) throws IOException {
-        driver1.findElement(By.xpath(applangoTextfields.FORGOT_PASSWORD_USERNAME.getValue().toString())).sendKeys(username);
+        driver1.findElement(By.id(applangoTextfields.FORGOT_PASSWORD_USERNAME.getValue().toString())).sendKeys(username);
+    }
+
+    public static void waitForFailureAuthenticatedMessage(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+        wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.AUTHENTICATION_AUTHENTICATED_FAILURE.getValue().toString())));
+        Assert.assertTrue(driver1.findElement(By.id(applangoObject.AUTHENTICATION_AUTHENTICATED_FAILURE.getValue().toString())).getText().contains(applangoMessages.AUTHENTICATION_FAILURE.getValue().toString()));
+
+    }
+
+    public static void checkEnterNewPasswordScreenLoaded(FirefoxDriver driver2, WebDriverWait wait2) throws IOException {
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoTextfields.NEW_PASSWORD.getValue().toString())));
+        Assert.assertTrue(driver2.findElement(By.id(applangoObject.CHANGE_PASSWORD_MESSAGE.getValue().toString())).getText().contains(applangoMessages.RESET_PASSWORD_DEFAULT.getValue().toString()));
+    }
+
+
+    public static void verifyPasswordSuccessfulyChangedMessageAppear(FirefoxDriver driver2) throws IOException {
+        Assert.assertTrue(driver2.findElement(By.id(applangoObject.RESET_PASSWORD_SUCCESSFULLY.getValue())).getText().equals(applangoMessages.RESET_PASSWORD_SUCCESSFULLY.getValue()));
+        driver2.findElement(By.xpath(applangoButtons.SUCCESSFUL_RESET_PASSWORD_BUTTON.getValue())).click();
+
     }
 }

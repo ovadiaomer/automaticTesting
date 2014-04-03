@@ -58,7 +58,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
             SFUsageStatsManagerClient sfUsageStatsManagerClient = new  SFUsageStatsManagerClient();
             sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
             SyncProcessProgress spp = sfUsageStatsManagerClient.populateUsage(customerId);
-            sfUsageStatsManagerClient.syncLoginInfo(customerId, "salesforce");
+//            sfUsageStatsManagerClient.syncLoginInfo(customerId, "salesforce");
             System.out.println("processId: " + spp.getProcessId());
 
             int processTime = 0;

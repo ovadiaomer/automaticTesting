@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gmail>
     <environment id="qa">
-        <url>https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ltmpl=default&service=mail&sacu=1&scc=1&passive=1209600&acui=2#Email=applango-build%40applango.com</url>
+        <url>https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&amp;ltmpl=default&amp;service=mail&amp;sacu=1&amp;scc=1&amp;passive=1209600&amp;acui=2#Email=applango-build%40applango.com</url>
         <username>applango-build@applango.com</username>
         <password>1Zippy1!</password>
     </environment>

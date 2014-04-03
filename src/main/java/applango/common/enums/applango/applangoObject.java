@@ -29,7 +29,7 @@ public enum applangoObject {
     INCORRECT_CREDENTIALS_ERRORMESSAGE{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("login.message.incorrect.xpath").toString();
+            return applangoObjectMap.get("login.message.incorrect.id").toString();
         }
     },
 
@@ -37,6 +37,12 @@ public enum applangoObject {
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.usertable.xpath").toString();
+        }
+    },
+    USERTABLE_ID{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.user.table.id").toString();
         }
     },
     HISTOGRAM{
@@ -54,7 +60,7 @@ public enum applangoObject {
     CHANGE_PASSWORD_MESSAGE{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.change.password.message.xpath").toString();
+            return applangoObjectMap.get("dashboard.change.password.message.id").toString();
         }
     },
     AUTHENTICATION_HEADER{
@@ -72,15 +78,17 @@ public enum applangoObject {
 
         }
     },
-    AUTHENTICATION_AUTHENTICATED_SUCCESSFULLY{
+    RESET_PASSWORD_SUCCESSFULLY{
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.application.authenticated.message.xpath").toString();
+            return salesforceObjectMap.get("dashboard.successful.reset.password.message.id").toString();
 
 
         }
     },
+
+
     AUTHENTICATION_AUTHENTICATED_SUCCESSFULLY_IN_DASHBOARD{
         public String path() throws IOException {
 
@@ -94,17 +102,33 @@ public enum applangoObject {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.recover.password.request.sent.label.xpath").toString();
+            return salesforceObjectMap.get("dashboard.recover.password.request.sent.label.id").toString();
 
 
         }
-    }
+    },
 
 
+    AUTHENTICATION_AUTHENTICATED_FAILURE{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.application.authenticated.failure.message.id").toString();
 
 
+        }
+    },
+    AUTHENTICATION_AUTHENTICATED_SUCCESS{
+        public String path() throws IOException {
 
-    ;
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.application.authenticated.success.message.id").toString();
+
+
+        }
+    };
+
+
 
 
 

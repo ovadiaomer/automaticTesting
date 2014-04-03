@@ -3,6 +3,7 @@ package applango.common.services.Salesforce;
 import applango.common.enums.salesforce.salesforceButtons;
 import applango.common.enums.salesforce.salesforceTextfields;
 import applango.common.enums.salesforce.salesforceUrls;
+import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceOpportunities;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -29,8 +30,8 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
                 clickOnButton(driver, salesforceButtons.NEW);
                 waitForPageToLoad(wait);
                 //Pressing on save uses as Continue also
-                clickOnButton(driver, salesforceButtons.SAVE);
-                waitForPageToLoad(wait);
+//                clickOnButton(driver, salesforceButtons.SAVE);
+//                waitForPageToLoad(wait);
                 newOpportunity[i-1] = fillDetailsAndSave(driver, wait, newOpportunityWithDefaultData);
 
 
@@ -54,11 +55,8 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
 //        clickOnButton(driver, salesforceButtons.SAVE);
         waitForPageToLoad(wait);
         //Save for choose price book
-        clickOnSave(driver);
 //        clickOnButton(driver, salesforceButtons.SAVE);
-        waitForPageToLoad(wait);
         //Click on cancel in Product Selection
-        clickOnCancel(driver);
 //        clickOnButton(driver, salesforceButtons.CANCEL);
         waitForPageToLoad(wait);
         sfOpportunity.setOpportunityId(getIdFromUrl(driver));
@@ -120,5 +118,11 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
     }
 
 
+    public static  void salesforcePerformActivitiesInOpportunities(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewOpportunities, int numOfUpdateOpportunities) throws IOException {
 
+        //Create Opportunity
+        SalesforceOpportunities[] salesforceOpportunities =  create(driver2, wait2, numOfNewOpportunities);
+        //Update the Opportunity x times
+        updateOpportunityNTimes(driver2, wait2, salesforceOpportunities[0], numOfUpdateOpportunities);
+    }
 }

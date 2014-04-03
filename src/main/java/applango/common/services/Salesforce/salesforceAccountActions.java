@@ -4,6 +4,7 @@ import applango.common.enums.salesforce.salesforceButtons;
 import applango.common.enums.salesforce.salesforceRecent;
 import applango.common.enums.salesforce.salesforceTextfields;
 import applango.common.enums.salesforce.salesforceUrls;
+import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceAccounts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -178,6 +179,14 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         {
             logger.info(ex.getMessage());
         }
+    }
+
+    public static  void salesforcePerformActivitiesInAccounts(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewAccounts, int numOfUpdateAccounts) throws IOException {
+
+        //Create Account
+        SalesforceAccounts[] salesforceAccounts =  create(driver2, wait2, numOfNewAccounts);
+        //Update the account x times
+        updateAccountNTimes(driver2, wait2, salesforceAccounts[0], numOfUpdateAccounts);
     }
 
 

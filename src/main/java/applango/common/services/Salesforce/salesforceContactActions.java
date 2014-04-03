@@ -3,6 +3,7 @@ package applango.common.services.Salesforce;
 import applango.common.enums.salesforce.salesforceButtons;
 import applango.common.enums.salesforce.salesforceTextfields;
 import applango.common.enums.salesforce.salesforceUrls;
+import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceContacts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -102,6 +103,14 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
 
         logger.info("New Contact name is " + contactName);
         return contactName.toString();
+    }
+
+    public static void salesforcePerformActivitiesInContacts(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewContact, int numOfUpdateContact) throws IOException {
+
+        //Create Contacts
+        SalesforceContacts[] salesforceContact =  create(driver2, wait2, numOfNewContact);
+        //Update the Contact x times
+        updateContactNTimes(driver2, wait2, salesforceContact[0], numOfUpdateContact);
     }
 }
 
