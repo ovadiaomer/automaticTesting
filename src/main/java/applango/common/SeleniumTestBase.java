@@ -29,6 +29,8 @@ import java.util.Set;
 
 public class SeleniumTestBase {
 
+
+
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
 
     private static Map configPropertiesMapper;
@@ -43,7 +45,7 @@ public class SeleniumTestBase {
     }
 
     public static DB connectToDB(Database dbProperties) throws UnknownHostException {
-        MongoClient mongoClient = new MongoClient(dbProperties.getUrl(), dbProperties.getPort());
+            MongoClient mongoClient = new MongoClient(dbProperties.getUrl(), dbProperties.getPort());
         DB db = mongoClient.getDB(dbProperties.getDbName());
         boolean auth = db.authenticate(dbProperties.getUsername(), dbProperties.getPassword().toCharArray());
         mongoClient.setWriteConcern(WriteConcern.JOURNALED);
@@ -54,6 +56,7 @@ public class SeleniumTestBase {
     @BeforeClass
     public static void setUpBase() throws ParserConfigurationException, SAXException, IOException {
         logger.info("+++++++++++++++++++++ SetUp Base +++++++++++++++++++++");
+
     }
 
     public static void launchingWebsite(FirefoxDriver driver, String websiteAdress) {

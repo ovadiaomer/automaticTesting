@@ -1,6 +1,6 @@
 package applango.common.enums.applango;
 
-import applango.common.enums.jsonMaps;
+import applango.common.enums.generic.jsonMaps;
 import applango.common.services.Mappers.objectMapper;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ public enum applangoButtons {
         public String path() throws IOException {
 
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.search.button.xpath").toString();
+            return applangoObjectMap.get("dashboard.search.button.id").toString();
         }
     },
     LOGIN_SUBMIT{
@@ -22,22 +22,34 @@ public enum applangoButtons {
             return applangoObjectMap.get("login.submit.button.id").toString();
         }
     },
+    LOGIN_REMEMBER_USERNAME_CHECKBOX{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("login.remember.username.id").toString();
+        }
+    },
     ACCOUNT{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.user.account").toString();
         }
     },
+    LOGOUT{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.user.logout").toString();
+        }
+    },
     CHANGE_PASSWORD{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.change.password.xpath").toString();
+            return applangoObjectMap.get("dashboard.change.password.new.password.button.id").toString();
         }
     },
     CHANGE_PASSWORD_SUBMIT{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.change.password.submit.xpath").toString();
+            return applangoObjectMap.get("dashboard.change.password.submit.button.id").toString();
         }
     },
     AUTHENTICATION_SETTINGS{
@@ -55,7 +67,7 @@ public enum applangoButtons {
     AUTHENTICATION_VERIFY{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return applangoObjectMap.get("dashboard.application.verify.button.xpath").toString();
+            return applangoObjectMap.get("dashboard.application.verify.button.id").toString();
         }
     },
     FORGOT_PASSWORD_BUTTON{
@@ -75,6 +87,18 @@ public enum applangoButtons {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.successful.reset.password.message.close.xpath").toString();
         }
+    },
+    APPLICATION_DROP_DOWN{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.application.dropdown.id").toString();
+        }
+    },
+    UPDATE_ALERT{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("dashboard.account.updateAlert.id").toString();
+        }
     }
 
 
@@ -92,4 +116,4 @@ public enum applangoButtons {
     public String getValue() throws IOException {
         return path();
     }
-}
+    }

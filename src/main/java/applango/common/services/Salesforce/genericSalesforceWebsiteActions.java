@@ -1,7 +1,7 @@
 package applango.common.services.Salesforce;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.*;
+import applango.common.enums.generic.jsonMaps;
 import applango.common.enums.salesforce.*;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.Mappers.readFromConfigurationFile;

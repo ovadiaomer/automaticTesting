@@ -1,4 +1,4 @@
-package applango.common.enums;
+package applango.common.enums.generic;
 
 /**
  * Created with IntelliJ IDEA.

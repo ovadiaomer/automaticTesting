@@ -1,5 +1,6 @@
 package applango.common.services.Gmail;
 
+import applango.common.SeleniumTestBase;
 import applango.common.enums.gmail.gmailButtons;
 import applango.common.enums.gmail.gmailTextfields;
 import applango.common.services.Mappers.objectMapper;
@@ -88,7 +89,7 @@ public class genericGmailWebsiteActions {
     }
 
     public static void waitForMailToLoad(WebDriverWait wait2) throws IOException {
-        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gmailButtons.RESET_PASSWORD_LINK.getValue())));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gmailTextfields.SENDER_LABEL.getValue())));
 
     }
 
@@ -102,7 +103,18 @@ public class genericGmailWebsiteActions {
         String amountOfMailAfterResetPassword =  getInboxLabel(driver2);
         int amountBefore = getAmountFromInboxLabel(amountOfMailBeforeResetPassword);
         int amountAfter = getAmountFromInboxLabel(amountOfMailAfterResetPassword);
-        System.out.println("Amount of mail is " + amountBefore + "\n And after " + amountAfter);
+        System.out.println("Amount of mail is " + amountBefore + "\nAnd after " + amountAfter);
         assertTrue(amountBefore+1 == amountAfter);
     }
+
+    public static void loginToGmail(Gmail gmail, FirefoxDriver driver2, WebDriverWait wait2) throws IOException {
+        SeleniumTestBase.launchingWebsite(driver2, gmail.getUrl());
+        enterPassword(driver2, gmail.getPassword());
+        clickOnSignIn(driver2, wait2);
+    }
+
+    public static void checkResetPasswordToken(FirefoxDriver driver2, String token) throws IOException {
+        assertTrue(driver2.findElement(By.xpath(gmailButtons.RESET_PASSWORD_LINK.getValue())).getText().contains(token));
+    }
+
 }

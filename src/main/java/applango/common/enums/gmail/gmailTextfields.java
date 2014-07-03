@@ -1,6 +1,6 @@
 package applango.common.enums.gmail;
 
-import applango.common.enums.jsonMaps;
+import applango.common.enums.generic.jsonMaps;
 import applango.common.services.Mappers.objectMapper;
 
 import java.io.IOException;
@@ -24,7 +24,20 @@ public enum gmailTextfields {
 
 
         }
+    },
+    SENDER_LABEL{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.GMAIL);
+            return salesforceObjectMap.get("gmail.mail.sender.time.xpath").toString();
+
+
+        }
     }
+
+
+
+
 
 
 

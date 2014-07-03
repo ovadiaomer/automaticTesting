@@ -1,8 +1,8 @@
 package applango.common.tests;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.jsonMaps;
-import applango.common.enums.requestType;
+import applango.common.enums.generic.jsonMaps;
+import applango.common.enums.generic.requestType;
 import applango.common.services.Applango.genericApplangoWebsiteActions;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.RestApi.restAPI;
@@ -16,7 +16,6 @@ import applango.common.services.beans.SalesforceContacts;
 import applango.common.services.beans.SalesforceLeads;
 import applango.common.services.clientManager.genericClientManagerActions;
 import com.applango.beans.Customer;
-import com.applango.beans.SalesforceCredentials;
 import com.applango.beans.SyncProcessProgress;
 import com.applango.rest.client.CustomerManagerClient;
 import com.applango.rest.client.SFUsageStatsManagerClient;
@@ -29,10 +28,8 @@ import org.jongo.MongoCollection;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.xml.sax.SAXException;
 
@@ -45,7 +42,6 @@ import java.util.Map;
 import static applango.common.services.Salesforce.genericSalesforceWebsiteActions.*;
 import static applango.common.services.Salesforce.salesforceContactActions.updateContactNTimes;
 import static applango.common.services.Salesforce.salesforceLeadActions.updateLeadNTimes;
-import static org.junit.Assert.assertTrue;
 
 public class SanityTest extends SeleniumTestBase{
     WebDriver driver;
@@ -317,58 +313,58 @@ public class SanityTest extends SeleniumTestBase{
 //            driver1.kill();
 //        }
 //    }
-    @Test
-    public void testValidCustomerCreation() throws ParserConfigurationException, SAXException, IOException, Throwable {
-        FirefoxDriver driver1 = null;
-//        WebDriverWait wait = null;
-        CustomerManagerClient client = new CustomerManagerClient();
-        Customer customer = new Customer();
-//        String newCustomerId;
-        client.setManagerServicesURL("http://localhost:8090/managerservices");
-        sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
-        SalesforceCredentials sfCredentials;
-        SFUserManagerClient userManagerClient = new SFUserManagerClient();
-        SFUsageStatsManagerClient userManagerstat = new SFUsageStatsManagerClient();
-        SFUsageStatsManagerClient usageStatsManagerClient = new SFUsageStatsManagerClient();
-        try {
-            //If connection refused run applangoQa1 ssh tunnel from putty (not shortcut) TODO: Fix tunnel
-            customer = createNewRandomCustomer(client, customer);
+//    @Test
+//    public void testValidCustomerCreation() throws ParserConfigurationException, SAXException, IOException, Throwable {
+//        FirefoxDriver driver1 = null;
+////        WebDriverWait wait = null;
+//        CustomerManagerClient client = new CustomerManagerClient();
+//        Customer customer = new Customer();
+////        String newCustomerId;
+//        client.setManagerServicesURL("http://localhost:8090/managerservices");
+//        sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
+//        SalesforceCredentials sfCredentials;
+//        SFUserManagerClient userManagerClient = new SFUserManagerClient();
+//        SFUsageStatsManagerClient userManagerstat = new SFUsageStatsManagerClient();
+//        SFUsageStatsManagerClient usageStatsManagerClient = new SFUsageStatsManagerClient();
+//        try {
+//            //If connection refused run applangoQa1 ssh tunnel from putty (not shortcut) TODO: Fix tunnel
+//            customer = createNewRandomCustomer(client, customer);
+////
+//            sfCredentials = addSalesforceCredentialsToNewCustomer(client, customer);
+//            driver1 = authenticateNewCustomer(driver1, customer, sfCredentials);
+////            executeSyncUsers(customer, userManagerClient);
+//            //TODO check users in DB
+////            userManagerstat.
+//            SFUsageStatsManagerClient sFUsageStatsManagerClient = new SFUsageStatsManagerClient();
+//            sFUsageStatsManagerClient.syncLoginInfo(customer.getCustomerId(), null);
+//            //Todo install triggers
 //
-            sfCredentials = addSalesforceCredentialsToNewCustomer(client, customer);
-            driver1 = authenticateNewCustomer(driver1, customer, sfCredentials);
-//            executeSyncUsers(customer, userManagerClient);
-            //TODO check users in DB
-//            userManagerstat.
-            SFUsageStatsManagerClient sFUsageStatsManagerClient = new SFUsageStatsManagerClient();
-            sFUsageStatsManagerClient.syncLoginInfo(customer.getCustomerId(), null);
-            //Todo install triggers
-
-            //Todo get activities
-
-
-
-        }
-        catch (Exception ex)  {
-            if (ex.getMessage().contains("500")) {
-                logger.error("Failed to create customer since user exist- \n" + ex.getMessage());
-
-            }
-
-            else {
-                logger.error(ex.getMessage());
-            }
-        }
-        catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
-
-        finally {
-
-                client.deleteCustomer(customer.getCustomerId());
-                driver1.kill();
-            }
-
-        }
+//            //Todo get activities
+//
+//
+//
+//        }
+//        catch (Exception ex)  {
+//            if (ex.getMessage().contains("500")) {
+//                logger.error("Failed to create customer since user exist- \n" + ex.getMessage());
+//
+//            }
+//
+//            else {
+//                logger.error(ex.getMessage());
+//            }
+//        }
+//        catch (Throwable throwable) {
+//            throwable.printStackTrace();
+//        }
+//
+//        finally {
+//
+//                client.deleteCustomer(customer.getCustomerId());
+//                driver1.kill();
+//            }
+//
+//        }
 
         @Test
         public void testSyncLogins() throws ParserConfigurationException, SAXException, IOException {
@@ -427,46 +423,46 @@ public class SanityTest extends SeleniumTestBase{
         System.out.println("Sync finished, Process:  " + syncResults.getProcessId() + " "  + userManagerClient.getSyncProcessProgress(syncResults.getProcessId()).getProcessStatus().toString());
     }
 
-    private FirefoxDriver authenticateNewCustomer(FirefoxDriver driver1, Customer customer, SalesforceCredentials sfCredentials) throws IOException {
-        WebDriverWait wait;
-        logger.info("Authenticating  " + customer.getCustomerId());
-        driver1 = new FirefoxDriver();
-
-        wait = new WebDriverWait(driver1, 15);
-        logger.info("Open launchWebsiteAndlogin page - " + sf.getClientLogin() + " and Enter clientId");
-        driver1.get(sf.getClientLogin());
-        driver1.findElement(By.xpath("/html/body/form/input")).sendKeys(customer.getCustomerId());
-//            driver1.findElement(By.xpath("/html/body/form/input")).sendKeys("testCust728");
-        driver1.findElement(By.xpath("/html/body/form/input[3]")).click();
-        assertTrue(driver1.findElement(By.xpath("/html/body/a")).isDisplayed());
-        driver1.findElement(By.xpath("/html/body/a")).click();
-        wait.until(ExpectedConditions.titleContains("salesforce.com"));
-
-        logger.info("Enter credentials in salesforce");
-        enterCredentials(driver1, sf.getUsername(), sf.getPassword());
-        genericSalesforceWebsiteActions.clickOnSubmitCredentials(driver1);
-        wait.until(ExpectedConditions.titleContains("Applango Authentication Completed"));
-        logger.info("Authentication Completed!");
-        return driver1;
-    }
-
-    private SalesforceCredentials addSalesforceCredentialsToNewCustomer(CustomerManagerClient client, Customer customer1) {
-
-
-        SalesforceCredentials sfCredentials = new SalesforceCredentials();
-        sfCredentials.setClientId(sf.getAccessToken());
-        sfCredentials.setClientSecret(sf.getClientSecret());
-        sfCredentials.setLoginURL(sf.getLoginUrl());
-        sfCredentials.setCustomerId(customer1.getCustomerId());
-        sfCredentials.setPassword(sf.getPassword());
-        sfCredentials.setSecurityToken(sf.getSecurityToken());
-        sfCredentials.setUsername(sf.getUsername());
-
-        logger.info("Adding credentials to customer " + customer1.getCustomerId());
-        client.addSalesforceCredentials(customer1.getCustomerId(), sfCredentials);
-        return sfCredentials;
-
-    }
+//    private FirefoxDriver authenticateNewCustomer(FirefoxDriver driver1, Customer customer, SalesforceCredentials sfCredentials) throws IOException {
+//        WebDriverWait wait;
+//        logger.info("Authenticating  " + customer.getCustomerId());
+//        driver1 = new FirefoxDriver();
+//
+//        wait = new WebDriverWait(driver1, 15);
+//        logger.info("Open launchWebsiteAndlogin page - " + sf.getClientLogin() + " and Enter clientId");
+//        driver1.get(sf.getClientLogin());
+//        driver1.findElement(By.xpath("/html/body/form/input")).sendKeys(customer.getCustomerId());
+////            driver1.findElement(By.xpath("/html/body/form/input")).sendKeys("testCust728");
+//        driver1.findElement(By.xpath("/html/body/form/input[3]")).click();
+//        assertTrue(driver1.findElement(By.xpath("/html/body/a")).isDisplayed());
+//        driver1.findElement(By.xpath("/html/body/a")).click();
+//        wait.until(ExpectedConditions.titleContains("salesforce.com"));
+//
+//        logger.info("Enter credentials in salesforce");
+//        enterCredentials(driver1, sf.getUsername(), sf.getPassword());
+//        genericSalesforceWebsiteActions.clickOnSubmitCredentials(driver1);
+//        wait.until(ExpectedConditions.titleContains("Applango Authentication Completed"));
+//        logger.info("Authentication Completed!");
+//        return driver1;
+//    }
+//
+//    private SalesforceCredentials addSalesforceCredentialsToNewCustomer(CustomerManagerClient client, Customer customer1) {
+//
+//
+//        SalesforceCredentials sfCredentials = new SalesforceCredentials();
+//        sfCredentials.setClientId(sf.getAccessToken());
+//        sfCredentials.setClientSecret(sf.getClientSecret());
+//        sfCredentials.setLoginURL(sf.getLoginUrl());
+//        sfCredentials.setCustomerId(customer1.getCustomerId());
+//        sfCredentials.setPassword(sf.getPassword());
+//        sfCredentials.setSecurityToken(sf.getSecurityToken());
+//        sfCredentials.setUsername(sf.getUsername());
+//
+//        logger.info("Adding credentials to customer " + customer1.getCustomerId());
+//        client.addSalesforceCredentials(customer1.getCustomerId(), sfCredentials);
+//        return sfCredentials;
+//
+//    }
 
     private Customer createNewRandomCustomer(CustomerManagerClient client, Customer customer) {
         String newCustomerId;

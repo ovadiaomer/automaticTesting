@@ -1,6 +1,6 @@
 package applango.common.enums.gmail;
 
-import applango.common.enums.jsonMaps;
+import applango.common.enums.generic.jsonMaps;
 import applango.common.services.Mappers.objectMapper;
 
 import java.io.IOException;

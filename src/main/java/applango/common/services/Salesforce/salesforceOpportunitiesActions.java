@@ -48,16 +48,10 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
     private static SalesforceOpportunities fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait, SalesforceOpportunities sfOpportunity) throws IOException {
         logger.info("Fill new opportunity details and return object SalesforceOpportunity");
         waitForPageToLoad(wait);
-//        SalesforceOpportunities newOpportunity = new SalesforceOpportunities();
         waitForPageToLoad(wait);
         sfOpportunity = fillDetailsRandomly(driver, wait, sfOpportunity);
         clickOnSave(driver);
-//        clickOnButton(driver, salesforceButtons.SAVE);
         waitForPageToLoad(wait);
-        //Save for choose price book
-//        clickOnButton(driver, salesforceButtons.SAVE);
-        //Click on cancel in Product Selection
-//        clickOnButton(driver, salesforceButtons.CANCEL);
         waitForPageToLoad(wait);
         sfOpportunity.setOpportunityId(getIdFromUrl(driver));
         return sfOpportunity;

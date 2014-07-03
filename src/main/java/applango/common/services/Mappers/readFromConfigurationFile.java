@@ -88,7 +88,7 @@ public class readFromConfigurationFile extends SeleniumTestBase {
 
                 if (((nNode.getNodeType() == Node.ELEMENT_NODE))
                         &&
-                        (nNode.getAttributes().item(0).toString().contains(salesforceEnvironmentId)))
+                        (nNode.getAttributes().item(0).toString().toLowerCase().contains(salesforceEnvironmentId.toLowerCase())))
                 {
                     logger.info("Init salesforce object by salesforce-configuration.xml");
                     Element eElement = (Element) nNode;

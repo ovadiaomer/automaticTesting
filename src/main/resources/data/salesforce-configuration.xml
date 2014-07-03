@@ -37,16 +37,30 @@
         <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
         <isSandbox>false</isSandbox>
     </environment>
-       <environment id="testing-qa">
+    <environment id="qa-it-release">
         <url>http://www.salesforce.com</url>
-        <username>omer.ovadia@applango.net</username>
-        <password>omer1983</password>
-        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wO.nH5cQNvHcYv3do0xDvruR7vmDGfEc4YmCwpOKCFrQFLwSqfRYntRzSulX</accessToken>
-        <clientSecret>473287191571074338</clientSecret>
+        <username>omer@applango.com</username>
+        <password>capelton2</password>
+        <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JwsFuCgXZbDSOMrANe5wE8ZGMEdMLU3UQ6wvd9oHddHn4qS8xlAiJs1IxXh</accessToken>
+        <clientSecret>1575767409006117159</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
         <clientId>automationCustomer</clientId>
-        <connectedApp>walkThru</connectedApp>
+        <connectedApp>ApplangoQA2</connectedApp>
         <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
+        <applangoUserId>1</applangoUserId>
+        <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
+        <isSandbox>false</isSandbox>
+    </environment>
+    <environment id="qa-it-develop">
+        <url>http://www.salesforce.com</url>
+        <username>omer@applango.com</username>
+        <password>capelton2</password>
+        <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JCS3z4sdoE99m6.A.H0GNo2qWclSPgODuyo2f9iC3_9f5y1F5nO1fPe4zGj</accessToken>
+        <clientSecret>7151926241509186983</clientSecret>
+        <loginUrl>https://login.salesforce.com</loginUrl>
+        <clientId>automationCustomer</clientId>
+        <connectedApp>applangoQa4</connectedApp>
+        <clientLogin>http://applangoqa4.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
         <applangoUserId>1</applangoUserId>
         <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
         <isSandbox>false</isSandbox>

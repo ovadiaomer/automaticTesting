@@ -1,4 +1,4 @@
-package applango.common.enums;
+package applango.common.enums.generic;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,15 +7,15 @@ package applango.common.enums;
  * Time: 13:24
  * To change this template use File | Settings | File Templates.
  */
-public enum jsonMaps {
+public enum applications {
 
-    APPLANGO("mappers/applangoObjectsMap.json"),
-    SALESFORCE("mappers/salesforceObjectsMap.json"),
-    GMAIL("mappers/gmailObjectsMap.json");
+    BOX("boxmenuitem"),
+    SALESFORCE("salesforcemenuitem")
+    ;
 
     private final String value;
 
-    private jsonMaps(String value) {
+    private applications(String value) {
         this.value = value;
     }
 

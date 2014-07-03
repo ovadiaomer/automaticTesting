@@ -1,6 +1,6 @@
 package applango.common.services.Mappers;
 
-import applango.common.enums.jsonMaps;
+import applango.common.enums.generic.jsonMaps;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;

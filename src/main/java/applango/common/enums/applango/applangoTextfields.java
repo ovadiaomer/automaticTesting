@@ -1,6 +1,6 @@
 package applango.common.enums.applango;
 
-import applango.common.enums.jsonMaps;
+import applango.common.enums.generic.jsonMaps;
 import applango.common.services.Mappers.objectMapper;
 
 import java.io.IOException;
@@ -37,7 +37,7 @@ public enum applangoTextfields {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.search.lastName.textfield.xpath").toString();
+            return salesforceObjectMap.get("dashboard.search.lastName.textfield.id").toString();
 
 
         }
@@ -46,7 +46,7 @@ public enum applangoTextfields {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.change.password.current.password.xpath").toString();
+            return salesforceObjectMap.get("dashboard.change.password.current.password.textfield.id").toString();
 
 
         }
@@ -55,7 +55,7 @@ public enum applangoTextfields {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.change.password.new.password.id").toString();
+            return salesforceObjectMap.get("dashboard.change.password.new.password.textfield.id").toString();
 
 
         }
@@ -64,7 +64,16 @@ public enum applangoTextfields {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.change.password.confirm.password.id").toString();
+            return salesforceObjectMap.get("dashboard.change.password.confirm.password.textfield.id").toString();
+
+
+        }
+    },
+    CONFIRM_PASSWORD_RESET{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.reset.password.confirm.password.id").toString();
 
 
         }
@@ -73,7 +82,7 @@ public enum applangoTextfields {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.client.key.textfield.xpath").toString();
+            return salesforceObjectMap.get("dashboard.client.key.textfield.id").toString();
 
 
         }
@@ -82,7 +91,7 @@ public enum applangoTextfields {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
-            return salesforceObjectMap.get("dashboard.client.secret.textfield.xpath").toString();
+            return salesforceObjectMap.get("dashboard.client.secret.textfield.id").toString();
 
 
         }

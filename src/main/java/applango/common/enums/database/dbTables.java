@@ -2,12 +2,20 @@ package applango.common.enums.database;
 
 public enum dbTables {
 
+    applangoUserLoginHistory("applangoUserLoginHistory"),
     appInfo("appInfo"),
-    syncProcessProgress("syncProcessProgress"),
-    externalObjectActivity("externalObjectActivity"),
     applangoUser("applangoUser"),
-    OAuth2Credentials("oAuth2Credentials"),
-    CUSTOMER("customer");
+    customer("customer"),
+    customerPreferencesSfManagedObjects("customerPreferencesSfManagedObjects"),
+    emailToken("emailToken"),
+    externalObjectActivity("externalObjectActivity"),
+    excludedUser("excludedUser"),
+    groupInfo("groupInfo"),
+    loginInfo("loginInfo"),
+    syncProcessProgress("syncProcessProgress"),
+    user("user"),
+    OAuth2Credentials("oAuth2Credentials");
+
 
     private final String value;
 

@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <saleforce>
-    <environment id="qa">
-        <url>https://applangoqa2.cloudapp.net/dashboard/login.html#/</url>
-        <username>omer</username>
-        <password>Omer1982</password>
-        <userForoAuth>ultra5</userForoAuth>
-        <passwordForoAuth>ultra5</passwordForoAuth>
-        <customerForoAuth>ultra5</customerForoAuth>
+    <environment id="qa-it-develop">
+        <url>https://qa4.applango.com/dashboard/login.html#/</url>
+        <username>automationuser@applango.com</username>
+        <password>Reut2006</password>
+        <primaryEmail>applango-build@applango.com</primaryEmail>
+        <primaryEmailPassword>1Zippy1!</primaryEmailPassword>
+        <userForoAuth>automationCustomer</userForoAuth>
+        <passwordForoAuth>automationCustomer</passwordForoAuth>
+        <customerForoAuth>automationCustomer</customerForoAuth>
     </environment>
-    <environment id="automation-qa">
+    <environment id="qa-it-release">
         <url>https://applangoqa2.cloudapp.net/dashboard/login.html#/</url>
         <username>automationuser@applango.com</username>
         <password>Reut2006</password>
