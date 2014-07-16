@@ -99,7 +99,34 @@ public enum applangoButtons {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.account.updateAlert.id").toString();
         }
+    },
+
+    PEOPLE_PAGE_SEARCH{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.searchUser.id").toString();
+        }
+    },
+
+    REPORT_PAGE_SEARCH{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.updateStatsButton.id").toString();
+        }
+    },
+    REPORT_PAGE_EXPORT{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.export.id").toString();
+        }
+    },
+    REPORT_PAGE_DOWNLOAD{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.download.id").toString();
+        }
     }
+
 
 
 
@@ -116,4 +143,4 @@ public enum applangoButtons {
     public String getValue() throws IOException {
         return path();
     }
-    }
+}

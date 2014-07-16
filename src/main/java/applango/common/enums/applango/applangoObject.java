@@ -26,6 +26,36 @@ public enum applangoObject {
         }
 
     },
+    WAITBOX{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("waitbox.id").toString();
+
+
+        }
+
+    },
+    REPORT_PAGE_TAB{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.tab.xpath").toString();
+
+
+        }
+
+    },
+    PEOPLE_PAGE_TAB{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.tab.xpath").toString();
+
+
+        }
+
+    },
     INCORRECT_CREDENTIALS_ERRORMESSAGE{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
@@ -37,6 +67,18 @@ public enum applangoObject {
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.usertable.id").toString();
+        }
+    },
+    PEOPLEPAGE_USERDETAIL{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.userdetails.id").toString();
+        }
+    },
+    PEOPLEPAGE_GRAPHROLLUP{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.graphRolledUp.id").toString();
         }
     },
     USERTABLER{
@@ -141,6 +183,33 @@ public enum applangoObject {
 
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
             return applangoObjectMap.get("dashboard.activealert.id").toString();
+
+
+        }
+    },
+    REPORT_DATA_HOLDER{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.dataholder.id").toString();
+
+
+        }
+    },
+    REPORT_DATA_TABLE{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.dataholderinner.id").toString();
+
+
+        }
+    },
+    REPORT_DATA_CHART{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.dataholderchart.id").toString();
 
 
         }

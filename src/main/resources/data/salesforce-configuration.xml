@@ -81,7 +81,6 @@
     </environment>
     <environment id="omerqa">
         <url>https://www.salesforce.com</url>
-        <!--username>omerqa@applango.com</username-->
         <username>omerqa@applango.com</username>
         <password>omer1982</password>
         <accessToken>3MVG9A2kN3Bn17hsVnmueHI2OSaOn6O_J8PtsZeijDQ6TSd.cojflHn41PDhLEKuDc_m.TYQgKpFJVtv1F8FI</accessToken>

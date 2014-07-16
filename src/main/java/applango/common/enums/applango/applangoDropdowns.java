@@ -50,8 +50,49 @@ public enum applangoDropdowns {
             return applangoObjectMap.get("dashboard.user.dropdown").toString();
         }
 
-    }
+    },
+    REPORT_FROM_YEAR{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.fromYear.id").toString();
+        }
 
+    },
+    REPORT_UNTIL_YEAR{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.toYear.id").toString();
+        }
+
+    },
+    REPORT_FROM_MONTH{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.fromMonth.id").toString();
+        }
+
+    },
+    REPORT_UNTIL_MONTH{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.toMonth.id").toString();
+        }
+
+    },
+    REPORT_APP_NAME{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.appnames.id").toString();
+        }
+
+    },
+    REPORT_NAME{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("reportPage.reportnames.id").toString();
+        }
+
+    }
 
 
 

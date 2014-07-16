@@ -7,7 +7,7 @@ import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceOpportunities;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.util.Calendar;
 
 public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActions {
 
-    public static SalesforceOpportunities[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfOpportunities) throws IOException {
+    public static SalesforceOpportunities[] create(WebDriver driver, WebDriverWait wait, int numberOfOpportunities) throws IOException {
         SalesforceOpportunities[] newOpportunity =  new SalesforceOpportunities[numberOfOpportunities];
         SalesforceOpportunities newOpportunityWithDefaultData;
 
@@ -45,7 +45,7 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         return newOpportunity;
     }
 
-    private static SalesforceOpportunities fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait, SalesforceOpportunities sfOpportunity) throws IOException {
+    private static SalesforceOpportunities fillDetailsAndSave(WebDriver driver, WebDriverWait wait, SalesforceOpportunities sfOpportunity) throws IOException {
         logger.info("Fill new opportunity details and return object SalesforceOpportunity");
         waitForPageToLoad(wait);
         waitForPageToLoad(wait);
@@ -57,7 +57,7 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         return sfOpportunity;
     }
 
-    private static SalesforceOpportunities fillDetailsRandomly(FirefoxDriver driver, WebDriverWait wait, SalesforceOpportunities sfOpportunity) throws IOException {
+    private static SalesforceOpportunities fillDetailsRandomly(WebDriver driver, WebDriverWait wait, SalesforceOpportunities sfOpportunity) throws IOException {
         CharSequence opportunityName = "testOpp"+ Calendar.getInstance().getTimeInMillis();
         driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).sendKeys(opportunityName);
         sfOpportunity.setOpportunityName(opportunityName.toString());
@@ -75,7 +75,7 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         return sfOpportunity;
     }
 
-    public static void update(FirefoxDriver driver, WebDriverWait wait, SalesforceOpportunities opportunity, String newOpportunityName) throws IOException {
+    public static void update(WebDriver driver, WebDriverWait wait, SalesforceOpportunities opportunity, String newOpportunityName) throws IOException {
         logger.info("Updating opportunity name of "+ opportunity.getOpportunityName() + " to "+ newOpportunityName);
         waitForPageToLoad(wait);
         waitForPageToLoad(wait);
@@ -89,14 +89,14 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         waitForPageToLoad(wait);
 
     }
-    public static void updateOpportunityNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceOpportunities opportunity, int numberOfUpdateOpportunities) throws IOException {
+    public static void updateOpportunityNTimes(WebDriver driver1, WebDriverWait wait, SalesforceOpportunities opportunity, int numberOfUpdateOpportunities) throws IOException {
         for (int i=0; i<numberOfUpdateOpportunities; i++){
             waitForPageToLoad(wait);
             salesforceOpportunitiesActions.update(driver1, wait, opportunity, "TestOpp" + i);
             waitForPageToLoad(wait);
         }
     }
-    public static void delete(FirefoxDriver driver, WebDriverWait wait, SalesforceOpportunities[] opportunity) throws IOException {
+    public static void delete(WebDriver driver, WebDriverWait wait, SalesforceOpportunities[] opportunity) throws IOException {
 
         for (SalesforceOpportunities salesforceOpportunities : opportunity) {
             delete(driver, wait, salesforceOpportunities.getOpportunityId());
@@ -104,7 +104,7 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
 
     }
 
-    public static String fillDetails(FirefoxDriver driver, String newOpportunityName) throws IOException {
+    public static String fillDetails(WebDriver driver, String newOpportunityName) throws IOException {
         Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.OPPORTUNITY_OpportunityName.getValue())).sendKeys(newOpportunityName);
@@ -112,7 +112,7 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
     }
 
 
-    public static  void salesforcePerformActivitiesInOpportunities(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewOpportunities, int numOfUpdateOpportunities) throws IOException {
+    public static  void salesforcePerformActivitiesInOpportunities(Salesforce sf, WebDriver driver2, WebDriverWait wait2, int numOfNewOpportunities, int numOfUpdateOpportunities) throws IOException {
 
         //Create Opportunity
         SalesforceOpportunities[] salesforceOpportunities =  create(driver2, wait2, numOfNewOpportunities);

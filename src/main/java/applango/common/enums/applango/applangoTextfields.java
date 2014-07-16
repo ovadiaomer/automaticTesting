@@ -104,7 +104,37 @@ public enum applangoTextfields {
 
 
         }
+    },
+    PEOPLE_PAGE_LASTNAME{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("peoplePage.lastname.id").toString();
+
+
+        }
+    },
+    PEOPLE_PAGE_FIRSTNAME{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("peoplePage.firstname.id").toString();
+
+
+        }
+    },
+
+
+    PEOPLE_PAGE_EMAIL{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("peoplePage.email.id").toString();
+
+
+        }
     }
+
 
 
 

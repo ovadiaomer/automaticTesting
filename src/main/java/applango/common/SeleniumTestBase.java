@@ -11,7 +11,7 @@ import com.mongodb.WriteConcern;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -59,7 +59,7 @@ public class SeleniumTestBase {
 
     }
 
-    public static void launchingWebsite(FirefoxDriver driver, String websiteAdress) {
+    public static void launchingWebsite(WebDriver driver, String websiteAdress) {
         logger.info("Launching " + websiteAdress);
         driver.navigate().to(websiteAdress);
 
@@ -77,7 +77,7 @@ public class SeleniumTestBase {
     }
 
 
-    protected static String controlAndSwitchWindow(FirefoxDriver driver1) {
+    protected static String controlAndSwitchWindow(WebDriver driver1) {
         Set<String> windowId = driver1.getWindowHandles();    // get  window id of current window
         Iterator<String> it = windowId.iterator();
 

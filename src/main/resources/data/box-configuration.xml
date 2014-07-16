@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<box>
+    <environment id="qa-it-develop">
+        <url>http://www.box.com</url>
+        <username>omer.ovadia@applango.com</username>
+        <password>omer1982</password>
+        <clientSecret>TgZXeME3HxR5JoGq77kal7Hho1THXOif</clientSecret>
+        <clientId>z3wlf5strxuvutdubsy2pvliildybpm2</clientId>
+    </environment>
+</box>

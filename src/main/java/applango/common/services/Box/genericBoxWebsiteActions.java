@@ -1,7 +1,7 @@
 package applango.common.services.Box;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,7 +17,7 @@ import static applango.common.SeleniumTestBase.logger;
  * To change this template use File | Settings | File Templates.
  */
 public class genericBoxWebsiteActions {
-    public static String createNewFolder(FirefoxDriver driver, WebDriverWait wait) {
+    public static String createNewFolder(WebDriver driver, WebDriverWait wait) {
         Calendar cal = Calendar.getInstance();
         String folderName = "testFolder" + cal.getTime();
         logger.info("Create a new folder: " + folderName);
@@ -32,7 +32,7 @@ public class genericBoxWebsiteActions {
         return  folderName;
     }
 
-    public static void deleteFolder(FirefoxDriver driver, WebDriverWait wait, String newFolder) {
+    public static void deleteFolder(WebDriver driver, WebDriverWait wait, String newFolder) {
         logger.info("Delete new folder: "+ newFolder);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.partialLinkText(newFolder)));
         driver.findElement(By.partialLinkText(newFolder)).click();
@@ -50,7 +50,7 @@ public class genericBoxWebsiteActions {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mod-header")));
     }
 
-    public static void loginToBox(FirefoxDriver driver, WebDriverWait wait) {
+    public static void loginToBox(WebDriver driver, WebDriverWait wait) {
         logger.info("Login to Box ");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("continue")));
         //Enter credentials
