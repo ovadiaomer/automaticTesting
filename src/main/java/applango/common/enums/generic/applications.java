@@ -10,7 +10,8 @@ package applango.common.enums.generic;
 public enum applications {
 
     BOX("boxmenuitem"),
-    SALESFORCE("salesforcemenuitem")
+    SALESFORCE("salesforcemenuitem"),
+    GOOGLE("google")
     ;
 
     private final String value;

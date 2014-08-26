@@ -36,6 +36,7 @@
     "dashboard.successful.reset.password.message.id":"dialogLogin",
     "dashboard.successful.reset.password.message.close.xpath":"/html/body/div[4]/div[11]/div/button",
     "dashboard.application.settings.button.xpath":"/html/body/span/span/div/div/div[2]/ul/img",
+    "dashboard.application.totalLicenseCost.css":"#appnav2 > span.nav.navbar-nav> div > div:nth-child(4)",
     "dashboard.client.key.textfield.xpath":"/html/body/div[3]/div/div/div/input",
     "dashboard.client.key.textfield.id":"username",
     "dashboard.client.secret.textfield.xpath":"/html/body/div[3]/div/div/div/input[2]",

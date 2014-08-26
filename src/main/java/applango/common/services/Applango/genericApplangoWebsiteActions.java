@@ -66,11 +66,18 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     public static void selectApplication(WebDriver driver1, WebDriverWait wait, applications app) throws IOException {
-        logger.info("Selecting application " + app);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoButtons.APPLICATION_DROP_DOWN.getValue())));
-        driver1.findElement(By.id(applangoButtons.APPLICATION_DROP_DOWN.getValue())).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(app.getValue())));
-        driver1.findElement(By.id(app.getValue())).click();
+        if (!isApplicationAlreadySelected(driver1, app)) {
+            logger.info("Selecting application " + app);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoButtons.APPLICATION_DROP_DOWN.getValue())));
+            driver1.findElement(By.id(applangoButtons.APPLICATION_DROP_DOWN.getValue())).click();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(app.getValue())));
+            driver1.findElement(By.id(app.getValue())).click();
+            waitUntilWaitForServerDissappears(wait);
+        }
+    }
+
+    private static boolean isApplicationAlreadySelected(WebDriver driver1, applications app) {
+        return app.getValue().toLowerCase().contains(driver1.findElement(By.id("appTitle")).getText().toLowerCase());
     }
 
     public static void openDashboard(Applango applango, WebDriver driver1, WebDriverWait wait) throws IOException {
@@ -219,7 +226,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
         int userRowNumber = searchOnWhichRowInTableTheUserAppear(driver1, name);
         if (userRowNumber != 0) {
-            clickOnRecordInTable(driver1, wait, userRowNumber);
+            clickOnRecordInTable(driver1, wait, 1);
         }
         else { //default -click on first record (0)
             clickOnRecordInTable(driver1, wait);
@@ -504,9 +511,8 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     public static void setBoxNoLoginAlertThreshold(WebDriver driver1, String alertThreshold) {
         logger.info("Set Alert Threshold : " + alertThreshold);
-        driver1.findElement(By.xpath("//*[@id=\"alertsdiv\"]/div[2]/input")).clear();
-        driver1.findElement(By.xpath("//*[@id=\"alertsdiv\"]/div[2]/input")).sendKeys(alertThreshold);
-
+        driver1.findElement(By.cssSelector("#alertsdiv > div:nth-child(2) > input")).clear();
+        driver1.findElement(By.cssSelector("#alertsdiv > div:nth-child(2) > input")).sendKeys(alertThreshold);
     }
 
     public static void clickSaveBoxNoLogin(WebDriver driver1, WebDriverWait wait1) throws IOException {
@@ -592,7 +598,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         driver1.findElement(By.id(applangoButtons.REPORT_PAGE_SEARCH.getValue())).click();
         genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait1);
         waitForReportDataHolder(wait1);
-        waitForReportDataTable(wait1);
+//        waitForReportDataTable(wait1);
         waitForReportDataChart(wait1);
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.REPORT_PAGE_EXPORT.getValue())));
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.REPORT_PAGE_DOWNLOAD.getValue())));
@@ -642,8 +648,18 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         logger.info("click On Report Download CSV");
         driver1.findElement(By.id(applangoButtons.REPORT_PAGE_DOWNLOAD.getValue())).click();
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"buttons\"]/output/a")));
-//        driver1.findElement(By.xpath("//*[@id=\"buttons\"]/output/a")).click();
-//        driver1.switchTo().alert().accept();
-//        System.out.println("--- " + driver1.switchTo().activeElement().getText());
+    }
+
+    public static String getLicenseCost(FirefoxDriver driver) throws IOException {
+        return driver.findElement(By.cssSelector(applangoTextfields.MAIN_LICENSE_COST.getValue())).getText();
+    }
+
+    public static void validateLicenseCostData(String licenseCost) {
+        assertTrue(licenseCost.contains("Total license cost"));
+        assertTrue(licenseCost.contains("$39585"));
+        assertTrue(licenseCost.contains("2634"));
+        assertTrue(licenseCost.contains("$39510"));
+        assertTrue(licenseCost.contains("1"));
+        assertTrue(licenseCost.contains("$75"));
     }
 }

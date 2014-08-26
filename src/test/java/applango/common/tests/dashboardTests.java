@@ -1,7 +1,9 @@
 package applango.common.tests;
 
 import applango.common.SeleniumTestBase;
-import applango.common.enums.applango.*;
+import applango.common.enums.applango.applangoMessages;
+import applango.common.enums.applango.applangoObject;
+import applango.common.enums.applango.applangoReports;
 import applango.common.enums.database.dbTables;
 import applango.common.enums.generic.applications;
 import applango.common.enums.generic.months;
@@ -26,7 +28,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.xml.sax.SAXException;
@@ -35,7 +36,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import static applango.common.enums.salesforce.salesforceLicenses.SALESFORCE;
 import static applango.common.services.Applango.genericApplangoWebsiteActions.*;
 import static applango.common.services.DB.mongo.mongoDB.countFailureLogins;
 import static applango.common.services.DB.mongo.mongoDB.countSuccessfulLogins;
@@ -217,6 +217,29 @@ public class dashboardTests extends SeleniumTestBase{
     }
 
     @Test
+    public void testLicenseCost() throws ParserConfigurationException, SAXException, IOException {
+        Applango applango = getApplangoConfigurationXML();
+        FirefoxDriver driver = getFirefoxDriver();
+        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
+        try {
+            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
+            genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
+
+            String licenseCost = getLicenseCost(driver);
+            validateLicenseCostData(licenseCost);
+
+            System.out.println("License Cost details : \n" + licenseCost);
+
+
+        }
+        finally {
+            driver.kill();
+        }
+
+
+    }
+
+    @Test
     public void testGroupByLicenseType() throws ParserConfigurationException, SAXException, IOException {
         Applango applango = getApplangoConfigurationXML();
         FirefoxDriver driver = getFirefoxDriver();
@@ -225,8 +248,6 @@ public class dashboardTests extends SeleniumTestBase{
         DBCollection coll = db.getCollection(connection);
         String licenseType =  salesforceLicenses.FORCE.getValue().toString();
         try {
-//            SFUserManagerClient sfUserMgr = new SFUserManagerClient();
-//            SyncProcessProgress spp = sfUserMgr.syncGroupInfo("automationCustomer");
             BasicDBObject documentBuilder = new BasicDBObject("appName", "salesforce").
                     append("customerId", "automationCustomer").
                     append("externalId", "00520000003ClOvAAK");
@@ -235,6 +256,7 @@ public class dashboardTests extends SeleniumTestBase{
             if (coll.find(documentBuilder).next().get("groups").toString().toLowerCase().contains(licenseType.toLowerCase())) {
                 genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
                 driver.manage().window().maximize();
+
                 logger.info("Check that user exist in usertable when filtering by " + licenseType);
                 genericApplangoWebsiteActions.filterLicenseType(driver, wait, salesforceLicenses.FORCE);
                 genericApplangoWebsiteActions.enterValueInSearchLastName(driver, lastName);
@@ -242,7 +264,6 @@ public class dashboardTests extends SeleniumTestBase{
                 //check Groups field
 
                 logger.info("Check that user not exist in usertable when filtering by " + salesforceLicenses.SYSTEM_ADMINISTRATOR.getValue());
-
                 genericApplangoWebsiteActions.filterLicenseType(driver, wait, salesforceLicenses.SYSTEM_ADMINISTRATOR);
                 genericApplangoWebsiteActions.enterValueInSearchLastName(driver, lastName);
                 assertFalse(driver.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
@@ -301,7 +322,7 @@ public class dashboardTests extends SeleniumTestBase{
             salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
 
             logger.info("Get appRank and Activities before sync");
-            filterByDate(driver1, wait1, "2014", months.JULY, "2014", months.JULY);
+            filterByDate(driver1, wait1, "", getToMonth(), "", getToMonth());
             selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
 
             int appRankBeforeActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
@@ -313,8 +334,7 @@ public class dashboardTests extends SeleniumTestBase{
 
             logger.info("Compare appRank and activities");
 
-            filterByDate(driver1, wait1, "2014", months.JULY, "2014", months.JULY);
-//            selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
+            filterByDate(driver1, wait1, "", getToMonth(), "", getToMonth());
 
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
@@ -348,8 +368,10 @@ public class dashboardTests extends SeleniumTestBase{
         wait1.withTimeout(50, TimeUnit.SECONDS);
         try {
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
-            genericApplangoWebsiteActions.filterLicenseType(driver1, wait1, SALESFORCE);
-            filterByDate(driver1, wait1, "2013", months.SEPTEMBER, "2014", months.JANUARY);
+//            genericApplangoWebsiteActions.filterLicenseType(driver1, wait1, SALESFORCE);
+            filterByDate(driver1, wait1, "2013", months.SEPTEMBER, "", months.JANUARY);  //Blank toYear in order to keep is till 2014
+
+
             genericApplangoWebsiteActions.waitForUsersTableToLoad(wait1);
 
         }
@@ -586,15 +608,15 @@ public class dashboardTests extends SeleniumTestBase{
     @Test
     public void testSyncBoxActivities() throws Throwable {
 
-        FirefoxDriver driver = new FirefoxDriver(DesiredCapabilities.firefox());
-        FirefoxDriver driver1 = new FirefoxDriver(DesiredCapabilities.firefox());
+        FirefoxDriver driver = new FirefoxDriver();
+        FirefoxDriver driver1 = new FirefoxDriver();
 //        driver = new SafariDriver();
+        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         logger.info("Sync metrics and roll up");
 
 
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         try {
 
             String customerId = "automationCustomer";
@@ -603,7 +625,7 @@ public class dashboardTests extends SeleniumTestBase{
             logger.info("Login to Applango");
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.BOX);
-            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", months.JULY, "2014", months.JULY);
+//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getToMonth(), "2014", getToMonth());
 
             logger.info("Perform actions in Box");
             launchingWebsite(driver, "https://app.box.com/login/");
@@ -615,8 +637,8 @@ public class dashboardTests extends SeleniumTestBase{
             int appRank = genericApplangoWebsiteActions.getAppRank(driver1);
             int activites = genericApplangoWebsiteActions.getActivity(driver1);
             applangoToolsCommand.syncBoxActivitiesAndRollup(customerId);
-            driver.navigate().refresh();
-            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", months.JULY, "2014", months.JULY);
+            reloadDashboard(driver1, wait1);
+//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getToMonth(), "2014", getToMonth());
             genericApplangoWebsiteActions.selectUserFromList(driver1, wait1, "Omer1", "OvadiaAutoBox");
             int appRankAfter = genericApplangoWebsiteActions.getAppRank(driver1);
             int activitesAfter = genericApplangoWebsiteActions.getActivity(driver1);
@@ -637,6 +659,18 @@ public class dashboardTests extends SeleniumTestBase{
         }
 
     }
+
+
+
+    private void reloadDashboard(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+        driver1.navigate().refresh();
+        waitUntilWaitForServerDissappears(wait1);
+    }
+
+    private months getToMonth() {
+        return months.AUGUST;
+    }
+
     @Test
     public void testPeoplePage()  throws Throwable {
         FirefoxDriver driver1 = getFirefoxDriver();
@@ -648,10 +682,8 @@ public class dashboardTests extends SeleniumTestBase{
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
 
             genericApplangoWebsiteActions.openPeoplePage(driver1, wait1);
-            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, months.JULY, "2014", months.JULY, "2014");
+            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, getToMonth(), "2014", getToMonth(), "2014");
             genericApplangoWebsiteActions.clickOnUserInPeopleTable(driver1, wait1);
-
-//            genericApplangoWebsiteActions.clickOnUserInPeoplePageUserTabler(driver1, wait1);
 
         }
         finally {
@@ -670,11 +702,19 @@ public class dashboardTests extends SeleniumTestBase{
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.openReportPage(driver1, wait1);
 
-            selectReport(driver1, applangoReports.TotalObjectActivityForCompany);
-            selectReportApplication(driver1, applications.SALESFORCE);
 
-            filterReportsDates(driver1, months.JANUARY, "2013", months.JULY, "2014");
-            clickOnReportSearch(driver1, wait1);
+            logger.info("Run ove all reports");
+            for (applangoReports report : applangoReports.values()) {
+                selectReport(driver1, report);
+                for (applications application : applications.values()) {
+                    selectReportApplication(driver1, application);
+                    logger.info("Run Report : " + report.getValue() + " for application : " + application.getValue());
+                    clickOnReportSearch(driver1, wait1);
+
+
+                }
+
+            }
 
             genericApplangoWebsiteActions.clickOnReportDownload(driver1, wait1);
             genericApplangoWebsiteActions.clickOnReportExportCSV(driver1, wait1);

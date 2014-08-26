@@ -6,7 +6,7 @@ import applango.common.services.beans.Salesforce;
 import com.applango.beans.SyncProcessProgress;
 import com.applango.beans.UsageStatsAggregation;
 import com.applango.rest.client.BoxIntegrationManagerClient;
-import com.applango.rest.client.SFUsageStatsManagerClient;
+import com.applango.rest.client.SFIntegrationManagerClient;
 import com.applango.services.UsageRollupManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,7 +34,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int napTime = 10;
         try {
                 String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
-                SFUsageStatsManagerClient sfUsageStatsManagerClient = new  SFUsageStatsManagerClient();
+                SFIntegrationManagerClient sfUsageStatsManagerClient = new  SFIntegrationManagerClient();
                 sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
                 SyncProcessProgress spp =  sfUsageStatsManagerClient.rollupAppRankInfo(customerId, zone, appName, "DAILY", null);
 //
@@ -43,7 +43,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
             while (spp.getFinished() == null && processTime < maximumWait) {
                 Thread.sleep(napTime);
                 processTime += napTime;
-                spp = sfUsageStatsManagerClient.getRollupProcessProgress(spp.getProcessId());
+                spp = sfUsageStatsManagerClient.getSyncProcessProgress(spp.getProcessId());
             }
         }
         catch (Exception ex) {
@@ -62,11 +62,15 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int napTime = 10;
         try {
             String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
-            SFUsageStatsManagerClient sfUsageStatsManagerClient = new  SFUsageStatsManagerClient();
-            sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
-            SyncProcessProgress spp = sfUsageStatsManagerClient.populateUsage(customerId);
-//            sfUsageStatsManagerClient.syncLoginInfo(customerId, "salesforce");
-            waitForProcessFinished(maximumWait, napTime, sfUsageStatsManagerClient, spp);
+            SFIntegrationManagerClient sfIntegrationManagerClient = new SFIntegrationManagerClient();
+            sfIntegrationManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
+            SyncProcessProgress spp = sfIntegrationManagerClient.populateUsage(customerId);
+
+//            SFUsageStatsManagerClient sfUsageStatsManagerClient = new  SFUsageStatsManagerClient();
+//            sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
+//            SyncProcessProgress spp = sfUsageStatsManagerClient.populateUsage(customerId);
+////            sfUsageStatsManagerClient.syncLoginInfo(customerId, "salesforce");
+            waitForProcessFinished(maximumWait, napTime, sfIntegrationManagerClient, spp);
 
         }
         catch (Exception ex) {
@@ -74,14 +78,14 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         }
     }
 
-    private static void waitForProcessFinished(int maximumWait, int napTime, SFUsageStatsManagerClient sfUsageStatsManagerClient, SyncProcessProgress spp) throws InterruptedException {
+    private static void waitForProcessFinished(int maximumWait, int napTime, SFIntegrationManagerClient sfIntegrationManagerClient, SyncProcessProgress spp) throws InterruptedException {
         System.out.println("processId: " + spp.getProcessId());
 
         int processTime = 0;
         while (spp.getFinished() == null && processTime < maximumWait) {
             Thread.sleep(napTime);
             processTime += napTime;
-            spp = sfUsageStatsManagerClient.getSyncProcessProgress(spp.getProcessId());
+            spp = sfIntegrationManagerClient.getSyncProcessProgress(spp.getProcessId());
         }
     }
 
@@ -94,16 +98,16 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
         try {
 
-            SFUsageStatsManagerClient sfUsageStatsManagerClient = new  SFUsageStatsManagerClient();
-            sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
-            SyncProcessProgress spp = sfUsageStatsManagerClient.syncLoginInfo(customerId, null);
+            SFIntegrationManagerClient sfIntegrationManagerClient = new  SFIntegrationManagerClient();
+            sfIntegrationManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
+            SyncProcessProgress spp = sfIntegrationManagerClient.syncLoginInfo(customerId, null);
             System.out.println("processId: " + spp.getProcessId());
 
             int processTime = 0;
             while (spp.getFinished() == null && processTime < maximumWait) {
                 Thread.sleep(napTime);
                 processTime += napTime;
-                spp = sfUsageStatsManagerClient.getSyncProcessProgress(spp.getProcessId());
+                spp = sfIntegrationManagerClient.getSyncProcessProgress(spp.getProcessId());
             }
 
         }

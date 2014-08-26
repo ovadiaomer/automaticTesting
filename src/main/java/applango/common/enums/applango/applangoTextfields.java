@@ -33,6 +33,15 @@ public enum applangoTextfields {
 
         }
     },
+    MAIN_LICENSE_COST{
+        public String path() throws IOException {
+
+            Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return salesforceObjectMap.get("dashboard.application.totalLicenseCost.css").toString();
+
+
+        }
+    },
     SearchLastName{
         public String path() throws IOException {
 
@@ -134,6 +143,10 @@ public enum applangoTextfields {
 
         }
     }
+
+
+
+
 
 
 

@@ -6,40 +6,30 @@
         <ServerConfiguration>
           <option name="label" value="omer-dev" />
           <option name="password" value="changeit123" />
-          <option name="serverName" value="iad-mongos0.objectrocket.com" />
-          <option name="serverPort" value="15101" />
           <option name="userDatabase" value="omer-dev" />
           <option name="username" value="omer.ovadia@applango.com" />
         </ServerConfiguration>
         <ServerConfiguration>
           <option name="label" value="kineret" />
           <option name="password" value="changeit123" />
-          <option name="serverName" value="iad-mongos0.objectrocket.com" />
-          <option name="serverPort" value="15101" />
           <option name="userDatabase" value="kineret-dev" />
           <option name="username" value="kineret.amor@applango.com" />
         </ServerConfiguration>
         <ServerConfiguration>
           <option name="label" value="vasily" />
           <option name="password" value="changeit123" />
-          <option name="serverName" value="iad-mongos0.objectrocket.com" />
-          <option name="serverPort" value="15101" />
           <option name="userDatabase" value="vasily-dev" />
           <option name="username" value="vasily@applango.com" />
         </ServerConfiguration>
         <ServerConfiguration>
           <option name="label" value="anders" />
           <option name="password" value="changeit123" />
-          <option name="serverName" value="iad-mongos0.objectrocket.com" />
-          <option name="serverPort" value="15101" />
           <option name="userDatabase" value="anders-dev" />
           <option name="username" value="anders.fridberg@applango.com" />
         </ServerConfiguration>
         <ServerConfiguration>
           <option name="label" value="prod-beta" />
           <option name="password" value="!SaaSDud3!" />
-          <option name="serverName" value="iad-mongos0.objectrocket.com" />
-          <option name="serverPort" value="15101" />
           <option name="userDatabase" value="prod-beta" />
           <option name="username" value="applango-beta@applango.com" />
         </ServerConfiguration>

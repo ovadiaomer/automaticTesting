@@ -9,18 +9,18 @@ package applango.common.enums.generic;
  */
 public enum months {
 
-    JANUARY("JANUARY"),
-    FEBRUARY("FEBRUARY"),
-    MARCH("MARCH"),
-    APRIL("APRIL"),
-    MAY("MAY"),
-    JUNE("JUNE"),
-    JULY("JULY"),
-    AUGUST("AUGUST"),
-    SEPTEMBER("SEPTEMBER"),
-    OCTOBER("OCTOBER"),
-    NOVEMBER("NOVEMBER"),
-    DECEMBER("DECEMBER");
+    JANUARY("DJ"),
+    FEBRUARY("DF"),
+    MARCH("DM"),
+    APRIL("DA"),
+    MAY("DAM"),
+    JUNE("DAJ"),
+    JULY("DAJJ"),
+    AUGUST("DAA"),
+    SEPTEMBER("S"),
+    OCTOBER("O"),
+    NOVEMBER("N"),
+    DECEMBER("D");
 
     private final String value;
 

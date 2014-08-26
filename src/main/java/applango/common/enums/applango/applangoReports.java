@@ -11,10 +11,10 @@ public enum applangoReports {
 
 
 
-    TotalObjectActivityForCompany("Total Object Activity for Company"),
+    TotalObjectActivityForCompany("T"),
 
-    GroupActivityObjects("Group Activity (Objects)"),
-    ObjectActivityGroups("Object Activity (Groups)"),
+    GroupActivityObjects("G"),
+    ObjectActivityGroups("O"),
 
 
     ;
