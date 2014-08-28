@@ -12,6 +12,7 @@ public enum dbTables {
     excludedUser("excludedUser"),
     groupInfo("groupInfo"),
     loginInfo("loginInfo"),
+    licenseApp("licenseApp"),
     syncProcessProgress("syncProcessProgress"),
     user("user"),
     OAuth2Credentials("oAuth2Credentials");

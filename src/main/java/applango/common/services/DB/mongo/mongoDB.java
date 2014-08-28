@@ -2,9 +2,7 @@ package applango.common.services.DB.mongo;
 
 import applango.common.SeleniumTestBase;
 import applango.common.services.beans.Applango;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
-import com.mongodb.WriteConcern;
+import com.mongodb.*;
 import com.mongodb.util.JSON;
 import junit.framework.Assert;
 
@@ -45,6 +43,8 @@ public class mongoDB extends SeleniumTestBase {
         }
         return dbObjectRecordQuery;
     }
+
+
     public static String getSpecialToken(Applango applango, DBCollection coll) {
         logger.info("Get the email token of : " + applango.getUsername() );
         String token;
@@ -94,6 +94,36 @@ public class mongoDB extends SeleniumTestBase {
         String loginOverTheLastWeek =  "( { distinct :\"loginInfo\"" + ",key: \"externalId\"" + ", query : { $and: [ {loginTime: {gte: new Date(ISODate().getTime()-1000*60*60*24*7)}}, {customerId : \"automationCustomer\"" + "}] } })";
         DBObject query = (DBObject) JSON.parse(loginOverTheLastWeek);
         return (int) appInfoConnection.count(query);
+
+    }
+
+
+    public static int getPriceByLicenseType(DBCollection appInfoConnection) {
+        return getPriceByLicenseType(appInfoConnection, "PID_CHATTER");
+    }
+
+    public static int getPriceByLicenseType(DBCollection appInfoConnection, String licenseType) {
+
+        String jsonCustomer = "{$and : [{'licenseType' : '"+ licenseType +"'}, {'customerId': 'automationCustomer'} ]}";
+        DBObject dbObjectRecordQuery = (DBObject) JSON.parse(jsonCustomer);
+        Object strPrice = appInfoConnection.find(dbObjectRecordQuery).next().get("price");
+        System.out.println("The price for " +licenseType+ " is " + strPrice);
+        return  (Integer) strPrice;
+
+    }
+
+    public static void updateLicensePrice(DBCollection appInfoConnection, int newPrice) {
+        updateLicensePrice(appInfoConnection, "PID_CHATTER", newPrice);
+    }
+
+    public static void updateLicensePrice(DBCollection appInfoConnection, String licenseType, int newPrice) {
+        System.out.println("Updating license price of " + licenseType);
+        String jsonCustomer = "{$and : [{'licenseType' : '"+ licenseType +"'}, {'customerId': 'automationCustomer'} ]}";
+        DBObject dbObjectRecordQuery = (DBObject) JSON.parse(jsonCustomer);
+
+        BasicDBObject set = new BasicDBObject("$set", new BasicDBObject("price", newPrice));
+        appInfoConnection.update(dbObjectRecordQuery, set);
+        System.out.println("The new price for " +licenseType+ " is " + newPrice);
 
     }
 

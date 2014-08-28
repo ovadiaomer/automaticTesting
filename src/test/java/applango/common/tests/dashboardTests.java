@@ -221,18 +221,30 @@ public class dashboardTests extends SeleniumTestBase{
         Applango applango = getApplangoConfigurationXML();
         FirefoxDriver driver = getFirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
+        final String connection = dbTables.licenseApp.getValue().toString();
+        DBCollection coll = db.getCollection(connection);
         try {
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
             genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
+            String licenseCostInfo = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
 
-            String licenseCost = getLicenseCost(driver);
-            validateLicenseCostData(licenseCost);
+            int price  = mongoDB.getPriceByLicenseType(coll, "PID_CHATTER");
+            if (!(price==15)) {
+                mongoDB.updateLicensePrice(coll, "PID_CHATTER", 15);
+            }
+            validateLicenseCostDataBeforeUpdate(licenseCostInfo); //licenseCost = 15
 
-            System.out.println("License Cost details : \n" + licenseCost);
+            mongoDB.updateLicensePrice(coll, "PID_CHATTER", 10);
+            //reload page
+            genericApplangoWebsiteActions.selectApplication(driver, wait, applications.BOX);
+            genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
 
+            licenseCostInfo = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
+            validateLicenseCostDataAfterUpdate(licenseCostInfo);
 
         }
         finally {
+            mongoDB.updateLicensePrice(coll, "PID_CHATTER", 15);
             driver.kill();
         }
 

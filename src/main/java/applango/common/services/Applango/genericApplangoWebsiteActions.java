@@ -120,9 +120,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
         clickOnLogin(driver);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.HEADER.getValue().toString())));
-//        driver.navigate().refresh();
         if (!isFirstTime) {
-//            selectApplication(driver, wait, applications.SALESFORCE);
             waitForUserListToLoad(wait);
 
         }
@@ -650,16 +648,27 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"buttons\"]/output/a")));
     }
 
-    public static String getLicenseCost(FirefoxDriver driver) throws IOException {
+    public static String getLicenseCostInfo(FirefoxDriver driver) throws IOException {
         return driver.findElement(By.cssSelector(applangoTextfields.MAIN_LICENSE_COST.getValue())).getText();
     }
 
-    public static void validateLicenseCostData(String licenseCost) {
+    public static void validateLicenseCostDataBeforeUpdate(String licenseCost) {
+        logger.info("Check the license Cost when 'PID_CHATTER' = 15 ");
         assertTrue(licenseCost.contains("Total license cost"));
         assertTrue(licenseCost.contains("$39585"));
-        assertTrue(licenseCost.contains("2634"));
-        assertTrue(licenseCost.contains("$39510"));
-        assertTrue(licenseCost.contains("1"));
-        assertTrue(licenseCost.contains("$75"));
+//        assertTrue(licenseCost.contains("2634"));
+//        assertTrue(licenseCost.contains("$39510"));
+//        assertTrue(licenseCost.contains("1"));
+//        assertTrue(licenseCost.contains("$75"));
+    }
+
+    public static void validateLicenseCostDataAfterUpdate(String licenseCost) {
+        logger.info("Check the license Cost when 'PID_CHATTER' = 10 ");
+        assertTrue(licenseCost.contains("Total license cost"));
+        assertTrue(licenseCost.contains("$26415"));
+//        assertTrue(licenseCost.contains("2634"));
+//        assertTrue(licenseCost.contains("$26340"));
+//        assertTrue(licenseCost.contains("1"));
+//        assertTrue(licenseCost.contains("$75"));
     }
 }
