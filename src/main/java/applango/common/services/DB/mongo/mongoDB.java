@@ -117,7 +117,7 @@ public class mongoDB extends SeleniumTestBase {
     }
 
     public static void updateLicensePrice(DBCollection appInfoConnection, String licenseType, int newPrice) {
-        System.out.println("Updating license price of " + licenseType);
+        System.out.println("Updating license price of " + licenseType + " to " + newPrice);
         String jsonCustomer = "{$and : [{'licenseType' : '"+ licenseType +"'}, {'customerId': 'automationCustomer'} ]}";
         DBObject dbObjectRecordQuery = (DBObject) JSON.parse(jsonCustomer);
 

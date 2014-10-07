@@ -26,6 +26,18 @@ public enum applangoObject {
         }
 
     },
+    APPLICATION_LINK{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("applicationPage.tab.xpath").toString();
+
+
+        }
+
+    },
+
+
     WAITBOX{
         public String path() throws IOException {
 
@@ -81,6 +93,25 @@ public enum applangoObject {
             return applangoObjectMap.get("peoplePage.graphRolledUp.id").toString();
         }
     },
+    PEOPLEPAGE_USER_APP_TABLE{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.usertable.css").toString();
+        }
+    },
+    PEOPLEPAGE_USER_CHART{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.usertchart.id").toString();
+        }
+    },
+    PEOPLEPAGE_USER_DETAILS{
+        public String path() throws IOException {
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("peoplePage.userdetails.id").toString();
+        }
+    },
+
     USERTABLER{
         public String path() throws IOException {
             Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);

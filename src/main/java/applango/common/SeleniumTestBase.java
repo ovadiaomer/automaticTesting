@@ -25,8 +25,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-//import java.util.logging.Logger;
-
 public class SeleniumTestBase {
 
 
@@ -34,6 +32,13 @@ public class SeleniumTestBase {
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
 
     private static Map configPropertiesMapper;
+
+    public static int getTimeout() throws IOException {
+        configPropertiesMapper = objectMapper.getConfigProperties();
+        return Integer.parseInt(configPropertiesMapper.get("timeout").toString());
+
+
+    }
 
     public static Database getDatabaseConfigurationXML() throws IOException, ParserConfigurationException, SAXException {
         configPropertiesMapper = objectMapper.getConfigProperties();
@@ -45,7 +50,7 @@ public class SeleniumTestBase {
     }
 
     public static DB connectToDB(Database dbProperties) throws UnknownHostException {
-            MongoClient mongoClient = new MongoClient(dbProperties.getUrl(), dbProperties.getPort());
+        MongoClient mongoClient = new MongoClient(dbProperties.getUrl(), dbProperties.getPort());
         DB db = mongoClient.getDB(dbProperties.getDbName());
         boolean auth = db.authenticate(dbProperties.getUsername(), dbProperties.getPassword().toCharArray());
         mongoClient.setWriteConcern(WriteConcern.JOURNALED);

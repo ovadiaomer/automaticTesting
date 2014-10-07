@@ -100,8 +100,8 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bodyCell")));
     }
 
- public static void waitForLoginPageToLoad(WebDriverWait wait) {
-     wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("Login")));
+    public static void waitForLoginPageToLoad(WebDriverWait wait) {
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("Login")));
     }
 
     public static String getUserLabel(WebDriver driver) {
@@ -223,6 +223,11 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
     public static void openTab(WebDriver driver, salesforceTabs sfTab, WebDriverWait wait) throws IOException {
         logger.info("Open tab " + sfTab);
         driver.findElement(By.xpath(sfTab.getValue())).click();
+        waitForPageToLoad(wait);
+    }
+    public static void openTabById(WebDriver driver, salesforceTabs sfTab, WebDriverWait wait) throws IOException {
+        logger.info("Open tab " + sfTab);
+        driver.findElement(By.id(salesforceTabs.LEAD.getValue())).click();
         waitForPageToLoad(wait);
     }
 

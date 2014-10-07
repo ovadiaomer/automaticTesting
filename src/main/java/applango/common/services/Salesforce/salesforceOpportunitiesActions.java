@@ -118,5 +118,6 @@ public class salesforceOpportunitiesActions extends genericSalesforceWebsiteActi
         SalesforceOpportunities[] salesforceOpportunities =  create(driver2, wait2, numOfNewOpportunities);
         //Update the Opportunity x times
         updateOpportunityNTimes(driver2, wait2, salesforceOpportunities[0], numOfUpdateOpportunities);
+        deleteRecordById(driver2, wait2, salesforceOpportunities[0].getOpportunityId());
     }
 }

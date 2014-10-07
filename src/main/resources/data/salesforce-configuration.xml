@@ -1,46 +1,9 @@
 <?xml version="1.0"?>
 <saleforce>
-    <environment id="production">
-        <url>http://www.salesforce.com</url>
-        <username>ovadia.omero@gmail.com</username>
-        <password>omer1983</password>
-        <accessToken>3MVG99qusVZJwhskm2SrYINfbrJQka3Ah2Otl6hfJbvdPWR8ncbxaJkWx0m277mji0kTVCyPywd2uJFavh84s</accessToken>
-        <clientSecret>9128680489914768464</clientSecret>
-        <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>music</clientId>
-        <applangoUserId>applangoMusic</applangoUserId>
-        <applangoPasswordId>applangoMusic</applangoPasswordId>
-        <isSandbox>false</isSandbox>
-        <clientId></clientId>
-    </environment>
-    <environment id="developer">
-        <url>http://www.salesforce.com</url>
-        <username>ovadia.omero@gmail.com</username>
-        <password>omer1983</password>
-        <accessToken></accessToken>
-        <clientSecret></clientSecret>
-        <loginUrl>https://login.salesforce.com</loginUrl>
-        <applangoUserId>1</applangoUserId>
-        <clientId>1</clientId>
-        <isSandbox>false</isSandbox>
-    </environment>
-    <environment id="testing-prodBeta">
-        <url>http://www.salesforce.com</url>
-        <username>omer.ovadia@applango.net</username>
-        <password>omer1983</password>
-        <accessToken>3MVG99qusVZJwhsn_xr.KeDe5wFcAtrXQR8g_gXDh62PMoOkRq8iCkiSDZkVdI3SzWBO.O0bd31KPAgAKZQtT</accessToken>
-        <clientSecret>7503168071949708689</clientSecret>
-        <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>omerTest</clientId>
-        <applangoUserId>applango</applangoUserId>
-        <applangoPasswordId>applango</applangoPasswordId>
-        <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
-        <isSandbox>false</isSandbox>
-    </environment>
     <environment id="qa-it-release">
         <url>http://www.salesforce.com</url>
         <username>omer@applango.com</username>
-        <password>capelton2</password>
+        <password>capelton3</password>
         <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JwsFuCgXZbDSOMrANe5wE8ZGMEdMLU3UQ6wvd9oHddHn4qS8xlAiJs1IxXh</accessToken>
         <clientSecret>1575767409006117159</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
@@ -54,7 +17,7 @@
     <environment id="qa-it-develop">
         <url>http://www.salesforce.com</url>
         <username>omer@applango.com</username>
-        <password>capelton2</password>
+        <password>capelton3</password>
         <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JCS3z4sdoE99m6.A.H0GNo2qWclSPgODuyo2f9iC3_9f5y1F5nO1fPe4zGj</accessToken>
         <clientSecret>7151926241509186983</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
@@ -63,34 +26,6 @@
         <clientLogin>http://applangoqa4.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
         <applangoUserId>1</applangoUserId>
         <securityToken>lUTKBO5DzVg1moS1y0VARiKha</securityToken>
-        <isSandbox>false</isSandbox>
-    </environment>
-    <environment id="netformx-sandbox">
-        <url>https://test.salesforce.com</url>
-        <username>brad.hlista@applango.com1</username>
-        <password>1Zippy1!</password>
-        <accessToken>3MVG9pHRjzOBdkd9_lUWgyk_HUId8Svzc0AKhITOasVp5LSgBANZGexUyXM4rac4Yu5zoTaBrjtSPYoSDTE6C</accessToken>
-        <clientSecret>2826080930407254723</clientSecret>
-        <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>omer1TestAuto1</clientId>
-        <connectedApp>1</connectedApp>
-        <clientLogin>1</clientLogin>
-        <applangoUserId>1</applangoUserId>
-        <securityToken>1</securityToken>
-        <isSandbox>true</isSandbox>
-    </environment>
-    <environment id="omerqa">
-        <url>https://www.salesforce.com</url>
-        <username>omerqa@applango.com</username>
-        <password>omer1982</password>
-        <accessToken>3MVG9A2kN3Bn17hsVnmueHI2OSaOn6O_J8PtsZeijDQ6TSd.cojflHn41PDhLEKuDc_m.TYQgKpFJVtv1F8FI</accessToken>
-        <clientSecret>8869251231301639512</clientSecret>
-        <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>omerqa</clientId>
-        <connectedApp>omerqa</connectedApp>
-        <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
-        <securityToken>1</securityToken>
-        <applangoUserId>omerqa</applangoUserId>
         <isSandbox>false</isSandbox>
     </environment>
 </saleforce>

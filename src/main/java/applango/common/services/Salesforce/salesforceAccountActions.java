@@ -187,6 +187,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         SalesforceAccounts[] salesforceAccounts =  create(driver2, wait2, numOfNewAccounts);
         //Update the account x times
         updateAccountNTimes(driver2, wait2, salesforceAccounts[0], numOfUpdateAccounts);
+        deleteRecordById(driver2, wait2, salesforceAccounts[0].getAccountId());
     }
 
 

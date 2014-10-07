@@ -128,5 +128,6 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
         SalesforceLeads[] salesforceLeads =  create(driver2, wait2, numOfNewLeads);
         //Update the Lead x times
         updateLeadNTimes(driver2, wait2, salesforceLeads[0], numOfUpdateLeads);
+        deleteRecordById(driver2, wait2, salesforceLeads[0].getId());
     }
 }

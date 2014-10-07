@@ -6,6 +6,7 @@ import applango.common.enums.generic.applications;
 import applango.common.enums.generic.jsonMaps;
 import applango.common.enums.generic.months;
 import applango.common.enums.salesforce.salesforceLicenses;
+import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Mappers.objectMapper;
 import applango.common.services.Mappers.readFromConfigurationFile;
 import applango.common.services.beans.Applango;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static applango.common.services.DB.mongo.mongoDB.countFailureLogins;
 import static applango.common.services.DB.mongo.mongoDB.countSuccessfulLogins;
@@ -40,6 +42,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     public static void openDashboardAndLogin(Applango applango, WebDriver driver1, WebDriverWait wait) throws IOException {
         openDashboardAndLogin(applango, driver1, wait, false, false);
+        openApplicationPage(driver1, wait);
     }
     public static void openDashboardAndLogin(Applango applango, WebDriver driver1, WebDriverWait wait, boolean isOAuthTest) throws IOException {
         openDashboardAndLogin(applango, driver1, wait, isOAuthTest, false);
@@ -60,6 +63,8 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
 
         genericApplangoWebsiteActions.clickOnLoginButtonAndWaitForUserListToLoad(driver1, wait, isFirstLogin);
+
+
 
         waitUntilWaitForServerDissappears(wait);
 
@@ -121,7 +126,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         clickOnLogin(driver);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.HEADER.getValue().toString())));
         if (!isFirstTime) {
-            waitForUserListToLoad(wait);
+//            waitForUserListToLoad(wait);
 
         }
     }
@@ -144,6 +149,11 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     public static void clickOnLogin(WebDriver driver) throws IOException {
         SeleniumTestBase.logger.info("Clicking on login button (by id)");
         driver.findElement(By.id(applangoButtons.LOGIN_SUBMIT.getValue())).click();
+
+        System.currentTimeMillis();
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+
+
     }
 
 
@@ -164,8 +174,22 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     public static void waitUntilWaitForServerDissappears(WebDriverWait wait) throws IOException {
         logger.info("Wait until waitbox disappear");
+        long start = getStartTimeInMillis();
         wait.until(ExpectedConditions.invisibilityOfElementLocated((By.id(applangoObject.WAITBOX.getValue()))));
+        getFinishTimeAndCompareToStartTime(start);
     }
+
+    private static void getFinishTimeAndCompareToStartTime(long start) {
+        long finish = System.currentTimeMillis();
+        long totalTime = finish - start;
+        totalTime /= 1000;
+        System.out.println("Total Time for page load :  "+totalTime + " seconds");
+    }
+
+    private static long getStartTimeInMillis() {
+        return System.currentTimeMillis();
+    }
+
 
     public static void waitForUserDetailsInPeoplePage(WebDriverWait wait) throws IOException {
         logger.info("wait For User Details In PeoplePage");
@@ -550,11 +574,35 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     public static void clickOnUserInPeopleTable(WebDriver driver1, WebDriverWait wait1, String rowNumber) throws IOException {
+        logger.info("click on user app in people page");
         driver1.findElement(By.cssSelector("#alluserstabler > tbody > tr:nth-child(" +rowNumber + ")")).click();
         waitUntilWaitForServerDissappears(wait1);
-        waitForUserDetailsInPeoplePage(wait1);
         waitForGraphRollUp(wait1);
 
+    }
+
+    public static void clickOnAppInPeopleTable(WebDriver driver1, WebDriverWait wait1) throws IOException {
+        logger.info("Click on first app in table");
+        if (checkUserApplicationTableIsNotEmpty(driver1)) {
+            driver1.findElement(By.cssSelector(applangoObject.PEOPLEPAGE_USER_APP_TABLE.getValue())).click();
+            waitUntilWaitForServerDissappears(wait1);
+            checkUserAppData(wait1);
+        }
+    }
+
+    private static void checkUserAppData(WebDriverWait wait1) throws IOException {
+        logger.info("Check user app in people page");
+        wait1.until(ExpectedConditions.visibilityOfElementLocated((By.id("appData")))); //wait for activity chart to load
+        wait1.until(ExpectedConditions.visibilityOfElementLocated((By.id(applangoObject.PEOPLEPAGE_USER_CHART.getValue())))); //wait for activity chart to load
+        wait1.until(ExpectedConditions.visibilityOfElementLocated((By.id(applangoObject.PEOPLEPAGE_USER_DETAILS.getValue())))); //wait for activity chart to load
+    }
+
+    private static boolean checkUserApplicationTableIsNotEmpty(WebDriver driver1) throws IOException {
+        if (!driver1.findElement(By.cssSelector(applangoObject.PEOPLEPAGE_USER_APP_TABLE.getValue())).getText().isEmpty()) {
+            return true;
+        }
+        else
+            return false;
     }
 
     private static void waitForGraphRollUp(WebDriverWait wait1) throws IOException {
@@ -596,7 +644,6 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         driver1.findElement(By.id(applangoButtons.REPORT_PAGE_SEARCH.getValue())).click();
         genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait1);
         waitForReportDataHolder(wait1);
-//        waitForReportDataTable(wait1);
         waitForReportDataChart(wait1);
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.REPORT_PAGE_EXPORT.getValue())));
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.REPORT_PAGE_DOWNLOAD.getValue())));
@@ -652,23 +699,99 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         return driver.findElement(By.cssSelector(applangoTextfields.MAIN_LICENSE_COST.getValue())).getText();
     }
 
-    public static void validateLicenseCostDataBeforeUpdate(String licenseCost) {
-        logger.info("Check the license Cost when 'PID_CHATTER' = 15 ");
-        assertTrue(licenseCost.contains("Total license cost"));
-        assertTrue(licenseCost.contains("$39585"));
+    public static void validateLicenseCostDataInApplicationPageBeforeUpdate(String licenseCost) {
+        logger.info("Check the license Cost when 'FDC_SUB' = 30 ");
+        assertTrue(licenseCost.contains("Total licenses"));
+        assertTrue(licenseCost.contains("101,770"));
 //        assertTrue(licenseCost.contains("2634"));
 //        assertTrue(licenseCost.contains("$39510"));
 //        assertTrue(licenseCost.contains("1"));
 //        assertTrue(licenseCost.contains("$75"));
     }
 
-    public static void validateLicenseCostDataAfterUpdate(String licenseCost) {
-        logger.info("Check the license Cost when 'PID_CHATTER' = 10 ");
-        assertTrue(licenseCost.contains("Total license cost"));
-        assertTrue(licenseCost.contains("$26415"));
+    public static void validateLicenseCostDataInApplicationPageAfterUpdate(String licenseCost) {
+        logger.info("Check the license Cost when 'FDC_SUB' = 10 ");
+        assertTrue(licenseCost.contains("Total licenses"));
+        assertTrue(licenseCost.contains("101,730"));
 //        assertTrue(licenseCost.contains("2634"));
 //        assertTrue(licenseCost.contains("$26340"));
 //        assertTrue(licenseCost.contains("1"));
 //        assertTrue(licenseCost.contains("$75"));
+    }
+
+    public static void checkLicenseCostInApplicationPageAfterUpdate(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        logger.info("check License Cost In Application Page After Update");
+        openApplicationPage(driver, wait);
+        String licenseCostInfoAfterUpdate = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
+        validateLicenseCostDataInApplicationPageAfterUpdate(licenseCostInfoAfterUpdate);
+    }
+
+    private static void openApplicationPage(WebDriver driver, WebDriverWait wait) throws IOException {
+        clickOnApplicationLink(driver);
+        genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.APPLICATION_DROP_DOWN.getValue())));
+    }
+
+    private static void clickOnApplicationLink(WebDriver driver) throws IOException {
+        driver.findElement(By.xpath(applangoObject.APPLICATION_LINK.getValue())).click();
+    }
+
+
+    public static void updateLicenseCostInDBAndReloadApplicationData(String licenseType, FirefoxDriver driver, WebDriverWait wait, DBCollection coll) throws IOException {
+        mongoDB.updateLicensePrice(coll, licenseType, 10);
+        //reload page
+        openApplicationPage(driver, wait);
+        genericApplangoWebsiteActions.selectApplication(driver, wait, applications.BOX);
+        genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
+    }
+
+    public static void checkLicenseCostInApplicationPageBeforeUpdate(String licenseType, FirefoxDriver driver, WebDriverWait wait, DBCollection coll) throws IOException {
+        logger.info("check License Cost In Application Page Before Update");
+        openApplicationPage(driver, wait);
+        genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
+        String licenseCostInfoBeforeUpdate = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
+
+        int price  = mongoDB.getPriceByLicenseType(coll, licenseType);
+        if (!(price==30)) {
+            mongoDB.updateLicensePrice(coll, licenseType, 30);
+        }
+        validateLicenseCostDataInApplicationPageBeforeUpdate(licenseCostInfoBeforeUpdate); //licenseCost = 30
+    }
+
+    private static String getLicenseCostInAccountPage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+//        genericApplangoWebsiteActions.openUserAccount(driver, wait);
+//            Click on SF in account page
+        driver.findElement(By.xpath("//*[@id=\"applist\"]/div[3]")).click();
+        waitUntilWaitForServerDissappears(wait);
+        return driver.findElement(By.id("licenses")).getText();
+    }
+
+    private static void validateLicenseCostInAccountsPageAfterUpdate(String licenseCostsInAccounts) {
+        assertTrue(licenseCostsInAccounts.contains("FDC_SUB:  $10 each for 2 users = $20"));
+    }
+
+    public static void checkLicenseCostInAccountPageAfterUpdate(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        logger.info("check License Cost In Account Page After Update");
+        openUserAccount(driver, wait);
+        String licenseCostsInAccountsAfterUpdate = getLicenseCostInAccountPage(driver, wait);
+        validateLicenseCostInAccountsPageAfterUpdate(licenseCostsInAccountsAfterUpdate);
+    }
+
+    public static void checkLicenseCostInAccountPageBeforeUpdate(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+        logger.info("check License Cost In Account Page Before Update");
+        openUserAccount(driver, wait);
+        String licenseCostsInAccountsBeforeUpdate = getLicenseCostInAccountPage(driver, wait);
+        validateLicenseCostInAccountsPageBeforeUpdate(licenseCostsInAccountsBeforeUpdate);
+    }
+
+
+    private static void validateLicenseCostInAccountsPageBeforeUpdate(String licenseCostsInAccounts) {
+        assertTrue(licenseCostsInAccounts.contains("FDC_SUB:  $30 each for 2 users = $60"));
+    }
+
+
+    public static void reloadDashboard(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+        driver1.navigate().refresh();
+        waitUntilWaitForServerDissappears(wait1);
     }
 }

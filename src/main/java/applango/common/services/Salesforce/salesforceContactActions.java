@@ -111,6 +111,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
         SalesforceContacts[] salesforceContact =  create(driver2, wait2, numOfNewContact);
         //Update the Contact x times
         updateContactNTimes(driver2, wait2, salesforceContact[0], numOfUpdateContact);
+        deleteRecordById(driver2, wait2, salesforceContact[0].getContactId());
     }
 }
 

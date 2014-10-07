@@ -27,7 +27,7 @@ public enum salesforceTabs {
         public String path() throws IOException {
 
             Map salesforceObjectMap = objectMapper.getObjectMap(jsonMaps.SALESFORCE);
-            return salesforceObjectMap.get("lead.tab.xpath").toString();
+            return salesforceObjectMap.get("lead.tab.id").toString();
 
 
         }

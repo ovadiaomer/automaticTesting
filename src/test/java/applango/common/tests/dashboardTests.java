@@ -47,16 +47,19 @@ import static com.thoughtworks.selenium.SeleneseTestBase.*;
 public class dashboardTests extends SeleniumTestBase{
     Database dbProperties;
     DB db;
-    private int timeOutInSeconds() {
-        return 155;
-    }
     Applango applango = getApplangoConfigurationXML();
+
+    private int timeOutInSeconds() throws IOException {
+        return getTimeout();
+    }
+
+    public static months getThisMonth() {
+        return months.OCTOBER;
+    }
 
     @Autowired
     UsageRollupManager usageRollupManager;
-
     public dashboardTests() throws ParserConfigurationException, SAXException, IOException {
-
     }
 
     @Before
@@ -117,7 +120,8 @@ public class dashboardTests extends SeleniumTestBase{
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
         FirefoxDriver driver1 = getFirefoxDriver();
 
-        WebDriverWait wait = new WebDriverWait(driver1, timeOutInSeconds());
+        WebDriverWait wait = new WebDriverWait(driver1, getTimeout());
+
         String validUsername = applango.getUsername();
         String validPassword = applango.getPassword();
         String invalidUsername = "notRealUsername";
@@ -218,6 +222,7 @@ public class dashboardTests extends SeleniumTestBase{
 
     @Test
     public void testLicenseCost() throws ParserConfigurationException, SAXException, IOException {
+        String licenseType = "FDC_SUB";
         Applango applango = getApplangoConfigurationXML();
         FirefoxDriver driver = getFirefoxDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
@@ -225,26 +230,15 @@ public class dashboardTests extends SeleniumTestBase{
         DBCollection coll = db.getCollection(connection);
         try {
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
-            genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
-            String licenseCostInfo = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
-
-            int price  = mongoDB.getPriceByLicenseType(coll, "PID_CHATTER");
-            if (!(price==15)) {
-                mongoDB.updateLicensePrice(coll, "PID_CHATTER", 15);
-            }
-            validateLicenseCostDataBeforeUpdate(licenseCostInfo); //licenseCost = 15
-
-            mongoDB.updateLicensePrice(coll, "PID_CHATTER", 10);
-            //reload page
-            genericApplangoWebsiteActions.selectApplication(driver, wait, applications.BOX);
-            genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
-
-            licenseCostInfo = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
-            validateLicenseCostDataAfterUpdate(licenseCostInfo);
+            genericApplangoWebsiteActions.checkLicenseCostInApplicationPageBeforeUpdate(licenseType, driver, wait, coll);
+            checkLicenseCostInAccountPageBeforeUpdate(driver, wait);
+            genericApplangoWebsiteActions.updateLicenseCostInDBAndReloadApplicationData(licenseType, driver, wait, coll);
+            checkLicenseCostInApplicationPageAfterUpdate(driver, wait);
+            checkLicenseCostInAccountPageAfterUpdate(driver, wait);
 
         }
         finally {
-            mongoDB.updateLicensePrice(coll, "PID_CHATTER", 15);
+            mongoDB.updateLicensePrice(coll, licenseType, 30);
             driver.kill();
         }
 
@@ -268,6 +262,8 @@ public class dashboardTests extends SeleniumTestBase{
             if (coll.find(documentBuilder).next().get("groups").toString().toLowerCase().contains(licenseType.toLowerCase())) {
                 genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
                 driver.manage().window().maximize();
+
+//                driver.findElement(By.id("//*[@id=\"licenz\"]/span[2]")).click();
 
                 logger.info("Check that user exist in usertable when filtering by " + licenseType);
                 genericApplangoWebsiteActions.filterLicenseType(driver, wait, salesforceLicenses.FORCE);
@@ -312,10 +308,10 @@ public class dashboardTests extends SeleniumTestBase{
         int numOfUpdateOpportunities = 1;
         int login = 1;
         int totalActivities = numOfNewContact + numOfUpdateContact + numOfNewAccount + numOfUpdateAccount + numOfNewLeads + numOfUpdateLeads + numOfNewOpportunities + numOfUpdateOpportunities + login;
-        int contactAppRankTotal = (numOfNewContact*salesforceRanks.CREATE.getValue() + numOfUpdateContact*salesforceRanks.UPDATE.getValue())*salesforceRanks.CONTACT.getValue();
-        int accountAppRankTotal = (numOfNewAccount*salesforceRanks.CREATE.getValue() + numOfUpdateAccount*salesforceRanks.UPDATE.getValue())*salesforceRanks.ACCOUNT.getValue();
-        int leadAppRankTotal = (numOfNewLeads*salesforceRanks.CREATE.getValue() + numOfUpdateLeads*salesforceRanks.UPDATE.getValue())*salesforceRanks.LEAD.getValue();
-        int opportunityAppRankTotal = (numOfNewOpportunities*salesforceRanks.CREATE.getValue() + numOfUpdateOpportunities*salesforceRanks.UPDATE.getValue())*salesforceRanks.OPPORTUNITY.getValue();
+        int contactAppRankTotal = (numOfNewContact*salesforceRanks.CREATE.getValue() + numOfUpdateContact*salesforceRanks.UPDATE.getValue())*salesforceRanks.CONTACT.getValue() +  + salesforceRanks.DELETE.getValue()*salesforceRanks.CONTACT.getValue();
+        int accountAppRankTotal = (numOfNewAccount*salesforceRanks.CREATE.getValue() + numOfUpdateAccount*salesforceRanks.UPDATE.getValue())*salesforceRanks.ACCOUNT.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.ACCOUNT.getValue();
+        int leadAppRankTotal = (numOfNewLeads*salesforceRanks.CREATE.getValue() + numOfUpdateLeads*salesforceRanks.UPDATE.getValue())*salesforceRanks.LEAD.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.LEAD.getValue() ;
+        int opportunityAppRankTotal = (numOfNewOpportunities*salesforceRanks.CREATE.getValue() + numOfUpdateOpportunities*salesforceRanks.UPDATE.getValue())*salesforceRanks.OPPORTUNITY.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.OPPORTUNITY.getValue();
         int appRankChange =  contactAppRankTotal + accountAppRankTotal + leadAppRankTotal + opportunityAppRankTotal + login;
         try {
             logger.info("Sync metrics and roll up");
@@ -328,25 +324,24 @@ public class dashboardTests extends SeleniumTestBase{
 
             logger.info("Open Salesforce and perform activities");
             genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
+            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
             salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
             salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
             salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
-            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
 
             logger.info("Get appRank and Activities before sync");
-            filterByDate(driver1, wait1, "", getToMonth(), "", getToMonth());
+            filterByDate(driver1, wait1, "", getThisMonth(), "", getThisMonth());
             selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
 
             int appRankBeforeActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityBeforeActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
             logger.info("AppRank before: " + appRankBeforeActivitiesInSF + " Activity before: " + activityBeforeActivitiesInSF);
 
-            logger.info("Sync metrics again ");
-            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
+            logger.info("Sync metrics again ");                                     applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
 
-            filterByDate(driver1, wait1, "", getToMonth(), "", getToMonth());
+            filterByDate(driver1, wait1, "", getThisMonth(), "", getThisMonth());
 
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
@@ -637,7 +632,7 @@ public class dashboardTests extends SeleniumTestBase{
             logger.info("Login to Applango");
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.BOX);
-//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getToMonth(), "2014", getToMonth());
+//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getThisMonth(), "2014", getThisMonth());
 
             logger.info("Perform actions in Box");
             launchingWebsite(driver, "https://app.box.com/login/");
@@ -650,7 +645,7 @@ public class dashboardTests extends SeleniumTestBase{
             int activites = genericApplangoWebsiteActions.getActivity(driver1);
             applangoToolsCommand.syncBoxActivitiesAndRollup(customerId);
             reloadDashboard(driver1, wait1);
-//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getToMonth(), "2014", getToMonth());
+//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getThisMonth(), "2014", getThisMonth());
             genericApplangoWebsiteActions.selectUserFromList(driver1, wait1, "Omer1", "OvadiaAutoBox");
             int appRankAfter = genericApplangoWebsiteActions.getAppRank(driver1);
             int activitesAfter = genericApplangoWebsiteActions.getActivity(driver1);
@@ -659,7 +654,7 @@ public class dashboardTests extends SeleniumTestBase{
             logger.info("" +
                     "Before performing  \nAppRank: " +  appRank         + " Activity: " + activites+"\n" +
                     "After              \nAppRank: " +  appRankAfter    + " Activity: " + activitesAfter+"\n"+
-                    "Expected           \nAppRank" +    expectedAppRank + " Activity: " + expectedActivities);
+                    "Expected           \nAppRank: " +    expectedAppRank + " Activity: " + expectedActivities);
             assertTrue(activitesAfter == expectedActivities);
             assertTrue(appRankAfter == expectedAppRank);
         }
@@ -674,17 +669,9 @@ public class dashboardTests extends SeleniumTestBase{
 
 
 
-    private void reloadDashboard(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
-        driver1.navigate().refresh();
-        waitUntilWaitForServerDissappears(wait1);
-    }
-
-    private months getToMonth() {
-        return months.AUGUST;
-    }
 
     @Test
-    public void testPeoplePage()  throws Throwable {
+    public void testPeoplePage() throws Throwable {
         FirefoxDriver driver1 = getFirefoxDriver();
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
         String firstName = "omer";
@@ -692,11 +679,10 @@ public class dashboardTests extends SeleniumTestBase{
         String email = null;
         try {
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
-
             genericApplangoWebsiteActions.openPeoplePage(driver1, wait1);
-            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, getToMonth(), "2014", getToMonth(), "2014");
+            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, getThisMonth(), "2014", getThisMonth(), "2014");
             genericApplangoWebsiteActions.clickOnUserInPeopleTable(driver1, wait1);
-
+            genericApplangoWebsiteActions.clickOnAppInPeopleTable(driver1, wait1);
         }
         finally {
             driver1.kill();
@@ -722,7 +708,6 @@ public class dashboardTests extends SeleniumTestBase{
                     selectReportApplication(driver1, application);
                     logger.info("Run Report : " + report.getValue() + " for application : " + application.getValue());
                     clickOnReportSearch(driver1, wait1);
-
 
                 }
 

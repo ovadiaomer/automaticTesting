@@ -61,6 +61,7 @@
     "custom.objects.popup.delete.checkbox.id":"confirmed",
     "custom.objects.popup.delete.button.xpath":"/html/body/div[2]/input",
     "lead.tab.xpath":"/html/body/div/div/div/div/nav/ul/li[4]/a",
+    "lead.tab.id":"Lead_Tab",
     "campaign.tab.xpath":"/html/body/div/div/div/div/nav/ul/li[3]/a",
     "contact.tab.xpath":"/html/body/div/div/div/div/nav/ul/li[6]/a",
     "opportunities.tab.xpath":"/html/body/div/div/div/div/nav/ul/li[7]/a"
