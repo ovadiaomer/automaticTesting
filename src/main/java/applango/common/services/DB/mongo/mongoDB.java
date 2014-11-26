@@ -5,6 +5,10 @@ import applango.common.services.beans.Applango;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
 import junit.framework.Assert;
+import org.joda.time.DateTime;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static java.lang.Thread.sleep;
 
@@ -127,6 +131,70 @@ public class mongoDB extends SeleniumTestBase {
 
     }
 
+    public static void updateCustomerAppRankWeightSet(DBCollection appInfoConnection, String weightName, boolean defaultWeightSet) {
+
+        System.out.println("Updating " + weightName + " to " + defaultWeightSet);
+        String jsonCustomer = "{$and : [{'weightName' : '"+ weightName +"'}, {'customerId': 'automationCustomer'} ]}";
+        DBObject dbObjectRecordQuery = (DBObject) JSON.parse(jsonCustomer);
+
+        BasicDBObject set = new BasicDBObject("$set", new BasicDBObject("defaultWeightSet", defaultWeightSet));
+        appInfoConnection.update(dbObjectRecordQuery, set);
+        System.out.println("CustomerAppRankWeightSet for " +weightName+ " is " + defaultWeightSet);
+
+    }
+
+    public static String getActivityWeight(DBCollection coll, String weightName) {
+        String activityWeight;
+        int maxWait = 10;
+        try {
+            String jsonCustomer =  "{$and : [{'weightName' : '"+ weightName +"'}, {'customerId': 'automationCustomer'} ]}";
+            DBObject dbObjectRecordQuery = (DBObject) JSON.parse(jsonCustomer);
+            while ( (coll.count(dbObjectRecordQuery) == 0) && maxWait> 0) {
+                sleep(1000);
+                maxWait--;
+            }
+            activityWeight = coll.find(dbObjectRecordQuery).next().get("activityWeight").toString();
+        }
+        catch (Exception ex) {
+            activityWeight = null;
+            logger.error(ex.getMessage());
+        }
+        return activityWeight;
+    }
+
+    public static DBObject getRollupValue(DBCollection coll, String userId) {
+        logger.info("Getting today's rollup record for user " + userId);
+        DBCursor cursor;
+        int maxWait = 10;
+        try {
+            DateTime jsonToday = new DateTime();
+            DateTime yesterday = new DateTime().minusDays(1);
+
+
+            Date yesterdayDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").parse(yesterday.toString());
+            BasicDBObject dateQueryObj = new BasicDBObject("beginDate",  new BasicDBObject("$gt", yesterdayDate));
+            dateQueryObj.append("userId", userId);
+            dateQueryObj.append("customerId", "automationCustomer");
+            dateQueryObj.append("appName", "salesforce");
+
+            cursor = coll.find(dateQueryObj);
+
+            while ( (cursor.count() == 0) && maxWait> 0) {
+                sleep(1000);
+                maxWait--;
+            }
+
+        }
+        catch (Exception ex) {
+            cursor = null;
+            logger.error(ex.getMessage());
+        }
+        return cursor.next();
+    }
+
+    public static int parseAppRankValueFromRollupRecord(DBObject rollupRecordAfterRollupActivitiesBeforeSettingNewWeight) {
+        return Integer.parseInt(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight.get("appRank").toString().substring(0, rollupRecordAfterRollupActivitiesBeforeSettingNewWeight.get("appRank").toString().indexOf(".")));
+    }
 
 
 }

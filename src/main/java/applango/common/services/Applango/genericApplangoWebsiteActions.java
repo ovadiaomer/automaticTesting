@@ -40,10 +40,19 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     private static final String APPLANGO_ENVIRONMENT = "applangoEnvironment";
     private static Map configPropertiesMapper;
 
+
     public static void openDashboardAndLogin(Applango applango, WebDriver driver1, WebDriverWait wait) throws IOException {
-        openDashboardAndLogin(applango, driver1, wait, false, false);
-        openApplicationPage(driver1, wait);
+        openDashboardAndLogin(applango, true, driver1, wait);
     }
+
+    public static void openDashboardAndLogin(Applango applango,  boolean openApplicationsPage, WebDriver driver1, WebDriverWait wait) throws IOException {
+        openDashboardAndLogin(applango, driver1, wait, false, false);
+        if (openApplicationsPage) {
+            openApplicationPage(driver1, wait);
+
+        }
+    }
+
     public static void openDashboardAndLogin(Applango applango, WebDriver driver1, WebDriverWait wait, boolean isOAuthTest) throws IOException {
         openDashboardAndLogin(applango, driver1, wait, isOAuthTest, false);
     }
@@ -793,5 +802,20 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     public static void reloadDashboard(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
         driver1.navigate().refresh();
         waitUntilWaitForServerDissappears(wait1);
+    }
+
+    public static void waitForHomePage(WebDriverWait wait1) throws IOException {
+        logger.info("Wait for home page bits");
+        waitUntilWaitForServerDissappears(wait1);
+        checkVisibilityOfHomePageTables(wait1);
+
+    }
+
+    private static void checkVisibilityOfHomePageTables(WebDriverWait wait1) throws IOException {
+        logger.info("Check visibility of HOME_PAGE_BITS, groupAnalytics, licenseAnalytics, minimalUsers");
+        wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoObject.HOME_PAGE_BITS.getValue())));
+        wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoObject.HOME_PAGE_groupAnalytics.getValue())));
+        wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoObject.HOME_PAGE_licenseAnalytics.getValue())));
+        wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoObject.HOME_PAGE_minimalUsers.getValue())));
     }
 }

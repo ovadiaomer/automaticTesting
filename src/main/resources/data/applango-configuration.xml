@@ -14,7 +14,7 @@
         <url>https://applangoqa2.cloudapp.net/dashboard/login.html#/</url>
         <username>automationuser@applango.com</username>
         <password>Reut2006</password>
-        <primaryEmail>applango-build@applango.com</primaryEmail>
+        <primaryEmail>omer.ovadia@applango.com</primaryEmail>
         <primaryEmailPassword>1Zippy1!</primaryEmailPassword>
         <userForoAuth>automationCustomer</userForoAuth>
         <passwordForoAuth>automationCustomer</passwordForoAuth>

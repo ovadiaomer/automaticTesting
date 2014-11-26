@@ -54,7 +54,7 @@ public class dashboardTests extends SeleniumTestBase{
     }
 
     public static months getThisMonth() {
-        return months.OCTOBER;
+        return months.NOVEMBER;
     }
 
     @Autowired
@@ -284,18 +284,23 @@ public class dashboardTests extends SeleniumTestBase{
 
     @Test
     public void testSyncingSalesforceActivities() throws Throwable {
-        //Before running this test make sure that you have a tunnel (applangoqa3.cloudapp.net) from putty not shortcut, http://localhost:8090/managerservices/customer-manager/cm-rest/hello
 
-//        ApplangoCmdTool.main(new String[]{"-rollupmgr", "-r", "-cid", "automationCustomer"
-//                , "-an", "salesforce", "-ag", "DAILY"});
+        Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
+        Applango applango = getApplangoConfigurationXML();
+        logger.info("Set CustomerAppRankWeightSet false (in order make sure weightSet is default)");
+        final String connectionCustomerAppRankWeightSet = dbTables.customerAppRankWeightSet.getValue().toString();
+        DBCollection coll = db.getCollection(connectionCustomerAppRankWeightSet);
+        mongoDB.updateCustomerAppRankWeightSet(coll, "testset2", false);
+        final String connectionRolledUpUserAppRankInfo= dbTables.rolledUpUserAppRankInfo.getValue().toString();
+        DBCollection collRoll = db.getCollection(connectionRolledUpUserAppRankInfo);
+
+        //Before running this test make sure that you have a tunnel (applangoqa3.cloudapp.net) from putty not shortcut, http://localhost:8090/managerservices/customer-manager/cm-rest/hello
 
         applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
-        Applango applango = getApplangoConfigurationXML();
-
         FirefoxDriver driver1 = getFirefoxDriver();
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
-        Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
+
         FirefoxDriver driver2 = getFirefoxDriver();
         WebDriverWait wait2 = new WebDriverWait(driver2, timeOutInSeconds());
         int numOfNewContact = 1;
@@ -306,13 +311,15 @@ public class dashboardTests extends SeleniumTestBase{
         int numOfUpdateLeads = 1;
         int numOfNewOpportunities = 1;
         int numOfUpdateOpportunities = 1;
+        int numOfDelete = numOfNewAccount + numOfNewContact + numOfNewLeads + numOfNewOpportunities;
         int login = 1;
-        int totalActivities = numOfNewContact + numOfUpdateContact + numOfNewAccount + numOfUpdateAccount + numOfNewLeads + numOfUpdateLeads + numOfNewOpportunities + numOfUpdateOpportunities + login;
+        int totalActivities = numOfNewContact + numOfUpdateContact + numOfNewAccount + numOfUpdateAccount + numOfNewLeads + numOfUpdateLeads + numOfNewOpportunities + numOfUpdateOpportunities + login + numOfDelete;
         int contactAppRankTotal = (numOfNewContact*salesforceRanks.CREATE.getValue() + numOfUpdateContact*salesforceRanks.UPDATE.getValue())*salesforceRanks.CONTACT.getValue() +  + salesforceRanks.DELETE.getValue()*salesforceRanks.CONTACT.getValue();
         int accountAppRankTotal = (numOfNewAccount*salesforceRanks.CREATE.getValue() + numOfUpdateAccount*salesforceRanks.UPDATE.getValue())*salesforceRanks.ACCOUNT.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.ACCOUNT.getValue();
         int leadAppRankTotal = (numOfNewLeads*salesforceRanks.CREATE.getValue() + numOfUpdateLeads*salesforceRanks.UPDATE.getValue())*salesforceRanks.LEAD.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.LEAD.getValue() ;
         int opportunityAppRankTotal = (numOfNewOpportunities*salesforceRanks.CREATE.getValue() + numOfUpdateOpportunities*salesforceRanks.UPDATE.getValue())*salesforceRanks.OPPORTUNITY.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.OPPORTUNITY.getValue();
         int appRankChange =  contactAppRankTotal + accountAppRankTotal + leadAppRankTotal + opportunityAppRankTotal + login;
+
         try {
             logger.info("Sync metrics and roll up");
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
@@ -321,11 +328,10 @@ public class dashboardTests extends SeleniumTestBase{
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.SALESFORCE);
 
-
             logger.info("Open Salesforce and perform activities");
             genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
-            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
             salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
+            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
             salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
             salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
 
@@ -337,7 +343,8 @@ public class dashboardTests extends SeleniumTestBase{
             int activityBeforeActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
             logger.info("AppRank before: " + appRankBeforeActivitiesInSF + " Activity before: " + activityBeforeActivitiesInSF);
 
-            logger.info("Sync metrics again ");                                     applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
+            logger.info("Sync metrics again ");
+            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
 
@@ -352,17 +359,32 @@ public class dashboardTests extends SeleniumTestBase{
             logger.info("\nBefore performing \nAppRank: " + appRankBeforeActivitiesInSF + " Activity: " + activityBeforeActivitiesInSF +"\n" +
                     "After performing  \nAppRank: " + appRankAfterActivitiesInSF + " Activity: " + activityAfterActivitiesInSF+"\n" +
                     "Should be \nAppRank: " + expectedAppRankAfterActivitiesInSF + " Activity: " + expectedActivitiesAfterActivitiesInSF);
-            assertTrue(appRankAfterActivitiesInSF == expectedAppRankAfterActivitiesInSF);
+            assertTrue(appRankAfterActivitiesInSF  == expectedAppRankAfterActivitiesInSF);
             assertTrue(activityAfterActivitiesInSF == expectedActivitiesAfterActivitiesInSF);
 
+            logger.info("Set CustomerAppRankWeightSet true (weight is four times higher than default)");
+            DBObject rollupRecordAfterRollupActivitiesBeforeSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
+            mongoDB.updateCustomerAppRankWeightSet(coll, "testset2", true);
+            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
+            DBObject rollupRecordAfterRollupActivitiesAfterSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
+
+            int appRankBefore = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight);
+            int appRankAfter = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesAfterSettingNewWeight);
+            int totalLogins = Integer.parseInt(rollupRecordAfterRollupActivitiesAfterSettingNewWeight.get("numLogins").toString());
+            int expectedAppRankAfterChangingWeightSet = (appRankBefore - totalLogins)*4 + totalLogins;
+            logger.info("\nBefore updating appRank weight set the AppRank is: "        + appRankBefore +"\n" +
+                          "After  updating appRank weight set the AppRank is: "        + appRankAfter +"\n" +
+                          "Should be: "                                                + expectedAppRankAfterChangingWeightSet);
+            assertTrue(appRankAfter == expectedAppRankAfterChangingWeightSet);
         }
         catch (Exception ex) {
             logger.error(ex.getMessage());
             fail("Test failed " + ex.getMessage());
         }
         finally {
-            driver1.kill();
-            driver2.kill();
+            mongoDB.updateCustomerAppRankWeightSet(coll, "testset2", false);
+            driver1.quit();
+            driver2.quit();
         }
     }
 
@@ -668,7 +690,20 @@ public class dashboardTests extends SeleniumTestBase{
     }
 
 
+    @Test
+    public void testHomePage() throws Throwable {
+        FirefoxDriver driver1 = getFirefoxDriver();
+        WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
+        try {
+            genericApplangoWebsiteActions.openDashboardAndLogin(applango, false, driver1, wait1);
+            genericApplangoWebsiteActions.waitForHomePage(wait1);
+        }
 
+
+        finally {
+            driver1.kill();
+        }
+    }
 
     @Test
     public void testPeoplePage() throws Throwable {

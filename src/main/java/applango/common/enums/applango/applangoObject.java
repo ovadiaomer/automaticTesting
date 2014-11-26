@@ -48,6 +48,50 @@ public enum applangoObject {
         }
 
     },
+    HOME_PAGE_BITS{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("homePageBits.id").toString();
+
+
+        }
+
+    },
+
+    HOME_PAGE_licenseAnalytics{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("homePage.licenseAnalytics.id").toString();
+
+
+        }
+
+    },
+   HOME_PAGE_groupAnalytics{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("homePage.groupAnalytics.id").toString();
+
+
+        }
+
+    },
+
+    HOME_PAGE_minimalUsers{
+        public String path() throws IOException {
+
+            Map applangoObjectMap = objectMapper.getObjectMap(jsonMaps.APPLANGO);
+            return applangoObjectMap.get("homePage.minimalUsers.id").toString();
+
+
+        }
+
+    },
+
+
     REPORT_PAGE_TAB{
         public String path() throws IOException {
 

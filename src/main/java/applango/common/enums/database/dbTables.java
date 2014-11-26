@@ -6,6 +6,7 @@ public enum dbTables {
     appInfo("appInfo"),
     applangoUser("applangoUser"),
     customer("customer"),
+    customerAppRankWeightSet("customerAppRankWeightSet"),
     customerPreferencesSfManagedObjects("customerPreferencesSfManagedObjects"),
     emailToken("emailToken"),
     externalObjectActivity("externalObjectActivity"),
@@ -13,6 +14,7 @@ public enum dbTables {
     groupInfo("groupInfo"),
     loginInfo("loginInfo"),
     licenseApp("licenseApp"),
+    rolledUpUserAppRankInfo("rolledUpUserAppRankInfo"),
     syncProcessProgress("syncProcessProgress"),
     user("user"),
     OAuth2Credentials("oAuth2Credentials");
