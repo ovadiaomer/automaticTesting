@@ -7,6 +7,7 @@ import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceContacts;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +17,7 @@ import java.util.Map;
 
 public class salesforceContactActions  extends genericSalesforceWebsiteActions {
 
-    public static SalesforceContacts[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfContacts) throws IOException {
+    public static SalesforceContacts[] create(WebDriver driver, WebDriverWait wait, int numberOfContacts) throws IOException {
         SalesforceContacts[] newContact =  new SalesforceContacts[numberOfContacts];
         Map salesforceObjectMap = getMap();
         try {
@@ -37,7 +38,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
         return newContact;
     }
 
-    public static void update(FirefoxDriver driver, WebDriverWait wait, SalesforceContacts contact, String newContactName) throws IOException {
+    public static void update(WebDriver driver, WebDriverWait wait, SalesforceContacts contact, String newContactName) throws IOException {
         logger.info("Updating contact name of "+ contact.getAccountName() + " to "+ newContactName);
         waitForPageToLoad(wait);
         openPageWithIdInUrl(driver, wait, contact.getContactId());
@@ -50,7 +51,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
         waitForPageToLoad(wait);
     }
 
-    public static void updateContactNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceContacts contact, int numberOfUpdateContacts) throws IOException {
+    public static void updateContactNTimes(WebDriver driver1, WebDriverWait wait, SalesforceContacts contact, int numberOfUpdateContacts) throws IOException {
         for (int i=0; i<numberOfUpdateContacts; i++){
             waitForPageToLoad(wait);
             salesforceContactActions.update(driver1, wait, contact, "TestC" + i);
@@ -58,7 +59,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
         }
     }
 
-    public static String fillDetails(FirefoxDriver driver, String newContactName) throws IOException {
+    public static String fillDetails(WebDriver driver, String newContactName) throws IOException {
         Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).sendKeys(newContactName);
@@ -66,7 +67,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
     }
 
 
-    private static SalesforceContacts fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    private static SalesforceContacts fillDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new contact details and return object SalesforceContact with contactName and contactId");
         waitForPageToLoad(wait);
         SalesforceContacts newContact = new SalesforceContacts();
@@ -88,7 +89,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
 
     }
 
-    private static String fillDetailsRandomly(FirefoxDriver driver) throws IOException {
+    private static String fillDetailsRandomly(WebDriver driver) throws IOException {
         CharSequence contactName = "testContact"+ Calendar.getInstance().getTimeInMillis();
         try {
             driver.findElement(By.id(salesforceTextfields.CONTACT_ContactLastName.getValue())).sendKeys(contactName);
@@ -105,7 +106,7 @@ public class salesforceContactActions  extends genericSalesforceWebsiteActions {
         return contactName.toString();
     }
 
-    public static void salesforcePerformActivitiesInContacts(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewContact, int numOfUpdateContact) throws IOException {
+    public static void salesforcePerformActivitiesInContacts(Salesforce sf, WebDriver driver2, WebDriverWait wait2, int numOfNewContact, int numOfUpdateContact) throws IOException {
 
         //Create Contacts
         SalesforceContacts[] salesforceContact =  create(driver2, wait2, numOfNewContact);

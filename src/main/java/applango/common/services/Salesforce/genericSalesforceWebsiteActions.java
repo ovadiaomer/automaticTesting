@@ -61,11 +61,6 @@ public class genericSalesforceWebsiteActions extends SeleniumTestBase{
 
     public static void login(Salesforce sf, WebDriver driver1, WebDriverWait wait) throws IOException {
 
-//        if (!sf.getEnvironment().contains("sandbox"))   {
-//            clickOnLoginButton(driver1, wait);
-//
-//
-//        }
         enterCredentials(driver1, sf.getUsername(), sf.getPassword());
         //Since SF open screen after launchWebsiteAndlogin is different, wait fail
         if (!sf.getEnvironment().contains("sandbox"))   {

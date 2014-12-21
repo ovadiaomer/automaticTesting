@@ -7,6 +7,7 @@ import applango.common.services.beans.Salesforce;
 import applango.common.services.beans.SalesforceLeads;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,7 +24,7 @@ import java.util.Map;
  */
 public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
 
-    public static SalesforceLeads[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfLeads) throws IOException {
+    public static SalesforceLeads[] create(WebDriver driver, WebDriverWait wait, int numberOfLeads) throws IOException {
         SalesforceLeads[] newLead =  new SalesforceLeads[numberOfLeads];
         Map salesforceObjectMap = getMap();
         try {
@@ -52,7 +53,7 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
     }
 
 
-    private static SalesforceLeads fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    private static SalesforceLeads fillDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new lead details and return object SalesforceContact with LeadName and LeadId");
         waitForPageToLoad(wait);
         SalesforceLeads newLead = new SalesforceLeads();
@@ -64,14 +65,14 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
         return newLead;
     }
 
-    public static String fillDetails(FirefoxDriver driver, String newLeadName) throws IOException {
+    public static String fillDetails(WebDriver driver, String newLeadName) throws IOException {
         Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).clear();
         driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).sendKeys(newLeadName);
         return newLeadName;
     }
 
-    private static String fillDetailsRandomly(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    private static String fillDetailsRandomly(WebDriver driver, WebDriverWait wait) throws IOException {
         Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.LEAD_LeadLastName.getValue())).isDisplayed());
         CharSequence leadName = "testLead"+ Calendar.getInstance().getTimeInMillis();
         try {
@@ -99,7 +100,7 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
 
     }
 
-    public static void update(FirefoxDriver driver, WebDriverWait wait, SalesforceLeads lead, String newLeadName) throws IOException {
+    public static void update(WebDriver driver, WebDriverWait wait, SalesforceLeads lead, String newLeadName) throws IOException {
         logger.info("Updating lead name of "+ lead.getLastName() + " to "+ newLeadName);
         waitForPageToLoad(wait);
         waitForPageToLoad(wait);
@@ -114,7 +115,7 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
 
     }
 
-    public static void updateLeadNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceLeads lead, int numberOfUpdateLeads) throws IOException {
+    public static void updateLeadNTimes(WebDriver driver1, WebDriverWait wait, SalesforceLeads lead, int numberOfUpdateLeads) throws IOException {
         for (int i=0; i<numberOfUpdateLeads; i++){
             waitForPageToLoad(wait);
             salesforceLeadActions.update(driver1, wait, lead, "TestL" + i);
@@ -122,7 +123,7 @@ public class salesforceLeadActions   extends genericSalesforceWebsiteActions {
         }
     }
 
-    public static  void salesforcePerformActivitiesInLeads(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewLeads, int numOfUpdateLeads) throws IOException {
+    public static  void salesforcePerformActivitiesInLeads(Salesforce sf, WebDriver driver2, WebDriverWait wait2, int numOfNewLeads, int numOfUpdateLeads) throws IOException {
 
         //Create Lead
         SalesforceLeads[] salesforceLeads =  create(driver2, wait2, numOfNewLeads);

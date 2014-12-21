@@ -1,3 +1,4 @@
+/*
 package applango.common.services.RestApi;
 
 import applango.common.SeleniumTestBase;
@@ -7,7 +8,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,13 +18,15 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * Created with IntelliJ IDEA.
  * User: omer.ovadia
  * Date: 27/10/13
  * Time: 13:32
  * To change this template use File | Settings | File Templates.
- */
+ *//*
+
 public class restAPI extends SeleniumTestBase {
 
     public static String executeGetRequest(String url) throws ClientProtocolException, IOException {
@@ -120,3 +122,4 @@ public class restAPI extends SeleniumTestBase {
 }
 
 
+*/

@@ -1,6 +1,5 @@
-package applango.common.tests;
+package applango.common;
 
-import applango.common.SeleniumTestBase;
 import applango.common.enums.applango.applangoMessages;
 import applango.common.enums.applango.applangoObject;
 import applango.common.enums.applango.applangoReports;
@@ -8,26 +7,24 @@ import applango.common.enums.database.dbTables;
 import applango.common.enums.generic.applications;
 import applango.common.enums.generic.months;
 import applango.common.enums.salesforce.salesforceLicenses;
-import applango.common.enums.salesforce.salesforceRanks;
-import applango.common.services.Applango.applangoToolsCommand;
 import applango.common.services.Applango.genericApplangoWebsiteActions;
-import applango.common.services.Box.genericBoxWebsiteActions;
 import applango.common.services.DB.mongo.mongoDB;
 import applango.common.services.Gmail.genericGmailWebsiteActions;
-import applango.common.services.Salesforce.*;
+import applango.common.services.Salesforce.genericSalesforceWebsiteActions;
 import applango.common.services.beans.Applango;
-import applango.common.services.beans.Database;
 import applango.common.services.beans.Gmail;
 import applango.common.services.beans.Salesforce;
 import com.applango.services.UsageRollupManager;
 import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
-import org.junit.Before;
+import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.xml.sax.SAXException;
@@ -42,33 +39,27 @@ import static applango.common.services.DB.mongo.mongoDB.countSuccessfulLogins;
 import static applango.common.services.Gmail.genericGmailWebsiteActions.loginToGmail;
 import static com.thoughtworks.selenium.SeleneseTestBase.*;
 
-//import com.applango.beans.Oauth2Credentials;
 
 public class dashboardTests extends SeleniumTestBase{
-    Database dbProperties;
-    DB db;
     Applango applango = getApplangoConfigurationXML();
+    public RemoteWebDriver driver0;
+    public RemoteWebDriver driver1;
 
     private int timeOutInSeconds() throws IOException {
         return getTimeout();
     }
 
-    public static months getThisMonth() {
-        return months.NOVEMBER;
-    }
+
 
     @Autowired
     UsageRollupManager usageRollupManager;
     public dashboardTests() throws ParserConfigurationException, SAXException, IOException {
     }
 
-    @Before
-    public void setup() throws IOException, ParserConfigurationException, SAXException {
-        dbProperties = getDatabaseConfigurationXML();
-        db = connectToDB(dbProperties);
-    }
+
 
     @Test
+    @Ignore
     public void testEnteringValidOAuthenticationCredentials() throws ParserConfigurationException, SAXException, IOException, InterruptedException {
         //Make sure customer and user for applango created
         //Set application  java -jar tools.jar -caimgr -dc automationCustomer,salesforce
@@ -110,7 +101,7 @@ public class dashboardTests extends SeleniumTestBase{
             fail("Failed due to : " + ex.getMessage());
         }
         finally {
-            driver1.kill();
+            driver1.close();
         }
     }
 
@@ -118,7 +109,7 @@ public class dashboardTests extends SeleniumTestBase{
     public void testDashboardLogin() throws Exception {
         Applango applango = getApplangoConfigurationXML();
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-        FirefoxDriver driver1 = getFirefoxDriver();
+        RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.firefox());
 
         WebDriverWait wait = new WebDriverWait(driver1, getTimeout());
 
@@ -186,17 +177,17 @@ public class dashboardTests extends SeleniumTestBase{
         }
 
         finally {
-            driver1.kill();
+            driver1.close();
         }
     }
 
 
     @Test
     public void testExcludeUsers() throws ParserConfigurationException, SAXException, IOException {
-
-        Applango applango = getApplangoConfigurationXML();
-        FirefoxDriver driver = getFirefoxDriver();
+        RemoteWebDriver driver = getRemoteWebDriver();
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
+        Applango applango = getApplangoConfigurationXML();
+        Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         final String connection = dbTables.excludedUser.getValue().toString();
         DBCollection coll = db.getCollection(connection);
 
@@ -215,10 +206,15 @@ public class dashboardTests extends SeleniumTestBase{
                 assertFalse(driver.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
             }
         }
+        catch (Exception ex) {
+            ex.getMessage();
+        }
         finally {
-            driver.kill();
+            driver.close();
         }
     }
+
+
 
     @Test
     public void testLicenseCost() throws ParserConfigurationException, SAXException, IOException {
@@ -239,7 +235,7 @@ public class dashboardTests extends SeleniumTestBase{
         }
         finally {
             mongoDB.updateLicensePrice(coll, licenseType, 30);
-            driver.kill();
+            driver.close();
         }
 
 
@@ -278,118 +274,13 @@ public class dashboardTests extends SeleniumTestBase{
             }
         }
         finally {
-            driver.kill();
-        }
-    }
-
-    @Test
-    public void testSyncingSalesforceActivities() throws Throwable {
-
-        Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
-        Applango applango = getApplangoConfigurationXML();
-        logger.info("Set CustomerAppRankWeightSet false (in order make sure weightSet is default)");
-        final String connectionCustomerAppRankWeightSet = dbTables.customerAppRankWeightSet.getValue().toString();
-        DBCollection coll = db.getCollection(connectionCustomerAppRankWeightSet);
-        mongoDB.updateCustomerAppRankWeightSet(coll, "testset2", false);
-        final String connectionRolledUpUserAppRankInfo= dbTables.rolledUpUserAppRankInfo.getValue().toString();
-        DBCollection collRoll = db.getCollection(connectionRolledUpUserAppRankInfo);
-
-        //Before running this test make sure that you have a tunnel (applangoqa3.cloudapp.net) from putty not shortcut, http://localhost:8090/managerservices/customer-manager/cm-rest/hello
-
-        applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
-
-        FirefoxDriver driver1 = getFirefoxDriver();
-        WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
-
-        FirefoxDriver driver2 = getFirefoxDriver();
-        WebDriverWait wait2 = new WebDriverWait(driver2, timeOutInSeconds());
-        int numOfNewContact = 1;
-        int numOfUpdateContact = 1;
-        int numOfNewAccount = 1;
-        int numOfUpdateAccount = 1;
-        int numOfNewLeads = 1;
-        int numOfUpdateLeads = 1;
-        int numOfNewOpportunities = 1;
-        int numOfUpdateOpportunities = 1;
-        int numOfDelete = numOfNewAccount + numOfNewContact + numOfNewLeads + numOfNewOpportunities;
-        int login = 1;
-        int totalActivities = numOfNewContact + numOfUpdateContact + numOfNewAccount + numOfUpdateAccount + numOfNewLeads + numOfUpdateLeads + numOfNewOpportunities + numOfUpdateOpportunities + login + numOfDelete;
-        int contactAppRankTotal = (numOfNewContact*salesforceRanks.CREATE.getValue() + numOfUpdateContact*salesforceRanks.UPDATE.getValue())*salesforceRanks.CONTACT.getValue() +  + salesforceRanks.DELETE.getValue()*salesforceRanks.CONTACT.getValue();
-        int accountAppRankTotal = (numOfNewAccount*salesforceRanks.CREATE.getValue() + numOfUpdateAccount*salesforceRanks.UPDATE.getValue())*salesforceRanks.ACCOUNT.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.ACCOUNT.getValue();
-        int leadAppRankTotal = (numOfNewLeads*salesforceRanks.CREATE.getValue() + numOfUpdateLeads*salesforceRanks.UPDATE.getValue())*salesforceRanks.LEAD.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.LEAD.getValue() ;
-        int opportunityAppRankTotal = (numOfNewOpportunities*salesforceRanks.CREATE.getValue() + numOfUpdateOpportunities*salesforceRanks.UPDATE.getValue())*salesforceRanks.OPPORTUNITY.getValue() + salesforceRanks.DELETE.getValue()*salesforceRanks.OPPORTUNITY.getValue();
-        int appRankChange =  contactAppRankTotal + accountAppRankTotal + leadAppRankTotal + opportunityAppRankTotal + login;
-
-        try {
-            logger.info("Sync metrics and roll up");
-            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
-
-            logger.info("Login to Applango");
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
-            genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.SALESFORCE);
-
-            logger.info("Open Salesforce and perform activities");
-            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
-            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
-            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
-            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
-            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
-
-            logger.info("Get appRank and Activities before sync");
-            filterByDate(driver1, wait1, "", getThisMonth(), "", getThisMonth());
-            selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
-
-            int appRankBeforeActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
-            int activityBeforeActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
-            logger.info("AppRank before: " + appRankBeforeActivitiesInSF + " Activity before: " + activityBeforeActivitiesInSF);
-
-            logger.info("Sync metrics again ");
-            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
-
-            logger.info("Compare appRank and activities");
-
-            filterByDate(driver1, wait1, "", getThisMonth(), "", getThisMonth());
-
-            int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
-            int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
-            String userName = genericApplangoWebsiteActions.getName(driver1);
-            int expectedAppRankAfterActivitiesInSF = appRankBeforeActivitiesInSF + appRankChange;
-            int expectedActivitiesAfterActivitiesInSF = activityBeforeActivitiesInSF + totalActivities;
-
-            logger.info("\nBefore performing \nAppRank: " + appRankBeforeActivitiesInSF + " Activity: " + activityBeforeActivitiesInSF +"\n" +
-                    "After performing  \nAppRank: " + appRankAfterActivitiesInSF + " Activity: " + activityAfterActivitiesInSF+"\n" +
-                    "Should be \nAppRank: " + expectedAppRankAfterActivitiesInSF + " Activity: " + expectedActivitiesAfterActivitiesInSF);
-            assertTrue(appRankAfterActivitiesInSF  == expectedAppRankAfterActivitiesInSF);
-            assertTrue(activityAfterActivitiesInSF == expectedActivitiesAfterActivitiesInSF);
-
-            logger.info("Set CustomerAppRankWeightSet true (weight is four times higher than default)");
-            DBObject rollupRecordAfterRollupActivitiesBeforeSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
-            mongoDB.updateCustomerAppRankWeightSet(coll, "testset2", true);
-            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
-            DBObject rollupRecordAfterRollupActivitiesAfterSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
-
-            int appRankBefore = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight);
-            int appRankAfter = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesAfterSettingNewWeight);
-            int totalLogins = Integer.parseInt(rollupRecordAfterRollupActivitiesAfterSettingNewWeight.get("numLogins").toString());
-            int expectedAppRankAfterChangingWeightSet = (appRankBefore - totalLogins)*4 + totalLogins;
-            logger.info("\nBefore updating appRank weight set the AppRank is: "        + appRankBefore +"\n" +
-                          "After  updating appRank weight set the AppRank is: "        + appRankAfter +"\n" +
-                          "Should be: "                                                + expectedAppRankAfterChangingWeightSet);
-            assertTrue(appRankAfter == expectedAppRankAfterChangingWeightSet);
-        }
-        catch (Exception ex) {
-            logger.error(ex.getMessage());
-            fail("Test failed " + ex.getMessage());
-        }
-        finally {
-            mongoDB.updateCustomerAppRankWeightSet(coll, "testset2", false);
-            driver1.quit();
-            driver2.quit();
+            driver.close();
         }
     }
 
 
     @Test
+    @Ignore
     public void testDashboardFilterDate() throws ParserConfigurationException, SAXException, IOException {
         Applango applango = getApplangoConfigurationXML();
         FirefoxDriver driver1 = getFirefoxDriver();
@@ -409,7 +300,7 @@ public class dashboardTests extends SeleniumTestBase{
             fail("Failed due to : " + ex.getMessage());
         }
         finally {
-            driver1.kill();
+            driver1.close();
         }
     }
 
@@ -463,11 +354,12 @@ public class dashboardTests extends SeleniumTestBase{
             logger.error(ex.getMessage());
             fail("Failed due to : " + ex.getMessage());
         } finally {
-            driver1.kill();
+            driver1.close();
         }
     }
 
     @Test
+    @Ignore
     public void testResetPasswordEmailRecieved() throws ParserConfigurationException, SAXException, IOException {
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
         Gmail gmail = genericGmailWebsiteActions.getGmailConfigurationXML();
@@ -512,13 +404,14 @@ public class dashboardTests extends SeleniumTestBase{
 
             fail("Failed due to : " + ex.getMessage());
         } finally {
-            driver.kill();
-            driver1.kill();
+            driver.close();
+            driver1.close();
         }
     }
 
 
     @Test
+    @Ignore
     public void testResettingPasswordFromEmail() throws ParserConfigurationException, SAXException, IOException {
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
         Gmail gmail = genericGmailWebsiteActions.getGmailConfigurationXML();
@@ -585,16 +478,17 @@ public class dashboardTests extends SeleniumTestBase{
             logger.error(ex.getMessage());
             fail("Failed due to : " + ex.getMessage());
         } finally {
-            driver1.kill();
+            driver1.close();
         }
     }
 
     @Test
+    @Ignore
     public void testRunner() throws Throwable {
         testChangePassword();
         testDashboardLogin();
         testEnteringValidOAuthenticationCredentials();
-        testSyncingSalesforceActivities();
+//        salesforceIntegrationTest.testSyncingSalesforceActivities();
 
     }
 
@@ -626,88 +520,65 @@ public class dashboardTests extends SeleniumTestBase{
             assertFalse(checkAlertTrigger(driver1));
         }
         finally {
-            driver1.kill();
+            driver1.close();
         }
     }
-    private FirefoxDriver getFirefoxDriver() {
-        return new FirefoxDriver();
-    }
 
 
-    @Test
-    public void testSyncBoxActivities() throws Throwable {
 
-        FirefoxDriver driver = new FirefoxDriver();
-        FirefoxDriver driver1 = new FirefoxDriver();
-//        driver = new SafariDriver();
-        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
-        WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
-        Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
-        logger.info("Sync metrics and roll up");
-
-
-        try {
-
-            String customerId = "automationCustomer";
-            applangoToolsCommand.syncBoxActivitiesAndRollup(customerId);
-
-            logger.info("Login to Applango");
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
-            genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.BOX);
-//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getThisMonth(), "2014", getThisMonth());
-
-            logger.info("Perform actions in Box");
-            launchingWebsite(driver, "https://app.box.com/login/");
-            genericBoxWebsiteActions.loginToBox(driver, wait);
-            String newFolder =  genericBoxWebsiteActions.createNewFolder(driver, wait);
-            genericBoxWebsiteActions.deleteFolder(driver, wait, newFolder);
-
-            logger.info("Sync box metrics and get appRank, activities");
-            int appRank = genericApplangoWebsiteActions.getAppRank(driver1);
-            int activites = genericApplangoWebsiteActions.getActivity(driver1);
-            applangoToolsCommand.syncBoxActivitiesAndRollup(customerId);
-            reloadDashboard(driver1, wait1);
-//            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", getThisMonth(), "2014", getThisMonth());
-            genericApplangoWebsiteActions.selectUserFromList(driver1, wait1, "Omer1", "OvadiaAutoBox");
-            int appRankAfter = genericApplangoWebsiteActions.getAppRank(driver1);
-            int activitesAfter = genericApplangoWebsiteActions.getActivity(driver1);
-            int expectedActivities =  activites + 3;
-            int expectedAppRank =  appRank + 4;
-            logger.info("" +
-                    "Before performing  \nAppRank: " +  appRank         + " Activity: " + activites+"\n" +
-                    "After              \nAppRank: " +  appRankAfter    + " Activity: " + activitesAfter+"\n"+
-                    "Expected           \nAppRank: " +    expectedAppRank + " Activity: " + expectedActivities);
-            assertTrue(activitesAfter == expectedActivities);
-            assertTrue(appRankAfter == expectedAppRank);
-        }
-
-        finally {
-            driver.kill();
-            driver1.kill();
-
-        }
-
-    }
 
 
     @Test
     public void testHomePage() throws Throwable {
-        FirefoxDriver driver1 = getFirefoxDriver();
-        WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
+        driver0 = getRemoteWebDriver(DesiredCapabilities.chrome());
+        WebDriverWait wait1 = new WebDriverWait(driver0, timeOutInSeconds());
         try {
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, false, driver1, wait1);
+            genericApplangoWebsiteActions.openDashboardAndLogin(applango, false, driver0, wait1);
             genericApplangoWebsiteActions.waitForHomePage(wait1);
         }
 
 
         finally {
-            driver1.kill();
+            driver0.quit();
+        }
+    }
+
+    @Test
+    public void testReportPage() throws IOException {
+        driver0 = getRemoteWebDriver(DesiredCapabilities.chrome());
+        WebDriverWait wait1 = new WebDriverWait(driver0, timeOutInSeconds());
+
+
+        try {
+            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver0, wait1);
+            genericApplangoWebsiteActions.openReportPage(driver0, wait1);
+
+
+            logger.info("Run ove all reports");
+            for (applangoReports report : applangoReports.values()) {
+                selectReport(driver0, report);
+                for (applications application : applications.values()) {
+                    selectReportApplication(driver0, application);
+                    logger.info("Run Report : " + report.getValue() + " for application : " + application.getValue());
+                    clickOnReportSearch(driver0, wait1);
+
+                }
+
+            }
+
+            genericApplangoWebsiteActions.clickOnReportDownload(driver0, wait1);
+            genericApplangoWebsiteActions.clickOnReportExportCSV(driver0, wait1);
+
+
+        }
+        finally {
+//            driver0.quit();
         }
     }
 
     @Test
     public void testPeoplePage() throws Throwable {
-        FirefoxDriver driver1 = getFirefoxDriver();
+        RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
         String firstName = "omer";
         String lastName = "ovadia";
@@ -715,48 +586,25 @@ public class dashboardTests extends SeleniumTestBase{
         try {
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.openPeoplePage(driver1, wait1);
-            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, getThisMonth(), "2014", getThisMonth(), "2014");
+            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, thisMonth, "2014", thisMonth, "2014");
             genericApplangoWebsiteActions.clickOnUserInPeopleTable(driver1, wait1);
             genericApplangoWebsiteActions.clickOnAppInPeopleTable(driver1, wait1);
         }
         finally {
-            driver1.kill();
+            driver1.quit();
         }
 
     }
-
-    @Test
-    public void testReportPage() throws IOException {
-        FirefoxDriver driver1 = getFirefoxDriver();
-        WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
-
-
-        try {
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
-            genericApplangoWebsiteActions.openReportPage(driver1, wait1);
-
-
-            logger.info("Run ove all reports");
-            for (applangoReports report : applangoReports.values()) {
-                selectReport(driver1, report);
-                for (applications application : applications.values()) {
-                    selectReportApplication(driver1, application);
-                    logger.info("Run Report : " + report.getValue() + " for application : " + application.getValue());
-                    clickOnReportSearch(driver1, wait1);
-
-                }
-
-            }
-
-            genericApplangoWebsiteActions.clickOnReportDownload(driver1, wait1);
-            genericApplangoWebsiteActions.clickOnReportExportCSV(driver1, wait1);
-
-
-        }
-        finally {
-            driver1.kill();
-        }
+    @After
+    public void TearDown()
+    {
+        logger.info("Tear Down");
+        if (driver0.getSessionId() != null)
+            driver0.quit();
+        if (driver1.getSessionId() != null)
+            driver1.quit();
     }
+
 
 }
 

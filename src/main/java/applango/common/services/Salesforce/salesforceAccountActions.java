@@ -26,7 +26,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         waitForPageToLoad(wait);
     }
 
-    static boolean verifySaved(FirefoxDriver driver, String newAccountName) {
+    static boolean verifySaved(WebDriver driver, String newAccountName) {
         logger.info("Verify account is saved ");
         try {
 //            Assert.assertTrue(driver.findElement(By.xpath(salesforceTextfields.ACCOUNT_AccountNameInTitle.getValue())).getText().equals(newAccountName));
@@ -38,7 +38,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         }
     }
 
-    public static SalesforceAccounts fillDetailsAndSave(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    public static SalesforceAccounts fillDetailsAndSave(WebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("Fill new account details and return object SalesforceAccounts with accountName and accountId");
         waitForPageToLoad(wait);
         SalesforceAccounts newAccount = new SalesforceAccounts();
@@ -68,7 +68,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         create(driver, wait, 1);
     }
 
-    public static SalesforceAccounts[] create(FirefoxDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
+    public static SalesforceAccounts[] create(WebDriver driver, WebDriverWait wait, int numberOfAccounts) throws IOException {
         logger.info("Create " + numberOfAccounts + " accounts");
         SalesforceAccounts[] newAccountName = new SalesforceAccounts[numberOfAccounts];
         Map salesforceObjectMap = getMap();
@@ -118,7 +118,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         }
     }
 
-    public static void updateOne(FirefoxDriver driver, WebDriverWait wait, SalesforceAccounts account, String newAccountName) throws IOException {
+    public static void updateOne(WebDriver driver, WebDriverWait wait, SalesforceAccounts account, String newAccountName) throws IOException {
         logger.info("Updating account name of "+ account.getAccountName() + " to "+ newAccountName);
         openPageWithIdInUrl(driver, wait, account.getAccountId());
         waitForPageToLoad(wait);
@@ -137,7 +137,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
     }
 
 
-    public static void updateAccountNTimes(FirefoxDriver driver1, WebDriverWait wait, SalesforceAccounts newAccount, int numberOfUpdateAccounts) throws IOException {
+    public static void updateAccountNTimes(WebDriver driver1, WebDriverWait wait, SalesforceAccounts newAccount, int numberOfUpdateAccounts) throws IOException {
         logger.info("Update Account " + numberOfUpdateAccounts + " times");
         for (int i=0; i<numberOfUpdateAccounts; i++){
             waitForPageToLoad(wait);
@@ -147,7 +147,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
     }
 
 
-    private static String fillDetails(FirefoxDriver driver, WebDriverWait wait, String accountName) throws IOException {
+    private static String fillDetails(WebDriver driver, WebDriverWait wait, String accountName) throws IOException {
         Assert.assertTrue(driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).isDisplayed());
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).clear();
         waitForPageToLoad(wait);
@@ -156,7 +156,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         return accountName.toString();
     }
 
-    private static String fillDetailsRandomly(FirefoxDriver driver) throws IOException {
+    private static String fillDetailsRandomly(WebDriver driver) throws IOException {
         CharSequence accountName = "testA"+ Calendar.getInstance().getTimeInMillis();
         accountName = accountName.subSequence(0,14);
         driver.findElement(By.id(salesforceTextfields.ACCOUNT_AccountNAME.getValue())).sendKeys(accountName);
@@ -164,7 +164,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         return accountName.toString();
     }
 
-    private static void fillExtraDetails(FirefoxDriver driver) throws IOException {
+    private static void fillExtraDetails(WebDriver driver) throws IOException {
 
         try {
 
@@ -181,7 +181,7 @@ public class salesforceAccountActions extends genericSalesforceWebsiteActions {
         }
     }
 
-    public static  void salesforcePerformActivitiesInAccounts(Salesforce sf, FirefoxDriver driver2, WebDriverWait wait2, int numOfNewAccounts, int numOfUpdateAccounts) throws IOException {
+    public static  void salesforcePerformActivitiesInAccounts(Salesforce sf, WebDriver driver2, WebDriverWait wait2, int numOfNewAccounts, int numOfUpdateAccounts) throws IOException {
 
         //Create Account
         SalesforceAccounts[] salesforceAccounts =  create(driver2, wait2, numOfNewAccounts);

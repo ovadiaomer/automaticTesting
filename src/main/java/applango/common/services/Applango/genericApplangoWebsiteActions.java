@@ -79,6 +79,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     }
 
+
     public static void selectApplication(WebDriver driver1, WebDriverWait wait, applications app) throws IOException {
         if (!isApplicationAlreadySelected(driver1, app)) {
             logger.info("Selecting application " + app);
@@ -642,14 +643,14 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.PEOPLE_PAGE_SEARCH.getValue())));
     }
 
-    public static void openReportPage(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+    public static void openReportPage(WebDriver driver1, WebDriverWait wait1) throws IOException {
         logger.info("Open Report page");
         driver1.findElement(By.xpath(applangoObject.REPORT_PAGE_TAB.getValue())).click();
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(applangoButtons.REPORT_PAGE_SEARCH.getValue())));
     }
 
-    public static void clickOnReportSearch(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
-        logger.info("Click On report search butoon");
+    public static void clickOnReportSearch(WebDriver driver1, WebDriverWait wait1) throws IOException {
+        logger.info("Click On report search button");
         driver1.findElement(By.id(applangoButtons.REPORT_PAGE_SEARCH.getValue())).click();
         genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait1);
         waitForReportDataHolder(wait1);
@@ -681,24 +682,24 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         driver1.findElement(By.id(applangoDropdowns.REPORT_UNTIL_YEAR.getValue())).sendKeys(toYear);
     }
 
-    public static void selectReportApplication(FirefoxDriver driver1, applications app) throws IOException {
+    public static void selectReportApplication(WebDriver driver1, applications app) throws IOException {
         logger.info("Select application " + app.getValue());
         driver1.findElement(By.id(applangoDropdowns.REPORT_APP_NAME.getValue())).sendKeys(app.getValue());
     }
 
-    public static void selectReport(FirefoxDriver driver1, applangoReports reportName) throws IOException {
+    public static void selectReport(WebDriver driver1, applangoReports reportName) throws IOException {
         logger.info("Select Report " + reportName.getValue());
         driver1.findElement(By.id(applangoDropdowns.REPORT_NAME.getValue())).sendKeys(reportName.getValue());
     }
 
-    public static void clickOnReportExportCSV(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+    public static void clickOnReportExportCSV(WebDriver driver1, WebDriverWait wait1) throws IOException {
         logger.info("click On Report Export CSV");
         driver1.findElement(By.id(applangoButtons.REPORT_PAGE_EXPORT.getValue())).click();
         System.out.println("--- " + driver1.switchTo().activeElement().getText());
         List<String> browserTabs = new ArrayList<String>(driver1.getWindowHandles());
         assertTrue(driver1.switchTo().window(browserTabs.get(1)).getTitle().equals("Applango Report"));
     }
-    public static void clickOnReportDownload(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+    public static void clickOnReportDownload(WebDriver driver1, WebDriverWait wait1) throws IOException {
         logger.info("click On Report Download CSV");
         driver1.findElement(By.id(applangoButtons.REPORT_PAGE_DOWNLOAD.getValue())).click();
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"buttons\"]/output/a")));
@@ -799,7 +800,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
 
-    public static void reloadDashboard(FirefoxDriver driver1, WebDriverWait wait1) throws IOException {
+    public static void reloadDashboard(WebDriver driver1, WebDriverWait wait1) throws IOException {
         driver1.navigate().refresh();
         waitUntilWaitForServerDissappears(wait1);
     }
