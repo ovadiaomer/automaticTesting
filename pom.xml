@@ -7,7 +7,7 @@
     <groupId>automaticTest.com</groupId>
     <artifactId>AutomaticTesting</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.1</version>
     <build>
         <testSourceDirectory>src/test/java/applango/com</testSourceDirectory>
         <testOutputDirectory>src/test/java/applango/logs</testOutputDirectory>
