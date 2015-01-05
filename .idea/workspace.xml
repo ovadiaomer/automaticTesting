@@ -163,7 +163,7 @@
     <file path="/applangoDropdown.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394615475881" ignored="false" />
     <file path="/months.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394617492822" ignored="false" />
     <file path="/applangoMessages.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1396862347266" ignored="false" />
-    <file path="/applangoToolsCommand.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1408630163886" ignored="false" />
+    <file path="/applangoToolsCommand.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420472468574" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/commonAPI/src/main/java/com/applango/services/UserManager.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395234746457" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/dataaccess/src/test/java/com/applango/dal/OAuth2CredentialsDAOIT.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395241457514" ignored="false" />
     <file path="/Database.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1395322193211" ignored="false" />
@@ -652,7 +652,7 @@
       <file leaf-file-name="boxIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
+            <state line="28" column="49" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -663,7 +663,7 @@
       <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="52" selection-start="744" selection-end="744" vertical-scroll-proportion="0.26877472">
+            <state line="63" column="73" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.9328063">
               <folding />
             </state>
           </provider>
@@ -2142,15 +2142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -2174,9 +2165,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="49" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="52" selection-start="744" selection-end="744" vertical-scroll-proportion="0.26877472">
+        <state line="63" column="73" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.9328063">
           <folding />
         </state>
       </provider>

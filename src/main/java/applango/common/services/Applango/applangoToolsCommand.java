@@ -61,7 +61,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         runSyncSFActivities(customerId);
     }
     public static void runSyncSFActivities(String customerId) throws Throwable {
-        System.out.println("Sync Activities");
+        System.out.println("Sync Activities - " + sfIntegrationServiceURL);
         int maximumWait = 20000;
         int napTime = 10;
         try {
@@ -121,7 +121,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
     }
 
     public static void syncBoxActivitiesAndRollup(String customerId) throws InterruptedException {
-        logger.info("Sync box activities and rollup");
+        logger.info("Sync box activities and rollup - " + sfIntegrationServiceURL);
         int maximumWait = 20000;
         int napTime = 10;
 
