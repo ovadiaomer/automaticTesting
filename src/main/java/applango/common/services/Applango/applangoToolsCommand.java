@@ -14,7 +14,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
 
 
     static String sfIntegrationServiceURL = "http://applangoqa3.cloudapp.net:8090/sfintegration";
-    static String boxIntegrationServiceURL  = "http://applangoqa3.cloudapp.net:8090/boxintegration";
+    static String boxIntegrationServiceURL  = "http://applangoqa3/boxintegration";
     @Autowired
     UsageRollupManager usageRollupManager;
     //"http://localhost:8090/sfintegration";
