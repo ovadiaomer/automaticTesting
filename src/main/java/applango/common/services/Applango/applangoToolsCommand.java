@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class applangoToolsCommand   extends SeleniumTestBase {
 
 
-    static String sfIntegrationServiceURL = "http://applangoqa3.cloudapp.net:8090/sfintegration";
+    static String sfIntegrationServiceURL = "http://applangoqa3:8090/sfintegration";
     static String boxIntegrationServiceURL  = "http://applangoqa3:8090/boxintegration";
     @Autowired
     UsageRollupManager usageRollupManager;
