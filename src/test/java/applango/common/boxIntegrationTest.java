@@ -1,12 +1,10 @@
 package applango.common;
 
-import applango.common.SeleniumTestBase;
 import applango.common.enums.generic.applications;
 import applango.common.services.Applango.applangoToolsCommand;
 import applango.common.services.Applango.genericApplangoWebsiteActions;
 import applango.common.services.Box.genericBoxWebsiteActions;
 import applango.common.services.beans.Applango;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -23,7 +21,6 @@ import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
  * To change this template use File | Settings | File Templates.
  */
 public class boxIntegrationTest  extends SeleniumTestBase {
-    @Ignore
     @Test
     public void testSyncBoxActivities() throws Throwable {
         RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
