@@ -17,14 +17,14 @@
     <file path="/LoginPage.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381239247413" ignored="false" />
     <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1419860649034" ignored="false" />
     <file path="/CreateUser.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382262684204" ignored="false" />
-    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1420455658942" ignored="false" />
+    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1420470416478" ignored="false" />
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
     <file path="/SeleniumBaseTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267638173" ignored="false" />
     <file path="$PROJECT_DIR$/../selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267697907" ignored="false" />
     <file path="/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420116953758" ignored="false" />
     <file path="/SanityTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394548994971" ignored="false" />
     <file path="/Logger.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382279699100" ignored="false" />
-    <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1418900022491" ignored="false" />
+    <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1420468852996" ignored="false" />
     <file path="/log4j.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1382449348836" ignored="false" />
     <file path="/log4j.properties" changelist="2c65d532-f314-485a-a005-237161801969" time="1390230170227" ignored="false" />
     <file path="/objectMapper.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1390238004980" ignored="false" />
@@ -641,10 +641,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="13" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.1325536">
+            <state line="29" column="66" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -661,10 +661,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="19" selection-start="6359" selection-end="6359" vertical-scroll-proportion="-88.4">
+            <state line="16" column="70" selection-start="774" selection-end="774" vertical-scroll-proportion="0.26877472">
               <folding />
             </state>
           </provider>
@@ -765,10 +765,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1918" />
-    <option name="height" value="1038" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1932,7 +1932,11 @@
       <created>1420455668667</created>
       <updated>1420455668667</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changed applangoqa3... to applangoqa3">
+      <created>1420470426584</created>
+      <updated>1420470426584</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1956,8 +1960,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1038" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1975,12 +1979,12 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25026682" sideWeight="0.5997866" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10021552" sideWeight="0.6518771" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09925293" sideWeight="0.6588629" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1547492" sideWeight="0.5090715" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31950432" sideWeight="0.6518771" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34812286" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31643543" sideWeight="0.6588629" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3411371" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.077047415" sideWeight="0.6575654" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.44160178" order="2" side_tool="false" content_ui="combo" />
@@ -2032,7 +2036,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove ignore from box test" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed applangoqa3... to applangoqa3" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -2048,6 +2052,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="update applango.commons" />
     <MESSAGE value="Remove ignore from box test" />
+    <MESSAGE value="changed applangoqa3... to applangoqa3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2147,13 +2152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="19" selection-start="6359" selection-end="6359" vertical-scroll-proportion="-88.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -2172,7 +2170,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.1325536">
+        <state line="29" column="66" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="70" selection-start="774" selection-end="774" vertical-scroll-proportion="0.26877472">
           <folding />
         </state>
       </provider>
