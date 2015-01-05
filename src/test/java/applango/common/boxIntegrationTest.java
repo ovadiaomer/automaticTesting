@@ -13,13 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static applango.common.services.Applango.genericApplangoWebsiteActions.getApplangoConfigurationXML;
 import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
 
-/**
- * Created with IntelliJ IDEA.
- * User: omer.ovadia
- * Date: 18/12/14
- * Time: 17:43
- * To change this template use File | Settings | File Templates.
- */
 public class boxIntegrationTest  extends SeleniumTestBase {
     @Test
     public void testSyncBoxActivities() throws Throwable {
