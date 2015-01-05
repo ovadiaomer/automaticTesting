@@ -12,8 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class applangoToolsCommand   extends SeleniumTestBase {
 
+
+    static String sfIntegrationServiceURL = "http://applangoqa3.cloudapp.net:8090/sfintegration";
+    static String boxIntegrationServiceURL  = "http://applangoqa3.cloudapp.net:8090/boxintegration";
     @Autowired
     UsageRollupManager usageRollupManager;
+    //"http://localhost:8090/sfintegration";
 
     public static void runRollUp() throws Throwable {
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
@@ -33,7 +37,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int maximumWait = 20000;
         int napTime = 10;
         try {
-                String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
+//                String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
                 SFIntegrationManagerClient sfUsageStatsManagerClient = new  SFIntegrationManagerClient();
                 sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
                 SyncProcessProgress spp =  sfUsageStatsManagerClient.rollupAppRankInfo(customerId, zone, appName, "DAILY", null);
@@ -61,7 +65,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int maximumWait = 20000;
         int napTime = 10;
         try {
-            String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
+
             SFIntegrationManagerClient sfIntegrationManagerClient = new SFIntegrationManagerClient();
             sfIntegrationManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
             SyncProcessProgress spp = sfIntegrationManagerClient.populateUsage(customerId);
@@ -95,7 +99,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int maximumWait = 20000;
         int napTime = 10;
         String customerId = sf.getClientId();
-        String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
+//        String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
         try {
 
             SFIntegrationManagerClient sfIntegrationManagerClient = new  SFIntegrationManagerClient();
@@ -122,7 +126,7 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int napTime = 10;
 
         BoxIntegrationManagerClient boxIntegrationMgr = new BoxIntegrationManagerClient();
-        String boxIntegrationServiceURL  = "http://localhost:8090/boxintegration";
+
         boxIntegrationMgr.setBoxIntegrationServiceURL(boxIntegrationServiceURL);
         SyncProcessProgress spp = boxIntegrationMgr.populateUsage(customerId);
         System.out.println("processId: " + spp.getProcessId());
