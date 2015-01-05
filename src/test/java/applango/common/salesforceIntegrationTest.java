@@ -11,6 +11,7 @@ import applango.common.services.beans.Applango;
 import applango.common.services.beans.Salesforce;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -24,7 +25,7 @@ import static com.thoughtworks.selenium.SeleneseTestBase.fail;
 
 public class salesforceIntegrationTest extends SeleniumTestBase {
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
-
+    @Ignore
     @Test
 //    @Category(IntegrationTestsCategory.class)
     public void testSyncingSalesforceActivities() throws Throwable {
@@ -81,7 +82,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
 
             logger.info("Get appRank and Activities before sync");
-            filterByDate(driver1, wait1, "", thisMonth, "", thisMonth);
+            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
             selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
 
             int appRankBeforeActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
@@ -92,8 +93,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
-
-            filterByDate(driver1, wait1, "", thisMonth, "", thisMonth);
+            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
 
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
@@ -112,7 +112,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             mongoDB.updateCustomerAppRankWeightSet(coll, appRankWeightSet, true);
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
             DBObject rollupRecordAfterRollupActivitiesAfterSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
-
+            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
             int appRankBefore = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight);
             int appRankAfter = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesAfterSettingNewWeight);
             int totalLogins = Integer.parseInt(rollupRecordAfterRollupActivitiesAfterSettingNewWeight.get("numLogins").toString());

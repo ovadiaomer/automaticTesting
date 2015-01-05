@@ -157,7 +157,7 @@ public class dashboardTests extends SeleniumTestBase{
             genericApplangoWebsiteActions.enterCredentials(driver1, validUsername.toLowerCase(), validPassword);
             selectRememberUsernameCheckbox(driver1);
             genericApplangoWebsiteActions.clickOnLoginButtonAndWaitForUserListToLoad(driver1, wait);
-            logger.info("Check no change in amount of failure logins, successfil login added");
+            logger.info("Check no change in amount of failure logins, successful login added");
             successfulLogins++;
             genericApplangoWebsiteActions.logout(driver1, wait);
             checkSuccessfulAndFailureLoginsCounts(applango, applangoUserLoginHistoryCollection, failureLogins, successfulLogins);
@@ -166,7 +166,7 @@ public class dashboardTests extends SeleniumTestBase{
             genericApplangoWebsiteActions.enterCredentials(driver1, validUsername.toLowerCase(), validPassword);
             unselectRememberUsernameCheckbox(driver1);
             genericApplangoWebsiteActions.clickOnLoginButtonAndWaitForUserListToLoad(driver1, wait);
-            logger.info("Check no change in amount of failure logins, successfil login added");
+            logger.info("Check no change in amount of failure log-ins, successful login added");
             successfulLogins++;
             genericApplangoWebsiteActions.logout(driver1, wait);
             checkSuccessfulAndFailureLoginsCounts(applango, applangoUserLoginHistoryCollection, failureLogins, successfulLogins);
@@ -586,7 +586,7 @@ public class dashboardTests extends SeleniumTestBase{
         try {
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.openPeoplePage(driver1, wait1);
-            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, thisMonth, "2014", thisMonth, "2014");
+            genericApplangoWebsiteActions.searchPeople(driver1, wait1, firstName, lastName, email, thisMonth, thisYear, thisMonth, thisYear);
             genericApplangoWebsiteActions.clickOnUserInPeopleTable(driver1, wait1);
             genericApplangoWebsiteActions.clickOnAppInPeopleTable(driver1, wait1);
         }

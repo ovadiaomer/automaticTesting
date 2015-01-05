@@ -176,9 +176,8 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     private static void waitForUserListToLoad(WebDriverWait wait) throws IOException {
         waitUntilWaitForServerDissappears(wait);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.HEADER.getValue().toString())));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.USERTABLE_ID.getValue().toString())));
-        waitUntilWaitForServerDissappears(wait);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.USERTABLE_ID.getValue().toString())));
+//        waitUntilWaitForServerDissappears(wait);
 
     }
 

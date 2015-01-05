@@ -1,9 +1,12 @@
+package applango.common;
+
 import applango.common.SeleniumTestBase;
 import applango.common.enums.generic.applications;
 import applango.common.services.Applango.applangoToolsCommand;
 import applango.common.services.Applango.genericApplangoWebsiteActions;
 import applango.common.services.Box.genericBoxWebsiteActions;
 import applango.common.services.beans.Applango;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -20,7 +23,7 @@ import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
  * To change this template use File | Settings | File Templates.
  */
 public class boxIntegrationTest  extends SeleniumTestBase {
-
+    @Ignore
     @Test
     public void testSyncBoxActivities() throws Throwable {
         RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
@@ -38,7 +41,7 @@ public class boxIntegrationTest  extends SeleniumTestBase {
             logger.info("Login to Applango");
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.BOX);
-            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", thisMonth, "2014", thisMonth);
+            genericApplangoWebsiteActions.filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
 
             logger.info("Perform actions in Box");
             launchingWebsite(driver0, "https://app.box.com/login/");
@@ -51,7 +54,7 @@ public class boxIntegrationTest  extends SeleniumTestBase {
             int activites = genericApplangoWebsiteActions.getActivity(driver1);
             applangoToolsCommand.syncBoxActivitiesAndRollup(customerId);
 //            reloadDashboard(driver1, wait1);
-            genericApplangoWebsiteActions.filterByDate(driver1, wait1, "2014", thisMonth, "2014", thisMonth);
+            genericApplangoWebsiteActions.filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
             genericApplangoWebsiteActions.selectUserFromList(driver1, wait1, "Omer1", "OvadiaAutoBox");
             int appRankAfter = genericApplangoWebsiteActions.getAppRank(driver1);
             int activitesAfter = genericApplangoWebsiteActions.getActivity(driver1);
@@ -66,8 +69,8 @@ public class boxIntegrationTest  extends SeleniumTestBase {
         }
 
         finally {
-            driver0.quit();
-            driver1.quit();
+            driver0.close();
+            driver1.close();
 
         }
 
