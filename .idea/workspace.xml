@@ -674,7 +674,7 @@
       <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="68" selection-start="757" selection-end="757" vertical-scroll-proportion="0.08811475">
+            <state line="16" column="60" selection-start="749" selection-end="749" vertical-scroll-proportion="0.08811475">
               <folding />
             </state>
           </provider>
@@ -2238,7 +2238,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="757" selection-end="757" vertical-scroll-proportion="0.08811475">
+        <state line="16" column="60" selection-start="749" selection-end="749" vertical-scroll-proportion="0.08811475">
           <folding />
         </state>
       </provider>
