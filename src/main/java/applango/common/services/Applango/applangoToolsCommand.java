@@ -13,11 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class applangoToolsCommand   extends SeleniumTestBase {
 
 
-    static String sfIntegrationServiceURL = "http://applangoqa3/sfintegration";
-    static String boxIntegrationServiceURL  = "http://applangoqa3/boxintegration";
+    static String sfIntegrationServiceURL   = "http://" + applango.getToolsJarServer() + "/sfintegration";
+    static String boxIntegrationServiceURL  = "http://" + applango.getToolsJarServer() + "/boxintegration";
     @Autowired
     UsageRollupManager usageRollupManager;
-    //"http://localhost:8090/sfintegration";
 
     public static void runRollUp() throws Throwable {
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
@@ -37,7 +36,6 @@ public class applangoToolsCommand   extends SeleniumTestBase {
         int maximumWait = 20000;
         int napTime = 10;
         try {
-//                String sfIntegrationServiceURL =  "http://localhost:8090/sfintegration";
                 SFIntegrationManagerClient sfUsageStatsManagerClient = new  SFIntegrationManagerClient();
                 sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
                 SyncProcessProgress spp =  sfUsageStatsManagerClient.rollupAppRankInfo(customerId, zone, appName, "DAILY", null);
@@ -70,10 +68,6 @@ public class applangoToolsCommand   extends SeleniumTestBase {
             sfIntegrationManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
             SyncProcessProgress spp = sfIntegrationManagerClient.populateUsage(customerId);
 
-//            SFUsageStatsManagerClient sfUsageStatsManagerClient = new  SFUsageStatsManagerClient();
-//            sfUsageStatsManagerClient.setSfIntegrationServiceURL(sfIntegrationServiceURL);
-//            SyncProcessProgress spp = sfUsageStatsManagerClient.populateUsage(customerId);
-////            sfUsageStatsManagerClient.syncLoginInfo(customerId, "salesforce");
             waitForProcessFinished(maximumWait, napTime, sfIntegrationManagerClient, spp);
 
         }

@@ -145,6 +145,7 @@ public class readFromConfigurationFile extends SeleniumTestBase {
                     applango.setUserForoAuth(eElement.getElementsByTagName("userForoAuth").item(0).getFirstChild().getTextContent());
                     applango.setPasswordForoAuth(eElement.getElementsByTagName("passwordForoAuth").item(0).getFirstChild().getTextContent());
                     applango.setCustomerForoAuth(eElement.getElementsByTagName("customerForoAuth").item(0).getFirstChild().getTextContent());
+                    applango.setToolsJarServer(eElement.getElementsByTagName("toolsJarServer").item(0).getFirstChild().getTextContent());
                 }
             }
 

@@ -9,6 +9,8 @@
         <userForoAuth>automationCustomer</userForoAuth>
         <passwordForoAuth>automationCustomer</passwordForoAuth>
         <customerForoAuth>automationCustomer</customerForoAuth>
+        <toolsJarServer>localhost:8090</toolsJarServer>
+
     </environment>
     <environment id="qa-it-release">
         <url>https://applangoqa2.cloudapp.net/dashboard/login.html#/</url>
@@ -19,5 +21,6 @@
         <userForoAuth>automationCustomer</userForoAuth>
         <passwordForoAuth>automationCustomer</passwordForoAuth>
         <customerForoAuth>automationCustomer</customerForoAuth>
+        <toolsJarServer>applangoqa1</toolsJarServer>
     </environment>
 </saleforce>

@@ -17,6 +17,16 @@ public class Applango {
     String userForoAuth;
     String passwordForoAuth;
 
+    public String getToolsJarServer() {
+        return toolsJarServer;
+    }
+
+    public void setToolsJarServer(String toolsJarServer) {
+        this.toolsJarServer = toolsJarServer;
+    }
+
+    String toolsJarServer;
+
     public String getPrimaryEmailPassword() {
         return primaryEmailPassword;
     }

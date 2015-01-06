@@ -34,6 +34,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import static applango.common.services.Applango.genericApplangoWebsiteActions.getApplangoConfigurationXML;
 import static com.thoughtworks.selenium.SeleneseTestBase.fail;
 
 public class SeleniumTestBase {
@@ -68,6 +69,7 @@ public class SeleniumTestBase {
     public void setup() throws IOException, ParserConfigurationException, SAXException {
         dbProperties = getDatabaseConfigurationXML();
         db = connectToDB(dbProperties);
+        applango = getApplangoConfigurationXML();
 
     }
 

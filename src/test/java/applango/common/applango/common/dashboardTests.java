@@ -495,7 +495,7 @@ public class dashboardTests extends SeleniumTestBase{
 
     @Test
     public void testAlertTrigger() throws Throwable {
-        Applango applango = getApplangoConfigurationXML();
+//        Applango applango = getApplangoConfigurationXML();
         FirefoxDriver driver1 = getFirefoxDriver();
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
 

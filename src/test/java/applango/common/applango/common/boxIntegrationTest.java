@@ -4,13 +4,11 @@ import applango.common.enums.generic.applications;
 import applango.common.services.Applango.applangoToolsCommand;
 import applango.common.services.Applango.genericApplangoWebsiteActions;
 import applango.common.services.Box.genericBoxWebsiteActions;
-import applango.common.services.beans.Applango;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static applango.common.services.Applango.genericApplangoWebsiteActions.getApplangoConfigurationXML;
 import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
 
 public class boxIntegrationTest  extends SeleniumTestBase {
@@ -21,7 +19,7 @@ public class boxIntegrationTest  extends SeleniumTestBase {
 
         WebDriverWait wait = new WebDriverWait(driver0, getTimeout());
         WebDriverWait wait1 = new WebDriverWait(driver1, getTimeout());
-        Applango applango = getApplangoConfigurationXML();
+//        Applango applango = getApplangoConfigurationXML();
 
         try {
             logger.info("Sync metrics and roll up");
