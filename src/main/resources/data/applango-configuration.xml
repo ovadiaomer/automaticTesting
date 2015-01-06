@@ -9,7 +9,7 @@
         <userForoAuth>automationCustomer</userForoAuth>
         <passwordForoAuth>automationCustomer</passwordForoAuth>
         <customerForoAuth>automationCustomer</customerForoAuth>
-        <toolsJarServer>localhost:8090</toolsJarServer>
+        <toolsJarServer>applangoqa3</toolsJarServer>
 
     </environment>
     <environment id="qa-it-release">

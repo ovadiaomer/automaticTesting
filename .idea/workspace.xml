@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/data/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
     <ignored path="AutomaticTesting.iws" />
@@ -159,7 +151,7 @@
     <file path="$PROJECT_DIR$/../applango/dataaccess/src/main/java/com/applango/dal/AppInfoDAOMongoImpl.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1391682151750" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/dashboard/src/main/webapp/js/controllers2.js" changelist="2c65d532-f314-485a-a005-237161801969" time="1391682151750" ignored="false" />
     <file path="/Applango.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420560029567" ignored="false" />
-    <file path="/applango-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1420561539167" ignored="false" />
+    <file path="/applango-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1420562052241" ignored="false" />
     <file path="/applangoObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1412675345934" ignored="false" />
     <file path="/applangoTextfields.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1409055265070" ignored="false" />
     <file path="/applangoButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1405347191434" ignored="false" />
@@ -674,10 +666,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applango-configuration.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="applango-configuration.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="34" selection-start="578" selection-end="578" vertical-scroll-proportion="0.34375">
+            <state line="11" column="35" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -710,10 +702,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="77" selection-start="790" selection-end="790" vertical-scroll-proportion="-5.44">
+            <state line="16" column="77" selection-start="790" selection-end="790" vertical-scroll-proportion="0.26877472">
               <folding />
             </state>
           </provider>
@@ -2119,7 +2111,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2142,7 +2134,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1547492" sideWeight="0.5090715" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31643543" sideWeight="0.6588629" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3411371" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3411371" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.077047415" sideWeight="0.6575654" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.44160178" order="2" side_tool="false" content_ui="combo" />
@@ -2328,16 +2320,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="77" selection-start="790" selection-end="790" vertical-scroll-proportion="-5.44">
+        <state line="11" column="35" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="34" selection-start="578" selection-end="578" vertical-scroll-proportion="0.34375">
+        <state line="16" column="77" selection-start="790" selection-end="790" vertical-scroll-proportion="0.26877472">
           <folding />
         </state>
       </provider>
