@@ -424,7 +424,7 @@
     <file path="/runner.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1418915198631" ignored="false" />
     <file path="/boxIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420626573129" ignored="false" />
     <file path="/salesforceIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420626683749" ignored="false" />
-    <file path="/dashboardTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420626109872" ignored="false" />
+    <file path="/dashboardTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420629852921" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -548,7 +548,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="114" class="applango.common.salesforceIntegrationTest" package="applango.common">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="112" class="applango.common.salesforceIntegrationTest" package="applango.common">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -563,7 +563,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="94" class="applango.common.salesforceIntegrationTest" package="applango.common">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="92" class="applango.common.salesforceIntegrationTest" package="applango.common">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -623,6 +623,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" line="261" class="applango.common.dashboardTest" package="applango.common">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
@@ -634,14 +649,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboardTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java">
+      <file leaf-file-name="dashboardTests.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="55" selection-start="11855" selection-end="11855" vertical-scroll-proportion="0.0">
+            <state line="42" column="13" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="method#testEnteringValidOAuthenticationCredentials#0;class#dashboardTest#0" expanded="false" />
-                <element signature="method#testResetPasswordEmailRecieved#0;class#dashboardTest#0" expanded="false" />
-                <element signature="method#testResettingPasswordFromEmail#0;class#dashboardTest#0" expanded="false" />
+                <element signature="method#testEnteringValidOAuthenticationCredentials#0;class#dashboardTests#0" expanded="false" />
+                <element signature="method#testResetPasswordEmailRecieved#0;class#dashboardTests#0" expanded="false" />
+                <element signature="method#testResettingPasswordFromEmail#0;class#dashboardTests#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -656,10 +671,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="11" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+            <state line="27" column="6" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.30512822">
               <folding />
             </state>
           </provider>
@@ -701,10 +716,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="genericApplangoWebsiteActions.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="genericApplangoWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="724" column="68" selection-start="39766" selection-end="39766" vertical-scroll-proportion="0.6044226">
+            <state line="522" column="0" selection-start="27687" selection-end="27687" vertical-scroll-proportion="-7.56">
               <folding />
             </state>
           </provider>
@@ -749,11 +764,11 @@
         <option value="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
       </list>
     </option>
   </component>
@@ -1347,67 +1362,7 @@
       <recent name="C:\app-project\AutomaticTesting\src\main\resources\data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.boxIntegrationTest.testSyncBoxActivities">
-    <configuration default="false" name="dashboardTest.testDashboardLogin" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="applango.common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AutomaticTesting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="applango.common" />
-      <option name="MAIN_CLASS_NAME" value="applango.common.dashboardTest" />
-      <option name="METHOD_NAME" value="testDashboardLogin" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="dashboardTest.testHomePage" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="applango.common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AutomaticTesting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="applango.common" />
-      <option name="MAIN_CLASS_NAME" value="applango.common.dashboardTest" />
-      <option name="METHOD_NAME" value="testHomePage" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.dashboardTests.testGroupByLicenseType">
     <configuration default="false" name="IntegrationsTestSuite" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1502,6 +1457,72 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dashboardTests.testGroupByLicenseType" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="applango.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AutomaticTesting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="applango.common" />
+      <option name="MAIN_CLASS_NAME" value="applango.common.dashboardTests" />
+      <option name="METHOD_NAME" value="testGroupByLicenseType" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dashboardTests.testLicenseCost" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="applango.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AutomaticTesting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="applango.common" />
+      <option name="MAIN_CLASS_NAME" value="applango.common.dashboardTests" />
+      <option name="METHOD_NAME" value="testLicenseCost" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1618,19 +1639,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.dashboardTest.testDashboardLogin" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.dashboardTest.testHomePage" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.IntegrationsTestSuite" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.salesforceIntegrationTest.testSyncingSalesforceActivities" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.boxIntegrationTest.testSyncBoxActivities" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.IntegrationsTestSuite" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.salesforceIntegrationTest.testSyncingSalesforceActivities" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.boxIntegrationTest.testSyncBoxActivities" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.dashboardTests.testGroupByLicenseType" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.dashboardTests.testLicenseCost" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.boxIntegrationTest.testSyncBoxActivities" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.salesforceIntegrationTest.testSyncingSalesforceActivities" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.dashboardTests.testGroupByLicenseType" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.dashboardTests.testLicenseCost" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.boxIntegrationTest.testSyncBoxActivities" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IntegrationsTestSuite" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.dashboardTest.testHomePage" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.salesforceIntegrationTest.testSyncingSalesforceActivities" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.boxIntegrationTest.testSyncBoxActivities" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1738,21 +1759,22 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15421557" sideWeight="0.40802675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.4871795" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49832776" sideWeight="0.8146552" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49832776" sideWeight="0.8146552" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3478261" sideWeight="0.3511206" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5819398" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2173913" sideWeight="0.7294557" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25026682" sideWeight="0.5997866" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10032017" sideWeight="0.6588629" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25026682" sideWeight="0.50167227" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10032017" sideWeight="0.50167227" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1547492" sideWeight="0.5090715" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31643543" sideWeight="0.6588629" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34056398" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31643543" sideWeight="0.50167227" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3400223" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.077047415" sideWeight="0.6575654" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.44160178" order="2" side_tool="false" content_ui="combo" />
@@ -1760,7 +1782,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22853957" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38684505" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2173913" sideWeight="0.7294557" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1857,7 +1878,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="29" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.27056962">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1907,13 +1928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="11" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="35" selection-start="1570" selection-end="1572" vertical-scroll-proportion="-11.0">
@@ -1928,20 +1942,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="55" selection-start="11855" selection-end="11855" vertical-scroll-proportion="0.0">
+        <state line="522" column="0" selection-start="27687" selection-end="27687" vertical-scroll-proportion="-7.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="13" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="method#testEnteringValidOAuthenticationCredentials#0;class#dashboardTest#0" expanded="false" />
-            <element signature="method#testResetPasswordEmailRecieved#0;class#dashboardTest#0" expanded="false" />
-            <element signature="method#testResettingPasswordFromEmail#0;class#dashboardTest#0" expanded="false" />
+            <element signature="method#testEnteringValidOAuthenticationCredentials#0;class#dashboardTests#0" expanded="false" />
+            <element signature="method#testResetPasswordEmailRecieved#0;class#dashboardTests#0" expanded="false" />
+            <element signature="method#testResettingPasswordFromEmail#0;class#dashboardTests#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="724" column="68" selection-start="39766" selection-end="39766" vertical-scroll-proportion="0.6044226">
+        <state line="27" column="6" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.30512822">
           <folding />
         </state>
       </provider>

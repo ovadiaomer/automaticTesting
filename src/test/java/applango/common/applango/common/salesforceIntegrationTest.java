@@ -11,7 +11,6 @@ import applango.common.services.beans.Applango;
 import applango.common.services.beans.Salesforce;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -26,7 +25,6 @@ import static com.thoughtworks.selenium.SeleneseTestBase.fail;
 public class salesforceIntegrationTest extends SeleniumTestBase {
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
     @Test
-    @Ignore
 //    @Category(IntegrationTestsCategory.class)
     public void testSyncingSalesforceActivities() throws Throwable {
 

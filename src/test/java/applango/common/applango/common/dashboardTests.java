@@ -40,7 +40,7 @@ import static applango.common.services.Gmail.genericGmailWebsiteActions.loginToG
 import static com.thoughtworks.selenium.SeleneseTestBase.*;
 
 
-public class dashboardTest extends SeleniumTestBase{
+public class dashboardTests extends SeleniumTestBase{
     Applango applango = getApplangoConfigurationXML();
 //    public RemoteWebDriver driver0;
     RemoteWebDriver driver1 = null;
@@ -56,7 +56,7 @@ public class dashboardTest extends SeleniumTestBase{
 
     @Autowired
     UsageRollupManager usageRollupManager;
-    public dashboardTest() throws ParserConfigurationException, SAXException, IOException {
+    public dashboardTests() throws ParserConfigurationException, SAXException, IOException {
     }
 
 
@@ -220,6 +220,7 @@ public class dashboardTest extends SeleniumTestBase{
 
 
     @Test
+    //Passing
     public void testLicenseCost() throws ParserConfigurationException, SAXException, IOException {
         String licenseType = "FDC_SUB";
         Applango applango = getApplangoConfigurationXML();
