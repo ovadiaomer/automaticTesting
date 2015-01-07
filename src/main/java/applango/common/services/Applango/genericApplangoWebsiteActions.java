@@ -713,7 +713,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         logger.info("Check the license Cost when 'FDC_SUB' = 30 ");
         logger.info("License cost is :\n" + licenseCost.toString());
         assertTrue(licenseCost.contains("Total licenses"));
-        assertTrue(licenseCost.contains("101,770"));
+        assertTrue(licenseCost.contains("101,915"));
 //        assertTrue(licenseCost.contains("2634"));
 //        assertTrue(licenseCost.contains("$39510"));
 //        assertTrue(licenseCost.contains("1"));
@@ -722,8 +722,9 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     public static void validateLicenseCostDataInApplicationPageAfterUpdate(String licenseCost) {
         logger.info("Check the license Cost when 'FDC_SUB' = 10 ");
+        logger.info("License cost is :\n" + licenseCost.toString());
         assertTrue(licenseCost.contains("Total licenses"));
-        assertTrue(licenseCost.contains("101,730"));
+        assertTrue(licenseCost.contains("101,875"));
 //        assertTrue(licenseCost.contains("2634"));
 //        assertTrue(licenseCost.contains("$26340"));
 //        assertTrue(licenseCost.contains("1"));
