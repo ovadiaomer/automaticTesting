@@ -16,6 +16,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.xml.sax.SAXException;
@@ -704,7 +705,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"buttons\"]/output/a")));
     }
 
-    public static String getLicenseCostInfo(FirefoxDriver driver) throws IOException {
+    public static String getLicenseCostInfo(RemoteWebDriver driver) throws IOException {
         return driver.findElement(By.cssSelector(applangoTextfields.MAIN_LICENSE_COST.getValue())).getText();
     }
 
@@ -728,7 +729,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 //        assertTrue(licenseCost.contains("$75"));
     }
 
-    public static void checkLicenseCostInApplicationPageAfterUpdate(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    public static void checkLicenseCostInApplicationPageAfterUpdate(RemoteWebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("check License Cost In Application Page After Update");
         openApplicationPage(driver, wait);
         String licenseCostInfoAfterUpdate = genericApplangoWebsiteActions.getLicenseCostInfo(driver);
@@ -746,7 +747,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
 
-    public static void updateLicenseCostInDBAndReloadApplicationData(String licenseType, FirefoxDriver driver, WebDriverWait wait, DBCollection coll) throws IOException {
+    public static void updateLicenseCostInDBAndReloadApplicationData(String licenseType, RemoteWebDriver driver, WebDriverWait wait, DBCollection coll) throws IOException {
         mongoDB.updateLicensePrice(coll, licenseType, 10);
         //reload page
         openApplicationPage(driver, wait);
@@ -754,7 +755,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
     }
 
-    public static void checkLicenseCostInApplicationPageBeforeUpdate(String licenseType, FirefoxDriver driver, WebDriverWait wait, DBCollection coll) throws IOException {
+    public static void checkLicenseCostInApplicationPageBeforeUpdate(String licenseType, RemoteWebDriver driver, WebDriverWait wait, DBCollection coll) throws IOException {
         logger.info("check License Cost In Application Page Before Update");
         openApplicationPage(driver, wait);
         genericApplangoWebsiteActions.selectApplication(driver, wait, applications.SALESFORCE);
@@ -767,7 +768,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         validateLicenseCostDataInApplicationPageBeforeUpdate(licenseCostInfoBeforeUpdate); //licenseCost = 30
     }
 
-    private static String getLicenseCostInAccountPage(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    private static String getLicenseCostInAccountPage(RemoteWebDriver driver, WebDriverWait wait) throws IOException {
 //        genericApplangoWebsiteActions.openUserAccount(driver, wait);
 //            Click on SF in account page
         driver.findElement(By.xpath("//*[@id=\"applist\"]/div[3]")).click();
@@ -779,14 +780,14 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         assertTrue(licenseCostsInAccounts.contains("FDC_SUB:  $10 each for 2 users = $20"));
     }
 
-    public static void checkLicenseCostInAccountPageAfterUpdate(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    public static void checkLicenseCostInAccountPageAfterUpdate(RemoteWebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("check License Cost In Account Page After Update");
         openUserAccount(driver, wait);
         String licenseCostsInAccountsAfterUpdate = getLicenseCostInAccountPage(driver, wait);
         validateLicenseCostInAccountsPageAfterUpdate(licenseCostsInAccountsAfterUpdate);
     }
 
-    public static void checkLicenseCostInAccountPageBeforeUpdate(FirefoxDriver driver, WebDriverWait wait) throws IOException {
+    public static void checkLicenseCostInAccountPageBeforeUpdate(RemoteWebDriver driver, WebDriverWait wait) throws IOException {
         logger.info("check License Cost In Account Page Before Update");
         openUserAccount(driver, wait);
         String licenseCostsInAccountsBeforeUpdate = getLicenseCostInAccountPage(driver, wait);

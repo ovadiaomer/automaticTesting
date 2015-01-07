@@ -4,6 +4,7 @@ import applango.common.enums.generic.applications;
 import applango.common.services.Applango.applangoToolsCommand;
 import applango.common.services.Applango.genericApplangoWebsiteActions;
 import applango.common.services.Box.genericBoxWebsiteActions;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -13,6 +14,7 @@ import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
 
 public class boxIntegrationTest  extends SeleniumTestBase {
     @Test
+    @Ignore
     public void testSyncBoxActivities() throws Throwable {
         RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
         RemoteWebDriver driver0 = getRemoteWebDriver(DesiredCapabilities.chrome());

@@ -42,8 +42,11 @@ import static com.thoughtworks.selenium.SeleneseTestBase.*;
 
 public class dashboardTest extends SeleniumTestBase{
     Applango applango = getApplangoConfigurationXML();
-    public RemoteWebDriver driver0;
-    public RemoteWebDriver driver1;
+//    public RemoteWebDriver driver0;
+    RemoteWebDriver driver1 = null;
+    RemoteWebDriver driver2 = null;
+
+//    public RemoteWebDriver driver1;
 
     private int timeOutInSeconds() throws IOException {
         return getTimeout();
@@ -63,9 +66,9 @@ public class dashboardTest extends SeleniumTestBase{
     public void testEnteringValidOAuthenticationCredentials() throws ParserConfigurationException, SAXException, IOException, InterruptedException {
         //Make sure customer and user for applango created
         //Set application  java -jar tools.jar -caimgr -dc automationCustomer,salesforce
-
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
         Applango applango = getApplangoConfigurationXML();
-        FirefoxDriver driver1 = getFirefoxDriver();
+//        FirefoxDriver driver1 = getFirefoxDriver();
         WebDriverWait wait1 = new WebDriverWait(driver1, 55);
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         final String connection = dbTables.OAuth2Credentials.getValue().toString();
@@ -109,7 +112,7 @@ public class dashboardTest extends SeleniumTestBase{
     public void testDashboardLogin() throws Exception {
         Applango applango = getApplangoConfigurationXML();
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-        RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.firefox());
+        driver1 = getRemoteWebDriver(DesiredCapabilities.firefox());
 
         WebDriverWait wait = new WebDriverWait(driver1, getTimeout());
 
@@ -184,8 +187,8 @@ public class dashboardTest extends SeleniumTestBase{
 
     @Test
     public void testExcludeUsers() throws ParserConfigurationException, SAXException, IOException {
-        RemoteWebDriver driver = getRemoteWebDriver();
-        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
+        driver1 = getRemoteWebDriver(DesiredCapabilities.firefox());
+        WebDriverWait wait = new WebDriverWait(driver1, timeOutInSeconds());
         Applango applango = getApplangoConfigurationXML();
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         final String connection = dbTables.excludedUser.getValue().toString();
@@ -200,17 +203,17 @@ public class dashboardTest extends SeleniumTestBase{
 
             logger.info("Check that user is in [excludedUser] table");
             if(coll.count(documentBuilder) != 0) {
-                genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
-                genericApplangoWebsiteActions.enterValueInSearchLastName(driver, lastName);
+                genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait);
+                genericApplangoWebsiteActions.enterValueInSearchLastName(driver1, lastName);
                 logger.info("Check that user not exist in usertable");
-                assertFalse(driver.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
+                assertFalse(driver1.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
             }
         }
         catch (Exception ex) {
             ex.getMessage();
         }
         finally {
-            driver.close();
+            driver1.close();
         }
     }
 
@@ -220,22 +223,23 @@ public class dashboardTest extends SeleniumTestBase{
     public void testLicenseCost() throws ParserConfigurationException, SAXException, IOException {
         String licenseType = "FDC_SUB";
         Applango applango = getApplangoConfigurationXML();
-        FirefoxDriver driver = getFirefoxDriver();
-        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
+//        FirefoxDriver driver = getFirefoxDriver();
+        WebDriverWait wait = new WebDriverWait(driver1, timeOutInSeconds());
         final String connection = dbTables.licenseApp.getValue().toString();
         DBCollection coll = db.getCollection(connection);
         try {
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
-            genericApplangoWebsiteActions.checkLicenseCostInApplicationPageBeforeUpdate(licenseType, driver, wait, coll);
-            checkLicenseCostInAccountPageBeforeUpdate(driver, wait);
-            genericApplangoWebsiteActions.updateLicenseCostInDBAndReloadApplicationData(licenseType, driver, wait, coll);
-            checkLicenseCostInApplicationPageAfterUpdate(driver, wait);
-            checkLicenseCostInAccountPageAfterUpdate(driver, wait);
+            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait);
+            genericApplangoWebsiteActions.checkLicenseCostInApplicationPageBeforeUpdate(licenseType, driver1, wait, coll);
+            checkLicenseCostInAccountPageBeforeUpdate(driver1, wait);
+            genericApplangoWebsiteActions.updateLicenseCostInDBAndReloadApplicationData(licenseType, driver1, wait, coll);
+            checkLicenseCostInApplicationPageAfterUpdate(driver1, wait);
+            checkLicenseCostInAccountPageAfterUpdate(driver1, wait);
 
         }
         finally {
             mongoDB.updateLicensePrice(coll, licenseType, 30);
-            driver.close();
+            driver1.close();
         }
 
 
@@ -244,8 +248,8 @@ public class dashboardTest extends SeleniumTestBase{
     @Test
     public void testGroupByLicenseType() throws ParserConfigurationException, SAXException, IOException {
         Applango applango = getApplangoConfigurationXML();
-        FirefoxDriver driver = getFirefoxDriver();
-        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds());
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
+        WebDriverWait wait = new WebDriverWait(driver1, timeOutInSeconds());
         final String connection = dbTables.groupInfo.getValue().toString();
         DBCollection coll = db.getCollection(connection);
         String licenseType =  salesforceLicenses.FORCE.getValue().toString();
@@ -256,25 +260,25 @@ public class dashboardTest extends SeleniumTestBase{
             String lastName = "Hilsta";
             logger.info("Check that user is in [groupInfo] table with group 'Chatter Free'");
             if (coll.find(documentBuilder).next().get("groups").toString().toLowerCase().contains(licenseType.toLowerCase())) {
-                genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver, wait);
-                driver.manage().window().maximize();
+                genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait);
+                driver1.manage().window().maximize();
 
 //                driver.findElement(By.id("//*[@id=\"licenz\"]/span[2]")).click();
 
                 logger.info("Check that user exist in usertable when filtering by " + licenseType);
-                genericApplangoWebsiteActions.filterLicenseType(driver, wait, salesforceLicenses.FORCE);
-                genericApplangoWebsiteActions.enterValueInSearchLastName(driver, lastName);
-                assertTrue(driver.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
+                genericApplangoWebsiteActions.filterLicenseType(driver1, wait, salesforceLicenses.FORCE);
+                genericApplangoWebsiteActions.enterValueInSearchLastName(driver1, lastName);
+                assertTrue(driver1.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
                 //check Groups field
 
                 logger.info("Check that user not exist in usertable when filtering by " + salesforceLicenses.SYSTEM_ADMINISTRATOR.getValue());
-                genericApplangoWebsiteActions.filterLicenseType(driver, wait, salesforceLicenses.SYSTEM_ADMINISTRATOR);
-                genericApplangoWebsiteActions.enterValueInSearchLastName(driver, lastName);
-                assertFalse(driver.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
+                genericApplangoWebsiteActions.filterLicenseType(driver1, wait, salesforceLicenses.SYSTEM_ADMINISTRATOR);
+                genericApplangoWebsiteActions.enterValueInSearchLastName(driver1, lastName);
+                assertFalse(driver1.findElement(By.id(applangoObject.USERTABLE.getValue().toString())).getText().contains(lastName));
             }
         }
         finally {
-            driver.close();
+            driver1.close();
         }
     }
 
@@ -307,7 +311,7 @@ public class dashboardTest extends SeleniumTestBase{
     @Test
     public void testChangePassword() throws ParserConfigurationException, SAXException, IOException {
         logger.info("********************************************* Running  " + Thread.currentThread().getStackTrace()[1].getMethodName() + "*********************************************");
-        FirefoxDriver driver1 = getFirefoxDriver();
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
         WebDriverWait wait = new WebDriverWait(driver1, timeOutInSeconds());
         Applango applango = getApplangoConfigurationXML();
         String currentPassword = applango.getPassword();
@@ -482,21 +486,11 @@ public class dashboardTest extends SeleniumTestBase{
         }
     }
 
-    @Test
-    @Ignore
-    public void testRunner() throws Throwable {
-        testChangePassword();
-        testDashboardLogin();
-        testEnteringValidOAuthenticationCredentials();
-//        salesforceIntegrationTest.testSyncingSalesforceActivities();
-
-    }
-
 
     @Test
     public void testAlertTrigger() throws Throwable {
 //        Applango applango = getApplangoConfigurationXML();
-        FirefoxDriver driver1 = getFirefoxDriver();
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
 
         try {
@@ -525,49 +519,31 @@ public class dashboardTest extends SeleniumTestBase{
     }
 
 
-
-
-    @Ignore
-    @Test
-    public void testHomePage() throws Throwable {
-        driver0 = getRemoteWebDriver(DesiredCapabilities.chrome());
-        WebDriverWait wait1 = new WebDriverWait(driver0, timeOutInSeconds());
-        try {
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, false, driver0, wait1);
-            genericApplangoWebsiteActions.waitForHomePage(wait1);
-        }
-
-
-        finally {
-            driver0.quit();
-        }
-    }
-
     @Test
     public void testReportPage() throws IOException {
-        driver0 = getRemoteWebDriver(DesiredCapabilities.chrome());
-        WebDriverWait wait1 = new WebDriverWait(driver0, timeOutInSeconds());
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
+        WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
 
 
         try {
-            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver0, wait1);
-            genericApplangoWebsiteActions.openReportPage(driver0, wait1);
+            genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
+            genericApplangoWebsiteActions.openReportPage(driver1, wait1);
 
 
             logger.info("Run ove all reports");
             for (applangoReports report : applangoReports.values()) {
-                selectReport(driver0, report);
+                selectReport(driver1, report);
                 for (applications application : applications.values()) {
-                    selectReportApplication(driver0, application);
+                    selectReportApplication(driver1, application);
                     logger.info("Run Report : " + report.getValue() + " for application : " + application.getValue());
-                    clickOnReportSearch(driver0, wait1);
+                    clickOnReportSearch(driver1, wait1);
 
                 }
 
             }
 
-            genericApplangoWebsiteActions.clickOnReportDownload(driver0, wait1);
-            genericApplangoWebsiteActions.clickOnReportExportCSV(driver0, wait1);
+            genericApplangoWebsiteActions.clickOnReportDownload(driver1, wait1);
+            genericApplangoWebsiteActions.clickOnReportExportCSV(driver1, wait1);
 
 
         }
@@ -577,8 +553,9 @@ public class dashboardTest extends SeleniumTestBase{
     }
 
     @Test
+
     public void testPeoplePage() throws Throwable {
-        RemoteWebDriver driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
+        driver1 = getRemoteWebDriver(DesiredCapabilities.chrome());
         WebDriverWait wait1 = new WebDriverWait(driver1, timeOutInSeconds());
         String firstName = "omer";
         String lastName = "ovadia";
@@ -599,10 +576,10 @@ public class dashboardTest extends SeleniumTestBase{
     public void TearDown()
     {
         logger.info("Tear Down");
-        if (driver0.getSessionId() != null)
+        /*if (driver0.getSessionId() != null)
             driver0.quit();
         if (driver1.getSessionId() != null)
-            driver1.quit();
+            driver1.quit();*/
     }
 
 

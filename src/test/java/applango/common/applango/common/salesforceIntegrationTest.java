@@ -11,6 +11,7 @@ import applango.common.services.beans.Applango;
 import applango.common.services.beans.Salesforce;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -25,11 +26,12 @@ import static com.thoughtworks.selenium.SeleneseTestBase.fail;
 public class salesforceIntegrationTest extends SeleniumTestBase {
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
     @Test
+    @Ignore
 //    @Category(IntegrationTestsCategory.class)
     public void testSyncingSalesforceActivities() throws Throwable {
 
-        RemoteWebDriver driver2 = null;
         RemoteWebDriver driver1 = null;
+        RemoteWebDriver driver2 = null;
         Applango applango = getApplangoConfigurationXML();
         Salesforce sf = genericSalesforceWebsiteActions.getSalesforceConfigurationXML();
         logger.info("Set CustomerAppRankWeightSet false (in order make sure weightSet is default)");
@@ -39,7 +41,6 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
         mongoDB.updateCustomerAppRankWeightSet(coll, appRankWeightSet, false);
         final String connectionRolledUpUserAppRankInfo = dbTables.rolledUpUserAppRankInfo.getValue().toString();
         DBCollection collRoll = db.getCollection(connectionRolledUpUserAppRankInfo);
-        //Before running this test make sure that you have a tunnel (applangoqa3.cloudapp.net) from putty not shortcut, http://localhost:8090/managerservices/customer-manager/cm-rest/hello
 
         int numOfNewContact = 1;
         int numOfUpdateContact = 1;
