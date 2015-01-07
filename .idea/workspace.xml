@@ -54,7 +54,7 @@
     <file path="/salesforce-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1402580176625" ignored="false" />
     <file path="/Salesforce.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1391943145856" ignored="false" />
     <file path="/genericWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394461189100" ignored="false" />
-    <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1418814499350" ignored="false" />
+    <file path="/genericApplangoWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420628621745" ignored="false" />
     <file path="/genericSalesforceWebsiteActions.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1417697617495" ignored="false" />
     <file path="/salesforceObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1412152602464" ignored="false" />
     <file path="/readFromConfigurationFile.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1402580155867" ignored="false" />
@@ -634,10 +634,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboardTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dashboardTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="536" column="14" selection-start="28052" selection-end="28052" vertical-scroll-proportion="0.8957617">
+            <state line="232" column="55" selection-start="11855" selection-end="11855" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="method#testEnteringValidOAuthenticationCredentials#0;class#dashboardTest#0" expanded="false" />
                 <element signature="method#testResetPasswordEmailRecieved#0;class#dashboardTest#0" expanded="false" />
@@ -650,7 +650,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="46" column="35" selection-start="1570" selection-end="1572" vertical-scroll-proportion="-11.0">
               <folding />
             </state>
           </provider>
@@ -701,10 +701,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="genericApplangoWebsiteActions.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="genericApplangoWebsiteActions.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="782" column="23" selection-start="42873" selection-end="42873" vertical-scroll-proportion="0.0">
+            <state line="713" column="40" selection-start="39178" selection-end="39178" vertical-scroll-proportion="0.3746929">
               <folding />
             </state>
           </provider>
@@ -750,10 +750,10 @@
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
       </list>
     </option>
   </component>
@@ -1746,7 +1746,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25026682" sideWeight="0.5997866" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25026682" sideWeight="0.5997866" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10032017" sideWeight="0.6588629" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1900,27 +1900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="34" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="782" column="23" selection-start="42873" selection-end="42873" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="11" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
@@ -1935,14 +1914,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="35" selection-start="1570" selection-end="1572" vertical-scroll-proportion="-11.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="34" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="536" column="14" selection-start="28052" selection-end="28052" vertical-scroll-proportion="0.8957617">
+        <state line="232" column="55" selection-start="11855" selection-end="11855" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="method#testEnteringValidOAuthenticationCredentials#0;class#dashboardTest#0" expanded="false" />
             <element signature="method#testResetPasswordEmailRecieved#0;class#dashboardTest#0" expanded="false" />
             <element signature="method#testResettingPasswordFromEmail#0;class#dashboardTest#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="713" column="40" selection-start="39178" selection-end="39178" vertical-scroll-proportion="0.3746929">
+          <folding />
         </state>
       </provider>
     </entry>

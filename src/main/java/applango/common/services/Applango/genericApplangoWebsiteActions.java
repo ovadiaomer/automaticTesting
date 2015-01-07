@@ -711,6 +711,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     public static void validateLicenseCostDataInApplicationPageBeforeUpdate(String licenseCost) {
         logger.info("Check the license Cost when 'FDC_SUB' = 30 ");
+        logger.info("License cost is :\n" + licenseCost.toString());
         assertTrue(licenseCost.contains("Total licenses"));
         assertTrue(licenseCost.contains("101,770"));
 //        assertTrue(licenseCost.contains("2634"));
