@@ -40,7 +40,7 @@ import static applango.common.services.Gmail.genericGmailWebsiteActions.loginToG
 import static com.thoughtworks.selenium.SeleneseTestBase.*;
 
 
-public class dashboardTests extends SeleniumTestBase{
+public class dashboardTest extends SeleniumTestBase{
     Applango applango = getApplangoConfigurationXML();
     public RemoteWebDriver driver0;
     public RemoteWebDriver driver1;
@@ -53,7 +53,7 @@ public class dashboardTests extends SeleniumTestBase{
 
     @Autowired
     UsageRollupManager usageRollupManager;
-    public dashboardTests() throws ParserConfigurationException, SAXException, IOException {
+    public dashboardTest() throws ParserConfigurationException, SAXException, IOException {
     }
 
 
@@ -527,7 +527,7 @@ public class dashboardTests extends SeleniumTestBase{
 
 
 
-
+    @Ignore
     @Test
     public void testHomePage() throws Throwable {
         driver0 = getRemoteWebDriver(DesiredCapabilities.chrome());
