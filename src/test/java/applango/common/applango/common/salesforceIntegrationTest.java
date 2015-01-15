@@ -63,6 +63,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             driver2 = getRemoteWebDriver(DesiredCapabilities.chrome());
             WebDriverWait wait1 = new WebDriverWait(driver1, getTimeout());
             WebDriverWait wait2 = new WebDriverWait(driver2, getTimeout());
+            //TODO:Set tooljar url in config.properties
 
 
             logger.info("Sync metrics and roll up");
@@ -90,7 +91,8 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
-            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
+//            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
+            genericApplangoWebsiteActions.clickOnDateSearchButton(driver1, wait1);
 
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
