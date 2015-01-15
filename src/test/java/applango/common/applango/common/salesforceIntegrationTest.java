@@ -73,11 +73,11 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.SALESFORCE);
 
             logger.info("Open Salesforce and perform activities");
-            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
-            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
-            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
-            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
-            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
+//            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
+//            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
+//            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
+//            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
+//            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
 
             logger.info("Get appRank and Activities before sync");
             filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
@@ -88,7 +88,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             logger.info("AppRank before: " + appRankBeforeActivitiesInSF + " Activity before: " + activityBeforeActivitiesInSF);
 
             logger.info("Sync metrics again ");
-            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
+//            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
 //            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
@@ -96,7 +96,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
 
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
-            String userName = genericApplangoWebsiteActions.getName(driver1);
+//            String userName = genericApplangoWebsiteActions.getName(driver1);
             int expectedAppRankAfterActivitiesInSF = appRankBeforeActivitiesInSF + appRankChange;
             int expectedActivitiesAfterActivitiesInSF = activityBeforeActivitiesInSF + totalActivities;
 
@@ -111,7 +111,8 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             mongoDB.updateCustomerAppRankWeightSet(coll, appRankWeightSet, true);
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
             DBObject rollupRecordAfterRollupActivitiesAfterSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
-            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
+//            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
+            genericApplangoWebsiteActions.clickOnDateSearchButton(driver1, wait1);
             int appRankBefore = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight);
             int appRankAfter = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesAfterSettingNewWeight);
             int totalLogins = Integer.parseInt(rollupRecordAfterRollupActivitiesAfterSettingNewWeight.get("numLogins").toString());
