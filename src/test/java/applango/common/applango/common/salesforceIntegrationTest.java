@@ -88,7 +88,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             logger.info("AppRank before: " + appRankBeforeActivitiesInSF + " Activity before: " + activityBeforeActivitiesInSF);
 
             logger.info("Sync metrics again ");
-//            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
+            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
 //            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
