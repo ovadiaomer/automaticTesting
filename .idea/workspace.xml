@@ -425,7 +425,7 @@
     <file path="$PROJECT_DIR$/../applango/reports/apprank-by-group/src/main/java/com/applango/reportservice/plugins/ApprankByGroup.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1418896544598" ignored="false" />
     <file path="/runner.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1418915198631" ignored="false" />
     <file path="/boxIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420626573129" ignored="false" />
-    <file path="/salesforceIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422201116256" ignored="false" />
+    <file path="/salesforceIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422201590486" ignored="false" />
     <file path="/dashboardTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420629852921" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -550,7 +550,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="121" class="applango.common.salesforceIntegrationTest" package="applango.common">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="124" class="applango.common.salesforceIntegrationTest" package="applango.common">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -633,7 +633,7 @@
       <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="30" selection-start="6568" selection-end="6568" vertical-scroll-proportion="0.65604025">
+            <state line="98" column="17" selection-start="6375" selection-end="6375" vertical-scroll-proportion="0.5419463">
               <folding />
             </state>
           </provider>
@@ -2152,7 +2152,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="30" selection-start="6568" selection-end="6568" vertical-scroll-proportion="0.65604025">
+        <state line="98" column="17" selection-start="6375" selection-end="6375" vertical-scroll-proportion="0.5419463">
           <folding />
         </state>
       </provider>
