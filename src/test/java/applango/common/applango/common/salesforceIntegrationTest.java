@@ -73,11 +73,11 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.SALESFORCE);
 
             logger.info("Open Salesforce and perform activities");
-//            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
-//            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
-//            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
-//            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
-//            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
+            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
+            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
+            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
+            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
+            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
 
             logger.info("Get appRank and Activities before sync");
             filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);

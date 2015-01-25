@@ -230,6 +230,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     public static void clickOnDateSearchButton(WebDriver driver1, WebDriverWait wait) throws IOException {
+       logger.info("Clicking on Date Search button");
         driver1.findElement(By.id(applangoButtons.DATE_SEARCH.getValue().toString())).click();
         waitForUserListToLoad(wait);
     }
