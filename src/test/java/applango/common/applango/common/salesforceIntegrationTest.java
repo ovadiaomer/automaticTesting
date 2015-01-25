@@ -1,6 +1,5 @@
 package applango.common;
 
-import applango.common.enums.applango.applangoButtons;
 import applango.common.enums.database.dbTables;
 import applango.common.enums.generic.applications;
 import applango.common.enums.salesforce.salesforceRanks;
@@ -13,10 +12,8 @@ import applango.common.services.beans.Salesforce;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,14 +91,11 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
-//            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
-            logger.info("1");
-            wait1.until(ExpectedConditions.elementToBeClickable(By.id(applangoButtons.DATE_SEARCH.getValue().toString())));
-            logger.info("1.5");
-            driver1.findElement(By.id(applangoButtons.DATE_SEARCH.getValue().toString())).click();
-            logger.info("2");
+            driver1.navigate().refresh();
             waitUntilWaitForServerDissappears(wait1);
-//            genericApplangoWebsiteActions.clickOnDateSearchButton(driver1, wait1);
+            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
+            genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait1);
+            selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
 
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);

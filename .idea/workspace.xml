@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/data/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
@@ -14,7 +16,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/pom.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1420465586594" ignored="false" />
     <file path="/LoginPage.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381239247413" ignored="false" />
-    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422199436764" ignored="false" />
+    <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422208434609" ignored="false" />
     <file path="/CreateUser.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382262684204" ignored="false" />
     <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1421857020757" ignored="false" />
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
@@ -151,7 +153,7 @@
     <file path="$PROJECT_DIR$/../applango/dataaccess/src/main/java/com/applango/dal/AppInfoDAOMongoImpl.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1391682151750" ignored="false" />
     <file path="$PROJECT_DIR$/../applango/dashboard/src/main/webapp/js/controllers2.js" changelist="2c65d532-f314-485a-a005-237161801969" time="1391682151750" ignored="false" />
     <file path="/Applango.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420560029567" ignored="false" />
-    <file path="/applango-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1422199177036" ignored="false" />
+    <file path="/applango-configuration.xml" changelist="2c65d532-f314-485a-a005-237161801969" time="1422202641476" ignored="false" />
     <file path="/applangoObjectsMap.json" changelist="2c65d532-f314-485a-a005-237161801969" time="1412675345934" ignored="false" />
     <file path="/applangoTextfields.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1409055265070" ignored="false" />
     <file path="/applangoButtons.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1405347191434" ignored="false" />
@@ -425,7 +427,7 @@
     <file path="$PROJECT_DIR$/../applango/reports/apprank-by-group/src/main/java/com/applango/reportservice/plugins/ApprankByGroup.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1418896544598" ignored="false" />
     <file path="/runner.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1418915198631" ignored="false" />
     <file path="/boxIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420626573129" ignored="false" />
-    <file path="/salesforceIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422201590486" ignored="false" />
+    <file path="/salesforceIntegrationTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422203040338" ignored="false" />
     <file path="/dashboardTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1420629852921" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -550,21 +552,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="124" class="applango.common.salesforceIntegrationTest" package="applango.common">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/boxIntegrationTest.java" line="2" class="boxIntegrationTest.java" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -610,6 +597,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="99" class="applango.common.salesforceIntegrationTest" package="applango.common">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
@@ -633,7 +635,7 @@
       <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="106" selection-start="6782" selection-end="6782" vertical-scroll-proportion="0.5033557">
+            <state line="93" column="19" selection-start="6117" selection-end="6117" vertical-scroll-proportion="0.6738609">
               <folding />
             </state>
           </provider>
@@ -643,15 +645,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -669,7 +662,7 @@
       <file leaf-file-name="applango-configuration.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="57" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+            <state line="11" column="48" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -726,7 +719,6 @@
         <option value="$PROJECT_DIR$/src/test/java/applango/common/boxIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/salesforceIntegrationTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Mappers/readFromConfigurationFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
@@ -735,6 +727,7 @@
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
       </list>
@@ -793,10 +786,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="934" />
+    <option name="width" value="986" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1939,7 +1931,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="934" y="0" width="986" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1947,7 +1939,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15421557" sideWeight="0.40802675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.4871795" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24080268" sideWeight="0.8146552" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4182243" sideWeight="0.8146552" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3478261" sideWeight="0.3511206" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1957,11 +1949,11 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32664436" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25026682" sideWeight="0.50167227" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.027748132" sideWeight="0.7591973" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.056277055" sideWeight="0.5817757" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1547492" sideWeight="0.5090715" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16915688" sideWeight="0.7591973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23051947" sideWeight="0.5817757" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3400223" sideWeight="0.6488794" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="reVu" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.077047415" sideWeight="0.6575654" order="4" side_tool="true" content_ui="tabs" />
@@ -2066,20 +2058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="13" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="44" selection-start="3226" selection-end="3226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/beans/Applango.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="22" selection-start="495" selection-end="495" vertical-scroll-proportion="0.90710384">
@@ -2115,13 +2093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/applangoObjectsMap.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="31" selection-start="1073" selection-end="1099" vertical-scroll-proportion="0.89235127">
@@ -2131,14 +2102,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0">
+        <state line="5" column="13" selection-start="123" selection-end="123" vertical-scroll-proportion="0.1340694">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/salesforceObjectsMap.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="44" selection-start="3226" selection-end="3226" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="57" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+        <state line="11" column="48" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="13" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -2152,7 +2144,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="106" selection-start="6782" selection-end="6782" vertical-scroll-proportion="0.5033557">
+        <state line="93" column="19" selection-start="6117" selection-end="6117" vertical-scroll-proportion="0.6738609">
           <folding />
         </state>
       </provider>
