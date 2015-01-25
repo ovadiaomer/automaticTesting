@@ -633,7 +633,7 @@
       <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="17" selection-start="6375" selection-end="6375" vertical-scroll-proportion="0.5419463">
+            <state line="104" column="106" selection-start="6782" selection-end="6782" vertical-scroll-proportion="0.5033557">
               <folding />
             </state>
           </provider>
@@ -2152,7 +2152,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="17" selection-start="6375" selection-end="6375" vertical-scroll-proportion="0.5419463">
+        <state line="104" column="106" selection-start="6782" selection-end="6782" vertical-scroll-proportion="0.5033557">
           <folding />
         </state>
       </provider>

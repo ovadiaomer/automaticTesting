@@ -96,7 +96,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             logger.info("Compare appRank and activities");
 //            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
             logger.info("1");
-            wait1.until(ExpectedConditions.elementToBeClickable(By.id(applangoButtons.DATE_SEARCH.getValue().toString()));
+            wait1.until(ExpectedConditions.elementToBeClickable(By.id(applangoButtons.DATE_SEARCH.getValue().toString())));
             logger.info("1.5");
             driver1.findElement(By.id(applangoButtons.DATE_SEARCH.getValue().toString())).click();
             logger.info("2");
