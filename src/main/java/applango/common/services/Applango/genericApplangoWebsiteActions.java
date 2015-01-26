@@ -255,6 +255,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
 
     }
 
+
     private static void clickOnRecordInTable(WebDriver driver1, WebDriverWait wait, String name) throws IOException {
 
         int userRowNumber = searchOnWhichRowInTableTheUserAppear(driver1, name);
@@ -291,7 +292,7 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
         waitForHistogramToLoad(wait);
     }
 
-    private static void clickOnRecordInTable(WebDriver driver1, WebDriverWait wait, int recordNumber) throws IOException {
+    public static void clickOnRecordInTable(WebDriver driver1, WebDriverWait wait, int recordNumber) throws IOException {
 //        driver1.findElements(By.cssSelector("#usertabler tr")).get(recordNumber).click();
         driver1.findElements(By.cssSelector(applangoObject.USERTABLER.getValue())).get(recordNumber).click();
         waitForHistogramToLoad(wait);

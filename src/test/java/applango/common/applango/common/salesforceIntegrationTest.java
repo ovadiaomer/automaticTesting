@@ -18,6 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 import static applango.common.services.Applango.genericApplangoWebsiteActions.*;
 import static com.thoughtworks.selenium.SeleneseTestBase.assertTrue;
 import static com.thoughtworks.selenium.SeleneseTestBase.fail;
@@ -65,19 +67,12 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             WebDriverWait wait2 = new WebDriverWait(driver2, getTimeout());
             //TODO:Set tooljar url in config.properties
 
-
+             //1
             logger.info("Sync metrics and roll up");
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
             logger.info("Login to Applango");
             genericApplangoWebsiteActions.openDashboardAndLogin(applango, driver1, wait1);
             genericApplangoWebsiteActions.selectApplication(driver1, wait1, applications.SALESFORCE);
-
-            logger.info("Open Salesforce and perform activities");
-            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
-            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
-            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
-            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
-            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
 
             logger.info("Get appRank and Activities before sync");
             filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
@@ -87,16 +82,21 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             int activityBeforeActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
             logger.info("AppRank before: " + appRankBeforeActivitiesInSF + " Activity before: " + activityBeforeActivitiesInSF);
 
+            //2
+            logger.info("Open Salesforce and perform activities");
+            genericSalesforceWebsiteActions.launchWebsiteAndlogin(sf, driver2, wait2);
+            salesforceOpportunitiesActions.salesforcePerformActivitiesInOpportunities(sf, driver2, wait2, numOfNewOpportunities, numOfUpdateOpportunities);
+            salesforceLeadActions.salesforcePerformActivitiesInLeads(sf, driver2, wait2, numOfNewLeads, numOfUpdateLeads);
+            salesforceContactActions.salesforcePerformActivitiesInContacts(sf, driver2, wait2, numOfNewContact, numOfUpdateContact);
+            salesforceAccountActions.salesforcePerformActivitiesInAccounts(sf, driver2, wait2, numOfNewAccount, numOfUpdateAccount);
+
+
+            //3
             logger.info("Sync metrics again ");
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
 
             logger.info("Compare appRank and activities");
-            driver1.navigate().refresh();
-            waitUntilWaitForServerDissappears(wait1);
-            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
-            genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait1);
-            selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
-
+            refreshAndReselectUser(driver1, wait1);
             int appRankAfterActivitiesInSF = genericApplangoWebsiteActions.getAppRank(driver1);
             int activityAfterActivitiesInSF = genericApplangoWebsiteActions.getActivity(driver1);
 //            String userName = genericApplangoWebsiteActions.getName(driver1);
@@ -109,11 +109,18 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             assertTrue(appRankAfterActivitiesInSF == expectedAppRankAfterActivitiesInSF);
             assertTrue(activityAfterActivitiesInSF == expectedActivitiesAfterActivitiesInSF);
 
+            //4
             logger.info("Set CustomerAppRankWeightSet true (weight is four times higher than default)");
             DBObject rollupRecordAfterRollupActivitiesBeforeSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
             mongoDB.updateCustomerAppRankWeightSet(coll, appRankWeightSet, true);
+
+            //5
+            logger.info("Sync metrics and roll again ");
             applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
             DBObject rollupRecordAfterRollupActivitiesAfterSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
+
+            logger.info("Compare appRank and activities");
+            refreshAndReselectUser(driver1, wait1);
 //            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
             genericApplangoWebsiteActions.clickOnDateSearchButton(driver1, wait1);
             int appRankBefore = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight);
@@ -132,6 +139,14 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             driver1.close();
             driver2.close();
         }
+    }
+
+    private void refreshAndReselectUser(RemoteWebDriver driver1, WebDriverWait wait1) throws IOException {
+        driver1.navigate().refresh();
+        waitUntilWaitForServerDissappears(wait1);
+        filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
+        genericApplangoWebsiteActions.waitUntilWaitForServerDissappears(wait1);
+        selectUserFromList(driver1, wait1, "Omer", "OvadiaAuto");
     }
 
 }
