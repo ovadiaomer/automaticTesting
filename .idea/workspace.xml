@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
     <ignored path="AutomaticTesting.iws" />
@@ -624,10 +621,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="43" selection-start="8070" selection-end="8070" vertical-scroll-proportion="0.12296564">
+            <state line="123" column="43" selection-start="8070" selection-end="8070" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -642,10 +639,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applango-configuration.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="applango-configuration.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="62" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
+            <state line="11" column="35" selection-start="579" selection-end="579" vertical-scroll-proportion="0.3303887">
               <folding />
             </state>
           </provider>
@@ -702,8 +699,8 @@
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
       </list>
     </option>
   </component>
@@ -2130,13 +2127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="62" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="13" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.030035336">
@@ -2153,7 +2143,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="43" selection-start="8070" selection-end="8070" vertical-scroll-proportion="0.12296564">
+        <state line="123" column="43" selection-start="8070" selection-end="8070" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="579" selection-end="579" vertical-scroll-proportion="0.3303887">
           <folding />
         </state>
       </provider>

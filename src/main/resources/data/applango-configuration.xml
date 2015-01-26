@@ -9,7 +9,7 @@
         <userForoAuth>automationCustomer</userForoAuth>
         <passwordForoAuth>automationCustomer</passwordForoAuth>
         <customerForoAuth>automationCustomer</customerForoAuth>
-        <toolsJarServer>applangoqa3.cloudapp.net</toolsJarServer>
+        <toolsJarServer>applangoqa3</toolsJarServer>
 
     </environment>
     <environment id="qa-it-release">
