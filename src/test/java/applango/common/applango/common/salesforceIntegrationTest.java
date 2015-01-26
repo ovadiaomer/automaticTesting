@@ -115,14 +115,12 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             mongoDB.updateCustomerAppRankWeightSet(coll, appRankWeightSet, true);
 
             //5
-            logger.info("Sync metrics and roll again ");
-            applangoToolsCommand.syncSFActivitiesLoginsAndRollup();
+            logger.info("Rolling again ");
+            applangoToolsCommand.runRollUp();
             DBObject rollupRecordAfterRollupActivitiesAfterSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
 
             logger.info("Compare appRank and activities");
             refreshAndReselectUser(driver1, wait1);
-//            filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
-            genericApplangoWebsiteActions.clickOnDateSearchButton(driver1, wait1);
             int appRankBefore = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesBeforeSettingNewWeight);
             int appRankAfter = mongoDB.parseAppRankValueFromRollupRecord(rollupRecordAfterRollupActivitiesAfterSettingNewWeight);
             int totalLogins = Integer.parseInt(rollupRecordAfterRollupActivitiesAfterSettingNewWeight.get("numLogins").toString());
@@ -142,6 +140,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
     }
 
     private void refreshAndReselectUser(RemoteWebDriver driver1, WebDriverWait wait1) throws IOException {
+        logger.info("refresh And Reselect User ");
         driver1.navigate().refresh();
         waitUntilWaitForServerDissappears(wait1);
         filterByDate(driver1, wait1, thisYear, thisMonth, thisYear, thisMonth);
