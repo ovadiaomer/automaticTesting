@@ -42,7 +42,7 @@ public class SeleniumTestBase {
     public static DB db;
     public static int timeOut = getTimeout();
     public static String thisYear = "2015";
-    public static months thisMonth = months.JANUARY;
+    public static months thisMonth = months.FEBRUARY;
     public static Applango applango;
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
 
