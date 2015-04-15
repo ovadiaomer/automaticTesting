@@ -42,7 +42,7 @@ public class SeleniumTestBase {
     public static DB db;
     public static int timeOut = getTimeout();
     public static String thisYear = "2015";
-    public static months thisMonth = months.MARCH;
+    public static months thisMonth = months.APRIL;
     public static Applango applango;
     public static final Logger logger = LoggerFactory.getLogger(SeleniumTestBase.class);
 
@@ -50,8 +50,6 @@ public class SeleniumTestBase {
 
 
     public static RemoteWebDriver getRemoteWebDriver(DesiredCapabilities capabilities) throws MalformedURLException {
-//        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
-//        ChromeOptions options = new ChromeOptions();
         return new RemoteWebDriver(new URL("http://selenium-server.cloudapp.net:4444/wd/hub"), capabilities);
     }
 
