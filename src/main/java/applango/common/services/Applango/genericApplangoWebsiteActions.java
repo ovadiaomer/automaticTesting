@@ -207,8 +207,8 @@ public class genericApplangoWebsiteActions  extends SeleniumTestBase{
     }
 
     private static void waitForHistogramToLoad(WebDriverWait wait) throws IOException {
-        logger.info("wait For Histogram To Load");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.HISTOGRAM.getValue()))).isDisplayed();
+//        logger.info("wait For Histogram To Load");
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(applangoObject.HISTOGRAM.getValue()))).isDisplayed();
     }
 
 
