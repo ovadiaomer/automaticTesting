@@ -7,7 +7,7 @@
         <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JwsFuCgXZbDSOMrANe5wE8ZGMEdMLU3UQ6wvd9oHddHn4qS8xlAiJs1IxXh</accessToken>
         <clientSecret>1575767409006117159</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>automationCustomer</clientId>
+        <clientId>00D20000000mHimEAE</clientId>
         <connectedApp>ApplangoQA2</connectedApp>
         <clientLogin>http://applangoqa2.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
         <applangoUserId>1</applangoUserId>
@@ -21,7 +21,7 @@
         <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JCS3z4sdoE99m6.A.H0GNo2qWclSPgODuyo2f9iC3_9f5y1F5nO1fPe4zGj</accessToken>
         <clientSecret>7151926241509186983</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
-        <clientId>automationCustomer</clientId>
+        <clientId>00D20000000mHimEAE</clientId>
         <connectedApp>applangoQa4</connectedApp>
         <clientLogin>http://applangoqa4.cloudapp.net/sf-oauth2-public/login.html</clientLogin>
         <applangoUserId>1</applangoUserId>
