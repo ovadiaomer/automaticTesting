@@ -3,7 +3,7 @@
     <environment id="qa-it-release">
         <url>http://www.salesforce.com</url>
         <username>omer@applango.com</username>
-        <password>capelton5</password>
+        <password>capelton6</password>
         <accessToken>3MVG9WtWSKUDG.x7fzYf2LIAO_JwsFuCgXZbDSOMrANe5wE8ZGMEdMLU3UQ6wvd9oHddHn4qS8xlAiJs1IxXh</accessToken>
         <clientSecret>1575767409006117159</clientSecret>
         <loginUrl>https://login.salesforce.com</loginUrl>
