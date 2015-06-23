@@ -17,7 +17,7 @@
     <file path="/LoginPage.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381239247413" ignored="false" />
     <file path="/fragment.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1422208434609" ignored="false" />
     <file path="/CreateUser.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382262684204" ignored="false" />
-    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1435073776513" ignored="false" />
+    <file path="/Dummy.txt" changelist="2c65d532-f314-485a-a005-237161801969" time="1435074238893" ignored="false" />
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
     <file path="/SeleniumBaseTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267638173" ignored="false" />
     <file path="$PROJECT_DIR$/../selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267697907" ignored="false" />
@@ -710,7 +710,7 @@
       <file leaf-file-name="applango-configuration.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="8" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.0">
+            <state line="5" column="26" selection-start="213" selection-end="221" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -719,7 +719,7 @@
       <file leaf-file-name="salesforce-configuration.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="27" selection-start="190" selection-end="190" vertical-scroll-proportion="0.099765256">
+            <state line="19" column="27" selection-start="950" selection-end="950" vertical-scroll-proportion="0.37910798">
               <folding />
             </state>
           </provider>
@@ -1115,6 +1115,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1223,7 +1224,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Revu" />
     </panes>
@@ -1240,18 +1240,18 @@
     <property name="options.lastSelected" value="org.codinjutsu.tools.mongo.view.MongoConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../applango" />
     <property name="project.structure.side.proportion" value="0.39165702" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="Downloaded.Files.Path" value="C:\app-project\AutomaticTesting\lib" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1494,19 +1494,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1533,6 +1520,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1843,13 +1843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="8" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="24" selection-start="4894" selection-end="4894" vertical-scroll-proportion="0.0">
@@ -1885,9 +1878,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="213" selection-end="221" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="190" selection-end="190" vertical-scroll-proportion="0.099765256">
+        <state line="19" column="27" selection-start="950" selection-end="950" vertical-scroll-proportion="0.37910798">
           <folding />
         </state>
       </provider>
