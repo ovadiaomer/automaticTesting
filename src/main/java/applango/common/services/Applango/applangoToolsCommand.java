@@ -145,8 +145,8 @@ public class applangoToolsCommand   extends SeleniumTestBase {
     }
 
     public static void syncSFActivitiesLoginsAndRollup() throws Throwable {
-        runSyncActivities();
         runSyncLogins();
+        runSyncActivities();
         runRollUp();
     }
 }
