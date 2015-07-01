@@ -10,7 +10,6 @@ import applango.common.services.Salesforce.*;
 import applango.common.services.beans.Applango;
 import applango.common.services.beans.Salesforce;
 import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -110,6 +109,7 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
             assertTrue(activityAfterActivitiesInSF == expectedActivitiesAfterActivitiesInSF);
 
             //4
+            /*
             logger.info("Set CustomerAppRankWeightSet true (weight is four times higher than default)");
             DBObject rollupRecordAfterRollupActivitiesBeforeSettingNewWeight = mongoDB.getRollupValue(collRoll, sf.getUsername());
             mongoDB.updateCustomerAppRankWeightSet(coll, appRankWeightSet, true);
@@ -129,6 +129,8 @@ public class salesforceIntegrationTest extends SeleniumTestBase {
                     "After  updating appRank weight set the AppRank is: " + appRankAfter + "\n" +
                     "Should be: " + expectedAppRankAfterChangingWeightSet);
             assertTrue(appRankAfter == expectedAppRankAfterChangingWeightSet);
+
+            */
         } catch (Exception ex) {
             logger.error(ex.getMessage());
             fail("Test failed " + ex.getMessage());

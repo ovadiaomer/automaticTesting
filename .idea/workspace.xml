@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c65d532-f314-485a-a005-237161801969" name="Default" comment="Code Review 1xc">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" afterPath="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="45669115-5568-4665-9e99-b7bde65ea3f1" name="Rejected commit: Default" comment="" />
@@ -21,7 +22,7 @@
     <file path="C:/applango_proj/selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1381390463321" ignored="false" />
     <file path="/SeleniumBaseTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267638173" ignored="false" />
     <file path="$PROJECT_DIR$/../selenium-testing/src/main/java/com/applango/common/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382267697907" ignored="false" />
-    <file path="/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1433169655936" ignored="false" />
+    <file path="/SeleniumTestBase.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1435762487766" ignored="false" />
     <file path="/SanityTest.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1394548994971" ignored="false" />
     <file path="/Logger.java" changelist="2c65d532-f314-485a-a005-237161801969" time="1382279699100" ignored="false" />
     <file path="/a.dummy" changelist="2c65d532-f314-485a-a005-237161801969" time="1420472187542" ignored="false" />
@@ -628,7 +629,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="108" class="applango.common.salesforceIntegrationTest" package="applango.common">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" line="107" class="applango.common.salesforceIntegrationTest" package="applango.common">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -653,10 +654,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="salesforceIntegrationTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="56" selection-start="4467" selection-end="4467" vertical-scroll-proportion="0.0">
+            <state line="123" column="94" selection-start="8071" selection-end="8071" vertical-scroll-proportion="0.55542314">
               <folding />
             </state>
           </provider>
@@ -725,10 +726,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="applangoToolsCommand.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="19" selection-start="6458" selection-end="6458" vertical-scroll-proportion="0.78051645">
+            <state line="147" column="19" selection-start="6458" selection-end="6458" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -773,11 +774,11 @@
         <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/dashboardTests.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data/config.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/data/applango-configuration.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/genericApplangoWebsiteActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data/salesforce-configuration.xml" />
         <option value="$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java" />
+        <option value="$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java" />
       </list>
     </option>
   </component>
@@ -1956,13 +1957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="48" selection-start="1639" selection-end="1639" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/data/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
@@ -1998,16 +1992,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="56" selection-start="4467" selection-end="4467" vertical-scroll-proportion="0.0">
+        <state line="147" column="19" selection-start="6458" selection-end="6458" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/services/Applango/applangoToolsCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/applango/common/SeleniumTestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="19" selection-start="6458" selection-end="6458" vertical-scroll-proportion="0.78051645">
+        <state line="44" column="48" selection-start="1639" selection-end="1639" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/applango/common/applango/common/salesforceIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="94" selection-start="8071" selection-end="8071" vertical-scroll-proportion="0.55542314">
           <folding />
         </state>
       </provider>
